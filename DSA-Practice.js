@@ -1185,30 +1185,995 @@ const { LinkedList, _Node } = require('./LinkedList')
 
 
 
-const arr = [1,  2, 3, 0]
 
-function areThereDuplicates(arr) {
+// sameFrequency Solution
+// function sameFrequency(num1, num2){
+//   let strNum1 = num1.toString();
+//   let strNum2 = num2.toString();
+//   if(strNum1.length !== strNum2.length) return false;
 
-    if (arr.length <= 1) return false
+//   let countNum1 = {};
+//   let countNum2 = {};
 
-    arr.sort()
+//   for(let i = 0; i < strNum1.length; i++){
+//     countNum1[strNum1[i]] = (countNum1[strNum1[i]] || 0) + 1
+//   }
 
-    let i = 0;
+//   for(let j = 0; j < strNum1.length; j++){
+//     countNum2[strNum2[j]] = (countNum2[strNum2[j]] || 0) + 1
+//   }
 
-    for (let j = i + 1; j < arr.length; j++) {
+//   for(let key in countNum1){
+//     if(countNum1[key] !== countNum2[key]) return false;
+//   }
 
-        if (arr[i] === arr[j]) {
-            return true
-        }
-        i++
-        
-    }
-
-    return false
-}
+//   return true;
+// }
 
 
-console.log('areThereDuplicates(arr)', areThereDuplicates(arr))
+
+
+
+
+
+
+
+
+// const args = [1, 2, 2, 3, 0]
+
+// function areThereDuplicates(...args) {
+//     if (!args) return false
+//     args.sort()
+
+//     let i = 0
+//     let next = 1
+
+//     while (next < args.length) {
+//         if (args[next] === args[i]) {
+//             return true
+//         }
+//         next++
+//         i++
+//     }
+
+//     return false
+// }
+
+
+// console.log('areThereDuplicates(arr)', areThereDuplicates(...args))
+
+
+
+
+
+
+// // areThereDuplicates Solution (Multiple Pointers)
+// function areThereDuplicates(...args) {
+//   // Two pointers
+//   args.sort((a,b) => a > b);
+//   let start = 0;
+//   let next = 1;
+//   while(next < args.length){
+//     if(args[start] === args[next]){
+//         return true
+//     }
+//     start++
+//     next++
+//   }
+//   return false
+// }
+
+
+// // areThereDuplicates One Liner Solution
+// function areThereDuplicates() {
+//   return new Set(arguments).size !== arguments.length;
+// }
+
+// console.log('areThereDuplicates(1,2,3,4,4)', areThereDuplicates(1,2,3,4,4))
+
+
+
+
+// const arr = [4, 1, 2, 3]
+// const avg = 2
+
+// function averagePair(arr, avg) {
+
+
+//   let i = 0;
+
+//   let next = 1
+//   while (next<arr.length) {
+
+
+//     for (let j = next; j < arr.length; j++ ) {
+//       console.log('j', j)
+
+//       console.log('(arr[i] + arr[next]) / 2', (arr[i] + arr[next]) / 2)
+//       if ((arr[i] + arr[j]) / 2 === avg) {
+
+//         return true
+//       }
+//     }
+
+
+
+
+
+
+//     i++
+//     next++
+//   }
+
+//   return false
+
+// }
+
+
+// console.log('averagePair(arr, avg)', averagePair(arr, avg))
+
+
+
+// const arr = [3,4,2,1]
+// const num = 1.5
+
+// // averagePair Solution
+// function averagePair(arr, num) {
+//   arr.sort()
+//   let start = 0
+//   let end = arr.length - 1;
+//   while (start < end) {
+//     let avg = (arr[start] + arr[end]) / 2
+//     if (avg === num) return true;
+//     else if (avg < num) start++
+//     else end--
+//   }
+//   return false;
+// }
+
+
+// console.log('averagePair(arr, num)', averagePair(arr, num))
+
+
+
+
+// //     i
+// // a b c 
+
+// //         j 
+// // a f b f d
+
+// // if j value === i value
+// // increment i, increment j
+// // else, increment j
+// // if j becomes greater than length of second string
+// // return false
+// // else return true
+
+// const str1 = 'abc'
+// const str2 = 'abfc'
+
+// function isSubsequence(str1,str2) {
+
+//   if (str2.length < str1.length ) {
+//     return false
+//   }
+
+//   let j = 0
+//   for (let i = 0; i< str1.length; i++) {
+
+//     while (str1[i] !== str2[j]) {
+//       if (j >= str2.length) {
+//         return false
+//       }
+//       j++
+//     }
+//   }
+
+//   return true
+
+// }
+// console.log('isSubsequence(str1,str2)', isSubsequence(str1,str2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // isSubsequence Solution - Iterative
+// function isSubsequence(str1, str2) {
+//   var i = 0;
+//   var j = 0;
+//   if (!str1) return true;
+//   while (j < str2.length) {
+//     if (str2[j] === str1[i]) i++;
+//     if (i === str1.length) return true;
+//     j++;
+//   }
+//   return false;
+// }
+// console.log('isSubsequence(str1, str2)', isSubsequence(str1, str2))
+
+
+// // isSubsequence Solution - Recursive but not O(1) Space
+// function isSubsequence(str1, str2) {
+//   if(str1.length === 0) return true
+//   if(str2.length === 0) return false
+//   if(str2[0] === str1[0]) return isSubsequence(str1.slice(1), str2.slice(1))  
+//   return isSubsequence(str1, str2.slice(1))
+// }
+
+
+
+// const arr = [1, 2, 3, 4, 2, 2]
+// const num = 2
+
+// // maxSubArray Solution
+// function maxSubarraySum(arr, num) {
+//   if (arr.length < num) return null;
+
+//   let total = 0;
+//   for (let i = 0; i < num; i++) {
+//     total += arr[i];  
+//   }
+//   let currentTotal = total;
+//   for (let i = num; i < arr.length; i++) {
+//     currentTotal += arr[i] - arr[i - num];
+//     total = Math.max(total, currentTotal);
+//   }
+//   return total;
+// }
+
+// console.log('maxSubarraySum(arr, num)', maxSubarraySum(arr, num))
+
+
+
+
+// const str = 'abcaaaaabcd'
+
+// // findLongestSubstring Solution
+// function findLongestSubstring(str) {
+//   let longest = 0;
+//   let seen = {};
+//   let start = 0;
+  
+//   for (let i = 0; i < str.length; i++) {
+//     // console.log('start', start)
+//     let char = str[i];
+//     if (seen[char]) {
+//       start = Math.max(start, seen[char]);
+//       console.log('seen[char]', seen[char])
+//       console.log('start', start)
+//     }
+//     // index - beginning of substring + 1 (to include current in count)
+//     longest = Math.max(longest, i - start + 1);
+//     console.log('longest', longest)
+//     // store the index of the next char so as to not double count
+//     seen[char] = i + 1;
+//   }
+//   return longest;
+// }
+
+
+// console.log('findLongestSubstring(str)', findLongestSubstring(str))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
