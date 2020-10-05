@@ -2235,88 +2235,210 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 // console.log('equalizeArray(arr)', equalizeArray(arr))
 
 
-const arr = [
-  [1, 1, 1, 0, 0, 0],
-  [0, 1, 0, 0, 0, 0],
-  [1, 1, 1, 0, 0, 0],
-  [0, 9, 2, -4, -4, 0],
-  [0, 0, 0, -2, 0, 0],
-  [0, 0, -1, -2, -4, 0],
-]
+// const arr = [
+//   [1, 1, 1, 0, 0, 0],
+//   [0, 1, 0, 0, 0, 0],
+//   [1, 1, 1, 0, 0, 0],
+//   [0, 9, 2, -4, -4, 0],
+//   [0, 0, 0, -2, 0, 0],
+//   [0, 0, -1, -2, -4, 0],
+// ]
 
 
-function hourglassSum(arr) {
-  let maxSum = -Infinity;
-  for (let i = 0; i < 4; i++) {
-    for (let j = 0; j < 4; j++) {
-      maxSum = Math.max(hgSum(arr, i, j), maxSum)
-      // console.log('hourglassSum', i, j, arr[i][j], maxSum)
-    }
-  }
+// function hourglassSum(arr) {
+//   let maxSum = -Infinity;
+//   for (let i = 0; i < 4; i++) {
+//     for (let j = 0; j < 4; j++) {
+//       maxSum = Math.max(hgSum(arr, i, j), maxSum)
+//       // console.log('hourglassSum', i, j, arr[i][j], maxSum)
+//     }
+//   }
 
-  return maxSum;
+//   return maxSum;
 
-}
+// }
 
-function hgSum(arr, x, y) {
-  let sum = 0;
+// function hgSum(arr, x, y) {
+//   let sum = 0;
 
-  for (let i = x; i < x + 3; i++) {
+//   for (let i = x; i < x + 3; i++) {
 
-    for (let j = y; j < y + 3; j++) {
+//     for (let j = y; j < y + 3; j++) {
 
-      if (i === x + 1) {
-        if (j === y + 1) {
-          sum += arr[i][j];
-        }
-      } else {
-        sum += arr[i][j];
+//       if (i === x + 1) {
+//         if (j === y + 1) {
+//           sum += arr[i][j];
+//         }
+//       } else {
+//         sum += arr[i][j];
+//       }
+//       // console.log('i', i,'j', j,'sum',sum)
+//     }
+//   }
+//   return sum;
+// }
+
+// let x = 0;
+// let y = 0;
+
+// console.log('hgSum(arr, x, y)', hgSum(arr, x, y))
+
+
+// console.log('hourglassSum(arr)', hourglassSum(arr))
+
+
+
+
+
+
+// const a = [1, 2, 3, 4, 5];
+
+// const d = 2;
+
+// function rotLeft(a, d) {
+//   const n = a.length;
+
+//   if (d === n) return a
+
+//   const result = a.slice(d).concat(a.slice(0, d))
+
+//   return result
+
+// }
+
+
+// console.log('rotLeft(a, d)', rotLeft(a, d))
+
+
+
+
+
+
+// const arr = [1, 3, 5, 2, 4, 6, 7]
+
+
+// function minimumSwaps(arr) {
+
+//   let swapCount = 0
+
+//   let j
+//   for (let i = 0; i < arr.length; i++) {
+
+//     let correctVal = i + 1
+
+//     if (arr[i] !== correctVal) {
+//       j = i + 1
+//       while (arr[j] !== correctVal && j < arr.length) {
+
+//         j++
+//       }
+
+//       swap(arr,i,j)
+//       swapCount++
+//     }
+
+
+//   }
+
+//   // return arr
+//   return swapCount;
+
+
+// }
+
+// function swap(arr, i, j) {
+//   const temp = arr[i]
+//   arr[i] = arr[j]
+//   arr[j] = temp;
+// }
+
+
+// console.log('minimumSwaps(arr)', minimumSwaps(arr))
+
+
+
+
+// const queries = [[2,6,8], [3,5,7], [1,8,1],[5,9,15]];
+// const n = 10
+
+// function arrayManipulation(n, queries) {
+
+//   let max = 0;
+//   let size = queries.length;
+//   let sums = {};
+
+//   for (let row = 0; row < size; row++) {
+
+//     let k
+//     let startInd = queries[row][0]
+//     // console.log('startInd', startInd)
+//     let endInd = queries[row][1]
+//     // console.log('endInd', endInd)
+//     for (let col = startInd; col < endInd+1; col++) {
+//       k = queries[row][2];
+
+//       if (sums[col] === undefined) {
+//         sums[col] = 0
+//       }
+
+//       sums[col] += sums[col] !== undefined && col >= startInd && col <= endInd
+//         ? k
+//         : 0
+
+//         if (sums[col] > max) max = sums[col]
+//     }
+//   }
+
+
+//   return max
+// }
+
+// console.log('arrayManipulation(n, queries)', arrayManipulation(n, queries))
+
+
+
+
+const queries = [[1, 3, 5], [3, 5, 10], [5, 7, 20], [1, 2, 30]];
+const n = 10
+
+function arrayManipulation(n, queries) {
+
+  const arr = Array(n + 1);
+
+
+  let maxValue = 0,
+    currentNumber = 0;
+  queries.forEach(([startRange, endRange, value]) => {
+    arr[startRange] = arr[startRange] || { start: 0, end: 0 };
+    console.log('arr[startRange]', arr[startRange])
+    // console.log('startRange', startRange)
+    // console.log('arr[startRange]', arr[startRange])
+    arr[endRange] = arr[endRange] || { start: 0, end: 0 };
+    arr[startRange].start += value;
+    // console.log('arr[startRange].start', arr[startRange].start)
+    arr[endRange].end += value;
+    // console.log('arr[endRange].end', arr[endRange].end)
+    console.log('arr', arr)
+  });
+  // console.log('queries', queries)
+  // console.log('arr', arr)
+  console.log('arr', arr)
+  arr.forEach((cell) => {
+    if (cell) {
+      currentNumber += cell.start;
+      if (currentNumber > maxValue) {
+        maxValue = currentNumber;
       }
-      // console.log('i', i,'j', j,'sum',sum)
+      currentNumber -= cell.end;
     }
-  }
-  return sum;
+  });
+  return maxValue;
 }
 
-let x = 0;
-let y = 0;
-
-console.log('hgSum(arr, x, y)', hgSum(arr, x, y))
-
-
-console.log('hourglassSum(arr)', hourglassSum(arr))
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log('arrayManipulation(n, queries)', arrayManipulation(n, queries))
 
 
 
