@@ -2398,71 +2398,118 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 
 
 
-const queries = [[1, 3, 5], [3, 5, 10], [5, 7, 20], [1, 2, 30]];
-const n = 10
+// const queries = [[1, 3, 5], [3, 5, 10], [5, 7, 20], [1, 2, 30]];
+// const n = 10
 
-function arrayManipulation(n, queries) {
+// function arrayManipulation(n, queries) {
 
-  const arr = Array(n + 1);
+//   const arr = Array(n + 1);
 
 
-  let maxValue = 0,
-    currentNumber = 0;
-  queries.forEach(([startRange, endRange, value]) => {
-    arr[startRange] = arr[startRange] || { start: 0, end: 0 };
-    console.log('arr[startRange]', arr[startRange])
-    // console.log('startRange', startRange)
-    // console.log('arr[startRange]', arr[startRange])
-    arr[endRange] = arr[endRange] || { start: 0, end: 0 };
-    arr[startRange].start += value;
-    // console.log('arr[startRange].start', arr[startRange].start)
-    arr[endRange].end += value;
-    // console.log('arr[endRange].end', arr[endRange].end)
-    console.log('arr', arr)
-  });
-  // console.log('queries', queries)
-  // console.log('arr', arr)
-  console.log('arr', arr)
-  arr.forEach((cell) => {
-    if (cell) {
-      currentNumber += cell.start;
-      if (currentNumber > maxValue) {
-        maxValue = currentNumber;
-      }
-      currentNumber -= cell.end;
+//   let maxValue = 0,
+//     currentNumber = 0;
+//   queries.forEach(([startRange, endRange, value]) => {
+//     arr[startRange] = arr[startRange] || { start: 0, end: 0 };
+//     console.log('arr[startRange]', arr[startRange])
+//     // console.log('startRange', startRange)
+//     // console.log('arr[startRange]', arr[startRange])
+//     arr[endRange] = arr[endRange] || { start: 0, end: 0 };
+//     arr[startRange].start += value;
+//     // console.log('arr[startRange].start', arr[startRange].start)
+//     arr[endRange].end += value;
+//     // console.log('arr[endRange].end', arr[endRange].end)
+//     console.log('arr', arr)
+//   });
+//   // console.log('queries', queries)
+//   // console.log('arr', arr)
+//   console.log('arr', arr)
+//   arr.forEach((cell) => {
+//     if (cell) {
+//       currentNumber += cell.start;
+//       if (currentNumber > maxValue) {
+//         maxValue = currentNumber;
+//       }
+//       currentNumber -= cell.end;
+//     }
+//   });
+//   return maxValue;
+// }
+
+
+
+
+// console.log('arrayManipulation(n, queries)', arrayManipulation(n, queries))
+
+
+
+
+
+
+// const nums = [1]
+
+// var removeDuplicates = function (nums) {
+
+//   if (nums.length === 0) return 0
+//   let j = 0;
+//   for (let i = 0; i < nums.length - 1; i++) {
+//     if (nums[i] !== nums[i + 1]) {
+//       nums[j++] = nums[i]
+//     }
+//   }
+//   nums[j++] = nums[nums.length - 1]
+//   return j;
+// };
+
+// console.log('removeDuplicates(nums)', removeDuplicates(nums))
+
+
+
+
+
+// const prices = [1,2,3,4,5]
+
+// var maxProfit = function (prices) {
+//   let profit = 0
+//   let buyInd
+//   let sellInd
+//   let i = 0
+//   while (i < prices.length - 1)  {
+//     if (prices[i] < prices[i + 1]) {
+//       buyInd = i
+//       let j = i + 1;
+//       while (prices[j] < prices[j + 1]) {
+//         j++
+//       }
+//       sellInd = j
+//       profit += prices[sellInd] - prices[buyInd]
+//       i = j+1
+//     } else {
+//       i++
+//     }
+//   }
+//   return profit
+// };
+
+
+
+
+
+
+// console.log('maxProfit(prices)', maxProfit(prices))
+
+
+
+function f(x) {
+  x *= 2
+  return function (y) {
+    y *= x
+    return function (z) {
+      return z * y;
     }
-  });
-  return maxValue;
+  }
 }
-
-
-
-
-console.log('arrayManipulation(n, queries)', arrayManipulation(n, queries))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let g = f(3)(4)(5);
+console.log('f(3)(4)(5)', f(3)(4)(5))
 
 
 
