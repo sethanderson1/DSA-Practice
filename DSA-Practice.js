@@ -1,3 +1,4 @@
+const nodemon = require('nodemon')
 // const { LinkedList, _Node } = require('./LinkedList')
 const { SinglyLinkedList, Node } = require('./LinkedList')
 
@@ -2499,53 +2500,116 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 
 
 
-function f(x) {
-  x *= 2
-  return function (y) {
-    y *= x
-    return function (z) {
-      return z * y;
-    }
-  }
+// function f(x) {
+//   x *= 2
+//   return function (y) {
+//     y *= x
+//     return function (z) {
+//       return z * y;
+//     }
+//   }
+// }
+// let g = f(3)(4)(5);
+// console.log('f(3)(4)(5)', f(3)(4)(5))
+
+
+// const nums = [1,5,-2,-4,0,1]
+
+// const containsDuplicate = function (nums) {
+
+//   const dictionary = new Set();
+
+//   for (let num of nums) {
+//     if(dictionary.has(num)) {
+//       return true
+//     }
+
+//     dictionary.add(num)
+//   }
+//   return false
+// };
+
+
+// console.log('containsDuplicate(nums)', containsDuplicate(nums))
+
+
+
+
+
+// const s = ["h"];
+
+// var reverseString = function (s) {
+
+//   const len = s.length
+//   if (len <= 1) return s
+//   const middle = Math.floor(len / 2)
+//   for (let i = 0; i < middle; i++) {
+//     let j = len - 1 - i
+//     let temp = s[i]
+//     s[i] = s[j]
+//     s[j] = temp
+//   }
+//   return s;
+// };
+
+// function swap(arr, i, j) {
+
+// }
+
+
+// console.log('reverseString(s)', reverseString(s))
+
+
+
+
+// var removeNthFromEnd = function (head, n) {
+
+
+
+//   const list = head
+//   let isTrue = true
+//   while (head.next || isTrue) {
+    
+
+//   }
+//   return list
+// };
+
+
+function ListNode(val,next) {
+  this.val = (val === undefined ? 0 : val) 
+  this.next = (next === undefined ? null : next)
 }
-let g = f(3)(4)(5);
-console.log('f(3)(4)(5)', f(3)(4)(5))
+
+
+let SLL = new SinglyLinkedList
+
+SLL.push(0)
+SLL.push(1)
+SLL.push(2)
+console.log('SLL', SLL)
+
+let head = SLL.head;
+
+var reverseList = function(head) {
+    if (!head.next) return head
+
+    let curNode = head
+    
+    while(curNode.next) {
+
+
+      
+      
+    }
+    
+    console.log('curNode', curNode)
+    
+};
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log('reverseList(head)', reverseList(head))
 
 
 
