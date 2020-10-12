@@ -2569,110 +2569,413 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 //   const list = head
 //   let isTrue = true
 //   while (head.next || isTrue) {
-    
+
 
 //   }
 //   return list
 // };
 
 
-function ListNode(val,next) {
-  this.val = (val === undefined ? 0 : val) 
-  this.next = (next === undefined ? null : next)
-}
+// function ListNode(val,next) {
+//   this.val = (val === undefined ? 0 : val) 
+//   this.next = (next === undefined ? null : next)
+// }
 
 
-let SLL = new SinglyLinkedList
+// let SLL = new SinglyLinkedList
 
-SLL.push(0)
-SLL.push(1)
-SLL.push(2)
-console.log('SLL', SLL)
+// SLL.push(0)
+// SLL.push(1)
+// SLL.push(2)
+// console.log('SLL', SLL)
 
-let head = SLL.head;
+// let head = SLL.head;
 
-var reverseList = function(head) {
-    if (!head.next) return head
+// var reverseList = function(head) {
+//     if (!head.next) return head
 
-    let curNode = head
+//     let prev = null
+//     let cur = head
+
+//     while(cur !== null) {
+
+//       nextTemp = cur.next // 1
+//       cur.next = prev // null
+//       prev = cur
+//       cur = nextTemp
+
+//     }
+
+//     console.log('cur', cur)
+
+// };
+
+
+
+// console.log('reverseList(head)', reverseList(head))
+
+// const nums = new Set()
+// nums.add(1)
+// nums.add(2)
+// nums.add(3)
+
+// const nums = [1, 2, 3]
+
+// var Solution = function (nums) {
+//   const origNums = nums;
+//   const len = nums.length;
+
+//   this.shuffle = () => {
+//     const shuffled = []
+
+//     while (nums.length > 0) {
+//       const index = Math.random() * nums.length;
+//       const spliced = nums.splice(index, 1)[0];
+//       shuffled.push(spliced);
+//     }
+//     return shuffled
+//   }
+
+//   this.reset = () => {
+
+//   }
+
+// };
+
+// let solution = new Solution(nums)
+
+// let shuffled = solution.shuffle()
+// console.log('shuffled', shuffled)
+
+
+// const nums = [2,7,4,1] 
+// const target = 9
+
+// var twoSum = function(nums, target) {
+//   const dictionary = new Map()
+
+//   for (let i = 0; i< nums.length; i++) {
+//     const num = nums[i]
+//     const complement = target - num
+//     if (dictionary.has(num)) {
+//       return [dictionary.get(num),i ]
+//     }
+//     dictionary.set(complement,i)
+//   }
+// };
+
+
+
+// console.log('twoSum(nums,target)', twoSum(nums,target))
+
+
+
+// //                j
+// const nums1 =    [4, 9, 5]
+// //                k
+// //             i
+// const nums2 = [9, 4, 9, 8, 4, 9]
+
+// //               j
+// const nums1 = [2, 1]
+// //             k
+// //               i
+// const nums2 = [1, 1]
+
+// var intersect = function (nums1, nums2) {
+//   const len1 = nums1.length
+//   const len2 = nums2.length
+//   let short
+//   let long
+//   if (len1 <= len2) {
+//     short = nums1
+//     long = nums2
+//   } else {
+//     short = nums2
+//     long = nums1
+//   }
+
+//   let intersection = [];
+
+//   for (let i = 0; i < long.length; i++) {
+//     // console.log('long[i]', long[i])
+//     // console.log('short[0]', short[0])
+//     if (short[0] === long[i]) {
+
+//       let j = 0
+//       let k = i
+//       while (long[k] === short[j] && k < long.length && j < short.length) {
+//         intersection[j] = short[j]
+//         k++
+//         j++
+//       }
+//     }
+
+//   }
+//   return intersection
+// };
+
+
+
+
+// console.log('intersect(num1,num2)', intersect(nums1, nums2))
+
+// //             j
+// const nums1 = [2, 1]
+// //             k
+// //             i
+// const nums2 = [1, 1]
+
+
+// //                j
+// const nums1 =    [4, 9, 5]
+// //                k
+// //             i
+// const nums2 = [9, 4, 9, 8, 4, 9]
+
+
+
+// var intersect = function (nums1, nums2) {
+//   const len1 = nums1.length
+//   const len2 = nums2.length
+//   let short
+//   let long
+//   if (len1 <= len2) {
+//     short = nums1
+//     long = nums2
+//   } else {
+//     short = nums2
+//     long = nums1
+//   }
+
+//   const longObj = {}
+//   const intersection = []
+
+//   for (const num of long) {
+//     if (longObj[num]) {
+//       longObj[num]++ 
+//     } else {
+//       longObj[num] = 1
+//     }
+//   }
+
+//   for (const num of short) {
+//     if (longObj[num]) {
+//       intersection.push(num)
+//       longObj[num]--
+//     }
+//   }
+//   return intersection
+
+// };
+
+
+
+
+// console.log('intersect(num1,num2)', intersect(nums1, nums2))
+
+
+// //               i          
+// const s = "cce"
+
+// var firstUniqChar = function(s) {
+
+//   if (s.length === 0) return -1
+
+//   const possibles = []
+//   const seenLetters = new Set()
+//   // traverse from i = end to beginning of string
+//   for (let i = s.length-1; i >= 0; i--) {
+//     // for each character, check if it's contained in map. 
+//     const letter = s.charAt(i)
+
+//     if (!seenLetters.has(letter)) {
+//       // if it's not, push the index onto a stack
+//       possibles.push([letter, i])
+//       seenLetters.add(letter)
+//     } 
+//   }
+
+//   let j = 0
+//   while (j < possibles.length) {
+//     if (!seenLetters.has(possibles[j][0])) {
+//         return possibles[j][0]
+//       }
+//       j++
+//     }
+
+
+//     // return last item on stack
+//   console.log('possibles', possibles)
+//   // return possibles.pop()
+//   return -1
+
+// };
+
+// console.log('firstUniqChar(s)', firstUniqChar(s))
+
+
+
+
+
+
+
+
+
+// //               i          
+// const s = "ccecccce"
+
+// var firstUniqChar = function(s) {
+//   const seen = {}
+
+//   for (let i = 0; i < s.length; i++) {
+//     const letter = s[i]
+//     if (!seen[letter]) {
+//       seen[letter] = 1
+
+//     } else {
+//       seen[letter]++
+//     }
+//   }
+
+//   for (let i = 0; i< s.length; i++) {
+//     const letter = s[i]
+//     if (seen[letter] === 1) {
+//       return i
+//     }
+//   }
+
+//   return -1
+
+// };
+
+// console.log('firstUniqChar(s)', firstUniqChar(s))
+
+
+// const s = "-5-"
+
+// var myAtoi = function (s) {
+//   if (s.length === 0) return 0
+
+//   let result = ''
+//   let i = 0
+//   let keepGoing = true;
+//   let answer = 0
+//   let foundNums = false
+//   let foundSign = false
+//   let signClosed = false
+
+//   function returnResult(result) {
+//     if (parseInt(result) < -2147483648) {
+//       result = -2147483648
+//     }
+//     if (parseInt(result) > 2147483647) {
+//       result = 2147483647
+//     }
+//     return parseInt(result)
+//   }
+
+//   while (i < s.length && keepGoing) {
+//     const letter = s.charAt(i).toLowerCase()
     
-    while(curNode.next) {
-
-
+//     if (letter === ' ') {
+//       if (foundNums ) {
+//         return returnResult(result)
+//       } else if (foundSign && !foundNums){
+//         return 0
+//       }
+//       i++
+//     } else if (letter.charCodeAt() === 46
+//     || (letter.charCodeAt() >= 97 && letter.charCodeAt() <= 122)) {
+//       if (foundNums) {
+//         return returnResult(result)
+//       } else {
+//         return answer
+//       }
+//     } else if (letter === '-' || letter === '+') {
+//       if (foundSign === true) {
+//         if (foundNums) return returnResult(result)
+//         return 0
+//       }
       
-      
-    }
-    
-    console.log('curNode', curNode)
-    
-};
-
-
-
-console.log('reverseList(head)', reverseList(head))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//       foundSign = true
+//       result += letter
+//       i++
+//     } else if (parseInt(letter) >= 0) {
+//       foundNums = true
+//       result += letter
+//       i++
+//     }
+//     // console.log('result', result)
+
+//   }
+//   if (parseInt(result) < -2147483648) {
+//     result = -2147483648
+//   }
+//   if (parseInt(result) > 2147483647) {
+//     result = 2147483647
+//   }
+//   if (parseInt(result) !== 0 && Boolean(parseInt(result)) === false) {
+//     return 0
+//   }
+//   return parseInt(result)
+
+// };
+
+
+// const s = "   34 qwer"
+
+
+
+
+// var myAtoi = function(s) {
+//   var a = parseInt(s, 10) ? parseInt(s, 10) : 0;
+//   if(a > Math.pow(2, 31) - 1) {
+//       return Math.pow(2, 31) - 1
+//     } else if (a < Math.pow(-2, 31)) {
+//       return -Math.pow(2, 31);
+//   }
+//   return a
+  
+// };
+
+// console.log('myAtoi(s)', myAtoi(s))
+
+
+
+
+// const haystack = ""
+// const needle =  ""
+
+// var strStr = function(haystack, needle) {
+  
+//   const len = haystack.length;
+//   const needleLen = needle.length;
+//   // if (len === 0) return -1
+//   if (needleLen === 0) return 0
+//   let potentialStart = 0
+ 
+//   // traverse until len - needleLen
+//   let i = 0
+//   while (i <= len - needleLen ) {
+//     // console.log('haystack[i]', haystack[i])
+//     // if needle[0] matches haystack[i], see if the rest of needle matches
+//     let j = 0
+//     let k = i
+//     potentialStart = i
+//     while( needle[j] === haystack[k] ) {
+//       if (j === needleLen-1) return potentialStart
+//       j++
+//       k++
+//     }
+//     i++
+//   }
+
+//   return -1
+
+// };
+
+// console.log('strStr(haystack, needle)', strStr(haystack, needle))
 
 
 
