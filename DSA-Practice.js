@@ -2877,7 +2877,7 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 
 //   while (i < s.length && keepGoing) {
 //     const letter = s.charAt(i).toLowerCase()
-    
+
 //     if (letter === ' ') {
 //       if (foundNums ) {
 //         return returnResult(result)
@@ -2897,7 +2897,7 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 //         if (foundNums) return returnResult(result)
 //         return 0
 //       }
-      
+
 //       foundSign = true
 //       result += letter
 //       i++
@@ -2936,7 +2936,7 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 //       return -Math.pow(2, 31);
 //   }
 //   return a
-  
+
 // };
 
 // console.log('myAtoi(s)', myAtoi(s))
@@ -2948,13 +2948,13 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 // const needle =  ""
 
 // var strStr = function(haystack, needle) {
-  
+
 //   const len = haystack.length;
 //   const needleLen = needle.length;
 //   // if (len === 0) return -1
 //   if (needleLen === 0) return 0
 //   let potentialStart = 0
- 
+
 //   // traverse until len - needleLen
 //   let i = 0
 //   while (i <= len - needleLen ) {
@@ -2977,6 +2977,49 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 
 // console.log('strStr(haystack, needle)', strStr(haystack, needle))
 
+//                      seen = a 
+//         i   
+// const s = "daasdfasdfasdfasdf"
+// //         j
+// //  i = 0   s[i] = a                                                                              maxStr = 1
+// //  i = 1   s[i] = b                                                                              maxStr = 2
+// //  i = 2   s[i] = b  if (set.has(s[i])) maxStr = 1                                               maxStr = 1  
+// //  i = 3   s[i] = a                                                                              maxStr = 2    
+// //  i = 4   s[i] = b  if (set.has(s[i])) maxStr = 1, go back to last element that isnt this one   maxStr = 1        
+// //  i = 5   s[i] = c                                                                              maxStr = 1  
+
+// var lengthOfLongestSubstring = function (s) {
+//   const len = s.length
+//   if (len === 0) return 0
+//   if (len === 1) return 1
+//   let subLen = 0
+//   let maxStr = 0
+//   const seen = new Set()
+//   let i = 0
+//   while (i < len) {
+//     if (seen.has(s[i])) {
+//       seen.clear()
+//       let j = i - 1
+//       let k = i
+//       if (s[i - 1] === s[i]) {
+//       } else {
+//         while (s[j] !== s[i] && j > 0) {
+//           j--
+//         }
+//         i = j + 1
+//       }
+//       subLen = 1
+//     } else {
+//       subLen++
+//     }
+//     maxStr = Math.max(subLen, maxStr)
+//     seen.add(s[i])
+//     i++
+//   }
+//   return maxStr
+// };
+
+// console.log('lengthOfLongestSubstring(s)', lengthOfLongestSubstring(s))
 
 
 
@@ -2985,41 +3028,180 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 
 
 
+// //              i
+// const s = "ababcabbcd"
+// //           j
+
+// var lengthOfLongestSubstring = function (s) {
+
+//   let max = 0
+//   let count = new Set()
+
+//   let i = 0
+//   let j = 0
+//   while (i < s.length) {
+
+//     while (count.has(s[i])) {
+//       count.delete(s[j])
+//       j++
+//     }
+
+//     count.add(s[i])
+//     i++
+
+//     max = Math.max(max, count.size)
+
+//   }
+//   return max
+// };
+
+// console.log('lengthOfLongestSubstring(s)', lengthOfLongestSubstring(s))
 
 
 
+//      aabc
+//      cbaa     does orig === rev ?   nope
+//      baa      does orig[0:3] === rev[1:4]   i=start=0 to i=len-winLenRem    j=len-winLenRem  to j=len       winLen=3  winLenRem=len-winLen=1  
+//       cba     does orig[1:4] === rev[0:3]   i=start=1 to i=len              j=0  to j=len-winLenRem         winLen=3  winLenRem=len-winLen=1  
+//      aa       does orig[0:2] === rev[2:4]   i=start=0 to i=start+len-winLenRem    j=len-winLenRem  to j=len       winLen=2  winLenRem=len-winLen=2
+//       ba      does orig[1:3] === rev[1:3]   i=start=1 to i=start+len-winLenRem
+//        cb
+
+//      aabc
+//      cbaa   
+//     s[0] === s[3]   i=start=0  i=start+winLen-1=3       winLen=4   
+//      baa              
+//     s[0] === s[2]   i=start=0  i=start+winLen-1=2       winLen=3   
+//       cba         
+//     s[1] === s[3]   i=start=1  i=start+winLen-1=3       winLen=3   
+//      aa       
+//     s[0] === s[1]   i=start=0  i=start+winLen-1=1       winLen=2   
+//       ba    
+//     s[1] === s[2]   i=start=1  i=start+winLen-1=2       winLen=2   
+//        cb
+//     s[2] === s[3]   i=start=2  i=start+winLen-1=3       winLen=2   
+
+
+// const s = "asdfasfwsdvewtrebv32wwdfevbwrwvsda"
+
+// var longestPalindrome = function (s) {
+//   let len = s.length;
+//   while (len > 0) {
+//     for (let i = 0; i < s.length - len + 1; i++) {
+
+
+//       let str = s.slice(i, i + len);
+//       if (isPalindrom(str))
+//         return str;
+//     }
+//     len--;
+//   }
+//   return "";
+// };
+
+// const isPalindrom = function (arr) {
+//   console.log('arr', arr)
+//   let i = 0;
+//   let j = arr.length - 1;
+//   while (i <= j) {
+//     if (arr[i] !== arr[j])
+//       return false;
+//     i++; j--;
+//   }
+//   return true;
+// }
+
+// console.log('longestPalindrome(s)', longestPalindrome(s))
 
 
 
+// Output: [1,2,2,3,5,6]
+
+//            i
+// nums1 = [1,2,3,0,0,0] 
+// 
+//            i   j
+// nums1 = [1,2,3,2,5,6] 
+//              i 
+// nums1 = [1,2,2,3,5,6] 
+//                j
+
+//          i   
+// nums1 = [1,2,5,1,3,4] 
+//                j
+//                  i   
+// nums1 = [1,1,2,3,5,1]     increment i, dont inc j until either i === j or 
+//                  j
+
+//            i 
+// nums1 = [1,2,5,1,3,4] 
+//                j
+
+//              i 
+// nums1 = [1,1,5,2,3,4] 
+//                j
+
+//                i 
+// nums1 = [1,1,2,5,3,4] 
+//                  j
+
+
+//            i   
+// nums1 = [1,2,5,1,1,1] 
+//                j
+//                  i   
+// nums1 = [1,1,2,3,5,1]     increment i, dont inc j until either i === j or 
+//                  j
+
+//            i 
+// nums1 = [1,2,5,1,3,4] 
+//                j
+
+//              i 
+// nums1 = [1,1,5,2,3,4] 
+//                j
+
+//                i 
+// nums1 = [1,1,2,5,3,4] 
+//                  j
 
 
 
+//          j
+// nums2 = [2,5,6]
+
+//  i=0
+//  j=0
+const nums1 = [1, 2, 3, 0, 0, 0]
+const nums2 = [1, 1, 1]
+const m = 3
+const n = 3
+
+var merge = function (nums1, m, nums2, n) {
+  
+  let k = 0
+  for (let i = m; i < nums1.length; i++) {
+    nums1[i] = nums2[k]
+    k++
+  }
+  
+  let j = n
+  for (let i = 0; i < nums1.length - 1; i++) {
+    if (nums1[i] > nums1[j]) {
+      let temp = nums1[i]
+      nums1[i] = nums1[j]
+      nums1[j] = temp
+      
+    }
+    if (i >= j) j++
+    console.log('nums1', nums1)
+
+  }
 
 
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log('merge(nums1, m, nums2, n)', merge(nums1, m, nums2, n))
 
 
 
