@@ -3172,31 +3172,44 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 
 //  i=0
 //  j=0
-const nums1 = [1, 2, 3, 0, 0, 0]
-const nums2 = [1, 1, 1]
-const m = 3
-const n = 3
+const nums1 = [1,5,9,0,0,0,0]
+const nums2 = [2,3,4,5]
+const n = nums2.length
+const m = nums1.length - n
+
 
 var merge = function (nums1, m, nums2, n) {
-  
-  let k = 0
-  for (let i = m; i < nums1.length; i++) {
-    nums1[i] = nums2[k]
-    k++
-  }
-  
-  let j = n
-  for (let i = 0; i < nums1.length - 1; i++) {
-    if (nums1[i] > nums1[j]) {
-      let temp = nums1[i]
-      nums1[i] = nums1[j]
-      nums1[j] = temp
-      
-    }
-    if (i >= j) j++
-    console.log('nums1', nums1)
 
+const result = []
+
+  let i = 0
+  let j = 0
+  while (i < m && j < n && nums1[i] !== undefined && nums2[j] !== undefined) {
+    if (nums1[i] < nums2[j]) {
+      result.push(nums1[i])
+      i++
+    } else {
+      result.push(nums2[j])
+      j++
+    }
+    
   }
+  
+    while (i < m) {
+      result.push(nums1[i])
+      i++
+    }
+
+    while (j < n ) {
+      result.push(nums2[j])
+      j++
+    }
+
+    for (let i = 0; i< nums1.length; i++) {
+      nums1[i] = result[i]
+    }
+
+  return nums1
 
 
 };

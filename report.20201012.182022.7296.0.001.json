@@ -1,0 +1,155 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20201012.182022.7296.0.001.json",
+    "dumpEventTime": "2020-10-12T18:20:22Z",
+    "dumpEventTimeStamp": "1602552022396",
+    "processId": 7296,
+    "cwd": "C:\\Users\\me\\projects\\DSA-practice",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "DSA-practice.js"
+    ],
+    "nodejsVersion": "v12.16.1",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.16.1",
+      "v8": "7.8.279.23-node.31",
+      "uv": "1.34.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.4",
+      "http_parser": "2.9.3",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.16.1/node-v12.16.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.16.1/node-v12.16.1.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.16.1/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18363",
+    "osVersion": "Windows 10 Home",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 763578,
+        "nice": 0,
+        "sys": 969484,
+        "idle": 9747171,
+        "irq": 260828
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 518156,
+        "nice": 0,
+        "sys": 293171,
+        "idle": 10668687,
+        "irq": 9218
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 852921,
+        "nice": 0,
+        "sys": 681546,
+        "idle": 9945546,
+        "irq": 17390
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 590796,
+        "nice": 0,
+        "sys": 422062,
+        "idle": 10467156,
+        "irq": 11109
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 863828,
+        "nice": 0,
+        "sys": 518171,
+        "idle": 10098015,
+        "irq": 13843
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 692375,
+        "nice": 0,
+        "sys": 480671,
+        "idle": 10306968,
+        "irq": 8906
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 909859,
+        "nice": 0,
+        "sys": 669312,
+        "idle": 9900843,
+        "irq": 15093
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz",
+        "speed": 2808,
+        "user": 551375,
+        "nice": 0,
+        "sys": 659265,
+        "idle": 10269375,
+        "irq": 13609
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "f8:59:71:0d:7b:b3",
+        "address": "2600:8800:2880:1320::d95e",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "f8:59:71:0d:7b:b3",
+        "address": "2600:8800:2880:1320:3d0a:61eb:a8ba:e064",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "f8:59:71:0d:7b:b3",
+        "address": "2600:8800:2880:1320:cd22:54ec:c710:5a8",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "f8:59:71:0d:7b:b3",
+        
