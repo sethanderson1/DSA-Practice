@@ -3172,57 +3172,119 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 
 //  i=0
 //  j=0
-const nums1 = [1,5,9,0,0,0,0]
-const nums2 = [2,3,4,5]
-const n = nums2.length
-const m = nums1.length - n
+// const nums1 = [1,5,9,0,0,0,0]
+// const nums2 = [2,3,4,5]
+// const n = nums2.length
+// const m = nums1.length - n
 
 
-var merge = function (nums1, m, nums2, n) {
+// var merge = function (nums1, m, nums2, n) {
 
-const result = []
+// const result = []
 
-  let i = 0
-  let j = 0
-  while (i < m && j < n && nums1[i] !== undefined && nums2[j] !== undefined) {
-    if (nums1[i] < nums2[j]) {
-      result.push(nums1[i])
-      i++
-    } else {
-      result.push(nums2[j])
-      j++
-    }
+//   let i = 0
+//   let j = 0
+//   while (i < m && j < n && nums1[i] !== undefined && nums2[j] !== undefined) {
+//     if (nums1[i] < nums2[j]) {
+//       result.push(nums1[i])
+//       i++
+//     } else {
+//       result.push(nums2[j])
+//       j++
+//     }
     
-  }
+//   }
   
-    while (i < m) {
-      result.push(nums1[i])
-      i++
-    }
+//     while (i < m) {
+//       result.push(nums1[i])
+//       i++
+//     }
 
-    while (j < n ) {
-      result.push(nums2[j])
-      j++
-    }
+//     while (j < n ) {
+//       result.push(nums2[j])
+//       j++
+//     }
 
-    for (let i = 0; i< nums1.length; i++) {
-      nums1[i] = result[i]
-    }
+//     for (let i = 0; i< nums1.length; i++) {
+//       nums1[i] = result[i]
+//     }
 
-  return nums1
-
-
-};
-
-console.log('merge(nums1, m, nums2, n)', merge(nums1, m, nums2, n))
+//   return nums1
 
 
+// };
+
+// console.log('merge(nums1, m, nums2, n)', merge(nums1, m, nums2, n))
 
 
 
 
+//     c1 
+//     1->  2->  4
+//                           c1 > c2 ?  no, so 
+
+//     c2 
+//     1->  3->  4
 
 
+
+
+//     c1 
+//     1->  2->  4
+
+
+//     c2 
+//     1->  3->  4
+
+
+
+
+//     c1 
+//     1->  2->  4
+
+
+//     c2 
+//     1->  3->  4
+
+
+
+
+//     c1 
+//     1->  2->  4
+
+
+//     c2 
+//     1->  3->  4
+
+//     c1 <= c2    yes, so 
+
+
+
+// var mergeTwoLists = function(l1, l2) {
+
+
+
+// };
+
+
+
+
+
+const SLL = new SinglyLinkedList();
+SLL.push(0)
+SLL.push(1)
+SLL.push(2)
+SLL.push(3)
+SLL.push(4)
+SLL.push(5)
+
+// console.log('SLL', SLL)
+
+// const third = SLL.get(2)
+// console.log('third', third)
+
+SLL.set(1,100)
+console.log('SLL', SLL)
 
 
 

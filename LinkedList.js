@@ -30,7 +30,7 @@ class SinglyLinkedList {
 
     pop() {
         if (!this.head) return undefined;
-        
+
         let curNode = this.head;
         if (!curNode.next) {
             this.head = null;
@@ -38,7 +38,7 @@ class SinglyLinkedList {
             this.length--;
             return undefined
         }
-        while ( curNode.next.next) {
+        while (curNode.next.next) {
             curNode = curNode.next;
         }
         curNode.next = null;
@@ -51,7 +51,7 @@ class SinglyLinkedList {
         if (!this.head) return undefined;
         const oldHead = this.head;
         this.head = this.head.next;
-        if (!this.head) this.tail=null
+        if (!this.head) this.tail = null
         this.length--;
         return oldHead;
     }
@@ -69,6 +69,26 @@ class SinglyLinkedList {
 
         this.length++;
         return this;
+    }
+    get(index) {
+        if (index === 0 || index >= this.length) return null;
+        let curNode = this.head;
+        let counter = 0
+        while (counter !== index) {
+            curNode = curNode.next;
+            counter++
+        }
+        return curNode;
+    }
+    set(index, val) {
+
+        const foundNode = this.get(index);
+        if (foundNode) {
+            foundNode.val = val;
+            return true
+        }
+
+        return false;
     }
 }
 
