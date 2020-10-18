@@ -41,10 +41,11 @@ class SinglyLinkedList {
         while (curNode.next.next) {
             curNode = curNode.next;
         }
+        const popped = curNode.next;
         curNode.next = null;
         this.tail = curNode;
         this.length--;
-        return this.tail;
+        return popped;
     }
 
     shift() {
@@ -71,7 +72,7 @@ class SinglyLinkedList {
         return this;
     }
     get(index) {
-        if (index === 0 || index >= this.length) return null;
+        if (index < 0 || index >= this.length) return null;
         let curNode = this.head;
         let counter = 0
         while (counter !== index) {
@@ -90,6 +91,60 @@ class SinglyLinkedList {
 
         return false;
     }
+    insert(index, val) {
+
+        if (index < 0 || index > this.length) return null;
+        if (index === this.length) return !!this.push(val);
+        if (index === 0) return !!this.unshift(val);
+
+        let curNode = this.get(index - 1)
+        console.log('curNode', curNode)
+
+        let rightSegHead = curNode.next;
+        let newNode = new Node(val);
+        newNode.next = rightSegHead;
+        curNode.next = newNode;
+        this.length++;
+        return true;
+    }
+    delete(index) {
+        if (index < 0 || index >= this.length) return undefined;
+        if (index === this.length - 1) return this.pop();
+        if (index === 0) return this.shift().val;
+        let foundNode = this.get(index - 1);
+        const removed = foundNode.next;
+        foundNode.next = foundNode.next.next;
+        this.length--;
+        return removed;
+    }
+    print() {
+        const arr = [];
+        let curNode = this.head;
+        while (curNode) {
+            arr.push(curNode.val);
+            curNode = curNode.next;
+        }
+        console.log(arr)
+    }
+    reverse() {
+        if (this.head.next === null) {
+            return this.head
+        }
+        let prev = null;
+        let curr = this.head;
+        let next;
+        this.head = this.tail;
+        this.tail = curr;
+        
+        while (curr)  {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        // this.head = prev;
+    }
+
 }
 
 

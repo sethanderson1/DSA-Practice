@@ -3192,9 +3192,9 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 //       result.push(nums2[j])
 //       j++
 //     }
-    
+
 //   }
-  
+
 //     while (i < m) {
 //       result.push(nums1[i])
 //       i++
@@ -3270,61 +3270,243 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 
 
 
-const SLL = new SinglyLinkedList();
-SLL.push(0)
-SLL.push(1)
-SLL.push(2)
-SLL.push(3)
-SLL.push(4)
-SLL.push(5)
+// const SLL = new SinglyLinkedList();
+// SLL.push(0)
+// SLL.push(1)
+// SLL.push(2)
+// // SLL.push(3)
+// // SLL.push(4)
+// // SLL.push(5)
 
-// console.log('SLL', SLL)
+// // console.log('SLL', SLL)
 
-// const third = SLL.get(2)
-// console.log('third', third)
+// // const third = SLL.get(2)
+// // console.log('third', third)
 
-SLL.set(1,100)
-console.log('SLL', SLL)
-
-
+// // SLL.set(1,100)
+// // console.log('SLL', SLL)
 
 
-
-
+// // SLL.insert(0,999)
+// // console.log('SLL', SLL)
 
 
 
+// // SLL.delete(1)
+// // console.log('SLL.delete(2)', SLL.delete(2))
+// // console.log('SLL', SLL)
+
+// SLL.reverse()
+
+// SLL.print()
 
 
 
+// 1
 
 
 
+// 11
+
+// 2
 
 
 
+// 111
+// 21
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 12
 
 
 
 
+// 1111
+// 211
+// 121
+
+// 112
+// 22
 
 
 
+// 11111
+// 2111
+// 1211
+// 1121
+// 1112
+// 221
+
+// 212
+// 122
+
+
+
+// 111111
+// 21111
+// 12111
+// 11211
+// 11121
+// 11112
+
+// 2211
+// 2121
+// 2112
+// 1221
+// 1212
+// 1122
+// 222 
+
+
+
+
+
+
+
+// const n = 6;
+
+// var climbStairs = function (n) {
+
+
+//   if (n <= 3) return n;
+
+
+//   let i = 4;
+//   let result;
+//   let prev1 = 3
+//   let prev2 = 2
+//   while (i <= n) {
+
+//     result = prev2 + prev1
+
+//     prev2 = prev1;
+//     prev1 = result;
+//     i++;
+//   }
+
+//   return result
+
+//   // return climbStairs(n-2) + climbStairs(n-1)
+// };
+
+// console.log('climbStairs(n)', climbStairs(n))
+
+
+
+
+
+
+// const prices = [10, 3, 8, 2, 3,1,100]
+
+// var maxProfit = function (prices) {
+
+//   if (prices.length === 0) return 0;
+//   let min = Infinity;
+//   let max = -Infinity;
+//   let maxProfit = -Infinity;
+
+//   for (let i = 0; i < prices.length; i++) {
+
+//     if (prices[i] < min) {
+//       min = prices[i];
+//       max = -Infinity;
+//     }
+
+//     if (prices[i] > max) {
+//       max = prices[i];
+//     }
+
+//     if (max - min > maxProfit) {
+//       maxProfit = max - min;
+//     }
+
+//   }
+
+//   return maxProfit;
+
+// };
+
+// console.log('maxProfit(prices)', maxProfit(prices))
+
+
+
+
+
+
+// const nums = [10, -2, 4, -3, -1, 4]
+
+
+// // const nums = [-2, -1]
+
+// var maxSubArray = function (nums) {
+
+//   if (nums.length === 1) return nums[0];
+//   let maxSum = nums[0];
+//   let maxEndingHere = nums[0]
+//   for (let i = 1; i < nums.length; i++) {
+
+//     maxEndingHere = Math.max(maxEndingHere + nums[i], nums[i]);
+//     console.log('maxEndingHere', i, maxEndingHere)
+//     if (maxEndingHere > maxSum) {
+//       maxSum = maxEndingHere;
+//     }
+//   }
+//   return maxSum
+// };
+
+// console.log('maxSubArray(nums)', maxSubArray(nums))
+
+
+
+
+
+
+
+
+// const nums = [3, -20, 4, -3, 6, 1]
+
+// var maxSubArray = function (nums) {
+
+//   let maxSoFar = nums[0]
+//   let maxEndingHere = nums[0]
+
+//   for (let i = 1; i < nums.length; i++) {
+//     maxEndingHere = Math.max(nums[i], nums[i] + maxEndingHere)
+//     console.log('i', i)
+//     console.log('maxEndingHere', maxEndingHere)
+//     maxSoFar = Math.max(maxSoFar, maxEndingHere)
+//     console.log('maxSoFar', maxSoFar)
+//   };
+//   return maxSoFar
+// }
+
+// console.log('maxSubArray(nums)', maxSubArray(nums))
+
+
+const nums = [1, 2, 3,4,5,6]
+
+var Solution = function (nums) {
+  const len = nums.length;
+  const original = nums;
+  
+  this.shuffle = () => {
+    let rand; 
+    for (let i = len-1; i >= 0; i--) {
+      rand = Math.floor(Math.random() * nums.length);
+      let temp = nums[i];
+      nums[i] = nums[rand];
+      nums[rand] = temp;
+      console.log('nums', nums)
+
+    }
+    return nums;
+  }
+  this.reset = () => {
+    return this.original
+  }
+};
+
+const solution = new Solution(nums)
+console.log('solution', solution.shuffle())
 
 
 
