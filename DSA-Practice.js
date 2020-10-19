@@ -1,6 +1,6 @@
 const nodemon = require('nodemon')
 // const { LinkedList, _Node } = require('./LinkedList')
-const { SinglyLinkedList, Node } = require('./LinkedList')
+const { SinglyLinkedList,DoublyLinkedList, Node } = require('./LinkedList')
 
 
 
@@ -3482,37 +3482,61 @@ const { SinglyLinkedList, Node } = require('./LinkedList')
 // console.log('maxSubArray(nums)', maxSubArray(nums))
 
 
-const nums = [1, 2, 3,4,5,6]
+// const nums = [1, 2, 3,4,5,6]
 
-var Solution = function (nums) {
-  const len = nums.length;
-  const original = nums;
-  
-  this.shuffle = () => {
-    let rand; 
-    for (let i = len-1; i >= 0; i--) {
-      rand = Math.floor(Math.random() * nums.length);
-      let temp = nums[i];
-      nums[i] = nums[rand];
-      nums[rand] = temp;
-      console.log('nums', nums)
+// var Solution = function (nums) {
+//   const len = nums.length;
+//   const original = nums;
 
-    }
-    return nums;
-  }
-  this.reset = () => {
-    return this.original
-  }
-};
+//   this.shuffle = () => {
+//     let rand; 
+//     for (let i = len-1; i >= 0; i--) {
+//       rand = Math.floor(Math.random() * nums.length);
+//       let temp = nums[i];
+//       nums[i] = nums[rand];
+//       nums[rand] = temp;
+//       console.log('nums', nums)
 
-const solution = new Solution(nums)
-console.log('solution', solution.shuffle())
+//     }
+//     return nums;
+//   }
+//   this.reset = () => {
+//     return this.original
+//   }
+// };
 
-
+// const solution = new Solution(nums)
+// console.log('solution', solution.shuffle())
 
 
+// const n = 15;
+
+// var fizzBuzz = function (n) {
+//   const result = []
+//   for (let i = 1; i <= n; i++) {
+//     let item = ''
+//     if (i % 3 === 0) item += 'Fizz'
+//     if (i % 5 === 0) item += 'Buzz'
+//     if (item.length === 0) item += '' + i
+//     result.push(item)
+//   }
+//   return result
+// };
+
+// console.log('fizzBuzz(n)', fizzBuzz(n))
 
 
+
+
+
+
+const DLL = new DoublyLinkedList()
+
+DLL.push(1)
+DLL.push(2)
+DLL.push(3)
+DLL.pop()
+console.log('DLL', DLL)
 
 
 
