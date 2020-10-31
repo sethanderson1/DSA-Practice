@@ -49,12 +49,40 @@ class DoublyLinkedList {
         } else {
             this.tail = poppedNode.prev;
             this.tail.next = null;
-            poppedNode.prev = null; 
+            poppedNode.prev = null;
         }
         this.length--;
         return poppedNode;
     }
 
+    shift() {
+        if (!this.head) return undefined;
+        const shiftedNode = this.head;
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = this.head.next;
+            this.head.prev = null;
+            shiftedNode.next = null;
+        }
+        this.length--;
+        return shiftedNode;
+    }
+    unshift(val) {
+        const newNode = new Node(val);
+        const oldHead = this.head;
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            newNode.next = oldHead;
+            oldHead.prev = newNode;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
 
 }
 

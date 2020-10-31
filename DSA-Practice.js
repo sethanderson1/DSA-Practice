@@ -3535,11 +3535,15 @@ const DLL = new DoublyLinkedList()
 DLL.push(1)
 DLL.push(2)
 DLL.push(3)
-DLL.pop()
+// DLL.pop()
+// console.log('DLL', DLL)
+
+// DLL.shift()
+// console.log('DLL', DLL)
+
+
+DLL.unshift(0)
 console.log('DLL', DLL)
-
-
-
 
 
 
