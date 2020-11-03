@@ -3532,9 +3532,12 @@ const { SinglyLinkedList,DoublyLinkedList, Node } = require('./LinkedList')
 
 const DLL = new DoublyLinkedList()
 
+DLL.push(0)
 DLL.push(1)
 DLL.push(2)
 DLL.push(3)
+// DLL.push(4)
+// DLL.push(5)
 // DLL.pop()
 // console.log('DLL', DLL)
 
@@ -3542,25 +3545,30 @@ DLL.push(3)
 // console.log('DLL', DLL)
 
 
-DLL.unshift(0)
+// DLL.unshift(0)
+// console.log('DLL', DLL)
+
+
+
+
+
+
+// console.log('DLL.get(1)', DLL.get(2))
+
+
+// DLL.set(100,2)
+// console.log('DLL.set(100,2)', DLL.set(2,100))
+
+
+
+
+// DLL.insert(1,'something')
+
+// console.log('DLL.insert(1,\'something\')', DLL.insert(1,'something'))
+
+DLL.remove(1)
+
 console.log('DLL', DLL)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
