@@ -1,6 +1,6 @@
 const nodemon = require('nodemon')
 // const { LinkedList, _Node } = require('./LinkedList')
-const { SinglyLinkedList,DoublyLinkedList, Node } = require('./LinkedList')
+const { SinglyLinkedList,DoublyLinkedList, Node, Stack } = require('./LinkedList')
 
 
 
@@ -3552,7 +3552,6 @@ DLL.push(3)
 
 
 
-
 // console.log('DLL.get(1)', DLL.get(2))
 
 
@@ -3566,9 +3565,21 @@ DLL.push(3)
 
 // console.log('DLL.insert(1,\'something\')', DLL.insert(1,'something'))
 
-DLL.remove(1)
+// DLL.remove(1)
 
-console.log('DLL', DLL)
+// console.log('DLL', DLL)
+
+const stack = new Stack();
+
+stack.push(1)
+stack.push(2)
+stack.push(3)
+
+
+// stack.pop()
+// stack.pop()
+
+console.log('stack', stack)
 
 
 
