@@ -1,6 +1,6 @@
 const nodemon = require('nodemon')
 // const { LinkedList, _Node } = require('./LinkedList')
-const { SinglyLinkedList,DoublyLinkedList, Node, Stack } = require('./LinkedList')
+const { SinglyLinkedList,DoublyLinkedList, Node, Stack, Queue } = require('./DS')
 
 
 
@@ -3530,12 +3530,12 @@ const { SinglyLinkedList,DoublyLinkedList, Node, Stack } = require('./LinkedList
 
 
 
-const DLL = new DoublyLinkedList()
+// const DLL = new DoublyLinkedList()
 
-DLL.push(0)
-DLL.push(1)
-DLL.push(2)
-DLL.push(3)
+// DLL.push(0)
+// DLL.push(1)
+// DLL.push(2)
+// DLL.push(3)
 // DLL.push(4)
 // DLL.push(5)
 // DLL.pop()
@@ -3569,18 +3569,34 @@ DLL.push(3)
 
 // console.log('DLL', DLL)
 
-const stack = new Stack();
+// const stack = new Stack();
 
-stack.push(1)
-stack.push(2)
-stack.push(3)
+// stack.push(1)
+// stack.push(2)
+// stack.push(3)
 
 
-// stack.pop()
-// stack.pop()
+// // stack.pop()
+// // stack.pop()
 
-console.log('stack', stack)
+// console.log('stack', stack)
 
+
+
+const queue = new Queue();
+
+
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+
+queue.dequeue()
+queue.dequeue()
+
+
+
+
+console.log('queue', queue)
 
 
 
