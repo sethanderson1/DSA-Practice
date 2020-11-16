@@ -9,12 +9,12 @@
 // }
 
 
-class Node {
-    constructor(val) {
-        this.val = val;
-        this.next = null;
-    }
-}
+// class Node {
+//     constructor(val) {
+//         this.val = val;
+//         this.next = null;
+//     }
+// }
 
 
 
@@ -373,8 +373,63 @@ class Queue {
     }
 }
 
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+}
 
 
+class BinarySearchTree {
+    constructor() {
+        this.root = null;
+    }
+
+    insert(val) {
+        const newNode = new Node(val);
+        if (this.root === null) {
+            this.root = newNode;
+            return this;
+        }
+        let curr = this.root;
+        while (true) {
+            if (val === curr.val) return undefined;
+            if (val > curr.val) {
+                if (curr.right === null) {
+                    curr.right = newNode;
+                    return this;
+                }
+                curr = curr.right;
+            } else if (val < curr.val) {
+                if (curr.left === null) {
+                    curr.left = newNode;
+                    return this;
+                }
+                curr = curr.left;
+            }
+        }
+    }
+
+    find(val) {
+        if (this.root === null) {
+            return false;
+        }
+        let curr = this.root;
+        while (true) {
+            if (val === curr.val) return true;
+            if (val > curr.val) {
+                if (curr.right === null) return false;
+                curr = curr.right;
+            }
+            if (val < curr.val) {
+                if (curr.left === null) return false;
+                curr = curr.left;
+            }
+        }
+    }
+}
 
 
 module.exports = {
@@ -382,7 +437,8 @@ module.exports = {
     DoublyLinkedList,
     Node,
     Stack,
-    Queue
+    Queue,
+    BinarySearchTree
 }
 
 

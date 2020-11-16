@@ -1,6 +1,6 @@
 const nodemon = require('nodemon')
 // const { LinkedList, _Node } = require('./LinkedList')
-const { SinglyLinkedList,DoublyLinkedList, Node, Stack, Queue } = require('./DS')
+const { SinglyLinkedList,DoublyLinkedList, Node, Stack, Queue, BinarySearchTree } = require('./DS')
 
 
 
@@ -3583,24 +3583,36 @@ const { SinglyLinkedList,DoublyLinkedList, Node, Stack, Queue } = require('./DS'
 
 
 
-const queue = new Queue();
+// const queue = new Queue();
 
 
-queue.enqueue(1)
-queue.enqueue(2)
-queue.enqueue(3)
+// queue.enqueue(1)
+// queue.enqueue(2)
+// queue.enqueue(3)
 
-queue.dequeue()
-queue.dequeue()
-
-
-
-
-console.log('queue', queue)
+// queue.dequeue()
+// queue.dequeue()
 
 
 
 
+// console.log('queue', queue)
+
+
+
+
+const BST = new BinarySearchTree();
+
+
+BST.insert(3)
+BST.insert(2)
+BST.insert(1)
+// BST.insert(4)
+
+// BST.find(1)
+
+console.log('BST.find(1)', BST.find(1))
+console.log('BST', BST)
 
 
 
