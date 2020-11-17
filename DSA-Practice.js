@@ -3611,7 +3611,9 @@ BST.insert(1)
 
 // BST.find(1)
 
-console.log('BST.find(1)', BST.find(1))
+// console.log('BST.find(1)', BST.find(1))
+
+console.log('BST.BFS()', BST.BFS())
 console.log('BST', BST)
 
 

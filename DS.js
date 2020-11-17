@@ -417,17 +417,35 @@ class BinarySearchTree {
             return false;
         }
         let curr = this.root;
-        while (true) {
-            if (val === curr.val) return true;
+        let found = false;
+        while (curr && !found) {
             if (val > curr.val) {
-                if (curr.right === null) return false;
                 curr = curr.right;
-            }
-            if (val < curr.val) {
-                if (curr.left === null) return false;
+            } else if (val < curr.val) {
                 curr = curr.left;
+            } else {
+                found = true;
             }
         }
+        if (!found) return false;
+        return curr;
+    }
+
+    BFS() {
+        let node = this.root;
+        const queue = [];
+        const data = [];
+        queue.push(node);
+
+        while (queue.length) {
+            node = queue.shift();
+            data.push(node);
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
+        }
+
+
+        return data;
     }
 }
 
