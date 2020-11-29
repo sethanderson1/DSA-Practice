@@ -1,6 +1,6 @@
 const nodemon = require('nodemon')
 // const { LinkedList, _Node } = require('./LinkedList')
-const { SinglyLinkedList,DoublyLinkedList, Node, Stack, Queue, BinarySearchTree } = require('./DS')
+const { SinglyLinkedList,DoublyLinkedList, Node, Stack, Queue, BinarySearchTree, MaxBinaryHeap } = require('./DS')
 
 
 
@@ -3601,20 +3601,41 @@ const { SinglyLinkedList,DoublyLinkedList, Node, Stack, Queue, BinarySearchTree 
 
 
 
-const BST = new BinarySearchTree();
+// const BST = new BinarySearchTree();
 
 
-BST.insert(3)
-BST.insert(2)
-BST.insert(1)
+// BST.insert(2)
+// BST.insert(3)
+// BST.insert(1)
 // BST.insert(4)
 
 // BST.find(1)
 
 // console.log('BST.find(1)', BST.find(1))
 
-console.log('BST.BFS()', BST.BFS())
-console.log('BST', BST)
+// console.log('BST.BFS()', BST.BFS())
+
+// BST.DFS_Pre()
+
+// console.log('BST.DFS_Pre()', BST.DFS_Pre())
+// console.log('BST.DFS_Post()', BST.DFS_Post())
+// console.log('BST.DFS_InOrder()', BST.DFS_InOrder())
+// console.log('BST', BST)
+
+
+
+
+const MBH = new MaxBinaryHeap();
+
+MBH.insert(10);
+MBH.insert(20);
+MBH.insert(30);
+MBH.insert(40);
+MBH.insert(50);
+console.log('MBH', MBH)
+
+
+
 
 
 

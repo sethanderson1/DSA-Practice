@@ -447,7 +447,75 @@ class BinarySearchTree {
 
         return data;
     }
+
+    DFS_Pre() {
+        const data = [];
+        let curr = this.root;
+
+        function traverse(node) {
+            data.push(node.val);
+            if (node.left) traverse(node.left);
+            if (node.right) traverse(node.right);
+        }
+        traverse(curr);
+        return data;
+    }
+
+    DFS_Post() {
+        const data = [];
+        let curr = this.root;
+
+        function traverse(node) {
+            data.push(node.val);
+            if (node.right) traverse(node.right);
+            if (node.left) traverse(node.left);
+        }
+        traverse(curr);
+        return data;
+    }
+
+    DFS_InOrder() {
+        const data = [];
+        let curr = this.root;
+
+        function traverse(node) {
+            if (node.left) traverse(node.left);
+            data.push(node.val);
+            if (node.right) traverse(node.right);
+        }
+        traverse(curr);
+        return data;
+    }
+
 }
+
+
+class MaxBinaryHeap {
+    constructor() {
+        this.values = [];
+    }
+
+
+    insert(element) {
+        this.values.push(element);
+        this.bubbleUp();
+    }
+
+    bubbleUp() {
+        let idx = this.values.length - 1;
+        const element = this.values[idx];
+        while (idx > 0) {
+            let parentIdx = Math.floor((idx - 1) / 2);
+            let parent = this.values[parentIdx];
+            if (element <= parent) break;
+            this.values[parentIdx] = element;
+            this.values[idx] = parent;
+            idx = parentIdx;
+        }
+    }
+
+}
+
 
 
 module.exports = {
@@ -456,7 +524,8 @@ module.exports = {
     Node,
     Stack,
     Queue,
-    BinarySearchTree
+    BinarySearchTree,
+    MaxBinaryHeap
 }
 
 
