@@ -514,6 +514,52 @@ class MaxBinaryHeap {
         }
     }
 
+    extractMax() {
+
+        const max = this.values[0];
+        const end = this.values.pop();
+        if (this.values.length > 0) {
+            this.values[0] = end;
+            this.sinkDown();
+        }
+
+        return max;
+    }
+
+    sinkDown() {
+        let idx = 0;
+        const len = this.values.length;
+        const element = this.values[0];
+        while (true) {
+            let leftChildIdx = 2 * idx + 1;
+            let rightChildIdx = 2 * idx + 2;
+            let leftChild;
+            let rightChild;
+            let swapIdx = null;
+
+            if (leftChildIdx < len) {
+                leftChild = this.values[leftChildIdx];
+                if (leftChild > element) {
+                    swapIdx = leftChildIdx;
+                }
+            }
+
+            if (rightChildIdx < len) {
+                rightChild = this.values[rightChildIdx];
+                if ((swapIdx === null && rightChild > element)
+                    || (swapIdx !== null && rightChild > leftChild)
+                ) {
+                    swapIdx = rightChildIdx;
+                }
+            }
+
+            if (swapIdx === null) break;
+            this.values[idx] = this.values[swapIdx];
+            this.values[swapIdx] = element;
+            idx = swapIdx;
+        }
+    }
+
 }
 
 

@@ -3628,11 +3628,17 @@ const { SinglyLinkedList,DoublyLinkedList, Node, Stack, Queue, BinarySearchTree,
 const MBH = new MaxBinaryHeap();
 
 MBH.insert(10);
-MBH.insert(20);
+MBH.insert(20); 
 MBH.insert(30);
 MBH.insert(40);
 MBH.insert(50);
 console.log('MBH', MBH)
+
+console.log('MBH.extractMax()', MBH.extractMax())
+console.log('MBH', MBH)
+
+
+
 
 
 
