@@ -1,6 +1,6 @@
 const nodemon = require('nodemon')
 // const { LinkedList, _Node } = require('./LinkedList')
-const { SinglyLinkedList,DoublyLinkedList, Node, Stack, Queue, BinarySearchTree, MaxBinaryHeap } = require('./DS')
+const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree, MaxBinaryHeap, PriorityQueue, NodePQ, HashTable } = require('./DS')
 
 
 
@@ -3625,20 +3625,71 @@ const { SinglyLinkedList,DoublyLinkedList, Node, Stack, Queue, BinarySearchTree,
 
 
 
-const MBH = new MaxBinaryHeap();
+// const MBH = new MaxBinaryHeap();
 
-MBH.insert(10);
-MBH.insert(20); 
-MBH.insert(30);
-MBH.insert(40);
-MBH.insert(50);
-console.log('MBH', MBH)
+// MBH.insert(10);
+// MBH.insert(20); 
+// MBH.insert(30);
+// MBH.insert(40);
+// MBH.insert(50);
+// console.log('MBH', MBH)
 
-console.log('MBH.extractMax()', MBH.extractMax())
-console.log('MBH', MBH)
+// console.log('MBH.extractMax()', MBH.extractMax())
+// console.log('MBH', MBH)
 
 
+// let ER = new PriorityQueue();
 
+// ER.enqueue("common cold", 5)
+// ER.enqueue("gunshot wound", 1)
+// ER.enqueue("high fever", 4)
+// ER.enqueue("broken arm", 2)
+// ER.enqueue("glass in foot", 3)
+
+// ER.dequeue();
+
+// console.log('ER', ER)
+
+// const HT = new HashTable(3);
+
+// HT.set('honda','civic');
+// HT.set('toyota','camry');
+// HT.set('ford','f150');
+// HT.set('ferrari','f150');
+
+// console.log('HT', HT)
+
+// // HT.get('toyota');
+// // console.log('HT.get(\'toyota\')', HT.get('toyota'))
+// // console.log('HT.get(\'doesntexist\')', HT.get('doesntexist'))
+
+// HT.values()
+
+// // console.log('HT.values()', HT.values())
+
+// HT.keys()
+
+// console.log('HT.keys()', HT.keys())
+
+
+// remove duplicate values in a string
+
+// const str = 'google';
+
+// function removeDups(str) {
+//     const map = new Map();
+//     let newStr = '';
+//     for (let char of str) {
+//         if (!map.has(char)) {
+//             map.set(char);
+//             newStr += char;
+//         } 
+//     }
+//     return newStr;
+
+// }
+
+// console.log('removeDups(str)', removeDups(str))
 
 
 

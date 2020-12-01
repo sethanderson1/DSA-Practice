@@ -563,6 +563,153 @@ class MaxBinaryHeap {
 }
 
 
+class PriorityQueue {
+    constructor() {
+        this.values = [];
+    }
+
+
+    enqueue(val, priority) {
+        let newNode = new NodePQ(val, priority);
+        this.values.push(newNode);
+        this.bubbleUp();
+    }
+
+    bubbleUp() {
+        let idx = this.values.length - 1;
+        const element = this.values[idx];
+        while (idx > 0) {
+            let parentIdx = Math.floor((idx - 1) / 2);
+            let parent = this.values[parentIdx];
+            if (element.priority >= parent.priority) break;
+            this.values[parentIdx] = element;
+            this.values[idx] = parent;
+            idx = parentIdx;
+        }
+    }
+
+    dequeue() {
+
+        const min = this.values[0];
+        const end = this.values.pop();
+        if (this.values.length > 0) {
+            this.values[0] = end;
+            this.sinkDown();
+        }
+
+        return min;
+    }
+
+    sinkDown() {
+        let idx = 0;
+        const len = this.values.length;
+        const element = this.values[0];
+        while (true) {
+            let leftChildIdx = 2 * idx + 1;
+            let rightChildIdx = 2 * idx + 2;
+            let leftChild;
+            let rightChild;
+            let swapIdx = null;
+
+            if (leftChildIdx < len) {
+                leftChild = this.values[leftChildIdx];
+                if (leftChild.priority < element.priority) {
+                    swapIdx = leftChildIdx;
+                }
+            }
+
+            if (rightChildIdx < len) {
+                rightChild = this.values[rightChildIdx];
+                if ((swapIdx === null && rightChild.priority < element.priority)
+                    || (swapIdx !== null && rightChild.priority < leftChild.priority)
+                ) {
+                    swapIdx = rightChildIdx;
+                }
+            }
+
+            if (swapIdx === null) break;
+            this.values[idx] = this.values[swapIdx];
+            this.values[swapIdx] = element;
+            idx = swapIdx;
+        }
+    }
+
+}
+
+class NodePQ {
+    constructor(val, priority) {
+        this.val = val;
+        this.priority = priority;
+    }
+}
+
+class HashTable {
+
+    constructor(size = 53) {
+        this.keyMap = new Array(size);
+    }
+
+    _hash(key) {
+        let total = 0;
+        let WEIRD_PRIME = 31;
+        for (let i = 0; i < Math.min(100, key.length); i++) {
+            let char = key[i];
+            let value = char.charCodeAt(0) - 96;
+            total = (total * WEIRD_PRIME + value) % this.keyMap.length;
+        }
+        return total;
+    }
+
+    set(key, value) {
+        const targetIndex = this._hash(key);
+        if (!this.keyMap[targetIndex]) {
+            this.keyMap[targetIndex] = [];
+        }
+        this.keyMap[targetIndex].push([key, value]);
+    }
+
+    get(key) {
+        const targetIndex = this._hash(key);
+        if (this.keyMap[targetIndex]) {
+            for (let entry of this.keyMap[targetIndex]) {
+                if (entry[0] === key) return entry[1];
+            }
+        }
+        return undefined;
+    }
+
+    keys() {
+        let keysArr = [];
+        for (let entry of this.keyMap) {
+            if (entry) {
+                for (let j = 0; j < entry.length; j++) {
+                    if (!keysArr.includes(entry[j][0])) {
+                        keysArr.push(entry[j][0])
+                    }
+                }
+            }
+        }
+        return keysArr;
+    }
+
+    values() {
+        let valuesArr = [];
+        for (let entry of this.keyMap) {
+            if (entry) {
+                for (let j = 0; j < entry.length; j++) {
+                    if (!valuesArr.includes(entry[j][1])) {
+                        valuesArr.push(entry[j][1])
+                    }
+                }
+            }
+        }
+        return valuesArr;
+    }
+
+
+}
+
+
 
 module.exports = {
     SinglyLinkedList,
@@ -571,7 +718,10 @@ module.exports = {
     Stack,
     Queue,
     BinarySearchTree,
-    MaxBinaryHeap
+    MaxBinaryHeap,
+    PriorityQueue,
+    NodePQ,
+    HashTable
 }
 
 
