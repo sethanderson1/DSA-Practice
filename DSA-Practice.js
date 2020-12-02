@@ -1,6 +1,6 @@
 const nodemon = require('nodemon')
 // const { LinkedList, _Node } = require('./LinkedList')
-const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree, MaxBinaryHeap, PriorityQueue, NodePQ, HashTable } = require('./DS')
+const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree, MaxBinaryHeap, PriorityQueue, NodePQ, HashTable, Graph } = require('./DS')
 
 
 
@@ -3695,10 +3695,32 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+const g = new Graph()
+
+g.addVertex('Dallas');
+g.addVertex('Tokyo');
+g.addVertex('Aspen');
+g.addVertex('NYC');
+
+g.addEdge('Dallas', 'Tokyo');
+g.addEdge('NYC', 'Tokyo');
+g.addEdge('NYC', 'Dallas');
+g.addEdge('NYC', 'Aspen');
+g.addEdge('Dallas', 'Aspen');
+
+console.log('g', g)
+
+
+// g.removeEdge('Tokyo', 'Dallas');
+
+// console.log('g', g)
+
+
+g.removeVertex('NYC')
 
 
 
-
+console.log('g', g)
 
 
 
