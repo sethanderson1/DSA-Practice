@@ -781,6 +781,49 @@ class Graph {
         return results;
     }
 
+    DFS_Iterative(start) {
+        const stack = [start];
+        const result = [];
+        const visited = {}
+        let vertex;
+
+        visited[start] = true;
+        while (stack.length) {
+            console.log('stack', stack)
+            vertex = stack.pop();
+            result.push(vertex);
+            this.adjacencyList[vertex].forEach(neighbor => {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    stack.push(neighbor);
+                }
+            })
+        }
+        return result;
+    }
+
+    BFS(start){
+        const queue = [start];
+        const result = [];
+        const visited = {};
+        let currentVertex;
+        visited[start] = true;
+
+        while(queue.length){
+            currentVertex = queue.shift();
+            result.push(currentVertex);
+           
+
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if(!visited[neighbor]){
+                    visited[neighbor] = true;
+                    queue.push(neighbor);
+                }
+            });
+        }
+        return result;
+    }
+
 
 }
 
