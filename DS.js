@@ -250,7 +250,6 @@ class SinglyLinkedList {
         if (index === 0) return !!this.unshift(val);
 
         let curNode = this.get(index - 1)
-        console.log('curNode', curNode)
 
         let rightSegHead = curNode.next;
         let newNode = new Node(val);
@@ -276,7 +275,6 @@ class SinglyLinkedList {
             arr.push(curNode.val);
             curNode = curNode.next;
         }
-        console.log(arr)
     }
     reverse() {
         if (this.head.next === null) {
@@ -737,7 +735,63 @@ class Graph {
         delete this.adjacencyList[vert];
     }
 
+    DFS_Recursive(start) {
+        // if (!this.adjacencyList[start]) return undefined;
+
+        const results = [];
+        const visited = {};
+        const adjacencyList = this.adjacencyList;
+
+        (function DFS(vertex) {
+            if (!vertex) return null;
+            visited[vertex] = true;
+            results.push(vertex);
+            console.log('adjacencyList[vertex]', adjacencyList[vertex])
+
+            adjacencyList[vertex].forEach(neighbor => {
+                if (!visited[neighbor]) {
+                    return DFS(neighbor);
+                }
+            })
+            
+
+            // for (const neighbor of adjacencyList[vertex]) {
+            //     if (!visited[neighbor]) {
+            //         return DFS(neighbor);
+            //     }
+            // }
+
+        })(start)
+
+
+        return results;
+
+    }
+
+
+    // DFS_Recursive(start) {
+    //     const result = [];
+    //     const visited = {};
+    //     const adjacencyList = this.adjacencyList;
+
+    //     (function dfs(vertex) {
+    //         if (!vertex) return null;
+    //         visited[vertex] = true;
+    //         result.push(vertex);
+    //         adjacencyList[vertex].forEach(neighbor => {
+    //             if (!visited[neighbor]) {
+    //                 return dfs(neighbor)
+    //             }
+    //         });
+    //     })(start);
+
+    //     return result;
+    // }
+
+
 }
+
+
 
 
 
@@ -872,7 +926,6 @@ module.exports = {
 //             currNode = currNode.next;
 //         }
 //         if (currNode === null) {
-//             console.log("Item not found");
 //             return;
 //         }
 //         previousNode.next = currNode.next;

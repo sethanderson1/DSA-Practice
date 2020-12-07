@@ -3695,43 +3695,57 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
-const g = new Graph()
+// const g = new Graph()
 
-g.addVertex('Dallas');
-g.addVertex('Tokyo');
-g.addVertex('Aspen');
-g.addVertex('NYC');
+// g.addVertex('Dallas');
+// g.addVertex('Tokyo');
+// g.addVertex('Aspen');
+// g.addVertex('NYC');
 
-g.addEdge('Dallas', 'Tokyo');
-g.addEdge('NYC', 'Tokyo');
-g.addEdge('NYC', 'Dallas');
-g.addEdge('NYC', 'Aspen');
-g.addEdge('Dallas', 'Aspen');
-
-console.log('g', g)
-
-
-// g.removeEdge('Tokyo', 'Dallas');
+// g.addEdge('Dallas', 'Tokyo');
+// g.addEdge('NYC', 'Tokyo');
+// g.addEdge('NYC', 'Dallas');
+// g.addEdge('NYC', 'Aspen');
+// g.addEdge('Dallas', 'Aspen');
 
 // console.log('g', g)
 
 
-g.removeVertex('NYC')
+// // g.removeEdge('Tokyo', 'Dallas');
+
+// // console.log('g', g)
 
 
+// g.removeVertex('NYC')
+
+
+
+// console.log('g', g)
+const g = new Graph()
+
+g.addVertex("A")
+g.addVertex("B")
+g.addVertex("C")
+g.addVertex("D")
+g.addVertex("E")
+g.addVertex("F")
+
+g.addEdge("A", "B")
+g.addEdge("A", "C")
+g.addEdge("B", "D")
+g.addEdge("C", "E")
+g.addEdge("D", "E")
+g.addEdge("D", "F")
+g.addEdge("E", "F")
 
 console.log('g', g)
 
 
+// console.log('g.DFS_Recursive("A")', g.DFS_Recursive("A"))
 
 
 
-
-
-
-
-
-
+console.log('g.DFS_Recursive("A")', g.DFS_Recursive("A"))
 
 
 
