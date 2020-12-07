@@ -735,58 +735,51 @@ class Graph {
         delete this.adjacencyList[vert];
     }
 
-    DFS_Recursive(start) {
-        // if (!this.adjacencyList[start]) return undefined;
-
+    DFS_Recursive(start, mine) {
         const results = [];
         const visited = {};
         const adjacencyList = this.adjacencyList;
 
         (function DFS(vertex) {
+            console.log(`DFS(${vertex}) called`)
             if (!vertex) return null;
             visited[vertex] = true;
             results.push(vertex);
-            console.log('adjacencyList[vertex]', adjacencyList[vertex])
 
-            adjacencyList[vertex].forEach(neighbor => {
-                if (!visited[neighbor]) {
-                    return DFS(neighbor);
+            function logSuite(neighbor, visited, adjacencyList, results, vertex) {
+                console.log('vertex', vertex)
+                // console.log('results', results)
+                // console.log('visited', visited)
+                console.log('adjacencyList[vertex]', adjacencyList[vertex])
+                console.log('neighbor', neighbor)
+
+            }
+
+            if (mine) {
+                for (let neighbor of adjacencyList[vertex]) {
+                    console.log('vertex', vertex, 'neighbor', neighbor, `adjacencyList[${vertex}]`, adjacencyList[vertex], `visited[${neighbor}]`, visited[neighbor])
+                    if (!visited[neighbor]) {
+                        // logSuite(neighbor,visited,adjacencyList,results,vertex)
+                        return DFS(neighbor);
+                    }
                 }
-            })
-            
-
-            // for (const neighbor of adjacencyList[vertex]) {
-            //     if (!visited[neighbor]) {
-            //         return DFS(neighbor);
-            //     }
-            // }
+                console.log('out of loop')
+                console.log('vertex', vertex)
+            } else {
+                adjacencyList[vertex].forEach(neighbor => {
+                    console.log('vertex', vertex, 'neighbor', neighbor, `adjacencyList[${vertex}]`, adjacencyList[vertex], `visited[${neighbor}]`, visited[neighbor])
+                    if (!visited[neighbor]) {
+                        // logSuite(neighbor,visited,adjacencyList,results,vertex)
+                        return DFS(neighbor);
+                    }
+                })
+                console.log('out of loop')
+                console.log('vertex', vertex)
+            }
 
         })(start)
-
-
         return results;
-
     }
-
-
-    // DFS_Recursive(start) {
-    //     const result = [];
-    //     const visited = {};
-    //     const adjacencyList = this.adjacencyList;
-
-    //     (function dfs(vertex) {
-    //         if (!vertex) return null;
-    //         visited[vertex] = true;
-    //         result.push(vertex);
-    //         adjacencyList[vertex].forEach(neighbor => {
-    //             if (!visited[neighbor]) {
-    //                 return dfs(neighbor)
-    //             }
-    //         });
-    //     })(start);
-
-    //     return result;
-    // }
 
 
 }
