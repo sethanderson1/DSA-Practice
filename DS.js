@@ -849,8 +849,10 @@ class WeightedGraph {
     shortestPath(startVert, endVert) {
 
         const distances = {};
-        const q = new PriorityQueueSimple();
+        const nodes = new PriorityQueueSimple();
         const prev = {};
+        let smallest;
+        let path = [];
 
         for (let vert in this.adjacencyList) {
             if (vert === startVert) {
@@ -858,35 +860,52 @@ class WeightedGraph {
             } else {
                 distances[vert] = Infinity;
             }
-            q.enqueue(vert, distances[vert]);
+            nodes.enqueue(vert, distances[vert]);
             prev[vert] = null;
         }
-        console.log('q', q)
+        // console.log('nodes', nodes)
 
-        while (q.values.length > 0) {
+        while (nodes.values.length) {
 
-            const curVert = q.dequeue();
+            smallest = nodes.dequeue().val;
 
-            if (curVert === endVert) {
-                return 'done'
-            }
-
-            for (let vert in this.adjacencyList[curVert]) {
-                const dist = distanceFromStart(vert);
-                if (dist < distances[curVert]) {
-                    distances[curVert] = dist;
-                    prev[vert] = curVert;
-                    q.enqueue(curVert, dist);
+            if (smallest === endVert) {
+                console.log('distances', distances)
+                console.log('prev', prev)
+                while (prev[smallest]) {
+                    path.push(smallest);
+                    smallest = prev[smallest];
                 }
+                break;
+                
             }
+            if (smallest || distances[smallest] !== Infinity) {
+
+                for (let neighbor in this.adjacencyList[smallest]) {
+                    let nextNode = this.adjacencyList[smallest][neighbor];
+                    // console.log('nextNode', nextNode)
+
+                    let candidate = distances[smallest] + nextNode.weight;
+                    let nextNeighbor = nextNode.node;
+                    if (candidate < distances[nextNeighbor]) {
+                        distances[nextNeighbor] = candidate;
+                        prev[nextNeighbor] = smallest;
+                        nodes.enqueue(nextNeighbor, candidate);
+
+                    }
+                }
+
+
+            }
+
         }
 
-        console.log('distances', distances)
-        return distances;
+  
+        
+        return path.concat(smallest).reverse();
+        
 
-        function distanceFromStart(vert) {
-            return distance(prev[vert]) + 10
-        }
+
 
 
 
