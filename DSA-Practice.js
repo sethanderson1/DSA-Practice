@@ -1,6 +1,6 @@
 const nodemon = require('nodemon')
 // const { LinkedList, _Node } = require('./LinkedList')
-const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree, MaxBinaryHeap, PriorityQueue, NodePQ, HashTable, Graph } = require('./DS')
+const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree, MaxBinaryHeap, PriorityQueue, NodePQ, HashTable, Graph, WeightedGraph } = require('./DS')
 
 
 
@@ -3721,24 +3721,24 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 // console.log('g', g)
-const g = new Graph()
+// const g = new Graph()
 
-g.addVertex("A")
-g.addVertex("B")
-g.addVertex("C")
-g.addVertex("D")
-g.addVertex("E")
-g.addVertex("F")
+// g.addVertex("A")
+// g.addVertex("B")
+// g.addVertex("C")
+// g.addVertex("D")
+// g.addVertex("E")
+// g.addVertex("F")
 
-g.addEdge("A", "B")
-g.addEdge("A", "C")
-g.addEdge("B", "D")
-g.addEdge("C", "E")
-g.addEdge("D", "E")
-g.addEdge("D", "F")
-g.addEdge("E", "F")
+// g.addEdge("A", "B")
+// g.addEdge("A", "C")
+// g.addEdge("B", "D")
+// g.addEdge("C", "E")
+// g.addEdge("D", "E")
+// g.addEdge("D", "F")
+// g.addEdge("E", "F")
 
-console.log('g', g)
+// console.log('g', g)
 
 
 
@@ -3759,18 +3759,29 @@ console.log('g', g)
 // console.log('g.BFS("A")', g.BFS("A"))
 
 
+let graph = new WeightedGraph();
 
 
+graph.addVertex("A");
+graph.addVertex("B");
+graph.addVertex("C");
+graph.addVertex("D");
+graph.addVertex("E");
+graph.addVertex("F");
 
+graph.addEdge("A","B", 4);
+graph.addEdge("A","C", 2);
+graph.addEdge("B","E", 3);
+graph.addEdge("C","D", 2);
+graph.addEdge("C","F", 4);
+graph.addEdge("D","E", 3);
+graph.addEdge("D","F", 1);
+graph.addEdge("E","F", 1);
 
+console.log('graph.adjacencyList', graph.adjacencyList)
 
-
-
-
-
-
-
-
+graph.shortestPath("A","E")
+ 
 
 
 

@@ -802,20 +802,20 @@ class Graph {
         return result;
     }
 
-    BFS(start){
+    BFS(start) {
         const queue = [start];
         const result = [];
         const visited = {};
         let currentVertex;
         visited[start] = true;
 
-        while(queue.length){
+        while (queue.length) {
             currentVertex = queue.shift();
             result.push(currentVertex);
-           
+
 
             this.adjacencyList[currentVertex].forEach(neighbor => {
-                if(!visited[neighbor]){
+                if (!visited[neighbor]) {
                     visited[neighbor] = true;
                     queue.push(neighbor);
                 }
@@ -827,6 +827,95 @@ class Graph {
 
 }
 
+
+class WeightedGraph {
+    constructor() {
+        this.adjacencyList = {};
+    }
+
+    addVertex(vertex) {
+        if (!this.adjacencyList[vertex]) {
+            this.adjacencyList[vertex] = [];
+        }
+    }
+
+    addEdge(vertex1, vertex2, weight) {
+        this.adjacencyList[vertex1]
+            .push({ node: vertex2, weight })
+        this.adjacencyList[vertex2]
+            .push({ node: vertex1, weight })
+    }
+
+    shortestPath(startVert, endVert) {
+
+        const distances = {};
+        const q = new PriorityQueueSimple();
+        const prev = {};
+
+        for (let vert in this.adjacencyList) {
+            if (vert === startVert) {
+                distances[vert] = 0;
+            } else {
+                distances[vert] = Infinity;
+            }
+            q.enqueue(vert, distances[vert]);
+            prev[vert] = null;
+        }
+        console.log('q', q)
+
+        while (q.values.length > 0) {
+
+            const curVert = q.dequeue();
+
+            if (curVert === endVert) {
+                return 'done'
+            }
+
+            for (let vert in this.adjacencyList[curVert]) {
+                const dist = distanceFromStart(vert);
+                if (dist < distances[curVert]) {
+                    distances[curVert] = dist;
+                    prev[vert] = curVert;
+                    q.enqueue(curVert, dist);
+                }
+            }
+        }
+
+        console.log('distances', distances)
+        return distances;
+
+        function distanceFromStart(vert) {
+            return distance(prev[vert]) + 10
+        }
+
+
+
+
+
+
+
+
+    }
+
+
+}
+
+
+class PriorityQueueSimple {
+    constructor() {
+        this.values = [];
+    }
+    enqueue(val, priority) {
+        this.values.push({ val, priority });
+        this.sort();
+    };
+    dequeue() {
+        return this.values.shift();
+    };
+    sort() {
+        this.values.sort((a, b) => a.priority - b.priority);
+    };
+}
 
 
 
@@ -840,9 +929,11 @@ module.exports = {
     BinarySearchTree,
     MaxBinaryHeap,
     PriorityQueue,
+    PriorityQueueSimple,
     NodePQ,
     HashTable,
-    Graph
+    Graph,
+    WeightedGraph
 }
 
 
