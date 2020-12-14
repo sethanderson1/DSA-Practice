@@ -3759,31 +3759,40 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 // console.log('g.BFS("A")', g.BFS("A"))
 
 
-let graph = new WeightedGraph();
+// let graph = new WeightedGraph();
 
 
-graph.addVertex("A");
-graph.addVertex("B");
-graph.addVertex("C");
-graph.addVertex("D");
-graph.addVertex("E");
-graph.addVertex("F");
+// graph.addVertex("A");
+// graph.addVertex("B");
+// graph.addVertex("C");
+// graph.addVertex("D");
+// graph.addVertex("E");
+// graph.addVertex("F");
 
-graph.addEdge("A", "B", 4);
-graph.addEdge("A", "C", 2);
-graph.addEdge("B", "E", 3);
-graph.addEdge("C", "D", 2);
-graph.addEdge("C", "F", 4);
-graph.addEdge("D", "E", 3);
-graph.addEdge("D", "F", 1);
-graph.addEdge("E", "F", 1);
+// graph.addEdge("A", "B", 4);
+// graph.addEdge("A", "C", 2);
+// graph.addEdge("B", "E", 3);
+// graph.addEdge("C", "D", 2);
+// graph.addEdge("C", "F", 4);
+// graph.addEdge("D", "E", 3);
+// graph.addEdge("D", "F", 1);
+// graph.addEdge("E", "F", 1);
 
-console.log('graph.adjacencyList', graph.adjacencyList)
+// console.log('graph.adjacencyList', graph.adjacencyList)
 
-console.log('graph.shortestPath("A","E")', graph.shortestPath("A", "E"))
+// console.log('graph.shortestPath("A","E")', graph.shortestPath("A", "E"))
 
 
+// const fib = (n, memo = []) => {
+//     if (memo[n] !== undefined) return memo[n];
+//     if (n <= 2) return 1;
+//     const result = fib(n - 1, memo) + fib(n - 2, memo);
+//     memo[n] = result;
+//     return result;
+// }
 
+// const num = 5
+// console.log(`fib(${num})`, fib(num))
 
 
 
