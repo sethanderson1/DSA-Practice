@@ -3794,27 +3794,157 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 // const num = 5
 // console.log(`fib(${num})`, fib(num))
 
+// const arr = [0, 0, 1, 1, 2, 2, 2, 2];
+// const num = 4;
+
+// function sortedFrequency(arr, num) {
+//     const obj = {};
+//     arr.forEach((val) => {
+//         obj[val] = ++obj[val] || 1;
+//     })
+//     return obj[num] || -1;
+// }
+// console.log('sortedFrequency(arr,num)', sortedFrequency(arr, num))
+
+
+// const denoms = [1, 5, 10, 25];
+// const val = 5;
+
+// function coinChange(denoms, val) {
+//     let paths = 0;
+//     let total = 0;
+//     let candidate;
+//     let coinCounts = {};
+//     while (total !== val) {
+//         candidate = denoms[1];
+//         if (total + candidate === val) { 
+//             total = total + candidate;
+//             coinCounts[candidate] = coinCounts[candidate] + 1 || 1;
+//             paths = paths + 1;
+//         } else if (total + candidate < val) {
+//             total = total + candidate;
+//         }
+
+//     }
+// }
+
+// console.log('coinChange(denoms, val)', coinChange(denoms, val))
 
 
 
 
 
+// function waysToReturnMemoize(amount, denominations) {
+//     // intialize an array of zeros with indices up to amount
+//     var waysOfDoingNcents = [];
+//     for (var i = 0; i <= amount; i++) {
+//         waysOfDoingNcents[i] = 0;
+//     }
+//     // there is 1 way to renturn 0 cents
+//     waysOfDoingNcents[0] = 1;
+
+//     for (var j = 0; j < denominations.length; j++) {
+//         // we can only start returning change with coins in our denominations
+//         var coin = denominations[j];
+//         console.log('coin', coin)
+
+//         // we start bottom up, each time reducing change amout with curr coin.
+//         for (var higherAmount = coin; higherAmount <= amount; higherAmount++) {
+//             console.log('higherAmount', higherAmount)
+//             var higherAmountRemainder = higherAmount - coin;
+//             // ways to create change is equivalent to reducing the problem to a known problem
+//             // and gaining all the ways to solve for smaller problems
+//             waysOfDoingNcents[higherAmount] += waysOfDoingNcents[higherAmountRemainder];
+//             console.log('waysOfDoingNcents', waysOfDoingNcents)
+//         }
+//     }
+
+//     return waysOfDoingNcents[amount];
+// }
+
+// var denominations = [1, 5, 10, 25];
+// var amount = 6;
+// // console.log(waysToReturnChange(denominations, denominations.length - 1, amount));
+// console.log(waysToReturnMemoize(amount,denominations));
 
 
 
+// const arr = [0, 1, 2];
+// const num = 1;
+
+// function sortedFrequency(arr, num) {
+//     const endIndex = findEndIndex(arr, num);
+
+//     console.log('endIndex', endIndex)
+
+//     if (endIndex === -1) return -1;
+//     const startIndex = findStartIndex(arr, num, endIndex);
+//     console.log('startIndex', startIndex)
+
+//     return (endIndex - startIndex) + 1;
+
+// }
+
+// const findEndIndex = (arr, num) => {
+//     let end = arr.length;
+//     let start = 0;
+//     let mid = Math.floor((end - start) / 2);
+
+//     while (true) {
+
+//         if (mid === 0 && arr[mid] > num ||
+//             mid === arr.length - 1 && arr[arr.length - 1] < num) {
+//             return -1;
+//         }
+
+//         if (arr[mid] < num) {
+//             start = mid;
+//             mid = start + Math.floor((end - start) / 2);
+//         } else if (arr[mid] > num) {
+//             end = mid;
+//             mid = start + Math.floor((end - start) / 2);
+//         } else if (arr[mid] === num) {
+//             if (arr[mid + 1] !== num) {
+//                 break;
+//             }
+//             start = mid;
+//             mid = start + Math.floor((end - start) / 2);
+//         }
 
 
+//     }
+//     return mid;
+// }
 
+// const findStartIndex = (arr, num, endIndex) => {
+//     let end = endIndex + 1;
+//     let start = 0;
+//     let mid = Math.floor((end - start) / 2);
 
+//     while (true) {
 
+//         if (arr[mid] < num) {
+//             start = mid;
+//             mid = start + Math.floor((end - start) / 2);
+//         } else if (arr[mid] > num) {
+//             end = mid;
+//             mid = start + Math.floor((end - start) / 2);
+//         } else if (arr[mid] === num) {
+//             if (arr[mid - 1] !== num) {
+//                 break;
+//             }
+//             end = mid;
+//             mid = start + Math.floor((end - start) / 2);
+//         }
+//     }
+//     return mid;
+// }
 
+// const findMiddle = (arr, start, end) => {
 
+// }
 
-
-
-
-
-
+// console.log('sortedFrequency(arr, num)', sortedFrequency(arr, num))
 
 
 
