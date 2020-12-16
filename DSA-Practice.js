@@ -3972,7 +3972,7 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 //         if (s2Map.has(s1[i]) || s1Map.has(s2[i])) return 'YES';
 //         i++;
 //     }    
-    
+
 //     return 'NO'
 // }
 
@@ -3980,12 +3980,59 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+const s = 'ifailuhkqq'
+
+
 function sherlockAndAnagrams(s) {
 
+    let count = 0;
+    const { substrArr, substrObj } = allSubstrings(s);
+
+
+    for (let str of substrArr) {
+
+        let amount = substrObj[str]
+
+        if (amount > 1) {
+
+            let numOfWays = amount * (amount - 1) / 2
+            substrObj[str] = 0;
+            count = count + numOfWays
+        }
+
+    }
+
+    return count;
 
 }
 
+function allSubstrings(s) {
 
+    let substr
+    let substrArr = []
+    let substrObj = {}
+
+    for (let i = 0; i < s.length; i++) {
+        for (let j = i + 1; j < s.length + 1; j++) {
+            substr = s.slice(i, j)
+            substr = sortedStr(substr)
+            substrArr.push(substr);
+            substrObj[substr] = ++substrObj[substr] || 1
+        }
+    }
+    substrArr = substrArr.sort()
+
+    return { substrArr, substrObj }
+
+}
+
+function sortedStr(s) {
+    return s.split('').sort().join('')
+}
+
+
+
+console.log('sherlockAndAnagrams(s)', sherlockAndAnagrams(s))
 
 
 
