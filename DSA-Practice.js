@@ -3950,11 +3950,40 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// https://www.hackerrank.com/challenges/two-strings/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=dictionaries-hashmaps
+
+// const s1 = 'asdf'
+// const s2 = 'aiuhi'
+
+// function twoStrings(s1, s2) {    
+//     const s1Len = s1.length;
+//     const s2Len = s2.length;
+//     const longest = Math.max(s1Len, s2Len);
+//     const s1Map = new Map();
+//     const s2Map = new Map();
+
+//     let i = 0;
+//     while (i < longest) {
+
+//         if (s1[i]) s1Map.set(s1[i])
+//         if (s2[i]) s2Map.set(s2[i])
+//         // console.log('s1Map.has(s2[i])', s1Map.has(s2[i]))
+//         // console.log('s2Map.has(s1[i])', s2Map.has(s1[i]))
+//         if (s2Map.has(s1[i]) || s1Map.has(s2[i])) return 'YES';
+//         i++;
+//     }    
+    
+//     return 'NO'
+// }
+
+// console.log('twoStrings(s1, s2)', twoStrings(s1, s2))
 
 
 
+function sherlockAndAnagrams(s) {
 
 
+}
 
 
 
