@@ -3980,94 +3980,277 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
-const s = 'ifailuhkqq'
+// const s = 'ifailuhkqq'
 
 
-function sherlockAndAnagrams(s) {
+// function sherlockAndAnagrams(s) {
 
-    let count = 0;
-    const { substrArr, substrObj } = allSubstrings(s);
+//     let count = 0;
+//     const { substrArr, substrObj } = allSubstrings(s);
 
 
-    for (let str of substrArr) {
+//     for (let str of substrArr) {
 
-        let amount = substrObj[str]
+//         let amount = substrObj[str]
 
-        if (amount > 1) {
+//         if (amount > 1) {
 
-            let numOfWays = amount * (amount - 1) / 2
-            substrObj[str] = 0;
-            count = count + numOfWays
+//             let numOfWays = amount * (amount - 1) / 2
+//             substrObj[str] = 0;
+//             count = count + numOfWays
+//         }
+
+//     }
+
+//     return count;
+
+// }
+
+// function allSubstrings(s) {
+
+//     let substr
+//     let substrArr = []
+//     let substrObj = {}
+
+//     for (let i = 0; i < s.length; i++) {
+//         for (let j = i + 1; j < s.length + 1; j++) {
+//             substr = s.slice(i, j)
+//             substr = sortedStr(substr)
+//             substrArr.push(substr);
+//             substrObj[substr] = ++substrObj[substr] || 1
+//         }
+//     }
+//     substrArr = substrArr.sort()
+
+//     return { substrArr, substrObj }
+
+// }
+
+// function sortedStr(s) {
+//     return s.split('').sort().join('')
+// }
+
+
+
+// console.log('sherlockAndAnagrams(s)', sherlockAndAnagrams(s))
+
+
+
+
+
+
+
+// const s = "ABABABAB"
+
+// function alternatingCharacters(s) {
+//     let deletions = 0;
+//     for (let i = s.length - 1; i >= 0; i--) {
+//         if (s[i-1] === s[i]) deletions++;
+//     }
+//     return deletions;
+// }
+
+// console.log('alternatingCharacters(s)', alternatingCharacters(s))
+
+
+
+
+// const s = "aabbc"
+
+// function isValid(s) {
+
+//     const counts = {};
+
+//     for (let char of s) {
+//         counts[char] = counts[char] + 1 || 1;
+//     }
+
+//     // console.log('counts', counts)
+
+
+//     const countsArr = Object.values(counts)
+//     const sortedCounts = countsArr.sort((a, b) => a - b)
+//     // console.log('sortedCounts', sortedCounts)
+
+//     const len = sortedCounts.length;
+//     const end = len - 1;
+
+//     if (len === 1) return 'YES'
+
+//     function containsASingleOne() {
+//         if (sortedCounts[0] === 1) {
+//             if (sortedCounts[1] === sortedCounts[end] ) {
+//                 return true
+//             }
+//         }
+//         return false
+//     }
+
+
+//     if (sortedCounts[0] === sortedCounts[end - 1] || containsASingleOne()) {
+//         if (sortedCounts[end] <= sortedCounts[end - 1] + 1) {
+//             return 'YES'
+//         }
+//     }
+
+//     return 'NO'
+// }
+
+// console.log('isValid(s)', isValid(s))
+
+
+
+
+
+// const arr = [1, 3, 3, 9, 27]
+// const r = 3
+
+// function countDoublets(arr, r) {
+
+//     const counts = {}
+//     const complements = {}
+//     let curDivR
+//     let cur
+//     let total = 0
+//     let addOn
+//     for (let i = 0; i < arr.length; i++) {
+//         cur = arr[i]
+//         curDivR = cur / r;
+//         counts[cur] = ++counts[cur] || 1
+
+//         console.log('cur', cur, 'curDivR', curDivR, 'counts[curDivR]', counts[curDivR])
+//         if (counts[curDivR]) {
+
+//             addOn = complements[cur] === undefined
+//                 ? counts[curDivR]
+//                 : complements[cur] + counts[curDivR]
+
+//             total += counts[curDivR]
+//             complements[cur] = addOn
+//         }
+//         console.log('total', total)
+//         console.log('counts', counts)
+//         console.log('complements', complements)
+//     }
+//     return total
+// }
+
+// console.log('countDoublets(arr, r)', countDoublets(arr, r))
+
+
+
+
+// const arr = [1237, 1237, 1237]
+// // const arr = [1, 100, 10000, 100000, 1000000, 1000000000, 1000000000, 10000000, 100000, 100000000, 1000, 100000000, 1000, 1000, 10000000, 10000, 100, 1000, 1, 100, 100000, 1, 10000]
+// const r = 1
+
+// function countTriplets(arr, r) {
+
+//     const counts = {}
+//     const complements = {}
+//     const triplements = {}
+//     let curDivR
+//     let cur
+//     let totalComplements = 0
+//     let totalTriplements = 0
+//     let addOn
+//     for (let i = 0; i < arr.length; i++) {
+//         cur = arr[i]
+//         curDivR = cur / r;
+//         counts[cur] = ++counts[cur] || 1
+
+//         // console.log('cur', cur, 'curDivR', curDivR, 'counts[curDivR]', counts[curDivR])
+//         if (counts[curDivR]) {
+
+//             addOn = complements[cur] === undefined
+//                 ? counts[curDivR]
+//                 : complements[cur] + counts[curDivR]
+
+//             totalComplements += counts[curDivR]
+//             complements[cur] = addOn
+//         }
+
+
+//         if (complements[curDivR]) {
+
+//             addOn = triplements[cur] === undefined
+//                 ? complements[curDivR]
+//                 : triplements[cur] + complements[curDivR]
+
+
+//             totalTriplements += complements[curDivR]
+//             triplements[cur] = addOn
+//             // triplements[cur] = complements[curDivR]
+//         }
+
+
+
+
+
+//         // console.log('totalComplements', totalComplements)
+//         // console.log('counts', counts)
+//         // console.log('complements', complements)
+//         // console.log('triplements', triplements)
+//     }
+//     return totalTriplements;
+
+// }
+
+// console.log('countTriplets(arr, r)', countTriplets(arr, r))
+
+
+
+
+
+
+
+
+
+
+
+// const arr = [1,3,9]
+const arr = [1, 3, 9, 9, 27, 81]
+const r = 3
+
+function countTriplets(arr, r) {
+    if (arr.length < 3) return 0;
+
+    let singlesCounts = {}
+    let doublesCounts = {}
+    let tripletCount = 0;
+    let cur
+    let cur2
+    let cur3
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+        cur = arr[i]
+        cur2 = cur * r
+        cur3 = cur2 * r
+
+        // console.log('cur', cur,)
+
+        if (doublesCounts[[cur2, cur3].toString()]) {
+            tripletCount += doublesCounts[[cur2, cur3].toString()]
         }
 
-    }
+        if (singlesCounts[cur2]) {
+            if (doublesCounts[[cur,cur2].toString()] === undefined) {
+                doublesCounts[[cur,cur2].toString()] = singlesCounts[cur2]
+            } else {
+                doublesCounts[[cur,cur2].toString()] += singlesCounts[cur2]
+                // console.log('doublesCounts[[cur,cur2].toString()]', doublesCounts[[cur,cur2].toString()])
+            }
 
-    return count;
-
-}
-
-function allSubstrings(s) {
-
-    let substr
-    let substrArr = []
-    let substrObj = {}
-
-    for (let i = 0; i < s.length; i++) {
-        for (let j = i + 1; j < s.length + 1; j++) {
-            substr = s.slice(i, j)
-            substr = sortedStr(substr)
-            substrArr.push(substr);
-            substrObj[substr] = ++substrObj[substr] || 1
         }
+        singlesCounts[cur] = ++singlesCounts[cur] || 1;
+        // console.log('doublesCounts', doublesCounts)
+        // console.log('singlesCounts', singlesCounts)
+        // console.log('tripletCount', tripletCount)
     }
-    substrArr = substrArr.sort()
-
-    return { substrArr, substrObj }
-
+    return tripletCount
 }
 
-function sortedStr(s) {
-    return s.split('').sort().join('')
-}
-
-
-
-console.log('sherlockAndAnagrams(s)', sherlockAndAnagrams(s))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log('countTriplets(arr, r)', countTriplets(arr, r))
 
 
 
