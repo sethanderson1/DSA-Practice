@@ -4208,49 +4208,106 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
-// const arr = [1,3,9]
-const arr = [1, 3, 9, 9, 27, 81]
-const r = 3
+// // const arr = [1,3,9]
+// const arr = [1, 3, 9, 9, 27, 81]
+// const r = 3
 
-function countTriplets(arr, r) {
-    if (arr.length < 3) return 0;
+// function countTriplets(arr, r) {
+//     if (arr.length < 3) return 0;
 
-    let singlesCounts = {}
-    let doublesCounts = {}
-    let tripletCount = 0;
-    let cur
-    let cur2
-    let cur3
+//     let singlesCounts = {}
+//     let doublesCounts = {}
+//     let tripletCount = 0;
+//     let cur
+//     let cur2
+//     let cur3
 
-    for (let i = arr.length - 1; i >= 0; i--) {
-        cur = arr[i]
-        cur2 = cur * r
-        cur3 = cur2 * r
+//     for (let i = arr.length - 1; i >= 0; i--) {
+//         cur = arr[i]
+//         cur2 = cur * r
+//         cur3 = cur2 * r
 
-        // console.log('cur', cur,)
+//         if (doublesCounts[[cur2, cur3].toString()]) {
+//             tripletCount += doublesCounts[[cur2, cur3].toString()]
+//         }
 
-        if (doublesCounts[[cur2, cur3].toString()]) {
-            tripletCount += doublesCounts[[cur2, cur3].toString()]
-        }
+//         if (singlesCounts[cur2]) {
+//             if (doublesCounts[[cur, cur2].toString()] === undefined) {
+//                 doublesCounts[[cur, cur2].toString()] = singlesCounts[cur2]
+//             } else {
+//                 doublesCounts[[cur, cur2].toString()] += singlesCounts[cur2]
+//             }
 
-        if (singlesCounts[cur2]) {
-            if (doublesCounts[[cur,cur2].toString()] === undefined) {
-                doublesCounts[[cur,cur2].toString()] = singlesCounts[cur2]
-            } else {
-                doublesCounts[[cur,cur2].toString()] += singlesCounts[cur2]
-                // console.log('doublesCounts[[cur,cur2].toString()]', doublesCounts[[cur,cur2].toString()])
-            }
+//         }
+//         singlesCounts[cur] = ++singlesCounts[cur] || 1;
+//         // console.log('doublesCounts', doublesCounts)
+//         // console.log('singlesCounts', singlesCounts)
+//         // console.log('tripletCount', tripletCount)
+//     }
+//     return tripletCount
+// }
 
-        }
-        singlesCounts[cur] = ++singlesCounts[cur] || 1;
-        // console.log('doublesCounts', doublesCounts)
-        // console.log('singlesCounts', singlesCounts)
-        // console.log('tripletCount', tripletCount)
-    }
-    return tripletCount
+// console.log('countTriplets(arr, r)', countTriplets(arr, r))
+
+
+
+
+
+
+
+
+// // Declare second integer, double, and String variables.
+// // Read and save an integer, double, and String to your variables.
+// var i2 = +(readLine());
+// var d2 = +(readLine());
+// var s2 = readLine();
+
+// // Print the sum of both integer variables on a new line.
+// console.log(i + i2);
+
+// // Print the sum of the double variables on a new line.
+// console.log((d + d2).toFixed(1));
+
+// // Concatenate and print the String variables on a new line
+// // The 's' variable above should be printed first.
+// console.log(s + s2);
+
+
+
+
+
+
+
+// console.log("What is your name?");
+// process.stdin.once('data', (chunk) => {
+//     let name = chunk.toString().trim();
+//     console.log("Hello, " + name + "!");
+//     process.exit();
+
+// });
+
+
+const readline = require('readline');
+const readlineInterface = readline.createInterface(process.stdin, process.stdout);
+
+function ask(questionText) {
+  return new Promise((resolve, reject) => {
+    readlineInterface.question(questionText, resolve);
+    
+  });
 }
 
-console.log('countTriplets(arr, r)', countTriplets(arr, r))
+start();
+
+async function start() {
+  let name = await ask('What is your name? ');
+  let quest = await ask('What is your quest? ');
+  let color = await ask('What is your favorite color? ');
+  console.log('Hello ' + name + '! ' +
+    'Good luck with ' + quest + ', ' +
+    'and here is a ' + color + ' flower for you.');
+  process.exit();
+}
 
 
 
