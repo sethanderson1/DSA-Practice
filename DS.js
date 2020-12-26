@@ -9,12 +9,12 @@
 // }
 
 
-// class Node {
-//     constructor(val) {
-//         this.val = val;
-//         this.next = null;
-//     }
-// }
+class SSLNode {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+    }
+}
 
 
 
@@ -171,10 +171,10 @@ class SinglyLinkedList {
     }
     push(val) {
         if (!this.head) {
-            this.head = new Node(val);
+            this.head = new SSLNode(val);
             this.tail = this.head;
         } else {
-            this.tail.next = new Node(val);
+            this.tail.next = new SSLNode(val);
             this.tail = this.tail.next;
         }
         this.length++
@@ -212,10 +212,10 @@ class SinglyLinkedList {
     unshift(val) {
 
         if (!this.head) {
-            this.head = new Node(val);
+            this.head = new SSLNode(val);
             this.tail = this.head;
         } else {
-            let newNode = new Node(val);
+            let newNode = new SSLNode(val);
             newNode.next = this.head;
             this.head = newNode;
         }
@@ -252,7 +252,7 @@ class SinglyLinkedList {
         let curNode = this.get(index - 1)
 
         let rightSegHead = curNode.next;
-        let newNode = new Node(val);
+        let newNode = new SSLNode(val);
         newNode.next = rightSegHead;
         curNode.next = newNode;
         this.length++;
