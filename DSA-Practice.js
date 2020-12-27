@@ -4440,33 +4440,88 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
-const str = 'aabbcdd'
+// const str = 'aabbcdd'
 
-function firstNonRepeatingCharacter(str) {
-    const counts = {}
-    for (const char of str) {
-        counts[char] = ++counts[char] || 1;
-    }
-    console.log('counts', counts)
-    for ( const char of str) {
-        if (counts[char] === 1) return char
-    }
-    return '_'
-}
-
-
-console.log('firstNonRepeatingCharacter(str)', firstNonRepeatingCharacter(str))
+// function firstNonRepeatingCharacter(str) {
+//     const counts = {}
+//     for (const char of str) {
+//         counts[char] = ++counts[char] || 1;
+//     }
+//     console.log('counts', counts)
+//     for ( const char of str) {
+//         if (counts[char] === 1) return char
+//     }
+//     return '_'
+// }
 
 
+// console.log('firstNonRepeatingCharacter(str)', firstNonRepeatingCharacter(str))
+
+// const str = 'abc'
+
+// function reverString2(str) {
+//     let temp
+//     let upper = str.length - 1
+//     let lower = 0
+//     while (lower <= upper) {
+//         console.log('upper', upper)
+//         temp = str[upper]
+//         console.log('str[upper]', str[upper])
+//         str[upper] = str[lower]
+//         str[lower] = temp
+//         upper--
+//         lower++
+//     }
+//     console.log('str', str)
+
+// }
+
+
+
+// console.log('reverString2(str)', reverString2(str))
 
 
 
 
+// const str = 'aabbbc'
+
+// function maxRecurringChar(str) {
+//     const counts = {}
+//     let maxRecurring = {
+//         letter: undefined,
+//         count: 0
+//     }
+//     for (const char of str) {
+//         counts[char] = ++counts[char] || 1;
+//         if (counts[char] > maxRecurring.count) {
+//             maxRecurring.count = counts[char]
+//             maxRecurring.letter = char
+//         }
+//     }
+//     return maxRecurring.letter
+// }
+// console.log('maxRecurringChar(str)', maxRecurringChar(str))
 
 
 
+// const arr = [1, 2, 3, 2, 3]
 
+// const firstDup = (arr) => {
 
+//     const counts = {};
+//     let num;
+//     let dup = 'no dups'
+
+//     for (let i = arr.length - 1; i >= 0; i--) {
+//         num = arr[i];
+//         counts[num] = ++counts[num] || 1;
+//         if (counts[num] > 1) {
+//             dup = num;
+//         }
+//     }
+//     return dup;
+// }
+// console.log('firstDup(arr)', firstDup(arr))
 
 
 
