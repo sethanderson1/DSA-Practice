@@ -4529,7 +4529,32 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+const arr = [-6, -4, 1, 2, 3, 5];
 
+function sortedSquaredArr(arr) {
+    let result = new Array(arr.length).fill(0)
+    let leftPtr = 0;
+    let rightPtr = arr.length - 1;
+    let left 
+    let right 
+    for (let i = result.length - 1; i >= 0; i--) {
+        left = arr[leftPtr]
+        right = arr[rightPtr]
+        if ((left * left) > (right * right)) {
+            result[i] = left * left
+            leftPtr++
+        } else {
+            result[i] = right * right
+            rightPtr--
+        }
+        console.log('result', result)
+
+    }
+
+
+    return result
+}
+console.log('sortedSquaredArr(arr)', sortedSquaredArr(arr))
 
 
 
