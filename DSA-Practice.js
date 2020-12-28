@@ -4529,38 +4529,93 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
-const arr = [-6, -4, 1, 2, 3, 5];
+// const arr = [-6, -4, 1, 2, 3, 5];
 
-function sortedSquaredArr(arr) {
-    let result = new Array(arr.length).fill(0)
-    let leftPtr = 0;
-    let rightPtr = arr.length - 1;
-    let left 
-    let right 
-    for (let i = result.length - 1; i >= 0; i--) {
-        left = arr[leftPtr]
-        right = arr[rightPtr]
-        if ((left * left) > (right * right)) {
-            result[i] = left * left
-            leftPtr++
-        } else {
-            result[i] = right * right
-            rightPtr--
-        }
-        console.log('result', result)
+// function sortedSquaredArr(arr) {
+//     let result = new Array(arr.length).fill(0)
+//     let leftPtr = 0;
+//     let rightPtr = arr.length - 1;
+//     let left 
+//     let right 
+//     for (let i = result.length - 1; i >= 0; i--) {
+//         left = arr[leftPtr]
+//         right = arr[rightPtr]
+//         if ((left * left) > (right * right)) {
+//             result[i] = left * left
+//             leftPtr++
+//         } else {
+//             result[i] = right * right
+//             rightPtr--
+//         }
+//         console.log('result', result)
 
-    }
+//     }
 
 
-    return result
+//     return result
+// }
+// console.log('sortedSquaredArr(arr)', sortedSquaredArr(arr))
+
+
+
+
+
+// const n = 3
+
+// function hanoi(n, start, end) {
+//     if (n === 1) {
+//         printMove(start, end)
+//     } else {
+//         const other = 6 - (start + end);
+//         hanoi(n - 1, start, other);
+//         printMove(start, end)
+//         hanoi(n - 1, other, end);
+//     }
+
+
+// }
+
+// function printMove(start, end) {
+//     console.log(`move ${start} to ${end}`)
+// }
+
+// console.log('hanoi(n,1,3)', hanoi(n, 1, 3))
+
+
+const n = 3
+
+const rods = {
+    1: [...new Array(n).fill(0).map((_, i) => (n - i))],
+    2: [],
+    3: [],
 }
-console.log('sortedSquaredArr(arr)', sortedSquaredArr(arr))
 
+console.log('rods', rods)
 
+function hanoi(n, start, end) {
+    if (n === 1) {
+        makeMove(start, end)
+    } else {
+        const other = 6 - (start + end);
+        hanoi(n - 1, start, other);
+        makeMove(start, end)
+        hanoi(n - 1, other, end);
+    }
+    
+}
 
+function makeMove(start, end) {
+    rods[end].push(rods[start].pop(1))
+    console.log('rods', rods)
 
+    printMove(start, end)
+}
 
+function printMove(start, end) {
+    console.log(`move from ${start} to ${end}`)
+}
 
+console.log('hanoi(n,1,3)', hanoi(n, 1, 3))
 
 
 
