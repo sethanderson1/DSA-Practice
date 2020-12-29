@@ -4582,43 +4582,68 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 // console.log('hanoi(n,1,3)', hanoi(n, 1, 3))
 
 
-const n = 3
+// const n = 3
 
-const rods = {
-    1: [...new Array(n).fill(0).map((_, i) => (n - i))],
-    2: [],
-    3: [],
-}
+// const rods = {
+//     1: [...new Array(n).fill(0).map((_, i) => (n - i))],
+//     2: [],
+//     3: [],
+// }
 
-console.log('rods', rods)
+// console.log('rods', rods)
 
-function hanoi(n, start, end) {
-    if (n === 1) {
-        makeMove(start, end)
-    } else {
-        const other = 6 - (start + end);
-        hanoi(n - 1, start, other);
-        makeMove(start, end)
-        hanoi(n - 1, other, end);
-    }
-    
-}
+// function hanoi(n, start, end) {
+//     if (n === 1) {
+//         makeMove(start, end)
+//     } else {
+//         const other = 6 - (start + end);
+//         hanoi(n - 1, start, other);
+//         makeMove(start, end)
+//         hanoi(n - 1, other, end);
+//     }
 
-function makeMove(start, end) {
-    rods[end].push(rods[start].pop(1))
-    console.log('rods', rods)
+// }
 
-    printMove(start, end)
-}
+// function makeMove(start, end) {
+//     rods[end].push(rods[start].pop(1))
+//     console.log('rods', rods)
 
-function printMove(start, end) {
-    console.log(`move from ${start} to ${end}`)
-}
+//     printMove(start, end)
+// }
 
-console.log('hanoi(n,1,3)', hanoi(n, 1, 3))
+// function printMove(start, end) {
+//     console.log(`move from ${start} to ${end}`)
+// }
 
+// console.log('hanoi(n,1,3)', hanoi(n, 1, 3))
 
+// const strArr = ["2, 5, 7, 10, 11, 12", "2, 7, 8, 9, 10, 11, 15"]
 
+// function FindIntersection(strArr) {
+//     let result = false
+//     const arr1 = strArr[0].split(',').map(val=>val.trim());
+//     const arr2 = strArr[1].split(',').map(val=>val.trim());
+//     let ptr1 = 0
+//     let ptr2 = 0
+//     while (ptr1 < arr1.length && ptr2 < arr2.length) {
+//         if (arr1[ptr1] === arr2[ptr2]) {
+//             if (result === false) {
+//                 result = arr1[ptr1];
+//             } else {
+//                 result += ',' + arr1[ptr1];
+//             }
+//             ptr1++;
+//             ptr2++;
+//         } else if (+arr1[ptr1] < +arr2[ptr2]) {
+//             ptr1++;
+//         } else if (+arr1[ptr1] > +arr2[ptr2]) {
+//             ptr2++;
+//         }
+//     }
+//     return result;
+// }
+
+// console.log('FindIntersection(strArr)', FindIntersection(strArr))
 
 
 
