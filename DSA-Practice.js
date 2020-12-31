@@ -4646,6 +4646,315 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 // console.log('FindIntersection(strArr)', FindIntersection(strArr))
 
 
+// const sen = "asdf asdf asdfasdfasdf asdf 03943948039840983098408902340289380489243";
+
+// function LongestWord(sen) {
+
+//     let wordArr = sen.split(' ')
+//     let longestWord = ''
+//     for (let word of wordArr) {
+//         if (isWord(word) && word.length > longestWord.length) {
+//             longestWord = word;
+//         }
+//     }
+//     return longestWord
+
+// }
+
+// function isWord(word) {
+
+//     let charCode
+//     for (let i = 0; i < word.length; i++) {
+//         charCode = word.charCodeAt(i)
+//         if (!((charCode >= 65 && charCode <= 122) || (charCode >= 48 && charCode <= 57))) {
+//             return false;
+//         }
+//     }
+//     return true
+// }
+
+// console.log('LongestWord(sen)', LongestWord(sen))
+
+
+// const str = "ab";
+
+// function FirstReverse(str) { 
+//     let reversed = ''
+//     for ( let i = str.length - 1; i >= 0; i--) {
+//         reversed += str[i]
+//     }
+
+//     return  reversed
+
+// }
+
+// const FirstReverse = ([head, ...tail]) => {
+//     console.log('head', head)
+//     console.log('...tail', ...tail)
+
+//     return tail.length === 0
+//         ? [head]
+//         : [...FirstReverse(tail), head];
+// }
+
+
+
+// console.log('FirstReverse(str)', FirstReverse(str))
+
+
+
+// const num = 18;
+
+// function FirstFactorial(num) { 
+
+//     let result = 1
+
+//     for (let i = num; i >0;i--) {
+//         result *= i
+//     }
+
+
+//     return result; 
+
+// }
+
+
+// console.log('FirstFactorial(num)', FirstFactorial(num))
+
+
+
+// const str = ")()"
+
+
+// function BracketMatcher(str) {
+//     str = str.split('')
+//     let stack = []
+//     for (let char of str) {
+//         if (char === ')') {
+//             if (stack.pop() !== '(') {
+//                 return 0
+//             }
+//         }
+//         if (char === '(') {
+//             stack.push('(')
+//         }
+//     }
+
+//     if (stack.length > 0) return 0;
+//     return 1
+
+// }
+
+// console.log('BracketMatcher(str)', BracketMatcher(str))
+
+
+
+
+// const strArr = ["caae", "cae"]
+
+// function MinWindowSubstring(strArr) {
+
+//     let str = strArr[0];
+//     let neededChars = strArr[1];
+//     const hash = {}
+
+//     for (let char of neededChars) {
+//         hash[char] = ++hash[char] || 1
+//     }
+
+//     let windowLen = neededChars.length;
+
+//     while (windowLen <= str.length) {
+//         let winStart = 0;
+//         let winEnd = winStart + windowLen;
+//         while (winEnd <= str.length) {
+//             let candidate = str.substr(winStart, windowLen)
+//             // console.log('str.substr(winStart,windowLen)', str.substr(winStart, windowLen))
+//             if (isMatch(candidate, hash)) return candidate;
+//             winStart++;
+//             winEnd++;
+//         }
+//         windowLen++
+//     }
+//     return
+// }
+
+
+// function isMatch(candidate, hash) {
+//     const clonedHash = JSON.parse(JSON.stringify(hash))
+//     for (let char of candidate) {
+//         if (clonedHash[char] > 0) --clonedHash[char]
+//         if (clonedHash[char] === 0) delete clonedHash[char]
+//     }
+//     if (Object.keys(clonedHash).length !== 0) return false
+//     return true
+// }
+
+// console.log('MinWindowSubstring(strArr)', MinWindowSubstring(strArr))
+
+
+
+// const adjacencyList = { 'a': ['d', 'b', 'c'], 'b': ['a'], 'c': ['a', 'd'], 'd': ['c', 'a'] }
+// console.log('adjacencyList', adjacencyList)
+
+// const start = 'a'
+
+// function BFS(adjacencyList, start) {
+
+//     const result = []
+//     const visited = {}
+//     visited[start] = true;
+//     const queue = [start];
+//     let curVertex;
+
+//         while (queue.length > 0) {
+
+//         curVertex = queue.shift()
+//         result.push(curVertex)
+
+//         for (let neighbor of adjacencyList[curVertex]) {
+//             if (!visited[neighbor]) {
+//                 visited[neighbor] = true
+//                 queue.push(neighbor);
+//             }
+//         }
+//         console.log('visited', visited)
+
+//     }
+
+//     return result
+
+// }
+
+
+// console.log('BFS(adjacencyList, start)', BFS(adjacencyList, start))
+
+
+// const strArr = ["(2,5)", "(2,6)"]
+
+// function TreeConstructor(strArr) { 
+//     const childCounts = {}
+//     const parentCounts = {}
+//     for (let node of strArr) {
+//         node = node.substr(1,node.length-2).split(',')
+//         childCounts[node[1]] = ++childCounts[node[1]] || 1;
+//         parentCounts[node[0]] = ++parentCounts[node[0]] || 1;
+//         if (childCounts[node[1]] > 2) return false
+//         if (parentCounts[node[0]] > 1) return false
+//     }
+
+
+//     return true
+
+// }
+
+// console.log('TreeConstructor(strArr)', TreeConstructor(strArr))
+
+// // const str = "acc?7??sss?3rr1??????5"
+// const str = "ac3???7"
+
+// function QuestionsMarks(str) {
+//     const complements = {}
+//     let filteredStr = ''
+//     let nums = []
+//     let j = 0
+//     let matchCount = 0
+//     for (let i = 0; i < str.length; i++) {
+//         if (isNumber(str[i])) {
+//             nums.push({ val: str[i], index: j })
+//             filteredStr += str[i];
+//             j++
+//         }
+//         if (str[i] === '?') {
+//             filteredStr += str[i];
+//             j++
+//         }
+//     }
+//     // console.log('filteredStr', filteredStr)
+//     // console.log('nums', nums)
+//     for (let i = 0; i < nums.length - 1; i++) {
+//         // console.log('i', i)
+//         if (+nums[i].val + +nums[i + 1].val === 10) {
+//             // complements[nums[i].val] = `???${10 - +nums[i].val}`
+
+//             if (nums[i].index + 4 >= filteredStr.length ) {
+//                 // console.log('too far')
+//             }
+//             let candidate = filteredStr.substr(nums[i].index +1, 4);
+//             // console.log('candidate', candidate)
+//             if (candidate !== `???${10 - +nums[i].val}`) {
+//                 return false
+//             } else if (candidate === `???${10 - +nums[i].val}`) {
+//                 matchCount += 1
+//             }
+//         }
+//     }
+
+//     if (matchCount === 0) return false
+
+//     return true
+
+// }
+
+
+
+// function isNumber(char) {
+//     return (char.charCodeAt() >= 48 && char.charCodeAt() <= 57)
+// }
+
+// console.log('QuestionsMarks(str)', QuestionsMarks(str))
+
+
+// const str = "_df34f"
+
+// function CodelandUsernameValidation(str) {
+
+
+//     if (str.length < 4 || str.length > 25) {
+//         return false
+//     }
+
+//     if (!isLetter(str[0])) {
+//         return false
+//     }
+
+//     if (isUnderscore(str[str.length-1])) {
+//         return false;
+//     }
+
+//     for (let i = 1; i < str.length; i++) {
+//         if (!(isLetter(str[i]) || isNumber(str[i]) || isUnderscore(str[i]))) {
+//             return false;
+//         }
+//     }
+
+
+
+//     return true;
+
+// }
+
+// function isNumber(char) {
+//     let charCode = char.charCodeAt()
+//     if ((charCode >= 48 && charCode <= 57)) {
+//         return true
+//     }
+//     return false
+// }
+
+// function isLetter(char) {
+//     let charCode = char.toLowerCase().charCodeAt()
+//     if ((charCode >= 97 && charCode <= 122)) return true
+//     return false
+// }
+
+// function isUnderscore(char) {
+//     if (char === '_') return true
+//     return false
+// }
+
+
+// console.log('CodelandUsernameValidation(str)', CodelandUsernameValidation(str))
 
 
 
@@ -4655,49 +4964,93 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+const queries = [[1, 3], [1, 3], [1, 3], [1, 3], [3, 1]]
+
+
+const freqQuery = queries => {
+    const result = [];
+    const hash = {};
+    const freq = [];
+
+    for (let i = 0; i < queries.length; i += 1) {
+        const [action, value] = queries[i];
+        const initValue = hash[value] || 0;
+        console.log('initValue', initValue)
+
+        if (action === 1) {
+            hash[value] = initValue + 1;
+
+            freq[initValue] = (freq[initValue] || 0) - 1;
+            freq[initValue + 1] = (freq[initValue + 1] || 0) + 1;
+        }
+
+        if (action === 2 && initValue > 0) {
+            hash[value] = initValue - 1;
+
+            freq[initValue - 1] += 1;
+            freq[initValue] -= 1;
+        }
+
+        if (action === 3) result.push(freq[value] > 0 ? 1 : 0);
+
+        console.log('hash', hash)
+        console.log('freq', freq)
+    }
+
+    return result;
+};
+
+// function freqQuery(queries) {
+
+//     const counts = {}
+//     const freqsCounts = {}
+//     const freqs = []
+//     let type, val, freq
+//     for (let query of queries) {
+
+//         type = query[0]
+//         val = query[1]
+
+//         if (type === 1) {
+
+//             counts[val] = ++counts[val] || 1;
+//             let freq = counts[val]
+
+//             freqsCounts[freq] = ++freqsCounts[freq] || 1;
+//             freqsCounts[freq - 1] = --freqsCounts[freq - 1] || 0;
+
+//         }
+
+//         if (type === 2) {
+//             counts[val] = Math.max(--counts[val], 0)
+//             let freq = counts[val]
+//             freqsCounts[freq] = ++freqsCounts[freq] || 1;
+//             freqsCounts[freq + 1] = Math.max(--freqsCounts[freq + 1], 0)
 
 
 
+//         }
+
+//         if (type === 3) {
+//             if (freqsCounts[val] > 0) {
+//                 freqs.push(1)
+//             } else {
+//                 freqs.push(0)
+//             }
+//         }
+//         // console.log('freqsCounts', freqsCounts)
+
+//     }
+//     // console.log('counts', counts)
+//     // console.log('freqsCounts', freqsCounts)
+//     // console.log('freqs', freqs)
 
 
+//     return freqs;
 
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log('freqQuery(queries)', freqQuery(queries))
 
 
 
