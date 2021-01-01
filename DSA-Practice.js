@@ -5140,11 +5140,29 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// const arr = [[1, 2, 5],
+//              [3, 1, 2],
+//              [8, 4, 2]]
+// function diagonalDifference(arr) {
+//     let primaryDiag = 0
+//     let secondaryDiag = 0
+//     let n = arr.length
+//     let j = 0
+//     let k = n - 1
+//     for (let i = 0; i < arr.length; i++) {
 
-function diagonalDifference(arr) {
-    return  arr[0][0]
+//         primaryDiag += arr[i][j++]
 
-}
+//         secondaryDiag += arr[i][k--]
+
+//     }
+
+//     return Math.abs(primaryDiag - secondaryDiag)
+
+
+// }
+
+// console.log('diagonalDifference(arr)', diagonalDifference(arr))
 
 
 
