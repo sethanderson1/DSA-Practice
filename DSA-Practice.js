@@ -5168,6 +5168,28 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// const a = [1,5,5]
+// const b = [2,4,1]
+
+
+// function compareTriplets(a, b) {
+//     let aScore = 0
+//     let bScore = 0
+
+//     for (let i = 0; i < a.length; i++) {
+
+//         if (a[i] > b[i]) {
+//             aScore += 1
+//         } else if (a[i] < b[i]) {
+//             bScore += 1
+//         } 
+
+//     }
+
+//     return [aScore, bScore]
+// }
+
+// console.log('compareTriplets(a, b)', compareTriplets(a, b))
 
 
 
@@ -5178,6 +5200,323 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// const ar = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]
+
+// function aVeryBigSum(ar) {
+
+//     let sum  = ar.reduce((acc, val) => acc + val)
+//     return sum
+
+// }
+
+// console.log('aVeryBigSum(ar)', aVeryBigSum(ar))
+
+
+// // const s = [[5, 4, 3], 
+// //            [1, 5, 8], 
+// //            [6, 4, 2]]
+//      5 to 8     8 to 9  4 to 7
+//  12    15        15      15     12     15
+//  14    14        15      15     14     
+//  12    12        12      15     12 
+//  12    15        15      15     12 
+//  13    13        13      13     13 
+//  13    13        15      15     13 
+//  12    15        15      15     12 
+//  15    15        15      15     14 
+
+// // 1 2
+// // 1 1
+
+// 3
+// 2
+// 2
+// 3
+// 2
+// 3
+
+// // 2 2 2
+// // 2 1 2
+// // 2 2 2
+
+
+
+// const s = [[5, 4, 3], [1, 5, 8], [6, 4, 2]]
+
+// function formingMagicSquare(s) {
+
+
+// }
+
+// console.log('formingMagicSquare(s)', formingMagicSquare(s))
+
+
+
+
+
+// const str = 'abc'
+// let k = 0
+// function permute(str) {
+//     if (str.length === 0) return '';
+//     if (str.length === 1) return str;
+
+//     let results = [];
+//     for (let i = 0; i < str.length; i++) {
+//         const currentChar = str[i];
+//         console.log('currentChar', currentChar)
+//         const remainingChars = str.slice(0, i) + str.slice(i + 1);
+//         for (let j = 0; j < remainingChars.length; j++) {
+//             console.log('i j', i, j)
+//             console.log('remainingChars', remainingChars)
+//             console.log('make recursive call')
+//             results.push(currentChar + permute(remainingChars)[j])
+//             console.log('results', results)
+//         }
+//     }
+//     return results
+// }
+
+
+
+// console.log('permute(str)', permute(str))
+
+
+// sum(3) = 3 + sum(2) 
+//                3    =    2 + sum(1) 
+//                                1
+
+
+// const n = 3
+
+// function sum(n) {
+//     if (n === 1) return n
+//     return n + sum(n-1)
+// }
+// console.log('sum(n)', sum(n))
+
+
+
+
+// const n = 10
+// const m = 2
+// const mCoord = 0
+// const nCoord = 0
+
+
+// function travelBox(n, m) {
+
+//     if (n === 1 || m === 1) return 1;
+
+//     return travelBox(n, m - 1) + travelBox(n - 1, m)
+
+
+// }
+
+// console.log('travelBox(n, m)', travelBox(n, m))
+
+// const nums = [1, 2, 3]
+
+// function permute(nums) {
+//     if (nums.length === 0) return
+//     if (nums.length === 1) return [nums];
+//     let result = []
+//     for (let i = 0; i < nums.length; i++) {
+//         const curNum = nums[i];
+//         const remainingNums = nums.slice(0, i).concat(nums.slice(i + 1))
+//         const remainingNumsPermuted = permute(remainingNums)
+//         for (let j = 0; j < remainingNumsPermuted.length; j++) {
+//             const permutedArray = [curNum].concat(remainingNumsPermuted[j])
+//             result.push(permutedArray)
+//             console.log('result', result)
+//         }
+//     }
+//     return result
+// }
+
+// console.log('permute(nums)', permute(nums))
+
+
+// s = 1
+// k = 1
+// p = 9
+
+// if n is 1 and k is 1 or more, 
+//     replace with 9
+
+// s = 12
+// k = 1
+// p = 22
+
+// if flanks not equal
+//     make them equal
+
+// if n is 2 and k is 1 
+//     if not a palindrome  
+//         replace min digit with larger digit
+
+// s = 123  323
+// k = 1
+// p = 323  393
+
+// if flanks not equal 
+//     make them equal
+// if flanks are equal 
+//     replace middle with 9
+
+// if n is 3 and k is 1
+//     if not palindrome
+//         replace min flank digit with larger flank digit
+
+//     if is palindrome 
+//         replace middle digit with 9
+
+// s = 123  129  323  919 
+// k = 2
+// p = 929  999  929  999 
+
+// if flanks not equal
+//     if one already a 9
+//         replace other with 9 
+//         replace middle with 9
+//     if none already a 9
+//         replace both with 9
+
+// if n is 3 and k is 2
+//     if not palindrome
+//         if one of the flanks is not 9, 
+//             replace non-9 flank with 9 
+//             replace middle with 9
+//         if no flanks are 9 
+//             replace flanks with 9
+
+// s = 1234 1224 4214 1238 1229 4114 9119
+// k = 1
+// p = 4234 4224 4224 8238 9229 4114 9119
+
+// if flanks not equal
+//     make equal
+//     if next inner level flanks not equal    
+//         not a palindrome
+// if flanks equal
+//     if next inner level flanks not equal
+//         make equal
+
+// if n is 4 and k is 1
+//     if not palindrome
+//         if flanks are 9
+
+
+// s = 1234 1224 4214 1238 1229 4114 9119
+// k = 2
+// p = 4334 9229 4994 8338 9229 9119 9999
+
+// if flanks not equal
+//     make equal
+//     if next inner level flanks not equal    
+//         not a palindrome
+// if flanks equal
+//     if next inner level flanks not equal
+//         make equal
+
+// if n is 4 and k is 1
+//     if not palindrome
+//         if flanks are 9
+
+// const s = '11331'
+// // const s = '932239'
+// const n = s.length;
+// const k = 4;
+
+// function highestValuePalindrome(s, n, k) {
+//     if (k >= n) return new Array(n).fill(9).join('');
+
+//     s = s.split('').map(item => +item)
+
+//     let left;
+//     let right;
+//     if (n % 2 === 1) {
+//         left = Math.floor(n / 2);
+//         right = left;
+//     } else {
+//         left = Math.floor(n / 2) - 1;
+//         right = Math.floor(n / 2);
+//     }
+//     // start in middle 
+//     const start = left;
+
+//     for (let i = start; i >= 0; i--) {
+//         // go out from the middle to each ring
+//         // i.e. from middle ring is i[middle-1] and i[middle]
+//         // outward i[(middle - 1) - 1] and i[middle + 1]
+//         // to i[0] and i[length -1]
+
+//         // and check if they are dichotomous
+//         // if they are not equal, 
+//         // equalize
+//         // decrement k
+//         // and mark down that that index is nined
+//         // if they are equal, 
+//         // mark down if they're nined
+
+//         if (k > 0) {
+//             if (s[left] < s[right]) {
+//                 s[left] = s[right];
+//                 k--;
+//             } else if (s[left] > s[right]) {
+//                 s[right] = s[left];
+//                 k--;
+//             }
+//         }
+
+//         if (s[left] !== s[right]) return -1;
+
+//         left--;
+//         right++;
+//     }
+
+//     left = 0;
+//     right = s.length - 1;
+
+//     for (let i = 0; i <= start; i++) {
+//         if (k > 0) {
+//             if (k >= 2) {
+//                 if (s[left] !== 9 && s[right] !== 9) {
+//                     s[left] = 9;
+//                     s[right] = 9;
+//                     k = k - 2;
+//                 }
+//             } else if (k === 1) {
+//                 if (s[left] === 9 && s[right] !== 9)  {
+//                     s[right] = 9;
+//                     k--;
+//                 } else if (s[left] !== 9 && s[right] === 9) {
+//                     s[left] = 9;
+//                     k--;
+//                 } else if (left === start) {
+//                     s[left] = 9;
+//                     k--;
+//                 }
+//             }
+//         } else {
+//             return s.join('')
+//         }
+
+//         left++;
+//         right--;
+//     }
+
+//     // keep going till get to i = 0
+//     // when gets to i = 0, if still have k's left
+//     // nine the outtermost rings, going inward and 
+//     // nining till run out of k's
+
+
+//     return s.join('')
+
+// }
+
+
+// console.log('highestValuePalindrome(s, n, k)', highestValuePalindrome(s, n, k))
 
 
 
@@ -5188,33 +5527,130 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// const s = '11331' k=4
+// const s = '13331' k=3
+// const s = '93339' k=1
+// const s = '93339' k=1
 
 
 
+// const s = '11331' k=4
+// const s = '13331' k=3  nonNineReplacement
+// const s = '93339' k=1
+// const s = '93339' k=1
 
 
+// const s = '11331' k=3
+// const s = '13331' k=2  nonNineReplacement
+// const s = '93339' k=0
+// const s = '93339' k=0
+
+// const s = '932239'
+
+const s = '11331'
+// const s = '1234'
+const n = s.length;
+const k = 2;
 
 
+function highestValuePalindrome(s, n, k) {
+    if (k >= n) return new Array(n).fill(9).join('');
+
+    let nonNineReplacement = {}
 
 
+    
+    s = s.split('').map(item => +item)
+    
+    let left;
+    let right;
 
 
+    const isOdd = n % 2 === 1;
+    if (isOdd) {
+        left = Math.floor(n / 2);
+        right = left;
+    } else {
+        left = Math.floor(n / 2) - 1;
+        right = Math.floor(n / 2);
+    }
+    // start in middle 
+    const start = left;
+    
+    for (let i = start; i >= 0; i--) {
+
+        
+        if (k > 0) {
+            if (s[left] < s[right]) {
+                s[left] = s[right];
+                if (s[left] !== 9 && s[right] !== 9) {
+                    nonNineReplacement[left] = true;
+                }
+                k--;
+            } else if (s[left] > s[right]) {
+                s[right] = s[left];
+                if (s[left] !== 9 && s[right] !== 9) {
+                    nonNineReplacement[left] = true;
+                }
+                k--;
+            }
+            
+        }
+        
+        if (s[left] !== s[right]) return -1;
+        
+        left--;
+        right++;
+    }
+    
+    left = 0;
+    right = s.length - 1;
+
+   
+        
+        for (let i = 0; i <= start; i++) {
+        if (k > 0) {
+            
+            if (nonNineReplacement[left]) {
+                s[left] = 9;
+                s[right] = 9;
+                k--;
+            }
+            
+            
+            if (k >= 2) {
+                if (s[left] !== 9 && s[right] !== 9) {
+                    s[left] = 9;
+                    s[right] = 9;
+                    k = k - 2;
+                }
+            } else if (k === 1) {
+                if (s[left] === 9 && s[right] !== 9) {
+                    s[right] = 9;
+                    k--;
+                } else if (s[left] !== 9 && s[right] === 9) {
+                    s[left] = 9;
+                    k--;
+                } else if (left === start && isOdd=== true) {
+                    s[left] = 9;
+                    k--;
+                }
+            }
+        } else {
+            return s.join('')
+        }
+
+        left++;
+        right--;
+    }
 
 
+    return s.join('')
+
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+console.log('highestValuePalindrome(s, n, k)', highestValuePalindrome(s, n, k))
 
 
 
