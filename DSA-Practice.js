@@ -5527,130 +5527,2389 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
-// const s = '11331' k=4
-// const s = '13331' k=3
-// const s = '93339' k=1
-// const s = '93339' k=1
+// // const s = '11331' k=4
+// // const s = '13331' k=3
+// // const s = '93339' k=1
+// // const s = '93339' k=1
 
 
 
-// const s = '11331' k=4
-// const s = '13331' k=3  nonNineReplacement
-// const s = '93339' k=1
-// const s = '93339' k=1
+// // const s = '11331' k=4
+// // const s = '13331' k=3  nonNineReplacement
+// // const s = '93339' k=1
+// // const s = '93339' k=1
 
 
-// const s = '11331' k=3
-// const s = '13331' k=2  nonNineReplacement
-// const s = '93339' k=0
-// const s = '93339' k=0
+// // const s = '11331' k=3
+// // const s = '13331' k=2  nonNineReplacement
+// // const s = '93339' k=0
+// // const s = '93339' k=0
 
-// const s = '932239'
+// // const s = '932239'
 
-const s = '11331'
-// const s = '1234'
-const n = s.length;
-const k = 2;
-
-
-function highestValuePalindrome(s, n, k) {
-    if (k >= n) return new Array(n).fill(9).join('');
-
-    let nonNineReplacement = {}
+// const s = '11331'
+// // const s = '1234'
+// const n = s.length;
+// const k = 2;
 
 
-    
-    s = s.split('').map(item => +item)
-    
-    let left;
-    let right;
+// function highestValuePalindrome(s, n, k) {
+//     if (k >= n) return new Array(n).fill(9).join('');
+
+//     let nonNineReplacement = {}
+//     s = s.split('').map(item => +item)
+//     let left;
+//     let right;
+
+//     const isOdd = n % 2 === 1;
+//     if (isOdd) {
+//         left = Math.floor(n / 2);
+//         right = left;
+//     } else {
+//         left = Math.floor(n / 2) - 1;
+//         right = Math.floor(n / 2);
+//     }
+//     const start = left;
+
+//     for (let i = start; i >= 0; i--) {
 
 
-    const isOdd = n % 2 === 1;
-    if (isOdd) {
-        left = Math.floor(n / 2);
-        right = left;
-    } else {
-        left = Math.floor(n / 2) - 1;
-        right = Math.floor(n / 2);
-    }
-    // start in middle 
-    const start = left;
-    
-    for (let i = start; i >= 0; i--) {
+//         if (k > 0) {
+//             if (s[left] < s[right]) {
+//                 s[left] = s[right];
+//                 if (s[left] !== 9 && s[right] !== 9) {
+//                     nonNineReplacement[left] = true;
+//                 }
+//                 k--;
+//             } else if (s[left] > s[right]) {
+//                 s[right] = s[left];
+//                 if (s[left] !== 9 && s[right] !== 9) {
+//                     nonNineReplacement[left] = true;
+//                 }
+//                 k--;
+//             }
 
-        
-        if (k > 0) {
-            if (s[left] < s[right]) {
-                s[left] = s[right];
-                if (s[left] !== 9 && s[right] !== 9) {
-                    nonNineReplacement[left] = true;
-                }
-                k--;
-            } else if (s[left] > s[right]) {
-                s[right] = s[left];
-                if (s[left] !== 9 && s[right] !== 9) {
-                    nonNineReplacement[left] = true;
-                }
-                k--;
-            }
-            
-        }
-        
-        if (s[left] !== s[right]) return -1;
-        
-        left--;
-        right++;
-    }
-    
-    left = 0;
-    right = s.length - 1;
+//         }
 
-   
-        
-        for (let i = 0; i <= start; i++) {
-        if (k > 0) {
-            
-            if (nonNineReplacement[left]) {
-                s[left] = 9;
-                s[right] = 9;
-                k--;
-            }
-            
-            
-            if (k >= 2) {
-                if (s[left] !== 9 && s[right] !== 9) {
-                    s[left] = 9;
-                    s[right] = 9;
-                    k = k - 2;
-                }
-            } else if (k === 1) {
-                if (s[left] === 9 && s[right] !== 9) {
-                    s[right] = 9;
-                    k--;
-                } else if (s[left] !== 9 && s[right] === 9) {
-                    s[left] = 9;
-                    k--;
-                } else if (left === start && isOdd=== true) {
-                    s[left] = 9;
-                    k--;
-                }
-            }
-        } else {
-            return s.join('')
-        }
+//         if (s[left] !== s[right]) return -1;
 
-        left++;
-        right--;
-    }
+//         left--;
+//         right++;
+//     }
+
+//     left = 0;
+//     right = s.length - 1;
 
 
-    return s.join('')
 
-}
+//     for (let i = 0; i <= start; i++) {
+//         if (k > 0) {
+
+//             if (nonNineReplacement[left]) {
+//                 s[left] = 9;
+//                 s[right] = 9;
+//                 k--;
+//             }
 
 
-console.log('highestValuePalindrome(s, n, k)', highestValuePalindrome(s, n, k))
+//             if (k >= 2) {
+//                 if (s[left] !== 9 && s[right] !== 9) {
+//                     s[left] = 9;
+//                     s[right] = 9;
+//                     k = k - 2;
+//                 }
+//             } else if (k === 1) {
+//                 if (s[left] === 9 && s[right] !== 9) {
+//                     s[right] = 9;
+//                     k--;
+//                 } else if (s[left] !== 9 && s[right] === 9) {
+//                     s[left] = 9;
+//                     k--;
+//                 } else if (left === start && isOdd === true) {
+//                     s[left] = 9;
+//                     k--;
+//                 }
+//             }
+//         } else {
+//             return s.join('')
+//         }
+
+//         left++;
+//         right--;
+//     }
+
+
+//     return s.join('')
+
+// }
+
+
+// console.log('highestValuePalindrome(s, n, k)', highestValuePalindrome(s, n, k))
+
+// const n = 6
+
+// function staircase(n) {
+//     let spaces = new Array(n).fill(' ').join('')
+//     let hashtags = new Array(n).fill('#').join('')
+//     let line;
+//     for (let i = 1; i <= n; i++) {
+//         line = spaces.substr(i) + hashtags.substr(n - i);
+//         console.log(line)
+//     }
+
+// }
+// console.log('staircase(n)', staircase(n))
+
+
+// const candles = [1,1]
+
+// function birthdayCakeCandles(candles) {
+
+//     let counts = {}
+//     let max = -Infinity;
+
+//     for (let i = 0; i < candles.length; i++) {
+
+//         counts[candles[i]] = ++counts[candles[i]] || 1;
+//         if (candles[i] > max) {
+//             max = candles[i]
+//         }
+
+//     }
+
+//     return counts[max]
+// }
+
+// console.log('birthdayCakeCandles(candles)', birthdayCakeCandles(candles))
+
+
+// const s = '04:40:22PM'
+
+// function timeConversion(s) {
+//     let result = s
+//     let hour = s.substr(0, 2)
+//     if (s[s.length - 2] === 'P') {
+//         if (+hour < 12) {
+//             hour = (12 + +hour).toString()
+//         }
+//         if (+hour === 12) {
+//             hour = '12'
+//         }
+//         result = hour + s.substr(2, 6);
+//     } else  {
+//         if (hour === '12') {
+//             hour = '00'
+//         }
+//         result = hour + s.substr(2, 6);
+//     }
+
+//     return result
+// }
+
+// console.log('timeConversion(s)', timeConversion(s))
+
+
+
+
+
+// const s = 7
+// const t = 10
+// const a = 4
+// const b = 12
+// const apples = [-1, 5, 2]
+// const oranges = [-3, 5, -4]
+
+
+// function countApplesAndOranges(s, t, a, b, apples, oranges) {
+//     let samsApples = 0
+//     let samsOranges = 0
+//     for (let apple of apples) {
+//         if (onSamsHouse(a + apple)) {
+//             samsApples++
+//         }
+//     }
+//     for (let orange of oranges) {
+//         if (onSamsHouse(b + orange)) {
+//             samsOranges++
+//         }
+//     }
+//     console.log(samsApples)
+//     console.log(samsOranges)
+//     function onSamsHouse(xVal) {
+//         return (xVal >= s && xVal <= t)
+//     }
+// }
+
+// console.log('countApplesAndOranges(s, t, a, b, apples, oranges)', countApplesAndOranges(s, t, a, b, apples, oranges))
+
+
+
+
+
+// function organizingContainers(container) {
+
+
+// }
+
+
+// console.log('organizingContainers(container)', organizingContainers(container))
+
+
+
+
+
+// const prices = [1, 2, 3, 2]
+// //                +1 +1 -1
+
+// const prices = [1, 3, 2, 4, 1]
+// //                +2 -1 +2 -3 
+
+// const prices = [1000000,1,10,1000,10,10,100]
+
+
+
+// function stockmax(prices) {
+//     let amount = 0
+//     let diff
+//     let localMax = -Infinity
+//     let i = prices.length - 1;
+//     while (i >= 0) {
+//         if (prices[i] > localMax) {
+//             localMax = prices[i]
+//             if (prices[i - 1] <= prices[i]) {
+
+//                 while (prices[i - 1] <= localMax) {
+//                     diff = localMax - prices[i - 1]
+//                     i--
+//                     amount += diff
+//                 }
+//             } 
+//             i--
+//         } 
+
+//     }
+//     return amount
+
+// }
+
+// console.log('stockmax(prices)', stockmax(prices))
+
+
+
+
+
+// let h = [1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7];
+
+// const word = 'zaba'
+
+// function designerPdfViewer(h, word) {
+
+//     const heights = {}
+
+//     let maxHeight = -Infinity;
+//     let width = word.length;
+
+//     for (let i = 97; i < h.length + 97; i++) {
+//         heights[String.fromCharCode(i)] = h[i - 97]
+//     }
+
+//     for (let char of word) {
+//         if ( heights[char] > maxHeight) {
+//             maxHeight = heights[char]
+//         }
+//     }
+
+//     return maxHeight * width
+
+// }
+
+// console.log('designerPdfViewer(h, word)', designerPdfViewer(h, word))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const year = 2000;
+
+
+// function dayOfProgrammer(year) {
+
+//     const nonLeapYearCounts = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+//     const leapYearCounts = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+//     const nonLeapYearPDay = '13.09.'
+//     const leapYearPDay = '12.09.'
+
+//     if (year === 1918) return '26.09.1918'
+
+//     if (year <= 1917) {
+
+//         if (isJulianLeapYear(year)) return leapYearPDay + '' + year
+
+//     } else {
+//         if (isGregorianLeapYear(year)) return leapYearPDay + '' + year
+//     }
+
+//     return nonLeapYearPDay + '' + year
+
+
+
+
+// }
+
+
+// function isGregorianLeapYear(year) {
+
+//     if (year % 400 === 0) return true
+//     if (year % 100 === 0) return false;
+//     if (year % 4 === 0) return true;
+//     return false
+// }
+
+
+// function isJulianLeapYear(year) {
+
+//     if (year % 4 === 0) return true;
+//     return false
+// }
+
+
+// console.log('dayOfProgrammer(year)', dayOfProgrammer(year))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
