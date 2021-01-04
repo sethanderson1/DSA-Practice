@@ -5931,6 +5931,279 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// const arr = [1, 6, 5, 2, 4, 3]
+// //          +0 +4 +2 -2 -1 -3
+
+// const arr = [1, 2, 3, 5, 4]
+// //          +0 +0 +0 +1 -1 
+
+// const arr = [1, 2, 5, 3, 4]
+// //          +0 +0 +2 -1 -1 
+
+// const arr = [5, 1, 2, 3, 4]
+// //          +4 -1 -1 -1 -1
+
+// //            -2 +1
+// const arr = [3, 1, 2] y
+// //          +2 -1 -1
+
+// //            +1 -2
+// const arr = [2, 3, 1] y
+// //          +1 +1 -2
+
+// //            
+// const arr = [] n
+// //          
+
+// //            +2 -1
+// const arr = [1, 3, 2] n
+// //          +0 +1 -1
+// //            -1 -1
+// const arr = [3, 2, 1] n
+// //          +2 +0 -2
+// //            -1 +2
+// const arr = [2, 1, 3] n
+// //          +1 -1 +0
+
+// //            +1 +1 -3
+// const arr = [2, 3, 4, 1]
+// const arr = [2, 1, 3, 4]
+// const arr = [1, 3, 2, 4]
+// const arr = [1, 4, 3, 2]
+// const arr = [1, 2, 4, 3]
+// //          +
+
+// //            +2 -1 -2
+// const arr = [2, 4, 3, 1]
+// const arr = [2, 1, 4, 3]
+// const arr = [1, 4, 2, 3]
+// const arr = [1, 2, 3, 4]
+
+
+// const arr = [1, 3, 2, 4]
+// //          +0 +1 -1 +0
+
+// const arr = [1, 4, 3, 2]
+// //          +0 +2 +0 -2
+
+// const arr = [1, 2, 4, 3]
+// //          +0 +0 +1 -1
+
+// const arr = [3, 1, 4, 2]
+// //          +2 -1 +1 -2
+// const arr = [1, 4, 3, 2]
+// const arr = [1, 2, 4, 3]
+// //         
+
+
+// const arr = [1, 2, 4, 3, 6, 5]
+// //          +0 +0 +1 -1 +1 -1
+
+// const arr = [1, 2, 4, 5, 3, 6]
+// //          +0 +0 +1 +1 -2 +0
+
+// const arr = [1, 2, 3, 4, 5, 6]
+// //          
+
+// const arr = [6, 2, 4, 3, 1, 5]
+// //          +5 +0 +1 -1 -4 -1
+
+// const arr = [6, 2, 4, 3, 1, 5]
+// const arr = [6, 2, 1, 4, 3, 5]
+// const arr = [1, 6, 2, 4, 3, 5]
+// const arr = [1, 4, 6, 2, 3, 5]
+// const arr = [1, 2, 4, 6, 3, 5]
+// const arr = [1, 2, 3, 4, 6, 5]
+// const arr = [1, 2, 3, 5, 4, 6]
+// const arr = [1, 2, 3, 6, 5, 4]
+// const arr = [1, 2, 3, 4, 6, 5]
+
+// const k = 2
+// const arr = [0, 2, 2, 4]
+// //            +2 +2 
+// //              4
+
+// function pairs(k, arr) {
+//     let count = 0
+//     let hash = {}
+
+//     for (let i = 0; i < arr.length; i++) {
+//         hash[arr[i]] = ++hash[arr[i]] || 1;
+//     }
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (hash[arr[i] + k]) count++
+//     }
+
+//     // console.log('hash', hash)
+//     // console.log('count', count)
+//     return count
+// }
+
+// console.log('pairs(k, arr)', pairs(k, arr))
+
+
+
+// const arr = [4, 3, 2, 1] 2
+// //          +3 +1 -1 -3
+// const arr = [1, 2, 3, 4]
+
+
+// const arr = [2, 1, 4, 3] 2
+// //          +1 -1 +1 -1
+// const arr = [1, 2, 3, 4]
+
+
+// const arr = [2, 4, 1, 3] 3
+// //          +1 +2 -2 -1
+// const arr = [1, 2, 3, 4]
+
+// //            -2 -1 +2
+// const arr = [4, 2, 1, 3] 2
+// //          +3 +0 -2 -1
+
+// const arr = [5, 6, 4]
+// //    arr = [4, 6, 5]
+// // sorted = [4, 5, 6]
+// // indices = {
+// //     4:2
+// //     5:0
+// //     6:1
+// // }
+
+// // sortedArr = [1, 2, 3, 4]
+
+// const arr = [1, 4, 2, 3]
+
+// function lilysHomework(arr) {
+//     const orig = JSON.parse(JSON.stringify(arr))
+//     const sorted = arr.sort((a, b) => a - b)
+//     const indices = {}
+//     let swaps = 0
+//     for (let i = 0; i < orig.length; i++) {
+//         indices[orig[i]] = i;
+//     }
+//     console.log('indices', indices)
+
+//     for (let i = 0; i < sorted.length; i++) {
+//         console.log('orig[i]', orig[i])
+//         console.log('sorted[i]', sorted[i])
+//         if (orig[i] !== sorted[i]) {
+
+//             let swapInd = indices[sorted[i]]
+//             console.log('swapInd', swapInd)
+//             indices[orig[i]] = indices[orig[swapInd]]
+//             indices[orig[swapInd]] = i
+//             swap(i, swapInd)
+//             swaps++;
+
+//             console.log('orig', orig)
+//             console.log('indices', indices)
+
+
+//         }
+//     }
+
+//     console.log('swaps', swaps)
+//     function swap(i, j) {
+//         let temp = orig[i]
+//         orig[i] = orig[j]
+//         orig[j] = temp
+//     }
+
+// }
+// console.log('lilysHomework(arr)', lilysHomework(arr))
+
+//     -------- -------------- --------
+//  01 02 03 04 05 06 07 08 09 10 11 12
+//     h        h     h               h
+
+
+//     -----       --------       -----
+//  01 02 03 04 05 06 07 08 09 10 11 12
+//     h     h        h     h        h
+// const x = [2, 4, 7, 9, 12]
+// const k = 2
+// function hackerlandRadioTransmitters(x, k) {
+//     x.sort((a, b) => a - b)
+//     let map = {}
+//     let transmittersCount = 0
+//     x.forEach((val, i, arr) => {
+//         map[val] = i
+//     })
+//     let transmitters = []
+//     const range = x[x.length - 1] - x[0] + 1
+//     let i = 0
+//     while (i < x.length) {
+//         // // while (i < x[x.length - 1]) {
+//         // let isCovered = false
+//         // // let isCovered = covered(i)
+//         // if (!isCovered) {
+//         //     let trans = nextTrans(i)
+//         //     console.log('trans', trans)
+//         //     // if (trans !== undefined) {
+//         //     //     // while (x[i] < trans + k) {
+//         //     //     //     i++
+//         //     //     // }
+//         //     //     // i++
+//         //     // }
+//         // }
+
+//         let trans = nextTrans(i)
+//         console.log('trans', trans)
+
+//         i = map[trans] + 1
+//         console.log('map[trans]', map[trans])
+
+
+
+//         // i++
+//         console.log('i', i)
+//     }
+//     console.log('transmittersCount', transmittersCount)
+
+//     function nextTrans(i) {
+
+//         let idealInd = x[i] + k
+
+//         let j = idealInd;
+//         if (i === x.length - 1) return x[i]
+//         while (j > i) {
+
+//             if (map[j] !== undefined) {
+//                 transmittersCount++
+//                 transmitters.push(j)
+//                 return j
+//             }
+//             j--
+
+//         }
+
+//         return
+
+
+//     }
+
+// }
+
+// console.log('hackerlandRadioTransmitters(x, k)', hackerlandRadioTransmitters(x, k))
+
+
+
+
+// const nums = [2,7,6,8]
+// const target = 9
+
+// function twoSum(nums, target) {
+//     const complements = {}
+//     for (let i = 0; i < nums.length; i++) {
+//         if (complements[nums[i]] !== undefined) return [complements[nums[i]], i]
+//         complements[target-nums[i]] = i;
+//         console.log('complements', complements)
+//     }
+// };
+
+// console.log('twoSum(nums, target)', twoSum(nums, target))
 
 
 
@@ -5939,6 +6212,14 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// const l1 = [2, 4, 3]
+// const l2 = [5, 6, 4]
+
+
+// function ListNode(val, next) {
+//     this.val = (val === undefined ? 0 : val)
+//     this.next = (next === undefined ? null : next)
+// }
 
 
 
@@ -5946,44 +6227,113 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// function SLL() {
+//     this.head = null;
+// }
+
+// var addTwoNumbers = function (l1, l2) {
+
+//     let SLLeet = new SLL()
+//     SLLeet.head = new ListNode(7);
+//     let curNode = SLLeet.head
+//     let i = 0;
+
+//     let l1Int = arrToInt(l1)
+//     let l2Int = arrToInt(l2)
+
+//     let forwardSum = l1Int + l2Int
+
+//     let reversedSumStrArr = forwardSum.toString().split('')
+//     let reversedSumArr = reversedSumStrArr.map((val) => val = +val)
+
+//     let outputArr = reversedSumArr
+//     i = 0;
+//     while (i < outputArr.length - 1) {
+//         let newNode = new ListNode(outputArr[i + 1])
+//         curNode.next = newNode
+//         i++
+//         curNode = curNode.next
+//     }
+
+//     return SLLeet.head
+
+// };
+
+
+// function arrToInt(arr) {
+//     let str = ''
+//     for (let i = 0; i < arr.length; i++) {
+//         str += '' + arr[i]
+//     }
+//     return Number(str)
+// }
+
+
+// console.log('addTwoNumbers(l1, l2)', addTwoNumbers(l1, l2))
 
 
 
 
 
 
+// const SLL1 = new SinglyLinkedList()
+// SLL1.push(2)
+// SLL1.push(3)
+// SLL1.push(4)
+// // console.log('SLL1', SLL1)
+// const SLL2 = new SinglyLinkedList()
+// SLL2.push(5)
+// SLL2.push(6)
+// SLL2.push(4)
+// // console.log('SLL2', SLL2)
 
 
 
+// const l1 = SLL1.head
+// const l2 = SLL2.head
 
 
 
+// function ListNode(val, next) {
+//     this.val = (val === undefined ? 0 : val)
+//     this.next = (next === undefined ? null : next)
+// }
+// var addTwoNumbers = function (l1, l2) {
+//     var List = new ListNode(0);
+//     var head = List;
+//     var sum = 0;
+//     var carry = 0;
+
+//     while (l1 !== null || l2 !== null || sum > 0) {
+//         console.log('l1', l1)
+        
+//         if (l1 !== null) {
+//             sum = sum + l1.val;
+//             l1 = l1.next;
+//         }
+//         if (l2 !== null) {
+//             sum = sum + l2.val;
+//             console.log('sum', sum)
+//             l2 = l2.next;
+//         }
+//         if (sum >= 10) {
+//             carry = 1;
+//             sum = sum - 10;
+//         }
+
+//         head.next = new ListNode(sum);
+//         head = head.next;
+        
+//         sum = carry;
+//         carry = 0;
+        
+//     }
+
+//     return List.next;
+// };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log('addTwoNumbers(l1, l2)', addTwoNumbers(l1, l2))
 
 
 
