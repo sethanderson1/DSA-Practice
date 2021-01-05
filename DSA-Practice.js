@@ -6306,7 +6306,7 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 //     while (l1 !== null || l2 !== null || sum > 0) {
 //         console.log('l1', l1)
-        
+
 //         if (l1 !== null) {
 //             sum = sum + l1.val;
 //             l1 = l1.next;
@@ -6323,10 +6323,10 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 //         head.next = new ListNode(sum);
 //         head = head.next;
-        
+
 //         sum = carry;
 //         carry = 0;
-        
+
 //     }
 
 //     return List.next;
@@ -6340,6 +6340,121 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// const nums = [1, 3, 4, 2, 2]
+
+// var findDuplicate = function (nums) {
+//     const prevNums = {}
+//     for (let i = 0; i < nums.length; i++) {
+//         if (prevNums[nums[i]]) return nums[i]
+//         prevNums[nums[i]] = true;
+//     }
+// };
+
+// console.log('findDuplicate(nums)', findDuplicate(nums))
+
+
+
+// const n = 3
+
+// var generateMatrix = function (n) {
+
+//     const matrix = []
+//     for (let i = 0; i < n; i++) {
+//         matrix.push(new Array(n))
+//     }
+
+//     let direction = ['r', 'd', 'l', 'u']
+//     let curDir = direction[0]
+//     let step = 1;
+//     let row = 0;
+//     let col = 0;
+//     let numSteps = n
+//     let dirChanges = 0;
+
+//     while (numSteps > 0) {
+//         console.log('row', row)
+//         console.log('col', col)
+//         console.log('dirChanges', dirChanges)
+//         if (dirChanges % 2 === 1) {
+//             numSteps--
+//         }
+//         console.log('numSteps', numSteps)
+//         console.log('curDir', curDir)
+//         if (curDir === 'r') {
+//             let i = 0;
+//             while (i < numSteps) {
+//                 matrix[row][col] = step
+//                 console.log('step', step)
+//                 console.log('matrix', matrix)
+//                 col++
+//                 step++
+//                 i++
+//             }
+//             col--
+//             row++
+//             curDir = 'd'
+//         } else if (curDir === 'd') {
+//             let i = 0;
+//             while (i < numSteps) {
+//                 matrix[row][col] = step
+//                 console.log('row', row)
+//                 console.log('col', col)
+//                 console.log('matrix', matrix)
+//                 row++
+//                 step++
+//                 i++
+//             }
+//             row--
+//             col--
+//             curDir = 'l'
+//         } else if (curDir === 'l') {
+//             let i = 0;
+//             while (i < numSteps) {
+//                 matrix[row][col] = step
+//                 console.log('row', row)
+//                 console.log('col', col)
+//                 console.log('matrix', matrix)
+//                 col--
+//                 step++
+//                 i++
+//             }
+//             col++
+//             row--
+//             curDir = 'u'
+//         } else if (curDir === 'u') {
+//             let i = 0;
+//             console.log('row', row)
+//             console.log('col', col)
+//             while (i < numSteps) {
+//                 matrix[row][col] = step
+//                 console.log('row', row)
+//                 console.log('col', col)
+//                 console.log('matrix', matrix)
+//                 row--
+//                 step++
+//                 i++
+//             }
+//             row++
+//             col++
+//             console.log('row', row)
+//             console.log('col', col)
+            
+//             curDir = 'r'
+//         }
+
+
+//         dirChanges++
+
+//     };
+//     return matrix
+
+// }
+
+// console.log('generateMatrix(n)', generateMatrix(n))
+// const mat = generateMatrix(4)
+// for (let i = 0; i < mat.length; i++) {
+//     console.log(mat[[i]])
+// }
 
 
 
@@ -6351,21 +6466,107 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// const n = 3
+
+// var generateMatrix = function (n) {
+
+//     const matrix = []
+//     for (let i = 0; i < n; i++) {
+//         matrix.push(new Array(n))
+//     }
+
+//     let direction = ['r', 'd', 'l', 'u']
+//     let curDir = direction[0]
+//     let step = 1;
+//     let row = 0;
+//     let col = 0;
+//     let numSteps = n
+//     let dirChanges = 0;
+
+//     while (numSteps > 0) {
+//         console.log('row', row)
+//         console.log('col', col)
+//         console.log('dirChanges', dirChanges)
+//         if (dirChanges % 2 === 1) {
+//             numSteps--
+//         }
+//         console.log('numSteps', numSteps)
+//         console.log('curDir', curDir)
+//         if (curDir === 'r') {
+//             let i = 0;
+//             while (i < numSteps) {
+//                 matrix[row][col] = step
+//                 console.log('step', step)
+//                 console.log('matrix', matrix)
+//                 col++
+//                 step++
+//                 i++
+//             }
+//             col--
+//             row++
+//             curDir = 'd'
+//         } else if (curDir === 'd') {
+//             let i = 0;
+//             while (i < numSteps) {
+//                 matrix[row][col] = step
+//                 console.log('row', row)
+//                 console.log('col', col)
+//                 console.log('matrix', matrix)
+//                 row++
+//                 step++
+//                 i++
+//             }
+//             row--
+//             col--
+//             curDir = 'l'
+//         } else if (curDir === 'l') {
+//             let i = 0;
+//             while (i < numSteps) {
+//                 matrix[row][col] = step
+//                 console.log('row', row)
+//                 console.log('col', col)
+//                 console.log('matrix', matrix)
+//                 col--
+//                 step++
+//                 i++
+//             }
+//             col++
+//             row--
+//             curDir = 'u'
+//         } else if (curDir === 'u') {
+//             let i = 0;
+//             console.log('row', row)
+//             console.log('col', col)
+//             while (i < numSteps) {
+//                 matrix[row][col] = step
+//                 console.log('row', row)
+//                 console.log('col', col)
+//                 console.log('matrix', matrix)
+//                 row--
+//                 step++
+//                 i++
+//             }
+//             row++
+//             col++
+//             console.log('row', row)
+//             console.log('col', col)
+            
+//             curDir = 'r'
+//         }
 
 
+//         dirChanges++
 
+//     };
+//     return matrix
 
+// }
 
-
-
-
-
-
-
-
-
-
-
+// console.log('generateMatrix(n)', generateMatrix(n))
+// const mat = generateMatrix(4)
+// for (let i = 0; i < mat.length; i++) {
+//     console.log(mat[[i]])
+// }
 
 
 
