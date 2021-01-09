@@ -1,6 +1,6 @@
 const nodemon = require('nodemon')
 // const { LinkedList, _Node } = require('./LinkedList')
-const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree, MaxBinaryHeap, PriorityQueue, NodePQ, HashTable, Graph, WeightedGraph } = require('./DS')
+const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree, MaxBinaryHeap, PriorityQueue, NodePQ, HashTable, Graph, WeightedGraph } = require('./DS')
 
 
 
@@ -6438,7 +6438,7 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 //             col++
 //             console.log('row', row)
 //             console.log('col', col)
-            
+
 //             curDir = 'r'
 //         }
 
@@ -6550,7 +6550,7 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 //             col++
 //             console.log('row', row)
 //             console.log('col', col)
-            
+
 //             curDir = 'r'
 //         }
 
@@ -6582,11 +6582,51 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// // const digits = [9,9,9]
+// const digits = [9,9]
+// // const digits = [6, 1, 4, 5, 3, 9, 0, 1, 9, 5, 1, 8, 6, 7, 0, 5, 5, 4, 9]
+// var plusOne = function (digits) {
+//     const end = digits.length - 1
+//     let lastDigitSum = digits[end] + 1
+//     let carry
+//     let backWardsResults = []
+//     let sum
 
+//     if (lastDigitSum < 10) {
+//         digits[end] = lastDigitSum;
+//         return digits
+//     }
 
+//     let i = end
+//     carry = 1
+//     sum = 10
+//     while (i >= 0) {
+//         // console.log('sum', sum)
+//         if (sum >= 10) {
+//             carry = 1
+//         } else {
+//             carry = 0
+//         }
+//         if ( i === 0) sum = digits[i] + carry
+//         if (sum === 10) {
+//             if (digits[i] === 9) {
+//                 backWardsResults.push(0)
+//             } else {
+//                 backWardsResults.push(digits[i] + carry)
+//             }
+//             if (i === 0 ) backWardsResults.push(1)
+//         } else {
+//             backWardsResults.push(digits[i] + carry)
+//         }
+//         sum = digits[i] + carry
+//         i--
+//     }
+//    return backWardsResults.reverse()
 
+// };
 
 
+// console.log('plusOne(digits)', plusOne(digits))
 
 
 
@@ -6598,25 +6638,74 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// const digits = [9,9,9,9]
 
+// function plusOne(digits) {
 
+//     const n = digits.length
 
+//     for (let i = n - 1; i >= 0; i--) {
+//         if ( digits[i] < 9) {
+//             digits[i]++
+//             return digits
+//         }
+//         digits[i] = 0
+//     }
 
+//     let newArr = new Array(n+1).fill(0)
+//     newArr[0] = 1;
+//     return newArr
 
+// }
 
 
 
+// console.log('plusOne(digits)', plusOne(digits))
 
 
+// const nums = [2, 0,2,0,0,2,0]
+// const val = 2
 
+// var removeElement = function (nums, val) {
+//     let left
+//     let right
+//     let l = 0
+//     let r = nums.length - 1
+//     let len = nums.length
 
+//     while (l <= r) {
 
+//         left = nums[l]
+//         // console.log('l', l)
+//         right = nums[r]
+//         if (left === val && right === val) {
+//             len--
+//             r--
+//         } else if (left === val && right !== val) {
+//             nums[l] = right
+//             len--
+//             r--
+//             l++
+//             // console.log('len', len)
+//         } else if (left !== val && right === val) {
+//             len--
+//             r--
+//             l++
+//         } else if (left !== val && right !== val) {
+//             l++
 
+//         }
 
 
+//     };
 
+//     // console.log('nums', nums)
 
+//     // console.log('len', len)
+//     return  len
 
+// }
+// console.log('removeElement(nums, val)', removeElement(nums, val))
 
 
 
@@ -6624,24 +6713,73 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// const nums = [2, 3, 2, 2, 3, 5, 2, 0]
+// const val = 2
 
+// var removeElement = function (nums, val) {
+//     let m = 0;
+//     for (let i = 0; i < nums.length; i++) {
 
+//         if (nums[i] !== val) {
+//             nums[m] = nums[i];
+//             m++;
+//         }
+//     }
+//     console.log('nums', nums)
 
+//     return m;
 
+// }
+// console.log('removeElement(nums, val)', removeElement(nums, val))
 
 
 
 
+// const nums = [1,2,10] 
+// const target = 9
 
+// var searchInsert = function(nums, target) {
+// let i = 0
+//     while ( i < nums.length) {
+//         if ( nums[i] >= target) {
+//             return i
+//         } 
+//         i++
+//     }
+//     return i
+// };
 
 
+// console.log('searchInsert(nums, target)', searchInsert(nums, target))
 
 
 
+// const intervals = [[1,4],[0,4]]
+// // const intervals = [[1, 3], [1, 10], [5, 18]]
 
+// var merge = function (intervals) {
 
+//     intervals.sort((a, b) => a[0] - b[0])
+//     let output = [intervals[0]]
+//     let i = 1;
+//     let j = 0
+//     while (i < intervals.length ) {
+//         let AoverlapsB = output[j][1] >= intervals[i][0]
+//         if (AoverlapsB) {
+//             output[j] = [Math.min(output[j][0], intervals[i][0]),
+//             Math.max(output[j][1], intervals[i][1])]
+//             j = output.length - 1
+//         } else {
+//             j++
+//             output[j] = intervals[i]
+//         }
+//         i++
+//     }
+//     return output
+// };
 
 
+// console.log('merge(intervals)', merge(intervals))
 
 
 
@@ -6651,20 +6789,52 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// const n = 4;
+// var climbStairs = function (n) {
 
+//     if (n <= 0) return 0;
+//     if (n == 1) return 1;
+//     if (n == 2) return 2;
 
+//     let one_step_before = 2;
+//     let two_steps_before = 1;
+//     let all_ways = 0;
 
+//     for (let i = 2; i < n; i++) {
+//         console.log('i', i)
+//         console.log('one_step_before', one_step_before)
+//         console.log('two_steps_before', two_steps_before)
+//         console.log('all_ways', all_ways)
+//         all_ways = one_step_before + two_steps_before;
+//         two_steps_before = one_step_before;
+//         one_step_before = all_ways;
+//     }
+//     return all_ways;
 
+// };
+// console.log('climbStairs(n)', climbStairs(n))
 
 
 
+// const n = 4;
+// var climbStairs = function (n) {
 
+//     const dp = new Array(n + 1)
 
+//     dp[0] = 1;
+//     dp[1] = 1;
 
+//     for (let i = 2; i <= n; i++) {
+//         dp[i] = dp[i - 2] + dp[i - 1]
+//         console.log('dp', dp)
 
+//     }
 
+//     return dp[n]
 
 
+// };
+// console.log('climbStairs(n)', climbStairs(n))
 
 
 
@@ -6675,14 +6845,120 @@ const { SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree
 
 
 
+// const arr = [1,2,3]
 
+// function largestToRight(arr) {
+//     let max = arr[arr.length - 1]
+//     if (arr.length === 1) return [-1]
+//     for (let i = arr.length - 2; i >=0; i--) {
 
+//         max = Math.max(arr[i], arr[i + 1])
+//         arr[i] = max
+//     }
+//     arr[arr.length - 1] = -1
+//     return arr
+// }
 
+// console.log('largestToRight(arr)', largestToRight(arr))
 
 
+// const SLL = new SinglyLinkedList()
 
+// SLL.push(1)
+// SLL.push(2)
+// // SLL.push(3)
+// // SLL.push(4)
+// // SLL.push(5)
+// // console.log('SLL', SLL)
 
 
+// var reverseList = function (head) {
+
+//     if (head === null || head.next === null) return head
+
+//     reversedListHead = reverseList(head.next)
+//     // console.log('reversedListHead', reversedListHead)
+//     head.next.next = head
+//     head.next = null
+//     // console.log('head', head)
+//     return reversedListHead
+
+
+// };
+
+// reverseList(SLL.head)
+
+
+
+
+
+// const s = []
+
+// var isValid = function (s) {
+
+//     const stack = []
+//     for (let i = 0; i < s.length; i++) {
+//         if (s[i] === '[' || s[i] === '{' || s[i] === '(') {
+//             stack.push(s[i])
+//         }
+
+//         if ((s[i] === ']' && stack.pop() !== '[')
+//             || (s[i] === '}' && stack.pop() !== '{')
+//             || (s[i] === ')' && stack.pop() !== '(')) {
+//             return false
+//         }
+//     }
+
+//     return stack.length === 0 ? true : false
+
+
+// };
+
+// console.log('isValid(s)', isValid(s))
+
+
+
+
+
+// const nums = [2,2]
+
+// var containsDuplicate = function(nums) {
+//     const seen = new Set()
+//     for ( let num of nums ) {
+//         if ( seen.has(num)) return true
+//         seen.add(num)
+//     }    
+//     return false
+// };
+
+
+// console.log('containsDuplicate(nums)', containsDuplicate(nums))
+
+
+
+
+// const prices = [1, 9, 3, 14, 0, 19]
+
+// var maxProfit = function (prices) {
+//     let maxProfit = 0
+//     let curProfit = 0
+//     let curMin = Infinity
+
+//     for (let i = 0; i < prices.length - 1; i++) {
+//         curMin = Math.min(prices[i], curMin)
+//         curProfit = prices[i + 1] - curMin
+//         maxProfit = Math.max(curProfit, maxProfit)
+
+//     }
+
+//     return maxProfit
+
+
+
+// };
+
+
+// console.log('maxProfit(prices)', maxProfit(prices))
 
 
 

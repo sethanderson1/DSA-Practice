@@ -952,7 +952,8 @@ module.exports = {
     NodePQ,
     HashTable,
     Graph,
-    WeightedGraph
+    WeightedGraph,
+    SSLNode
 }
 
 
