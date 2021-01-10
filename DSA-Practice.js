@@ -6967,28 +6967,54 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
+// const nums = [1, 0, 0, 3, 12]
 
+// var moveZeroes = function (nums) {
 
-var moveZeroes = function(nums) {
-    
-};
+//     let leftMostZero = 0;
 
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] !== 0) {
+//             let temp = nums[leftMostZero]
+//             nums[leftMostZero] = nums[i]
+//             nums[i] = temp
+//             leftMostZero++
+//         }
+//     }
 
+//     console.log('nums', nums)
 
+//     return nums
+// };
 
 
 
 
 
+// console.log('moveZeroes(nums)', moveZeroes(nums))
 
 
 
 
+// const nums = [1, 1, 3, 2, 2, 2]
 
+// var singleNumber = function (nums) {
+//     const justOne = new Set()
 
+//     for (let num of nums) {
+//         if (!justOne.has(num)) {
+//             justOne.add(num)
+//         } else {
+//             justOne.delete(num)
+//         }
+//         console.log('justOne', justOne)
+//     }
 
+//     return [...justOne][0]
 
+// };
 
+// console.log('singleNumber(nums)', singleNumber(nums))
 
 
 
@@ -6997,14 +7023,59 @@ var moveZeroes = function(nums) {
 
 
 
+// const nums = [1, 2, 3, 4, 5, 6, 7]
+// // const nums = [1, 2, 3, 4]
+// const k = 3
 
+// var rotate = function (nums, k) {
+//     // k = k % nums.length
+//     // let i = nums.length - 1
 
+//     // while (k > 0) {
 
+//     //     let j = i
+//     //     while (j > 0) {
+//     //         swap(nums, j, j - 1)
+//     //         j--
+//     //     }
+//     //     k--
 
 
+//     // }
+//     // console.log('nums', nums)
+//     k = k % nums.length;
+//     let count = 0;
+//     let startInd = 0
+//     let curInd = startInd;
+//     console.log('startInd', startInd)
+//     console.log('curInd', curInd)
+//     let prevVal = nums[startInd];
+//     console.log('prevVal', prevVal)
+//     while (count < nums.length) {
+//         console.log('count', count)
+//         let nextInd = (curInd + k) % nums.length;
+//         console.log('nextInd', nextInd)
+//         let tempVal = nums[nextInd];
+//         console.log('tempVal', tempVal)
+//         nums[nextInd] = prevVal;
+//         console.log('nums[nextInd]', nums[nextInd])
+//         prevVal = tempVal;
+//         console.log('prevVal', prevVal)
+//         curInd = nextInd;
+//         console.log('curInd', curInd)
+//         count++;
+//         console.log('nums', nums)
+//     }
+// };
 
+// function swap(arr, i, j) {
+//     const temp = arr[i]
+//     arr[i] = arr[j]
+//     arr[j] = temp
+// }
 
 
+// console.log('rotate(nums,k)', rotate(nums, k))
 
 
 
@@ -7018,9 +7089,36 @@ var moveZeroes = function(nums) {
 
 
 
+// const nums2 = [4, 4, 5, 9]
+// const nums1 = [3, 4, 4, 4, 8, 9, 9, 10]
 
+// var intersect = function (nums1, nums2) {
+//     const hash = {}
+//     const intersection = []
+//     let smallArr
+//     let bigArr
+//     if ( nums1.length >= nums2.length) {
+//         smallArr = nums2
+//         bigArr = nums1
+//     } else {
+//         smallArr = nums1
+//         bigArr = nums2
+//     }
+//     for (let num of smallArr) {
+//         hash[num] = ++hash[num] || 1
+//     }
+//     console.log('hash', hash)
+//     for (let num of bigArr) {
+//         if (hash[num] > 0) {
+//             intersection.push(num)
+//             --hash[num]
+//         }
+//     }
+//     console.log('intersection', intersection)
+// };
 
 
+// console.log('intersect(nums1,nums2)', intersect(nums1, nums2))
 
 
 
@@ -7050,6 +7148,43 @@ var moveZeroes = function(nums) {
 
 
 
+
+
+
+// const s = 'IV'
+
+
+// var romanToInt = function (s) {
+//     const romanVal = {
+//         'I': 1,
+//         'V': 5,
+//         'X': 10,
+//         'L': 50,
+//         'C': 100,
+//         'D': 500,
+//         'M': 1000,
+//     }
+
+//     let total = 0
+//     let i = 0
+//     while (i < s.length) {
+//         if (romanVal[s[i]] < romanVal[s[i + 1]]) {
+//             total += romanVal[s[i + 1]] - romanVal[s[i]]
+//             i = i + 2
+//         } else {
+//             total+= romanVal[s[i]]
+//             i++
+//         }
+//         console.log('total', total)
+
+//     }
+//     return total
+
+
+// };
+
+
+// console.log('romanToInt(s)', romanToInt(s))
 
 
 
