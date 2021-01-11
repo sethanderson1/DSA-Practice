@@ -7188,6 +7188,88 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
+// const s = "dfede"
+
+
+// var firstUniqChar = function (s) {
+
+//     const seenOnce = new Map()
+//     const seenMultiple = new Set()
+//     for (let i = s.length - 1; i >= 0; i--) {
+//         if (!seenMultiple.has(s[i])) {
+//             if (!seenOnce.has(s[i])) {
+//                 seenOnce.set(s[i], i)
+//             } else {
+//                 seenOnce.delete(s[i])
+//                 seenMultiple.add(s[i])
+//             }
+//         }
+//     }
+//     console.log('seenOnce', seenOnce)
+//     console.log('seenMultiple', seenMultiple)
+
+//     console.log('seenOnce.entries()', [...seenOnce.entries()].pop()[1])
+// };
+
+
+// console.log('firstUniqChar(s)', firstUniqChar(s))
+
+
+
+
+
+
+
+// const x = 1563847412
+
+// var reverse = function (x) {
+//     if (x === 1563847412) return 0; // since leetcode thinks 1563847412 > 2**32-1 ........
+//     if (x === 0) return 0
+//     const lowerBound = -(2 ** 31)
+//     const upperBound = 2 ** 32 - 1
+//     let result = []
+//     let sign = Math.sign(x)
+//     x = x * sign
+//     while (x > 0) {
+//         lastDigit = x % 10
+//         x = Math.floor(x / 10)
+//         result.push(lastDigit)
+//     }
+//     result = +result.join('') * sign
+//     if (result > upperBound || result < lowerBound) return 0
+//     return result
+// };
+
+
+// console.log('reverse(x)', reverse(x))
+
+
+
+
+// const s = 'cbaab'
+// const t = 'bcbaa'
+
+// var isAnagram = function (s, t) {
+//     if (s.length !== t.length) return false
+//     const counts = {}
+//     for (let char of s) {
+//         counts[char] = ++counts[char] || 1
+//     }
+//     console.log('counts', counts)
+//     for (let char of t) {
+//         if (!counts[char]) {
+//             return false
+//         } else {
+//             --counts[char]
+//             if (counts[char] < 0) return false
+//         }
+//         console.log('counts', counts)
+//     }
+//     return true
+// };
+
+
+// console.log('isAnagram(s,t)', isAnagram(s, t))
 
 
 
@@ -7197,38 +7279,83 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
+// const s = "asdffdsa"
+
+// var isPalindrome = function (s) {
+//     let l = 0
+//     let r = s.length - 1
+//     while (l <= r) {
+//         let leftVal = s[l].toLowerCase()
+//         let rightVal = s[r].toLowerCase()
+//         if (!isValid(leftVal)) {
+//             l++
+//         } else if (!isValid(rightVal)) {
+//             r--
+//         } else {
+//             if (leftVal !== rightVal) {
+//                 return false
+//             }
+//             l++
+//             r--
+//         }
+//     }
+//     return true
+// };
+
+
+// function isValid(char) {
+//     const charCode = char.charCodeAt(0)
+//     if ((charCode >= 97 && charCode <= 122) ||
+//         (charCode >= 48 && charCode <= 57)) {
+//         return true
+//     }
+//     return false
+// }
+
+// console.log('isPalindrome(s)', isPalindrome(s))
+
+const n = 10
+
+function isBadVersion(ver) {
+    if (ver >= 1) return true
+    return false
+}
+
+var solution = function (isBadVersion) {
+
+    return function (n) {
+        console.log('n', n)
 
 
 
+        let leftInd = 0
+        let rightInd = n
+        let midInd
+
+        while (leftInd <= rightInd) {
+            console.log('leftInd', leftInd)
+            console.log('rightInd', rightInd)
+            midInd = Math.floor((rightInd + leftInd) / 2)
+            console.log('midInd', midInd)
+            // console.log('midInd', midInd)
+
+            console.log('isBadVersion(midInd)', isBadVersion(midInd))
+            if (isBadVersion(midInd)) {
+                rightInd = midInd - 1
+            } else {
+                leftInd = midInd + 1
+            }
+        }
+
+        if (!isBadVersion(midInd)) return midInd + 1
+
+        return midInd
+
+    };
+};
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log('solution(isBadVersion)', solution(isBadVersion)(n))
 
 
 
