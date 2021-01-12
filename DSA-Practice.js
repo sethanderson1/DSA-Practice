@@ -7314,73 +7314,131 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 // console.log('isPalindrome(s)', isPalindrome(s))
 
-const n = 10
+// const n = 10
 
-function isBadVersion(ver) {
-    if (ver >= 1) return true
-    return false
-}
+// function isBadVersion(ver) {
+//     if (ver >= 1) return true
+//     return false
+// }
 
-var solution = function (isBadVersion) {
+// var solution = function (isBadVersion) {
 
-    return function (n) {
-        console.log('n', n)
-
-
-
-        let leftInd = 0
-        let rightInd = n
-        let midInd
-
-        while (leftInd <= rightInd) {
-            console.log('leftInd', leftInd)
-            console.log('rightInd', rightInd)
-            midInd = Math.floor((rightInd + leftInd) / 2)
-            console.log('midInd', midInd)
-            // console.log('midInd', midInd)
-
-            console.log('isBadVersion(midInd)', isBadVersion(midInd))
-            if (isBadVersion(midInd)) {
-                rightInd = midInd - 1
-            } else {
-                leftInd = midInd + 1
-            }
-        }
-
-        if (!isBadVersion(midInd)) return midInd + 1
-
-        return midInd
-
-    };
-};
+//     return function (n) {
+//         console.log('n', n)
 
 
-console.log('solution(isBadVersion)', solution(isBadVersion)(n))
+
+//         let leftInd = 0
+//         let rightInd = n
+//         let midInd
+
+//         while (leftInd <= rightInd) {
+//             console.log('leftInd', leftInd)
+//             console.log('rightInd', rightInd)
+//             midInd = Math.floor((rightInd + leftInd) / 2)
+//             console.log('midInd', midInd)
+//             // console.log('midInd', midInd)
+
+//             console.log('isBadVersion(midInd)', isBadVersion(midInd))
+//             if (isBadVersion(midInd)) {
+//                 rightInd = midInd - 1
+//             } else {
+//                 leftInd = midInd + 1
+//             }
+//         }
+
+//         if (!isBadVersion(midInd)) return midInd + 1
+
+//         return midInd
+
+//     };
+// };
 
 
+// console.log('solution(isBadVersion)', solution(isBadVersion)(n))
 
 
 
 
+// const nums = [2, 0, -1, -1, -4, 1]
+
+// var threeSum = function (nums) {
+//     if (nums.length <= 2) return []
+//     const tripletHash = {}
+//     const res = []
+//     for (let i = 0; i < nums.length; i++) {
+//         // console.log('i', i)
+//         let fixed = nums[i]
+//         let target = 0 - fixed
+//         let tripletArr = twoSum(nums, i, target, fixed, tripletHash)
+//         console.log('tripletArr', tripletArr)
+//         if (tripletArr.length > 0) {
+//             res.push(...tripletArr)
+//         }
+
+//     }
+//     console.log('tripletHash', tripletHash)
+//     console.log('res', res)
 
 
+// };
+
+// console.log('threeSum(nums)', threeSum(nums))
 
 
+// function twoSum(nums, i, target, fixed, tripletHash) {
+//     console.log('target', target)
+//     const map = {}
+//     let output = []
+//     for (i = i + 1; i < nums.length; i++) {
+//         console.log('i', i)
+//         // console.log('i', i)
+//         // console.log('map', map)
+//         let val = nums[i]
+//         if (map[val]) {
+//             let sortedTriplet = [fixed, val, target - val].sort((a, b) => a - b)
+//             console.log('sortedTriplet', sortedTriplet)
+//             if (!tripletHash[sortedTriplet]) output.push(sortedTriplet)
+//             tripletHash[sortedTriplet] = true
+//         } else {
+//             map[target - val] = ++map[target - val] || 1
+//         }
+//     }
+//     return output
+
+// }
 
 
+// const s = "abcabcd"
 
 
+// var lengthOfLongestSubstring = function (s) {
+//     let start = 0;
+//     let len = 0;
+//     let map = new Map()
+//     for (let i = 0; i < s.length; i++) {
+//         let char = s[i]
+//         console.log('start', start)
+//         console.log('i', i)
+//         console.log('char', char)
+//         console.log('map.get(char)', map.get(char))
+//         console.log('map.get(char) >= start', map.get(char) >= start)
+//         if (map.get(char) >= start) {
+//             start = map.get(char) + 1
+//             console.log('start1', start)
+//         }
+//         console.log('s.substr(start,i)', s.substr(start,i))
+//         len = Math.max(len, i - start + 1)
+//         // console.log('i - start + 1', i - start + 1)
+//         console.log('len', len)
+//         map.set(char, i)
+//     }
 
+//     return len
 
+// };
 
-
-
-
-
-
-
-
-
+// console.log('lengthOfLongestSubstring(s)', lengthOfLongestSubstring(s))
 
 
 
