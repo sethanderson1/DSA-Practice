@@ -7443,16 +7443,88 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
+const SLL1 = new SinglyLinkedList()
+const SLL2 = new SinglyLinkedList()
+
+SLL1.push(1)
+SLL1.push(3)
+SLL1.push(4)
+
+SLL2.push(1)
+SLL2.push(2)
+SLL2.push(5)
+
+// 1 --> 3 --> 4
+// 1 --> 2 --> 5
+
+// temp = head1
+// head1.next = head2
 
 
 
+// function mergeTwoLists(head1, head2) {
+//     const newHead = head1.val <= head2.val ? head1 : head2;
+//     while (head1 && head2) {
+//         console.log('newHead', newHead)
+//         console.log('head1.val', head1.val)
+//         console.log('head2.val', head2.val)
+//         if (head1.val <= head2.val) {
+//             temp = head1.next
+//             head1.next = head2
+//             head1 = temp
+//             head2 = head2.next
+//         } else {
+//             temp = head2.next
+//             head2.next = head1
+//             head2 = temp
+//             head1 = head1.next
+//         }
+//     }
+
+//     traverseSSL(newHead)
+
+// }
+
+// function traverseSSL(head) {
+//     while (head) {
+//         console.log(head.val)
+//         head = head.next
+//     }
+// }
+
+// console.log('mergeTwoLists(SLL1,SLL2)', mergeTwoLists(SLL1.head, SLL2.head))
 
 
+// const arr = [1, 2, 3, 4, 1, 2, 3, 4, 5]
+
+// function longestIncreasingSubsequence(arr) {
+//     if (arr.length === 1) return 1
+//     if (arr.length === 0) return 0
+//     let l = 0
+//     let r = 1
+//     let len = 1
+//     let maxLen = 0
+//     while (r < arr.length) {
+//         let left = arr[l]
+//         let right = arr[r]
+//         if (right > left) {
+//             len++
+//         } else {
+//             len = 1
+//             console.log('arr[l]', arr[l])
+//             console.log('arr[r]', arr[r])
+//         }
+//         l++
+//         r++
+//         console.log('len', len)
+//         maxLen = Math.max(maxLen, len)
+//         console.log('maxLen', maxLen)
+//     }
 
 
+// }
 
-
-
+// console.log('longestIncreasingSubsequence(arr)', longestIncreasingSubsequence(arr))
 
 
 
