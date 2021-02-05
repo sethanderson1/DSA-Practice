@@ -464,9 +464,9 @@ class BinarySearchTree {
         let curr = this.root;
 
         function traverse(node) {
-            data.push(node.val);
-            if (node.right) traverse(node.right);
             if (node.left) traverse(node.left);
+            if (node.right) traverse(node.right);
+            data.push(node.val);
         }
         traverse(curr);
         return data;
@@ -789,8 +789,7 @@ class Graph {
 
         visited[start] = true;
         while (stack.length) {
-            console.log('stack', stack)
-            vertex = stack.pop();
+             vertex = stack.pop();
             result.push(vertex);
             this.adjacencyList[vertex].forEach(neighbor => {
                 if (!visited[neighbor]) {

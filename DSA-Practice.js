@@ -7443,16 +7443,16 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
-const SLL1 = new SinglyLinkedList()
-const SLL2 = new SinglyLinkedList()
+// const SLL1 = new SinglyLinkedList()
+// const SLL2 = new SinglyLinkedList()
 
-SLL1.push(1)
-SLL1.push(3)
-SLL1.push(4)
+// SLL1.push(1)
+// SLL1.push(3)
+// SLL1.push(4)
 
-SLL2.push(1)
-SLL2.push(2)
-SLL2.push(5)
+// SLL2.push(1)
+// SLL2.push(2)
+// SLL2.push(5)
 
 // 1 --> 3 --> 4
 // 1 --> 2 --> 5
@@ -7527,69 +7527,228 @@ SLL2.push(5)
 // console.log('longestIncreasingSubsequence(arr)', longestIncreasingSubsequence(arr))
 
 
+// const matrix = [[1,1,1],[1,0,1],[1,1,1]]
 
+// var setZeroes = function(matrix) {
 
+// };
 
+// console.log('setZeroes(matrix)', setZeroes(matrix))
 
 
+// const arr = [0, 1, 0, 0]
 
+// function shuffleArray(arr) {
+//     let total1 = 0
+//     let total2 = 0
+//     let total3 = 0
+//     let total4 = 0
+//     for (let j = 0; j < 100000; j++) {
 
+//         for (let i = 0; i < arr.length; i++) {
+//             let temp = arr[i]
+//             let randInd = Math.floor(Math.random() * arr.length)
+//             arr[i] = arr[randInd]
+//             arr[randInd] = temp
+//             // console.log('arr', arr)
 
+//         }
+//         total1 += arr[0]
+//         total2 += arr[1]
+//         total3 += arr[2]
+//         total4 += arr[3]
+//     }
+//     console.log('[total1,total2,total3,total4]', [total1,total2,total3,total4])
+// }
 
+// console.log('shuffleArray(arr)', shuffleArray(arr))
 
 
 
+// const s = 'jasdoifjasdfk'
 
+// function findLongestSubstring(s) {
 
+//     let l = 0
+//     let set = new Set()
+//     let max = 0
 
+//     for (let i = 0; i < s.length; i++) {
+//         console.log('i', i)
 
+//         console.log('set', set)
+//         console.log('s.slice(l,i)', s.slice(l, i + 1))
+//         while (set.has(s[i])) {
+//             console.log('set w', set)
+//             set.delete(s[l])
+//             ++l
+//         }
+//         set.add(s[i])
+//         max = Math.max(max, i - l + 1)
+//     }
 
+//     return max
 
 
+// }
 
+// console.log('findLongestSubstring(s)', findLongestSubstring(s))
 
 
 
+// const SLL = new SinglyLinkedList()
 
+// SLL.push(1)
+// SLL.push(2)
+// SLL.push(3)
+// SLL.push(4)
 
+// // 1 -> 2 -> 3 -> 4
+// //      
 
+// const node = SLL.head.next
+// // console.log('node', node)
 
+// var deleteNode = function (node) {
 
+//     while (node) {
 
+//         node.val = node.next && node.next.val
+//         console.log('node.val', node.val)
+//         node = node.next
+//         traverseSSL(SLL.head)
+//         console.log('SLL', SLL)
+//     };
 
+//     function traverseSSL(head) {
+//         while (head) {
+//             console.log(head.val)
+//             head = head.next
+//         }
+//     }
 
+// }
+
+// console.log('deleteNode(node)', deleteNode(node))
+
+// const SLL = new SinglyLinkedList()
 
+// SLL.push(1)
+// SLL.push(2)
+// SLL.push(3)
+// SLL.push(4)
+// SLL.push(5)
 
+// // 1 -> 2 -> 3 -> 4 -> null
+// //      cur.next = cur.next.next     
 
+// const head = SLL.head
+// const n = 2
 
+// var removeNthFromEnd = function (head, n) {
+//     let left = head
+//     let right = head
+//     let count = 0
 
+//     while (count < n) {
+//         right = right.next
+//         count++
+//     }
 
+//     while (right.next) {
+//         left = left.next
+//         right = right.next
+//     }
+//     console.log('left', left)
+//     left.next = left.next.next
 
+//     traverseSSL(head)
 
+// };
 
+// function traverseSSL(head) {
+//     while (head) {
+//         console.log(head.val)
+//         head = head.next
+//     }
+// }
 
+// console.log('removeNthFromEnd(head, n)', removeNthFromEnd(head, n))
 
 
 
+// const SLL1 = new SinglyLinkedList()
+// const SLL2 = new SinglyLinkedList()
 
+// SLL1.push(5)
 
+// SLL2.push(1)
+// SLL2.push(2)
+// SLL2.push(4)
+// SLL2.push(8)
+// SLL2.push(9)
+// SLL2.push(22)
 
+// const l1 = SLL1.head
+// const l2 = SLL2.head
 
 
+// var mergeTwoLists = function (l1, l2) {
 
+//     if (!l1) return l2
+//     if (!l2) return l1
 
+//     let newHead = l1.val < l2.val ? l1 : l2;
 
+//     while (l1 && l2) {
 
+//         if (l2.val < l1.val) {
+//             if (l1.val < (l2.next && l2.next.val)) {
+//                 temp = l2.next
+//                 l2.next = l1
+//                 l2 = temp
+//             } else {
+//                 if (!l2.next) {
+//                     l2.next = l1
+//                     l2 = null
+//                 } else {
+//                     l2 = l2.next
+//                 }
+//             }
+//         } else {
+//             if (l2.val < (l1.next && l1.next.val)) {
+//                 temp = l1.next
+//                 l1.next = l2
+//                 l1 = temp
+//             } else {
+//                 if (!l1.next) {
+//                     l1.next = l2
+//                     l1 = null
+//                 } else {
+//                     l1 = l1.next
+//                 }
 
+//             }
+//         }
 
 
+//     }
 
 
 
+//     traverseSSL(newHead)
 
+// };
 
+// function traverseSSL(head) {
+//     while (head) {
+//         console.log(head.val)
+//         head = head.next
+//     }
+// }
 
 
+// console.log('mergeTwoLists(l1,l2)', mergeTwoLists(l1, l2))
 
 
 
@@ -7601,44 +7760,117 @@ SLL2.push(5)
 
 
 
+// const BST = new BinarySearchTree()
 
+// BST.insert(3)
+// BST.insert(2)
+// BST.insert(4)
+// BST.insert(1)
+// BST.insert(5)
 
+// const root = BST.root
 
+// function traverseBST(root) {
 
+//     const result = []
+//     const q = [root]
+//     let depth = 0
+//     let node 
 
+//     while (q.length) {
+//         let level = q.length;
+//         console.log('q.length', q.length)
+//         console.log('level', level)
+//         depth++;
+//         console.log('depth', depth)
 
+//         for (let i = 0; i < level; i++) {
+//             node = q.pop();
 
+//             if (node.left) q.unshift(node.left)
+//             if (node.right) q.unshift(node.right)
+//         }
 
 
+//     }
 
 
+// }
 
+// console.log('traverseBST(root)', traverseBST(root))
 
 
 
 
+// const strs = ["gar", "gar"]
 
+// var longestCommonPrefix = function (strs) {
 
+//     let ans = ''
+//     let charInd = 0
+//     let targetLetter = ''
 
+//     while (true) {
 
+//         targetLetter = strs[0][charInd]
+//         if (targetLetter === undefined) return ans
+//         for (let i = 1; i < strs.length; i++) {
+//             if ( strs[i][charInd] !== targetLetter) return ans
+//         }
+//         ans += targetLetter
 
+//         charInd++
+//     }
 
+//     return ans
 
+// };
 
+// console.log('longestCommonPrefix(strs)', longestCommonPrefix(strs))
 
+// const SLL = new SinglyLinkedList()
 
+// SLL.push(1)
+// SLL.push(2)
+// SLL.push(3)
+// SLL.push(4)
 
+// //      1 -> 2 -> 3 -> 4 -> null
 
+// // p    c    n 
 
+// const head = SLL.head
 
+// function reverseSLL(head) {
+//     console.log('head', head)
 
+//     let prev = null;
+//     let cur = head
+//     let next
+//     while (cur) {
 
+//         next = cur.next
+//         console.log('next', next)
+//         cur.next = prev
+//         console.log('cur', cur)
+//         prev = cur
+//         cur = next
+//         console.log('prev', prev)
 
 
 
 
+//     }
+//     return prev
+// }
 
+// console.log('reverseSLL(head)', reverseSLL(head))
 
+//                                 2
+//                             /       \ 
+//                           1           4
+//                                      /  \ 
+//                                     3    5
 
 
 
@@ -7646,13 +7878,38 @@ SLL2.push(5)
 
 
 
+// const BT = new BinarySearchTree()
 
+// BT.insert(2)
+// BT.insert(1)
+// BT.insert(4)
+// BT.insert(3)
+// BT.insert(5)
 
+// const root = BT.root
+// // console.log('root', root)
 
+// function inverseBT(root) {
+//     console.log('root', root)
 
+//     let curr 
+//     const q = [root]
+//     // console.log('q', q)
+//     let temp
 
+//     while (q.length) {
+//         curr = q.shift()
+//         temp = curr.left
+//         curr.left = curr.right;
+//         curr.right = temp
+//         if (curr.left) q.push(curr.left)
+//         if (curr.right) q.push(curr.right)
+//     }
+//     return root
 
+// }
 
+// console.log('inverseBT(root)', inverseBT(root))
 
 
 
@@ -7666,46 +7923,561 @@ SLL2.push(5)
 
 
 
+// const BT = new BinarySearchTree()
 
+// BT.insert(2)
+// BT.insert(1)
+// BT.insert(4)
+// BT.insert(3)
+// BT.insert(5)
 
+// const root = BT.root
 
+// var isValidBST = function (root) {
+//     let results = []
+//     let isValid = true
+//     traverse(root)
+//     function traverse(node) {
+//         if (node.left) traverse(node.left)
+//         results.push(node.val)
+//         if (results.length > 1) {
+//             console.log('results', results)
+//             console.log('results[results.length - 1] <= results[results.length - 2]', results[results.length - 1] <= results[results.length - 2])
+//             if (results[results.length - 1] <= results[results.length - 2]) isValid = false
+//         }
+//         if (node.right) traverse(node.right)
+//     }
 
+//     return isValid
+// };
 
+// console.log('isValidBST(root)', isValidBST(root))
 
 
+// const n = 3
+// const m = 3
 
+// function horsebot(n, m) {
+//     if (n > m) {
+//         n = n + m
+//         m = n - m
+//         n = n - m
+//     }
+//     const canReachBottomRight = (initialPos, row, col) => {
+//         const visited = []
+//         for (let i = 0; i < n; i++) {
+//             visited[i] = []
+//         }
+//         visited[initialPos[0]][initialPos[1]] = true
+//         const moveOptions = [
+//             [row, col], [col, row], [row, -col], [col, -row],
+//             [-row, col], [-col, row], [-row, -col], [-col, -row]
+//         ]
 
+//         const recursive = (currX, currY) => {
+//             console.log('recursive call #: ', currX,currY)
+//             let result = false
+//             for (const [x, y] of moveOptions) {
+//                 if (result) break
+//                 if (currX + x >= 0 && currX + x < n
+//                     && currY + y >= 0 && currY + y < m
+//                     && !visited[currX + x][currY + y]) {
+//                         console.log('[x, y]', [x, y])
+//                         if (currX + x === n - 1 && currY + y === m - 1) {
+//                             console.log('valid move definition', [x,y])
+//                             result = true
+//                             break
+//                         }
+//                         visited[currX + x][currY + y] = true
+//                         result = result || recursive(currX + x, currY + y)
+//                     }
+//                 }
+//             return result
+//         }
 
+//         return recursive(...initialPos)
+//     }
 
+//     let count = 0
+//     for (let i = 1; i < n; i++) {
+//         for (let j = i; j < m; j++) {
+//             if (canReachBottomRight([0, 0], i, j)) {
+//                 count++
+//             }
+//         }
+//     }
 
+//     return count
+// }
 
 
+// console.log('horsebot(n,m)', horsebot(n,m))
 
 
 
 
 
+// const s = "a"
 
+// var partition = function(s) {
 
+//     output = []
 
+//     recurse([s],0,s.length) 
 
+//     function recurse(parts,start,end) {
 
+//         let part = [part.substr(start,end)]
+//         if (parts.length === 1) {
+//             parts.push(...part)
+//             console.log('parts', parts)
+//             return 
+//         }
 
 
 
+//     }
 
+//     return output
 
+// };
 
+// function isPalindrome(str) {
+//     let i = 0
+//     let j = str.length - 1;
+//     while (i <= j) {
+//         if (str[i] !== str[j] ) return false 
+//         i++
+//         j--
+//     }
+//     return true
+// }
 
+// console.log('partition(s)', partition(s))
 
 
+// 21 
 
 
 
+// const n = 15;
 
+// // n = 1         1
+// // n = 2        11
+// // n = 3        21
+// // n = 4        1211
+// // n = 5        111221
+// // n = 6        312211
+// // n = 7        13112221
+// // n = 7        1113213211
+// // n = 7        31131211131221
+// // n = 7        13211311123113112211
+// // n = 7        
+// // n = 7        
+// // n = 7        
 
 
 
+// var countAndSay = function (n) {
+//     let count
+//     if (n === 1) {
+//         return '1'
+//     }
+//     if (n === 2) {
+//         count = 1
+//         return '11'
+//     }
+//     let val = '1'
+//     let str = '11'
+//     let resArr = ['1', '11']
+
+//     for (let x = 3; x <= n; x++) {
+//         let res = ''
+//         let ind = 0
+//         while (ind < str.length) {
+//             val = str[ind]
+//             // console.log('val', val)
+//             count = getCount(str, ind)
+//             // console.log('str', str)
+//             // console.log('count', count)
+//             ind += Number(count)
+//             // console.log('ind', ind)
+//             res += count + val
+//         }
+//         str = res
+//         resArr.push(res)
+//     }
+//     return resArr
+
+// };
+
+
+
+// function getCount(str, i) {
+//     // console.log('i', i)
+
+//     let count = 0
+//     let val = str[i]
+//     // console.log('val', val)
+//     while (i < str.length) {
+//         // console.log('str[i]', str[i])
+//         // console.log('str[i] === val', str[i] === val)
+//         if (str[i] === val) {
+//             count++
+//             // console.log('count', count)
+//         } else {
+//             break
+//         }
+//         i++
+//     }
+//     return count.toString()
+// }
+
+
+// console.log('countAndSay(n)', countAndSay(n))
+
+
+
+// // Input: 5
+// // Output:
+// // [
+// //      [1],
+// //     [1,1],
+// //    [1,2,1],
+// //   [1,3,3,1],
+// //  [1,4,6,4,1]
+// // ]
+// const numRows = 10
+
+// var generate = function (numRows) {
+//     if (numRows === 1) return [[1]]
+//     if (numRows === 2) return [[1], [1, 1]]
+//     const res = [[1], [1, 1]]
+
+
+
+//     for (let i = 2; i < numRows; i++) {
+//         let end = i
+//         let curRes = []
+//         for (let j = 0; j <= end; j++) {
+//             if (j === 0 || j === end) {
+//                 curRes.push(1)
+//             } else {
+//                 let sum = res[i - 1][j-1] + res[i - 1][j]
+//                 curRes.push(sum)
+//             }
+//         }
+//         res.push(curRes)
+//         console.log('curRes', curRes)
+//     }
+
+//     return res
+
+// };
+
+// console.log('generate(numRows)', generate(numRows))
+
+
+// const board = [["5", "3", ".", ".", "7", ".", ".", ".", "."]
+//     , ["6", ".", ".", "1", "9", "5", ".", ".", "."]
+//     , [".", "9", "8", ".", ".", ".", ".", "6", "."]
+//     , ["8", ".", ".", ".", "6", ".", ".", ".", "3"]
+//     , ["4", ".", ".", "8", ".", "3", ".", ".", "1"]
+//     , ["7", ".", ".", ".", "2", ".", ".", ".", "6"]
+//     , [".", "6", ".", ".", ".", ".", "2", "8", "."]
+//     , [".", ".", ".", "4", "1", "9", ".", ".", "5"]
+//     , [".", ".", ".", ".", "8", ".", ".", "7", "9"]]
+
+// var isValidSudoku = function (board) {
+
+//     for (let row of board) {
+//         if (hasDuplicate(row)) {
+//             return false
+//         }
+//     }
+
+//     for (let i = 0; i < board.length; i++) {
+//         let arr = []
+//         for (let j = 0; j < board.length; j++) {
+//             arr.push(board[j][i])
+//         }
+//         if (hasDuplicate(arr)) {
+//             return false
+//         }
+//         console.log('arr', arr)
+//     }
+
+//     for (let row = 0; row < 9; row = row + 3) {
+//         for (let col = 0; col < 9; col = col + 3) {
+//             if (row % 3 === 0 && col % 3 === 0) {
+//                 console.log('row', row)
+//                 console.log('col', col)
+//                 const squareArr = getSquareArr(row, col)
+//                 if (hasDuplicate(squareArr)) return false
+//             }
+//         }
+
+//     }
+
+
+
+
+
+//     function getSquareArr(row, col) {
+//         const arr = []
+//         let i = 0
+//         while (i < 3) {
+
+//             for (let j = col; j < 3 + col; j++) {
+//                 arr.push(board[row][j])
+//                 console.log('arr', arr)
+//             }
+//             row++
+//             i++
+//         }
+//         return arr
+
+//     }
+
+//     return true
+
+// };
+
+
+// function hasDuplicate(arr) {
+//     const set = new Set()
+//     for (let num of arr) {
+//         if (num !== '.' && set.has(num)) {
+//             return true
+//         } else {
+//             set.add(num)
+//         }
+//     }
+//     return false
+// }
+
+// console.log('isValidSudoku(board)', isValidSudoku(board))
+
+
+
+
+
+// const strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
+
+// var groupAnagrams = function(strs) {
+//     let mapping = {}
+//     for (let str of strs) {
+//         let charCount = new Array(26).fill(0)
+//         for (let c of str) {
+//             charCount[c.charCodeAt(0) - 'a'.charCodeAt(0)]++
+//         }
+//         if (!mapping[charCount]) mapping[charCount] = []
+//         mapping[charCount].push(str)
+//     }
+//     return Object.values(mapping)
+// };
+
+// console.log('groupAnagrams(strs)', groupAnagrams(strs))
+
+
+
+
+
+// ababdbeabfbaaabfdccabbefabbabcdbbb
+//       ^    ^
+
+
+// const str = 'aggggghoijgabcdefghi'
+// //            ^^
+
+// function lengthOfLongestSubstring(str) {
+
+//     let left = 0;
+//     let right = 1;
+//     let lChar = str[0]
+//     let rChar = str[1]
+//     let longest = 0
+//     let curLongest = 0
+//     let longestWord = lChar
+//     const map = new Map()
+//     map.set(lChar, left)
+//     console.log('map', map)
+
+//     while (right <= str.length) {
+
+
+//         lChar = str[left]
+//         rChar = str[right]
+
+//         if ((right + 1 === left) && lChar === rChar) {
+//             lChar = str[++left]
+//             rChar = str[++right]
+//         }
+
+//         // console.log('left', left)
+//         // console.log('right', right)
+//         // console.log('lChar', lChar)
+//         // console.log('rChar', rChar)
+
+//         curLongest = right - left
+//         // console.log('curLongest', curLongest)
+
+//         if (curLongest > longest) {
+//             longest = curLongest;
+//             longestWord = str.slice(left , right)
+//             console.log('longestWord', longestWord)
+//         }
+//         console.log('map', map)
+//         console.log('rChar', rChar)
+//         console.log('map.has(rChar)', map.has(rChar))
+//         if (map.has(rChar)) {
+//             let temp = map.get(rChar)
+//             console.log('temp', temp)
+//             for (let i = left; i < temp; i++) {
+//                 console.log('i', i)
+//                 if (left < temp) {
+//                     map.delete(lChar)
+//                     map.delete(rChar)
+//                     console.log('rChar', rChar)
+//                     console.log('map after delete', map)
+//                 }
+//             }
+//             console.log('left', left)
+//             left = temp + 1;
+//             console.log('left after temp', left)
+//         } else {
+//             map.set(rChar, right)
+//         }
+
+//         right++
+
+
+
+//     }
+//     return longestWord
+// }
+
+
+// console.log('lengthOfLongestSubstring(str)', lengthOfLongestSubstring(str))
+
+
+
+
+
+
+
+
+
+
+
+// const lowLimit = 1
+// const highLimit = 5
+
+// var countBalls = function (lowLimit, highLimit) {
+//     const map = {}
+//     let ball = lowLimit
+//     let max = 0
+//     while (ball <= highLimit) {
+//         let ballSum = getSum(ball)
+//         map[ballSum] = ++map[ballSum] || 1
+//         max = Math.max(max, map[ballSum])
+//         ball++
+//     }
+//     return max
+// };
+
+// function getSum(ball) {
+//     sum = 0
+//     while (ball > 0) {
+//         sum = sum + ball % 10
+//         ball = Math.floor(ball / 10)
+//     }
+//     return sum
+// }
+
+// console.log('countBalls(lowLimit,highLimit)', countBalls(lowLimit, highLimit))
+
+
+
+
+// adjacentPairs = [[4, -2], [1, 4], [-3, 1]]
+
+// var restoreArray = function (adjacentPairs) {
+
+// };
+
+// console.log('restoreArray(adjacentPairs)', restoreArray(adjacentPairs))
+
+
+
+// const str = 'ababa'
+// function threePalindromes(str) {
+
+// }
+
+
+
+// // const nums = [4, 5, 6, 7, 0, 1, 2]
+// const nums = [6, 7, 0, 1, 2, 4, 5]
+
+// //           [4, 5, 6, 7, 0, 1, 2]
+
+// const target = 4
+// var search = function (nums, target) {
+//     const startInd = findStartInd(nums)
+//     console.log('startInd', startInd)
+// };
+
+// function findStartInd(nums) {
+//     let left = 0
+//     let right = nums.length - 1
+//     let mid = Math.floor((left + right) / 2)
+//     while (mid !== left || mid !== right) {
+//         console.log('left', left)
+//         console.log('right', right)
+//         console.log('mid', mid)
+//         mid = Math.floor((left + right) / 2)
+//         let leftVal = nums[left]
+//         let rightVal = nums[right]
+//         let midVal = nums[mid]
+//         console.log('mid > right', mid > right)
+//         if (midVal > rightVal) {
+//             left = mid + 1
+//         } else if (midVal < rightVal) {
+//             right = mid - 1
+//         }
+//         console.log('left', left)
+//         console.log('right', right)
+//         console.log('mid', mid)
+
+//     }
+//     return mid
+// }
+
+// function j(index) {
+//     const end = nums.length
+//     return index % end
+// }
+
+// console.log('search(nums,target)', search(nums, target))
+
+
+const nums = [2, 3, 1, 1, 4]
+// const nums = [1, 0, 1, 0, 4]
+
+var canJump = function (nums) {
+    let 
+    
+    recurse(nums[end])
+    
+    function recurse() {
+        
+    }
+};
+
+
+
+console.log('canJump(nums)', canJump(nums))
 
 
 
