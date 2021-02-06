@@ -8462,26 +8462,110 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 // console.log('search(nums,target)', search(nums, target))
 
 
-const nums = [2, 3, 1, 1, 4]
-// const nums = [1, 0, 1, 0, 4]
+// // const nums = [2, 3, 1, 1, 4]
+// const nums = [3,2,1,1]
 
-var canJump = function (nums) {
-    let 
-    
-    recurse(nums[end])
-    
-    function recurse() {
-        
-    }
-};
+// var canJump = function (nums) {
+//     const end = nums.length - 1;
+//     let i = end;
+//     while (i >= 0) {
+//         if (i === 0) return true
+//         let j = i - 1;
+//         while (j >= 0) {
+//             let jumpLen = nums[j]
+//             if (j === 0 && jumpLen + j < i) return false;
+//             if (jumpLen + j >= i) {
+//                 i = j
+//                 break
+//             }
+//             j--;
+//         }
+//     }
+
+// };
 
 
 
-console.log('canJump(nums)', canJump(nums))
+// console.log('canJump(nums)', canJump(nums))
 
 
+// // const newInterval = [1,2];
+// // const newInterval = [1,2];
+// // const newInterval = [1,2];
+// // const newInterval = [1,2];
+// const newInterval = [4, 17];
+// // const newInterval = [1, 2];
+// // const newInterval = [4, 11];
+// const intervals = [[3, 5], [10, 12], [16, 19], [20, 22]]
 
+// var insert = function (intervals, newInterval) {
+//     let i = 0;
+//     const result = [];
+//     while (i < intervals.length) {
+//         let interval = intervals[i];
+//         let intStart = interval[0];
+//         let intEnd = interval[1];
+//         let newIntStart = newInterval[0];
+//         let newIntEnd = newInterval[1];
+//         console.log('i', i)
+//         if (intStart <= newIntEnd && intEnd >= newIntEnd && intervals[i - 1][1] < newIntStart) {
 
+//             result.push([newIntStart, intEnd]);
+//         }
+
+//         if (intStart > newIntEnd && i === 0) {
+//             result.push(newInterval)
+//             result.push([intStart, intEnd]);
+//         } else if (intStart > newIntEnd && i !== 0) {
+//             result.push([intStart, intEnd]);
+//         } else if (intStart >= newIntStart) {
+//             if (intEnd < newIntEnd) {
+//                 let j = i + 1;
+//                 while (intervals[j][1] <= newIntEnd && intervals[j] !== undefined) {
+//                     j++;
+//                 }
+//                 if (intervals[j][0] <= newIntEnd) {
+//                     result.push([newIntStart, intervals[j][1]]);
+//                 } else {
+//                     result.push([newIntStart, newIntEnd]);
+//                 }
+//             }
+//         } else if (intStart < newIntStart && intEnd >= newIntStart) {
+
+//             if (intEnd < newIntEnd) {
+//                 let j = i + 1;
+//                 while (intervals[j][1] <= newIntEnd && intervals[j] !== undefined) {
+//                     j++;
+//                 }
+//                 if (intervals[j][0] <= newIntEnd) {
+//                     result.push([intStart, intervals[j][1]]);
+//                 } else {
+//                     result.push([intStart, newIntEnd]);
+//                 }
+//             }
+
+//         } else if (intEnd < newIntStart) {
+//             result.push([intStart, intEnd]);
+//         } else if (intEnd >= newIntStart) {
+//             // result.push([in])
+//         }
+
+//         if (intEnd < newIntStart) {
+//             if (i === intervals.length - 1) {
+//                 result.push(newInterval);
+//             }
+
+//             if (intervals[i + 1] && intervals[i + 1][0] > newIntEnd) {
+//                 result.push(newInterval);
+//             }
+//         }
+//         i++;
+//         console.log('result', result)
+//     };
+//     return result;
+// }
+
+// console.log('insert(intervals,newInterval)', insert(intervals, newInterval))
 
 
 
