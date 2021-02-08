@@ -8493,81 +8493,129 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 // // const newInterval = [1,2];
 // // const newInterval = [1,2];
 // // const newInterval = [1,2];
-// const newInterval = [4, 17];
+// const newInterval = [4, 11];
 // // const newInterval = [1, 2];
 // // const newInterval = [4, 11];
 // const intervals = [[3, 5], [10, 12], [16, 19], [20, 22]]
 
 // var insert = function (intervals, newInterval) {
-//     let i = 0;
-//     const result = [];
-//     while (i < intervals.length) {
-//         let interval = intervals[i];
-//         let intStart = interval[0];
-//         let intEnd = interval[1];
-//         let newIntStart = newInterval[0];
-//         let newIntEnd = newInterval[1];
-//         console.log('i', i)
-//         if (intStart <= newIntEnd && intEnd >= newIntEnd && intervals[i - 1][1] < newIntStart) {
+//     const left = [];
+//     const right = [];
+//     let start = newInterval[0];
+//     let end = newInterval[1];
+//     for (let interval of intervals) {
+//         if (interval[1] < start) {
+//             left.push(interval);
+//         } else if (interval[0] > end) {
+//             right.push(interval);
+//         } else {
+//             start = Math.min(interval[0], start);
+//             end = Math.max(interval[1], end);
 
-//             result.push([newIntStart, intEnd]);
 //         }
+//     }
+//     return [...left,[start,end],...right];
 
-//         if (intStart > newIntEnd && i === 0) {
-//             result.push(newInterval)
-//             result.push([intStart, intEnd]);
-//         } else if (intStart > newIntEnd && i !== 0) {
-//             result.push([intStart, intEnd]);
-//         } else if (intStart >= newIntStart) {
-//             if (intEnd < newIntEnd) {
-//                 let j = i + 1;
-//                 while (intervals[j][1] <= newIntEnd && intervals[j] !== undefined) {
-//                     j++;
-//                 }
-//                 if (intervals[j][0] <= newIntEnd) {
-//                     result.push([newIntStart, intervals[j][1]]);
-//                 } else {
-//                     result.push([newIntStart, newIntEnd]);
-//                 }
-//             }
-//         } else if (intStart < newIntStart && intEnd >= newIntStart) {
-
-//             if (intEnd < newIntEnd) {
-//                 let j = i + 1;
-//                 while (intervals[j][1] <= newIntEnd && intervals[j] !== undefined) {
-//                     j++;
-//                 }
-//                 if (intervals[j][0] <= newIntEnd) {
-//                     result.push([intStart, intervals[j][1]]);
-//                 } else {
-//                     result.push([intStart, newIntEnd]);
-//                 }
-//             }
-
-//         } else if (intEnd < newIntStart) {
-//             result.push([intStart, intEnd]);
-//         } else if (intEnd >= newIntStart) {
-//             // result.push([in])
-//         }
-
-//         if (intEnd < newIntStart) {
-//             if (i === intervals.length - 1) {
-//                 result.push(newInterval);
-//             }
-
-//             if (intervals[i + 1] && intervals[i + 1][0] > newIntEnd) {
-//                 result.push(newInterval);
-//             }
-//         }
-//         i++;
-//         console.log('result', result)
-//     };
-//     return result;
 // }
 
 // console.log('insert(intervals,newInterval)', insert(intervals, newInterval))
 
 
+// const board = [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
+// const word = "SEE"
+
+// var exist = function (board, word) {
+//     const rowLen = board[0].length;
+//     const colLen = board.length;
+
+//     for (let i = 0; i < colLen; i++) {
+//         for (let j = 0; j < rowLen; j++) {
+//             if (board[i][j] === word[0]) {
+//                const foundWord = wordExists(i, j); 
+//                console.log('foundWord', foundWord)
+//                 if (foundWord) return true;
+//             }
+//         }
+//     }
+
+//     return false
+
+//     function wordExists(i, j) {
+//         if (word.length === 1) return true;
+//         const visited = {};
+//         visited[[i, j]] = true;
+//         let k = 1;
+//         let exists = false;
+
+//         traverse(i,j);
+
+//         function traverse(i, j) {
+//             console.log('i, j', i, j)
+//             console.log('k', k)
+//             let neighborsCoords = [[i + 1, j], [i, j + 1], [i - 1, j], [i, j - 1]];
+//             console.log('neighborsCoords', neighborsCoords)
+//             for (let neighborCoords of neighborsCoords) {
+//                 let neighbor = board[neighborCoords[0]] && board[neighborCoords[0]][neighborCoords[1]];
+//                 if (neighbor !== undefined && !visited[neighborCoords]) {
+//                     console.log('neighbor', neighbor)
+//                     visited[neighborCoords] = true;
+//                     if (neighbor === word[k]) {
+//                         k++;
+//                         if (k === word.length) exists = true;
+//                         console.log('exists', exists)
+//                         console.log('k === word.length', k === word.length)
+//                         traverse(...neighborCoords)
+//                     }
+//                 }
+//             }
+//         }
+//         if (exists) return true;
+
+//         return false;
+
+
+//     }
+
+
+
+// };
+
+// console.log('exist(board,word)', exist(board, word))
+
+
+
+
+// const nums = [-2, 2, 3, -2, -10, 0, 2,10,10];
+
+// var maxProduct = function (nums) {
+//     let max = nums[0];
+//     let cur = max;
+//     let contProd = max;
+//     let timesMaxAtPrev = max;
+//     let maxOfOptions = max;
+
+//     for (let i = 1; i < nums.length; i++) {
+//         cur = nums[i];
+//         console.log('cur', cur)
+
+//         contProd = cur * contProd;
+//         console.log('contProd', contProd)
+
+//         timesMaxAtPrev = cur * maxOfOptions;
+//         console.log('timesMaxAtPrev', timesMaxAtPrev)
+
+//         maxOfOptions = Math.max(cur, contProd, timesMaxAtPrev);
+//         console.log('maxOfOptions', maxOfOptions)
+
+//         max = Math.max(max, maxOfOptions);
+//         console.log('max', max)
+
+//     }
+//     return max
+
+// };
+
+// console.log('maxProduct(nums)', maxProduct(nums))
 
 
 
@@ -8575,31 +8623,45 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
+// // const nums = [3, 4, 5, 1, 2];
+// // const nums = [2, 3, 4, 5, 1];
+// // const nums = [1, 2, 3, 4, 5, 6];
+// const nums = [8, 9, 10, 11, 1, 2, 3, 4, 5];
+// // const nums = [1];
+
+// var findMin = function (nums) {
+//     let start = 0;
+//     let end = nums.length - 1;
+//     let mid;
+
+//     while (start < end) {
+//         if (nums[start] < nums[end]) {
+//             return nums[start];
+//         }
+
+//         mid = Math.floor((start + end) / 2);
+//         console.log(nums[start], nums[mid], nums[end])
+        
+//         if (nums[mid] >= nums[start]) {
+//             start = mid + 1;
+//         } else {
+//             end = mid;
+//         }
+
+
+//     }
+
+//     return nums[start];
+// };
+
+// console.log('findMin(nums)', findMin(nums))
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const nums = [2,7,9,3,1]
 
 
 
