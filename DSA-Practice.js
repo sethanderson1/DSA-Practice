@@ -8641,7 +8641,7 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 //         mid = Math.floor((start + end) / 2);
 //         console.log(nums[start], nums[mid], nums[end])
-        
+
 //         if (nums[mid] >= nums[start]) {
 //             start = mid + 1;
 //         } else {
@@ -8661,7 +8661,23 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
-const nums = [2,7,9,3,1]
+// const nums = [1, 2, 3, 1, 1, 10];
+
+// var rob = function (nums) {
+//     if (nums.length === 0) return 0;
+//     if (nums.length === 1) return nums[0];
+//     if (nums.length === 2) return Math.max(nums[0], nums[1]);
+//     const dp = new Array(nums.length);
+//     dp[0] = nums[0];
+//     dp[1] = Math.max(nums[0], nums[1]);
+//     for (let i = 2; i < nums.length; i++) {
+//         dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+//         // console.log('dp', dp)
+//     }
+//     return dp[nums.length - 1];
+// };
+
+// console.log('rob(nums)', rob(nums))
 
 
 
@@ -8669,6 +8685,84 @@ const nums = [2,7,9,3,1]
 
 
 
+// let s = 'ff'
+// let t = 'asdf'
+
+// var isAnagram = function (s, t) {
+//     if ( s.length !== t.length) return false;
+//     let countsS = {};
+//     let countsT = {};
+//     for (let char of s) {
+//         countsS[char] = ++countsS[char] || 1;
+//     }
+
+//     for (let char of t) {
+//         countsT[char] = ++countsT[char] || 1;
+//     }
+
+//     for (let key in countsS) {
+//         if (countsS[key] !== countsT[key]) return false;
+//     }
+//     return true;
+// };
+
+// console.log('isAnagram(s,t)', isAnagram(s, t))
+
+
+
+
+
+
+// const nums = [1,2,3];
+
+// var permute = function(nums) {
+//     const res = {};
+
+//     return res;
+
+// };
+
+// function backtrack(res, nums, permutation, used) {
+//     if (permutation.length === nums.length ) {
+//         res.push(permutation)
+//         return
+
+//     } 
+
+
+// // console.log('permute(nums)', permute(nums))
+
+
+// const nums = [9, 1, 2, 5, 6, 7]
+
+// var longestConsecutive = function (nums) {
+//     if (nums.length === 0) return 0;
+//     const hash = {};
+//     let maxCount = 0;
+//     for (let char of nums) {
+//         hash[char] = ++hash[char] || 1;
+//     }
+//     for (let i = 0; i < nums.length; i++) {
+//         let prev = nums[i]
+//         let cur = prev + 1
+//         let count = 0;
+//         if (hash[nums[i] - 1] !== undefined) {
+//             while (hash[cur] !== undefined || hash[prev] !== undefined) {
+//                 count++
+//                 maxCount = Math.max(count, maxCount)
+//                 console.log('maxCount', maxCount)
+//                 prev = cur
+//                 cur++
+//             }
+//         }
+
+//     }
+//     return maxCount
+
+
+// };
+
+// console.log('longestConsecutive(nums)', longestConsecutive(nums))
 
 
 
@@ -8676,41 +8770,12 @@ const nums = [2,7,9,3,1]
 
 
 
+const intervals = [[1,2],[2,3],[3,4],[1,3]];
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+var eraseOverlapIntervals = function(intervals) {
+    
+};
 
 
 
