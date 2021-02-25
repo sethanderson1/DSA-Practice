@@ -8770,45 +8770,172 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
-const intervals = [[1,2],[2,3],[3,4],[1,3]];
+// const intervals = [[1, 4], [3, 5]];
 
+// var eraseOverlapIntervals = function (intervals) {
 
-var eraseOverlapIntervals = function(intervals) {
-    
-};
+// };
 
-
-
-
+// console.log('eraseOverlapIntervals(intervals)', eraseOverlapIntervals(intervals))
 
 
 
 
 
+// const nums = [3,0,1]
 
+// var missingNumber = function (nums) {
+//     const n = nums.length;
+//     const map = {};
+//     let targetSum = n;
+//     let actualSum = 0;
+//     for (let i = 0; i < nums.length; i++) {
+//         console.log('i', i)
+//         actualSum = actualSum + nums[i];
+//         targetSum += i;
+//         console.log('targetSum', targetSum)
+//         console.log('actualSum', actualSum)
+//     }
+//     return targetSum - actualSum
+// };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// console.log('missingNumber(nums)', missingNumber(nums))
 
 
 
 
 
 
+// const nums = [3, 1, 3, 4, 2]
+
+// var findDuplicate = function (nums) {
+//     const prevNums = {}
+//     for (let i = 0; i < nums.length; i++) {
+//         if (prevNums[nums[i]]) return nums[i]
+//         prevNums[nums[i]] = true;
+//     }
+// };
+
+
+// console.log('findDuplicate(nums)', findDuplicate(nums))
+
+
+
+// // const s = "qrsaaqrsdabbabf"
+// const s = "01234bbabasdfasdfasdfasdfasdfasdfasdfbbbbbaaasb"
+// const k = 2
+
+// var characterReplacement = function (s, k) {
+//     if (s.length === 0) return 0;
+//     if (s.length === 1) return 1;
+
+//     let maxStreak = 0;
+//     let l = 0;
+//     while (l < s.length) {
+//     // while (l <= (s.length - maxStreak)) {
+
+//         let streak = 0;
+//         let _k = k;
+//         let r = l;
+//         console.log('l', l)
+//         while (_k > 0) {
+//             if (s[r] !== undefined) {
+//                 streak++
+//                 if (s[r] !== s[l]) {
+//                     _k--
+//                 }
+//                 r++
+//             } else {
+//                 console.log('r', r)
+//                 console.log('s[r]', s[r])
+//                 r = l - 1;
+//                 while (_k > 0) {
+//                     if (s[r] !== s[l] ) {
+//                         _k--
+//                         console.log('_k', _k)
+//                     }
+//                     streak++
+//                     r--
+//                 }
+//             }
+//         }
+//         while (s[l] === s[r]) {
+//             console.log('s[l]', s[l])
+//             streak++
+//             console.log('streak', streak)
+//             r++
+//         }
+
+//         maxStreak = Math.max(maxStreak, streak);
+//         l++;
+
+//     }
+
+//     return maxStreak
+
+// };
+
+// console.log('characterReplacement(s,k)', characterReplacement(s, k))
+
+
+
+
+
+// // const s = "qrsaaqrsdabbabf"
+// const s = "ABBAAAACCCC"
+// const k = 2
+
+// var characterReplacement = function (s, k) {
+//     let maxStreak = 0;
+//     let startChar = 'A';
+//     let set = new Set()
+//     for (const char of s) {
+//         set.add(char.charCodeAt(0))
+//         console.log('set', set)
+//     }
+//     for (let char = startChar.charCodeAt(0); char < startChar.charCodeAt(0) + 26; char++) {
+//         if (set.has(char)) {
+//             console.log('does')
+//             let c = String.fromCharCode(char)
+//             console.log('c', c)
+//             maxStreak = Math.max(charRepForLetter(c, s, k), maxStreak)
+//         } 
+//     }
+//     return maxStreak
+// };
+
+// function charRepForLetter(c, s, k) {
+//     const len = s.length;
+//     let l = 0;
+//     let r = 0;
+//     let best = 0;
+//     let used = 0;
+
+//     for (r = 0; r < len; r++) {
+
+//         console.log('l', l)
+//         console.log('r', r)
+//         if (s[r] !== c) {
+//             used++;
+//         }
+
+//         while (used > k) {
+//             if (s[l] !== c) {
+//                 used--;
+//             }
+//             l++;
+//         }
+//         console.log('r - l + 1', r - l + 1)
+//         best = Math.max(best, r - l + 1)
+//     }
+
+//     return best
+
+
+
+// }
+
+// console.log('characterReplacement(s,k)', characterReplacement(s, k))
 
 
 
@@ -8816,11 +8943,18 @@ var eraseOverlapIntervals = function(intervals) {
 
 
 
+// const OPTIONS = ["One", "Two", "Three"];
+// OPTIONS.reduce(
+//     (options, option) => (
 
+//         console.log(options),
+//         {
 
-
-
-
+//             ...options,
+//             [option]: false
+//         }),
+//     {}
+// )
 
 
 
