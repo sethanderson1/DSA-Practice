@@ -9115,12 +9115,67 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
+// const moves = 'LL'
+
+// var judgeCircle = function (moves) {
+//     let xOff = 0;
+//     let yOff = 0;
+//     for (let i = 0; i < moves.length; i++) {
+//         const move = moves[i]
+//         if (move === 'R') ++xOff
+//         if (move === 'L') --xOff
+//         if (move === 'U') ++yOff
+//         if (move === 'D') --yOff
+//     }
+
+//     if (xOff === 0 && yOff === 0) {
+//         return true
+//     }
+//     return false
+// };
+
+// const res = judgeCircle(moves)
+// console.log('res', res)
 
 
 
 
+const nums = [3, 329, 30, 34, 5, 9]
+
+var largestNumber = function (nums) {
+
+    let strNums = []
+    let maxLen = 0
+    for (let i = 0; i < nums.length; i++) {
+        strNums.push({ id: i, num: nums[i].toString() })
+        maxLen = Math.max(maxLen, strNums[i].num.length)
+        console.log('maxLen', maxLen)
+    }
+    console.log('strNums', strNums)
+
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = 0; j < maxLen; j++) {
+            while (strNums[i].num[j] === undefined) {
+                strNums[i].num += strNums[i].num[j - 1]
+            }
+        }
+    }
+    console.log('strNums', strNums)
+
+    strNums.sort((a, b) => b.num - a.num)
+    console.log('strNums', strNums)
+    let finalStr = ''
+    for (let i = 0; i < nums.length; i++) {
+       finalStr += nums[+strNums[i].id]
+       console.log('finalStr', finalStr)
+    }
 
 
+};
+
+
+const res = largestNumber(nums)
+console.log('res', res)
 
 
 
