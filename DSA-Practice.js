@@ -8961,6 +8961,123 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
+// const tempTermList = []
+
+// const terms = ["donald trump", 'something', 'cuomo']
+
+// terms.forEach(term => {
+//     tempTermList.push(`"${term}"`)
+// })
+
+// console.log('tempTermList', tempTermList)
+
+// const termList = tempTermList.join(' OR ')
+
+// console.log('termList', termList)
+
+
+// const num = 20;
+// const fizzBuzz = () => {
+//     for (i = 0; i <= num; i++) {
+//         if (i % 3 === 0 && i % 5 === 0) {
+//             console.log('fizzbuzz')
+//         } else if (i % 3 === 0) {
+//             console.log('fizz')
+//         } else if (i % 5 === 0) {
+//             console.log('buzz')
+//         } else {
+//             console.log(i)
+//         }
+//     }
+// }
+
+// const res = fizzBuzz()
+// console.log('res', res)
+
+
+// const num = 20;
+// const fizzBuzz = () => {
+//     for (i = 0; i <= num; i++) {
+//         let output = '';
+//         if (i % 3 === 0) output += 'fizz';
+//         if (i % 5 === 0) output += 'buzz';
+//         if (!output.length) output = i;
+//         console.log(output)
+//     }
+// }
+
+// const res = fizzBuzz()
+// console.log('res', res)
+
+
+// const word = 'SasdfF'
+
+// var detectCapitalUse = function(word) {
+//     const len = word.length;
+//     let capitolCount = 0;
+//     for (let i = 0; i < len; i++) {
+//         if (isCapital(word[i])) {
+//             capitolCount++;
+//         }
+//     }
+
+//     if (capitolCount === 0) return true;
+//     if (capitolCount === len) return true;
+//     if (capitolCount === 1 && isCapital(word[0])) return true;
+//     return false;
+
+// };
+
+// function isCapital (letter) {
+
+//     if (letter === letter.toUpperCase()) {
+//         return true;
+//     }
+//     return false
+// }
+
+// const res = detectCapitalUse(word)
+// console.log('res', res)
+
+
+
+
+// const n = 5;
+// const start = 0;
+
+// var xorOperation = function (n, start) {
+//     let output = start;
+
+//     for (let i = 0; i < n - 1; i++) {
+//         let curNum = start + 2 * (i + 1)
+//         output = output ^ curNum
+//     }
+//     return output
+// };
+
+// const res = xorOperation(n, start)
+// console.log('res', res)
+
+
+
+
+
+// const num = 5;
+
+
+// var findComplement = function (num) {
+//     let binary = (num >>> 0).toString(2)
+//     let newStr = ''
+//     binary.split('').forEach(el=>{
+//         if (el === '1') newStr += '0';
+//         if (el === '0') newStr += '1';
+//     })
+
+//     return parseInt(newStr,2)
+// };
+
+// const res = findComplement(num)
+// console.log('res', res)
 
 
 
@@ -8969,39 +9086,25 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
+// const arr = [1, 2, 2, 3, 3, 3]
+
+// var findLucky = function (arr) {
+//     const counts = {}
+//     for (let num of arr) {
+//         counts[num] = ++counts[num] || 1;
+//     }
+//     let maxLuckyNumber = -1
+//     for (let num of Object.keys(counts)) {
+//         if (counts[num] === +num) {
+//             maxLuckyNumber = Math.max(maxLuckyNumber, num)
+//         }
+//     }
+//     return maxLuckyNumber
+// };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// const res = findLucky(arr)
+// console.log('res', res)
 
 
 
