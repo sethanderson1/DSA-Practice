@@ -9140,45 +9140,43 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
-const nums = [3, 329, 30, 34, 5, 9]
+// const nums = [34323, 3432]
 
-var largestNumber = function (nums) {
+// var largestNumber = function (nums) {
 
-    let strNums = []
-    let maxLen = 0
-    for (let i = 0; i < nums.length; i++) {
-        strNums.push({ id: i, num: nums[i].toString() })
-        maxLen = Math.max(maxLen, strNums[i].num.length)
-        console.log('maxLen', maxLen)
-    }
-    console.log('strNums', strNums)
+//     let strNums = []
+//     let maxLen = 0
+//     for (let i = 0; i < nums.length; i++) {
+//         strNums.push({ id: i, num: nums[i].toString() })
+//         maxLen = Math.max(maxLen, strNums[i].num.length)
+//         // console.log('maxLen', maxLen)
+//     }
+//     // console.log('strNums', strNums)
 
-    for (let i = 0; i < nums.length; i++) {
-        for (let j = 0; j < maxLen; j++) {
-            while (strNums[i].num[j] === undefined) {
-                strNums[i].num += strNums[i].num[j - 1]
-            }
-        }
-    }
-    console.log('strNums', strNums)
+//     for (let i = 0; i < nums.length; i++) {
+//         for (let j = 0; j < maxLen; j++) {
+//             while (strNums[i].num[j] === undefined) {
+//                 strNums[i].num += strNums[i].num[j - 1]
+//             }
+//         }
+//         // console.log('strNums', strNums)
+//     }
+//     console.log('strNums', strNums)
 
-    strNums.sort((a, b) => b.num - a.num)
-    console.log('strNums', strNums)
-    let finalStr = ''
-    for (let i = 0; i < nums.length; i++) {
-       finalStr += nums[+strNums[i].id]
-       console.log('finalStr', finalStr)
-    }
+//     strNums.sort((a, b) => b.num - a.num)
+//     console.log('strNums', strNums)
+//     let finalStr = ''
+//     for (let i = 0; i < nums.length; i++) {
+//         finalStr += nums[+strNums[i].id]
+//         //    console.log('finalStr', finalStr)
+//     }
 
-
-};
-
-
-const res = largestNumber(nums)
-console.log('res', res)
+//     return finalStr
+// };
 
 
-
+// const res = largestNumber(nums)
+// console.log('res', res)
 
 
 
@@ -9187,6 +9185,119 @@ console.log('res', res)
 
 
 
+// // const nums = [9, 4, 32, 3, 36]
+// const nums = [0,0]
+// // const nums = [34323, 3432]
+
+// var largestNumber = function (nums) {
+
+//     nums.sort((a, b) => {
+//         a = a.toString()
+//         b = b.toString()
+//         if (a + b > b + a) {
+//             return -1
+//         } else if (b + a > a + b) {
+//             return 1
+//         } else {
+//             return 0
+//         }
+//     })
+//     let output = nums.join('')
+//     if (output[0] === '0') return '0'
+//     return nums.join('')
+// };
+
+
+// const res = largestNumber(nums)
+// console.log('res', res)
+
+
+
+
+// const digits = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+// var plusOne = function (digits) {
+//     const len = digits.length;
+
+//     if (len === 1) {
+//         if (digits[0] === 9) {
+//             return [1, 0]
+//         }
+//         return [digits[0] + 1]
+//     }
+
+//     let carry = 0
+
+//     if (digits[len - 1] === 9) {
+//         carry = 1
+//         digits[len - 1] = 0
+//     } else {
+//         digits[len - 1] += 1
+//     }
+
+//     for (let i = len - 2; i >= 0; i--) {
+//         if (digits[i] === 9 && carry === 1) {
+//             digits[i] = 0
+//             if (i === 0) digits.unshift(1)
+//         } else {
+//             digits[i] += carry
+//             carry = 0
+//         }
+//         // console.log('digits', digits)
+//     }
+
+//     return digits
+// };
+
+// const res = plusOne(digits)
+// console.log('res', res)
+
+
+
+
+
+// // const s = 'ababab'
+// const s = 'abcabc'
+// // const s = 'aaaaa'
+
+
+
+// var repeatedSubstringPattern = function (s) {
+
+
+// };
+
+
+
+// const res = repeatedSubstringPattern(s)
+// console.log('res', res)
+
+
+// const nums = [1,2,1,1,2,3]
+// // const nums = [1, 3, 5, 3, 3, 3, 3, 7, 8, 9, 11, 12]
+
+// var findLengthOfLCIS = function (nums) {
+
+//     if (nums.length === 0) return 0;
+//     if (nums.length === 1) return 1;
+//     let len = 1;
+//     let maxLen = 1;
+
+//     for (let i = 1; i < nums.length; i++) {
+//         if (nums[i] > nums[i - 1]) {
+//             len++
+//             maxLen = Math.max(maxLen, len)
+//         } else {
+//             len = 1
+//         }
+
+//     }
+//     return maxLen
+
+// };
+
+// const res = findLengthOfLCIS(nums)
+// console.log('res', res)
 
 
 
@@ -9197,10 +9308,42 @@ console.log('res', res)
 
 
 
+// const nums = [1, 3, 2, 4, 2, 4]
+
+// var findNumberOfLIS = function (nums) {
+
+//     const LIS = Array(nums.length).fill(1);
+//     for (let i = 0; i < nums.length; i++) {
+//         for (let j = i - 1; j >= 0; j--) {
+//             LIS[i] = Math.max(LIS[i], 1 + LIS[j])
+//         }
+//     }
+//     return LIS
+// };
+
+// const res = findNumberOfLIS(nums)
+// console.log('res', res)
 
 
 
 
+// const nums = [10, 9, 2, 5, 3, 7, 101, 18]
+
+// var lengthOfLIS = function (nums) {
+
+//     const LIS = Array(nums.length).fill(1);
+//     for (let i = nums.length - 1; i >= 0; i--) {
+//         for (let j = i + 1; j < nums.length; j++) {
+//             if (nums[i] < nums[j]) {
+//                 LIS[i] = Math.max(LIS[i], 1 + LIS[j])
+//             }
+//         }
+//     }
+//     return Math.max(...LIS)
+// };
+
+// const res = lengthOfLIS(nums)
+// console.log('res', res)
 
 
 
