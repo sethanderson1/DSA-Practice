@@ -380,6 +380,162 @@ class Node {
 }
 
 
+class BinaryTree {
+    constructor() {
+        this.root = null;
+    }
+
+    insert(val) {
+        
+    }
+
+    insertArray(arr) {
+
+        const newNode = new Node(arr[0]);
+        if (this.root === null) {
+            this.root = newNode;
+        }
+
+        let curr = this.root;
+        const queue = [curr]
+
+        let j = 1
+        while (queue.length && j < arr.length) {
+            curr = queue.shift()
+
+
+            console.log('queue', queue)
+
+            curr.left = new Node(arr[j++])
+            if (curr.left) queue.push(curr.left)
+
+            curr.right = new Node(arr[j++])
+            if (curr.right) queue.push(curr.right)
+
+        }
+
+        // while (true) {
+        //     if (val === curr.val) return undefined;
+        //     if (val > curr.val) {
+        //         if (curr.right === null) {
+        //             curr.right = newNode;
+        //             return this;
+        //         }
+        //         curr = curr.right;
+        //     } else if (val < curr.val) {
+        //         if (curr.left === null) {
+        //             curr.left = newNode;
+        //             return this;
+        //         }
+        //         curr = curr.left;
+        //     }
+        // }
+        console.log('escaped')
+    }
+    // insert(val) {
+    //     const newNode = new Node(val);
+    //     if (this.root === null) {
+    //         this.root = newNode;
+    //         return this;
+    //     }
+    //     let curr = this.root;
+    //     while (true) {
+    //         if (val === curr.val) return undefined;
+    //         if (val > curr.val) {
+    //             if (curr.right === null) {
+    //                 curr.right = newNode;
+    //                 return this;
+    //             }
+    //             curr = curr.right;
+    //         } else if (val < curr.val) {
+    //             if (curr.left === null) {
+    //                 curr.left = newNode;
+    //                 return this;
+    //             }
+    //             curr = curr.left;
+    //         }
+    //     }
+    // }
+
+    // find(val) {
+    //     if (this.root === null) {
+    //         return false;
+    //     }
+    //     let curr = this.root;
+    //     let found = false;
+    //     while (curr && !found) {
+    //         if (val > curr.val) {
+    //             curr = curr.right;
+    //         } else if (val < curr.val) {
+    //             curr = curr.left;
+    //         } else {
+    //             found = true;
+    //         }
+    //     }
+    //     if (!found) return false;
+    //     return curr;
+    // }
+
+    // BFS() {
+    //     let node = this.root;
+    //     const queue = [];
+    //     const data = [];
+    //     queue.push(node);
+
+    //     while (queue.length) {
+    //         node = queue.shift();
+    //         data.push(node);
+    //         if (node.left) queue.push(node.left);
+    //         if (node.right) queue.push(node.right);
+    //     }
+
+
+    //     return data;
+    // }
+
+    // DFS_Pre() {
+    //     const data = [];
+    //     let curr = this.root;
+
+    //     function traverse(node) {
+    //         data.push(node.val);
+    //         if (node.left) traverse(node.left);
+    //         if (node.right) traverse(node.right);
+    //     }
+    //     traverse(curr);
+    //     return data;
+    // }
+
+    // DFS_Post() {
+    //     const data = [];
+    //     let curr = this.root;
+
+    //     function traverse(node) {
+    //         if (node.left) traverse(node.left);
+    //         if (node.right) traverse(node.right);
+    //         data.push(node.val);
+    //     }
+    //     traverse(curr);
+    //     return data;
+    // }
+
+    // DFS_InOrder() {
+    //     const data = [];
+    //     let curr = this.root;
+
+    //     function traverse(node) {
+    //         if (node.left) traverse(node.left);
+    //         data.push(node.val);
+    //         if (node.right) traverse(node.right);
+    //     }
+    //     traverse(curr);
+    //     return data;
+    // }
+
+}
+
+
+
 class BinarySearchTree {
     constructor() {
         this.root = null;
@@ -789,7 +945,7 @@ class Graph {
 
         visited[start] = true;
         while (stack.length) {
-             vertex = stack.pop();
+            vertex = stack.pop();
             result.push(vertex);
             this.adjacencyList[vertex].forEach(neighbor => {
                 if (!visited[neighbor]) {
@@ -876,7 +1032,7 @@ class WeightedGraph {
                     smallest = prev[smallest];
                 }
                 break;
-                
+
             }
             if (smallest || distances[smallest] !== Infinity) {
 
@@ -899,10 +1055,10 @@ class WeightedGraph {
 
         }
 
-  
-        
+
+
         return path.concat(smallest).reverse();
-        
+
 
 
 
@@ -944,6 +1100,7 @@ module.exports = {
     Node,
     Stack,
     Queue,
+    BinaryTree,
     BinarySearchTree,
     MaxBinaryHeap,
     PriorityQueue,

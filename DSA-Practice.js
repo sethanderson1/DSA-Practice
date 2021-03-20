@@ -1,6 +1,6 @@
 const nodemon = require('nodemon')
 // const { LinkedList, _Node } = require('./LinkedList')
-const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree, MaxBinaryHeap, PriorityQueue, NodePQ, HashTable, Graph, WeightedGraph } = require('./DS')
+const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree, MaxBinaryHeap, PriorityQueue, NodePQ, HashTable, Graph, WeightedGraph, BinaryTree } = require('./DS')
 
 
 
@@ -9346,6 +9346,128 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 // console.log('res', res)
 
 
+// const arr = [0, 0]
+
+// var checkIfExist = function (arr) {
+//     const seen = new Set()
+//     for (let num of arr) {
+
+//         if (seen.has(num*2) || seen.has(num/2)) {
+//             return true
+//         }
+//         seen.add(num)
+//     }
+
+
+
+//     return false
+// };
+
+// const res = checkIfExist(arr)
+// console.log('res', res)
+
+
+// const arr = [1, 2, 3, 4]
+// const k = 2
+
+// var findKthPositive = function (arr, k) {
+//     const missing = []
+//     let i = 1;
+//     let j = 0;
+//     while (missing.length < k) {
+//         if (i !== arr[j]) {
+//             missing.push(i)
+//         } else {
+//             j++
+//         }
+
+//         i++
+//     }
+//     return missing[k - 1]
+// };
+
+// const res = findKthPositive(arr, k)
+// console.log('res', res)
+
+
+// const arr = [8, 4, 5, 0, 0, 0, 0, 7]
+// //          [8, 4, 5, 0, 0, 0, 0, 0]
+// var duplicateZeros = function (arr) {
+
+
+// };
+
+// const res = duplicateZeros(arr)
+// console.log('res', res)
+
+
+
+
+// const nums = [1, -2, -3]
+
+// var minStartValue = function (nums) {
+
+// };
+
+// const res = minStartValue(nums)
+// console.log('res', res)
+
+
+// const s = 'caca'
+// const t = 'baba'
+
+// var isIsomorphic = function (s, t) {
+//     const dictST = {}
+//     const dictTS = {}
+
+//     for (let i = 0; i < s.length; i++) {
+//         let charS = s[i]
+//         let charT = t[i]
+
+//         if (dictST[charS] && dictST[charS] !== charT) {
+//             return false
+//         } else if (dictTS[charT] && dictTS[charT] !== charS) {
+//             return false
+//         }
+//         dictST[charS] = charT
+//         dictTS[charT] = charS
+//     }
+//     return true
+
+// };
+
+// const res = isIsomorphic(s, t)
+// console.log('res', res)
+
+
+
+
+
+
+
+
+// const BT = new BinaryTree()
+
+// // BT.insertArray([0, 1, 2, 21, 22, 23, 24])
+// BT.insertArray([0, 1, 2, 21, null, 23, 24, 31, 32, null, null, null, 36])
+// // BT.insertArray([5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1])
+// // BT.insertArray([5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1])
+// console.log('BT', BT.root.left)
+
+
+
+
+
+
+// var hasPathSum = function(root, sum) {
+//     if (!root) return false;
+
+//     if (!root.left && !root.right) { // check leaf
+//         return sum === root.val;
+//     } else { // continue DFS
+//         return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
+//     }
+// };
 
 
 
@@ -9359,28 +9481,149 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
+// const nums = [-2, -1, 0, 1, 2]
+
+
+
+// var maximumProduct = function (nums) {
+//     if (nums.length === 3) return nums.reduce((acc, val) => acc * val)
+
+//     for (let i = 0; i < nums.length; i++) {
+
+//     }
+
+// };
+
+// const res = maximumProduct(nums)
+// console.log('res', res)
+
+
+
+
+// const SLL = new SinglyLinkedList()
+
+// SLL.push(1)
+// SLL.push(2)
+// SLL.push(3)
+// SLL.push(2)
+// SLL.push(1)
+
+
+// const head = SLL.head
+
+// var isPalindrome = function (head) {
+
+//     let slow = head
+//     let fast = head
+
+//     while (fast && fast.next) {
+
+//         slow = slow.next
+//         console.log('slow', slow)
+//         fast = fast.next.next
+//         console.log('fast', fast)
+//     }
+
+//     if (fast !== null) slow = slow.next
+
+//     // reverse second half
+
+
+//     const reverseSLL = (head) {
+//         let prev = null
+//         while (head !== null) {
+//             next = head.next
+//             head.next = prev
+//             prev = head
+//             head = next
+//         }
+//     }
+
+
+
+// };
+
+// const res = isPalindrome(head)
+// console.log('res', res)
+
+
+// const coordinates =[[1,1],[2,2],[3,4],[4,5],[5,6],[7,7]]
+
+// var checkStraightLine = function (coordinates) {
+
+//     if (coordinates.length === 2) return true
+
+//     const dx = coordinates[1][0] - coordinates[0][0]
+//     const dy = coordinates[1][1] - coordinates[0][1]
+
+//     const slopish = dx * dy
+
+//     for (let i = 2; i < coordinates.length; i++) {
+//         const curDx = coordinates[i][0] - coordinates[0][0]
+//         const curDy = coordinates[i][1] - coordinates[0][1]
+
+//         if (dx * curDy !== dy * curDx) return false
+//     }
+
+//     return true
+
+
+// };
+
+// const res = checkStraightLine(coordinates)
+// console.log('res', res)
 
 
 
 
 
+const BST = new BinarySearchTree()
+
+BST.insert(3)
+BST.insert(4)
+BST.insert(2)
+BST.insert(1)
+console.log('BST', BST)
+
+
+const root = BST.root
+
+var binaryTreePaths = function (root) {
+    // console.log('root', root)
+
+    const list = []
+
+    const str = ''
+
+    traverse(root, str)
+
+
+    function traverse(root, str) {
+        if (!str.length) {
+            str = str + root.val
+        } else {
+            str = str + '->' + root.val
+        }
+
+        if (root.left === null && root.right === null) {
+            // console.log('root', root)
+            list.push(str)
+            return
+        }
+
+        if (root.left) traverse(root.left, str)
+
+        if (root.right) traverse(root.right, str)
+    }
+
+    return list
+
+};
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const res = binaryTreePaths(root)
+console.log('res', res)
 
 
 
