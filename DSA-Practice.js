@@ -9577,61 +9577,108 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
-const BST = new BinarySearchTree()
+// const BST = new BinarySearchTree()
 
-BST.insert(3)
-BST.insert(4)
-BST.insert(2)
-BST.insert(1)
-console.log('BST', BST)
-
-
-const root = BST.root
-
-var binaryTreePaths = function (root) {
-    // console.log('root', root)
-
-    const list = []
-
-    const str = ''
-
-    traverse(root, str)
+// BST.insert(3)
+// BST.insert(4)
+// BST.insert(2)
+// BST.insert(1)
+// console.log('BST', BST)
 
 
-    function traverse(root, str) {
-        if (!str.length) {
-            str = str + root.val
-        } else {
-            str = str + '->' + root.val
-        }
+// const root = BST.root
 
-        if (root.left === null && root.right === null) {
-            // console.log('root', root)
-            list.push(str)
-            return
-        }
+// var binaryTreePaths = function (root) {
+//     // console.log('root', root)
 
-        if (root.left) traverse(root.left, str)
+//     const list = []
 
-        if (root.right) traverse(root.right, str)
+//     const str = ''
+
+//     traverse(root, str)
+
+
+//     function traverse(root, str) {
+//         if (!str.length) {
+//             str = str + root.val
+//         } else {
+//             str = str + '->' + root.val
+//         }
+
+//         if (root.left === null && root.right === null) {
+//             // console.log('root', root)
+//             list.push(str)
+//             return
+//         }
+
+//         if (root.left) traverse(root.left, str)
+
+//         if (root.right) traverse(root.right, str)
+//     }
+
+//     return list
+
+// };
+
+
+
+// const res = binaryTreePaths(root)
+// console.log('res', res)
+
+
+// const nums = [0,11,1222]
+
+// var findNumbers = function (nums) {
+//     let evens = 0
+
+//     for (let num of nums) {
+//         let digitCount = 0
+//         if (num !== 0) {
+//             while (num) {
+//                 num = Math.floor(num / 10)
+//                 digitCount++
+//             }
+//             if (digitCount % 2 === 0) evens++
+//         }
+
+//     }
+
+//     return evens
+// };
+
+
+
+// const res = findNumbers(nums)
+// console.log('res', res)
+
+
+
+
+const columnTitle = "AA"
+
+var titleToNumber = function (columnTitle) {
+    const len = columnTitle.length;
+    let output = 0
+    const map = {}
+    for (let i = 1; i <= 26; i++) {
+        map[String.fromCharCode(i + 64)] = i
     }
-
-    return list
+    let i = 0
+    while (i < len - 1) {
+        const curChar = columnTitle[i]
+        const curCharVal = map[curChar]
+        let digit = len - i
+        const digitVal = (26) ** (digit - 1) * curCharVal
+        output += digitVal
+        i++
+    }
+    output += map[columnTitle[len - 1]]
+    return output
 
 };
 
-
-
-const res = binaryTreePaths(root)
+const res = titleToNumber(columnTitle)
 console.log('res', res)
-
-
-
-
-
-
-
-
 
 
 
