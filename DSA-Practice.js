@@ -1,6 +1,7 @@
 const nodemon = require('nodemon')
 // const { LinkedList, _Node } = require('./LinkedList')
 const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree, MaxBinaryHeap, PriorityQueue, NodePQ, HashTable, Graph, WeightedGraph, BinaryTree } = require('./DS')
+const { test } = require('./testDir')
 
 
 
@@ -9654,38 +9655,77 @@ const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinaryS
 
 
 
-const columnTitle = "AA"
+// const columnTitle = "AA"
 
-var titleToNumber = function (columnTitle) {
-    const len = columnTitle.length;
-    let output = 0
-    const map = {}
-    for (let i = 1; i <= 26; i++) {
-        map[String.fromCharCode(i + 64)] = i
-    }
-    let i = 0
-    while (i < len - 1) {
-        const curChar = columnTitle[i]
-        const curCharVal = map[curChar]
-        let digit = len - i
-        const digitVal = (26) ** (digit - 1) * curCharVal
-        output += digitVal
-        i++
-    }
-    output += map[columnTitle[len - 1]]
-    return output
+// var titleToNumber = function (columnTitle) {
+//     const len = columnTitle.length;
+//     let output = 0
+//     const map = {}
+//     for (let i = 1; i <= 26; i++) {
+//         map[String.fromCharCode(i + 64)] = i
+//     }
+//     let i = 0
+//     while (i < len - 1) {
+//         const curChar = columnTitle[i]
+//         const curCharVal = map[curChar]
+//         let digit = len - i
+//         const digitVal = curCharVal * (26 ** (digit - 1))
+//         output += digitVal
+//         i++
+//     }
+//     output += map[columnTitle[len - 1]]
+//     return output
 
-};
+// };
 
-const res = titleToNumber(columnTitle)
-console.log('res', res)
-
-
+// const res = titleToNumber(columnTitle)
+// console.log('res', res)
 
 
 
 
 
+// const rowIndex = 4
+// var getRow = function (rowIndex) {
+//     let rows = []
+
+//     for (let i = 0; i < rowIndex + 1; i++) {
+//         const newRow = []
+//         const len = i + 1;
+//         const prevRow = rows[i - 1]
+
+//         for (let j = 0; j < len; j++) {
+//             if (j !== 0 && j !== len - 1) {
+//                 newRow[j] = prevRow[j - 1] + prevRow[j]
+//             } else {
+//                 newRow[j] = 1;
+//             }
+//         }
+//         rows.push(newRow)
+//     }
+
+//     return rows[rowIndex]
+// };
+
+// const res = getRow(rowIndex)
+// console.log('res', res)
+
+
+
+
+
+
+// const { main, something } = require('./testDir/findAnagrams')
+// const { main } = require('./test')
+const funcs = require('./testDir')
+
+// main()
+// something()
+
+
+// funcs.findAnagrams()
+console.log('funcs', funcs.findAnagrams.main())
+console.log('funcs', funcs.findAnagrams.something())
 
 
 
@@ -9694,25 +9734,18 @@ console.log('res', res)
 
 
 
+// const s = 'asdf'
+// const p = 'dff'
 
 
+// var findAnagrams = function (s, p) {
+//     console.log('s', s)
+
+// };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// const res = findAnagrams(s, p)
+// console.log('res', res)
 
 
 
