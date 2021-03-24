@@ -9715,37 +9715,73 @@ const { test } = require('./testDir')
 
 
 
-// const { main, something } = require('./testDir/findAnagrams')
-// const { main } = require('./test')
-const funcs = require('./testDir')
+// // const { main, something } = require('./testDir/findAnagrams')
+// // const { main } = require('./test')
+// const funcs = require('./testDir')
 
-// main()
-// something()
-
-
-// funcs.findAnagrams()
-console.log('funcs', funcs.findAnagrams.main())
-console.log('funcs', funcs.findAnagrams.something())
+// // main()
+// // something()
 
 
+// // funcs.findAnagrams()
+// console.log('funcs', funcs.findAnagrams.main())
+// console.log('funcs', funcs.findAnagrams.something())
 
 
 
 
 
 
-// const s = 'asdf'
-// const p = 'dff'
 
 
-// var findAnagrams = function (s, p) {
-//     console.log('s', s)
-
-// };
+const s = 'zzzaabzcbaa'
+const p = 'aab'
 
 
-// const res = findAnagrams(s, p)
-// console.log('res', res)
+var findAnagrams = function (s, p) {
+    const pCounts = {}
+    const end = s.length - 1;
+    // let r = p.length - 1;
+    let r = 0;
+    let l = 0;
+
+    
+
+    for (let char of p) {
+        pCounts[char] = ++pCounts[char] || 1    ``
+    }
+
+    let len = 0
+    while (r <= end) {
+        if (pCounts[s[r]] !== undefined && len <= p.length) {
+            ++pCounts[s[r]]
+            len++
+            
+            l = r - len + 1
+        } else {
+
+
+        }
+
+
+        r++
+
+
+    }
+
+    // subtract left p
+    pCounts[p[l]] = pCounts[p[l]] - 1
+    // add to right p
+    // need a
+    // if dont have it, 
+    // reset pCounts
+    // }
+
+};
+
+
+const res = findAnagrams(s, p)
+console.log('res', res)
 
 
 
