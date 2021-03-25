@@ -9734,46 +9734,43 @@ const { test } = require('./testDir')
 
 
 
-const s = 'zzzbabaabaz'
-const p = 'aab'
+// const s = 'zzzbabaabaz'
+// const p = 'aab'
 
 
-var findAnagrams = function (s, p) {
-    const starts = []
-    const pLen = p.length;
-    const sLen = s.length;
+// var findAnagrams = function (s, p) {
+//     const starts = []
+//     const pLen = p.length;
+//     const sLen = s.length;
 
-    const pWindow = new Array(26).fill(0)
-    const sWindow = new Array(26).fill(0)
+//     const pWindow = new Array(26).fill(0)
+//     const sWindow = new Array(26).fill(0)
 
-    p.split('').forEach((char, i) => {
-        pWindow[char.charCodeAt(0) - 97]++
-    });
+//     p.split('').forEach((char, i) => {
+//         pWindow[char.charCodeAt(0) - 97]++
+//     });
 
-    [...s].forEach((char, i) => {
+//     [...s].forEach((char, i) => {
 
-        if (i >= pLen) {
-            sWindow[s.charCodeAt(i - pLen) - 97]--
+//         if (i >= pLen) {
+//             sWindow[s.charCodeAt(i - pLen) - 97]--
 
-        }
-        sWindow[char.charCodeAt(0) - 97]++
-        console.log('sWindow', sWindow)
+//         }
+//         sWindow[char.charCodeAt(0) - 97]++
 
-        if (pWindow.join() === sWindow.join()) {
+//         if (pWindow.join() === sWindow.join()) {
 
-            starts.push(i - pLen + 1)
-        }
-    })
-
-
-    return starts
-};
+//             starts.push(i - pLen + 1)
+//         }
+//     })
 
 
-const res = findAnagrams(s, p)
-console.log('res', res)
+//     return starts
+// };
 
 
+// const res = findAnagrams(s, p)
+// console.log('res', res)
 
 
 
@@ -9781,8 +9778,45 @@ console.log('res', res)
 
 
 
+// // const nums = [1, 2, 4]
+// const nums = [1334, 1500, 4169, 724, 4358]
+// // const nums = [0, 0, 1, 6, 8]
+// // const nums = [0, 1, 1]
+
+// var minMoves2 = function (nums) {
+//     let moves = 0;
 
 
+//     const len = nums.length
+//     nums.sort((a,b)=>a-b)
+//     // console.log('nums', nums)
+//     let median
+//     if (len % 2 === 0) {
+//         // console.log('nums[(len / 2) - 1]', nums[(len / 2) - 1])
+//         // console.log('nums[(len / 2)])', nums[(len / 2)])
+//         median = Math.round((nums[(len / 2) - 1] + nums[(len / 2)]) / 2)
+//     } else {
+//         median = nums[Math.floor(len / 2)]
+//     }
+//     // median = 1400
+//     // console.log('median', median)
+
+
+
+
+//     for (let num of nums) {
+//         // console.log('num', num)
+//         let increment = Math.abs(num - median)
+//         // console.log('increment', increment)
+//         moves += increment
+//         // console.log('moves', moves)
+//     }
+
+//     return moves
+// };
+
+// const res = minMoves2(nums)
+// console.log('res', res)
 
 
 
