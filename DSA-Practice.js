@@ -9740,37 +9740,30 @@ const p = 'aab'
 
 var findAnagrams = function (s, p) {
     const starts = []
-    const pLen = p.length
-    const masterHash = {}
-    p.split('').forEach(char => {
-        masterHash[char] = ++masterHash[char] || 1
-    })
-    let hash = {...masterHash}
+    const pLen = p.length;
+    const sLen = s.length;
 
-    let l = 0
-    let r = 0
-    let len = 0
-    while ( r < s.length) {
-        let char = s[r]
+    const pWindow = new Array(26).fill(0)
+    const sWindow = new Array(26).fill(0)
 
-        // traverse until get to a letter that is in our hash
-        if (hash[char] !== undefined) {
-            if (!len) l = r
-            if (hash[char] === 0) {
+    p.split('').forEach((char, i) => {
+        pWindow[char.charCodeAt(0) - 97]++
+    });
 
-            } else {
-                len++
-                --hash[char]
-            }
-            if (len === pLen) {
-                starts.push(l)
-            }
-        } else {
-            len = 0
-            hash = {...masterHash}
+    [...s].forEach((char, i) => {
+
+        if (i >= pLen) {
+            sWindow[s.charCodeAt(i - pLen) - 97]--
+
         }
-        r++
-    }
+        sWindow[char.charCodeAt(0) - 97]++
+        console.log('sWindow', sWindow)
+
+        if (pWindow.join() === sWindow.join()) {
+
+            starts.push(i - pLen + 1)
+        }
+    })
 
 
     return starts
