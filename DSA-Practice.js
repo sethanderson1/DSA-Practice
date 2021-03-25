@@ -9734,49 +9734,46 @@ const { test } = require('./testDir')
 
 
 
-const s = 'zzzaabzcbaa'
+const s = 'zzzbabaabaz'
 const p = 'aab'
 
 
 var findAnagrams = function (s, p) {
-    const pCounts = {}
-    const end = s.length - 1;
-    // let r = p.length - 1;
-    let r = 0;
-    let l = 0;
+    const starts = []
+    const pLen = p.length
+    const masterHash = {}
+    p.split('').forEach(char => {
+        masterHash[char] = ++masterHash[char] || 1
+    })
+    let hash = {...masterHash}
 
-    
-
-    for (let char of p) {
-        pCounts[char] = ++pCounts[char] || 1    ``
-    }
-
+    let l = 0
+    let r = 0
     let len = 0
-    while (r <= end) {
-        if (pCounts[s[r]] !== undefined && len <= p.length) {
-            ++pCounts[s[r]]
-            len++
-            
-            l = r - len + 1
+    while ( r < s.length) {
+        let char = s[r]
+
+        // traverse until get to a letter that is in our hash
+        if (hash[char] !== undefined) {
+            if (!len) l = r
+            if (hash[char] === 0) {
+
+            } else {
+                len++
+                --hash[char]
+            }
+            if (len === pLen) {
+                starts.push(l)
+            }
         } else {
-
-
+            len = 0
+            hash = {...masterHash}
         }
-
-
         r++
-
-
     }
 
-    // subtract left p
-    pCounts[p[l]] = pCounts[p[l]] - 1
-    // add to right p
-    // need a
-    // if dont have it, 
-    // reset pCounts
-    // }
 
+    return starts
 };
 
 
