@@ -9832,13 +9832,35 @@ const { test } = require('./testDir')
 
 let pageTokensMaster = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
-function getPageNums(curPage, window, lastPage, highestSeen) {
-    const { start, end } = window
+function getPageNums(curPage, seen, lastPage) {
+    const { start, end } = seen
     const maxWinLen = 5
+    const span = Math.floor(maxWinLen / 2)
+    const highestSeen = end
+    let low
+    let high
     let pageTokens = pageTokensMaster.slice(start - 1, end)
-    let low = Math.max(1, curPage - 2)
-    let factor = 1
-    let high = Math.max( curPage + 2, highestSeen - factor)
+    let index = curPage - 1
+    if (curPage === 1) {
+        low = 0
+        high = index + maxWinLen - 1
+    } else if (!pageTokens[index - span]) {
+        low = 0
+        high = index + maxWinLen - curPage
+    } else if (!pageTokens[index + span]) {
+        high = highestSeen - 1
+        const addTerm = high - index
+        low = curPage - (maxWinLen) + addTerm
+    } else if (pageTokens[index - span] && pageTokens[index + span]) {
+        low = index - span
+        high = index + span
+
+        // low = Math.max(1, curPage - 2)
+        // let factor = 1
+
+        // high = Math.max(curPage + 2, highestSeen - factor)
+    }
+
 
     console.log('low', low)
     console.log('high', high)
@@ -9846,7 +9868,7 @@ function getPageNums(curPage, window, lastPage, highestSeen) {
     let pageNums = pageTokens.map((el, i) => i + 1)
     console.log('pageNums', pageNums)
 
-    let numsForDisplay = pageNums.slice(low - 1, high)
+    let numsForDisplay = pageNums.slice(low, high + 1)
     console.log('numsForDisplay', numsForDisplay)
 
 
@@ -9854,13 +9876,12 @@ function getPageNums(curPage, window, lastPage, highestSeen) {
 }
 
 const start = 1
-const end = 6
-const curPage = 1
-const window = { start, end }
-const highestSeen = 6
+const end = 7
+const curPage = 3
+const seen = { start, end }
 const lastPage = null
 
-console.log('getPageNums(curPage,window,lastPage,highestSeen)', getPageNums(curPage, window, lastPage, highestSeen))
+console.log('getPageNums(curPage,seen,lastPage)', getPageNums(curPage, seen, lastPage))
 
 
 
