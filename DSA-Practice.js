@@ -9812,7 +9812,7 @@ const { test } = require('./testDir')
 //         // console.log('moves', moves)
 //     }
 
-//     return moves
+//     return mo+ves
 // };
 
 // const res = minMoves2(nums)
@@ -9828,10 +9828,39 @@ const { test } = require('./testDir')
 
 
 
+// pagination problem
+
+let pageTokensMaster = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
+function getPageNums(curPage, window, lastPage, highestSeen) {
+    const { start, end } = window
+    const maxWinLen = 5
+    let pageTokens = pageTokensMaster.slice(start - 1, end)
+    let low = Math.max(1, curPage - 2)
+    let factor = 1
+    let high = Math.max( curPage + 2, highestSeen - factor)
+
+    console.log('low', low)
+    console.log('high', high)
+
+    let pageNums = pageTokens.map((el, i) => i + 1)
+    console.log('pageNums', pageNums)
+
+    let numsForDisplay = pageNums.slice(low - 1, high)
+    console.log('numsForDisplay', numsForDisplay)
 
 
 
+}
 
+const start = 1
+const end = 6
+const curPage = 1
+const window = { start, end }
+const highestSeen = 6
+const lastPage = null
+
+console.log('getPageNums(curPage,window,lastPage,highestSeen)', getPageNums(curPage, window, lastPage, highestSeen))
 
 
 
