@@ -9830,15 +9830,14 @@ const { test } = require('./testDir')
 
 // pagination problem
 
-let pageTokensMaster = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+let pageTokensMaster = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
-function getPageNums(curPage, seen, lastPage) {
+function getPageNums(curPage, seen) {
     const { start, end } = seen
-    const maxWinLen = 5
-    const span = Math.floor(maxWinLen / 2)
+    const span = 2
+    const maxWinLen = span * 2 + 1
     const highestSeen = end
-    let low
-    let high
+    let low, high
     let pageTokens = pageTokensMaster.slice(start - 1, end)
     let index = curPage - 1
     if (curPage === 1) {
@@ -9854,34 +9853,19 @@ function getPageNums(curPage, seen, lastPage) {
     } else if (pageTokens[index - span] && pageTokens[index + span]) {
         low = index - span
         high = index + span
-
-        // low = Math.max(1, curPage - 2)
-        // let factor = 1
-
-        // high = Math.max(curPage + 2, highestSeen - factor)
     }
 
-
-    console.log('low', low)
-    console.log('high', high)
-
     let pageNums = pageTokens.map((el, i) => i + 1)
-    console.log('pageNums', pageNums)
-
-    let numsForDisplay = pageNums.slice(low, high + 1)
-    console.log('numsForDisplay', numsForDisplay)
-
-
-
+    let numsForDisplay = pageNums.slice(Math.max(0, low), high + 1)
+    return numsForDisplay
 }
 
 const start = 1
-const end = 7
+const end = 5
 const curPage = 3
 const seen = { start, end }
-const lastPage = null
 
-console.log('getPageNums(curPage,seen,lastPage)', getPageNums(curPage, seen, lastPage))
+console.log('getPageNums(curPage,seen)', getPageNums(curPage, seen))
 
 
 
