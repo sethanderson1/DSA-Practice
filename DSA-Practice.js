@@ -1,26 +1,30 @@
-const nodemon = require('nodemon')
+const nodemon = require("nodemon");
 // const { LinkedList, _Node } = require('./LinkedList')
-const { SSLNode, SinglyLinkedList, DoublyLinkedList, Node, Stack, Queue, BinarySearchTree, MaxBinaryHeap, PriorityQueue, NodePQ, HashTable, Graph, WeightedGraph, BinaryTree } = require('./DS')
-const { test } = require('./testDir')
-
-
+const {
+  SSLNode,
+  SinglyLinkedList,
+  DoublyLinkedList,
+  Node,
+  Stack,
+  Queue,
+  BinarySearchTree,
+  MaxBinaryHeap,
+  PriorityQueue,
+  NodePQ,
+  HashTable,
+  Graph,
+  WeightedGraph,
+  BinaryTree,
+} = require("./DS");
+const { test } = require("./testDir");
 
 // const SLL = new LinkedList()
-
 
 // SLL.insertFirst(1)
 // SLL.insertLast(2)
 // SLL.insertLast(3)
 // SLL.insertLast(4)
 // SLL.insertLast(5)
-
-
-
-
-
-
-
-
 
 // display = (list) => {
 //     let currentNode = list.head;
@@ -35,14 +39,6 @@ const { test } = require('./testDir')
 // console.log('SLL.head', SLL.head)
 // display(reverse(SLL.head))
 
-
-
-
-
-
-
-
-
 // function reverse(head) {
 
 //     if (!head || head.next===null) {
@@ -53,23 +49,16 @@ const { test } = require('./testDir')
 //     head.next.next = head
 //     head.next = null
 
-
-
 // }
 
 //  SLL.head.next.next = SLL.head
 // console.log('third', third)
 
-
-
-
-// // reverse linked list 
+// // reverse linked list
 
 // function reverseListIter(head) {
 
-
-
-//     let prev = null 
+//     let prev = null
 //     let curr = head
 //     let nextNode
 //     while (curr!==null) {
@@ -85,7 +74,6 @@ const { test } = require('./testDir')
 
 // console.log('reverseListIter(SLL.head)', reverseListIter(SLL.head))
 
-
 // // O(n) time & O(n) space
 // function reverse(head) {
 //     if (!head || !head.next) {
@@ -98,77 +86,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('reverse(SLL.head)', reverse(SLL.head))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const str = "Hello there, how are you? Can you tell me how to get to the nearest Starbucks?"
 
@@ -195,36 +112,10 @@ const { test } = require('./testDir')
 // countStr(str)
 // console.log('countStr(str)', countStr(str))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // function reverse(list) {
-//     let reversedHead = null; 
-//     let currNode = list.head; 
-//     let nextNode; 
+//     let reversedHead = null;
+//     let currNode = list.head;
+//     let nextNode;
 
 //     while (currNode !== null) {
 //         nextNode = currNode.next;
@@ -238,21 +129,21 @@ const { test } = require('./testDir')
 // }
 
 // function findThird(list) {
-//     let currNode = list.head; 
-//     let prevNode = list.head; 
+//     let currNode = list.head;
+//     let prevNode = list.head;
 
 //     while (currNode.next.next.next !== null) {
-//         prevNode = currNode; 
+//         prevNode = currNode;
 //         currNode = currNode.next;
 //     }
 
-//     return currNode; 
+//     return currNode;
 // }
 
 // function findMid(list) {
-//    let currNode = list.head; 
-//    let prevNode = list.head; 
-//    let listLength = 0; 
+//    let currNode = list.head;
+//    let prevNode = list.head;
+//    let listLength = 0;
 //    let index = 0;
 
 //    while (currNode !== null) {
@@ -261,18 +152,17 @@ const { test } = require('./testDir')
 //        currNode = currNode.next;
 //    }
 
-//    let midpoint = (Math.ceil(listLength / 2) - 1); 
-//    currNode = list.head; 
-//    prevNode = list.head; 
+//    let midpoint = (Math.ceil(listLength / 2) - 1);
+//    currNode = list.head;
+//    prevNode = list.head;
 
 //    while (index < midpoint) {
-//        prevNode = currNode; 
-//        currNode = currNode.next; 
-//        index++; 
+//        prevNode = currNode;
+//        currNode = currNode.next;
+//        index++;
 //    }
-//    return currNode; 
+//    return currNode;
 // }
-
 
 // function cycleList(list) {
 //     let item1 = list.head;
@@ -289,24 +179,24 @@ const { test } = require('./testDir')
 // }
 
 // function listSort(list) {
-//     let currNode = list.head; 
-//     let head = list.head; 
-//     let store; 
-//     let sorting = true; 
+//     let currNode = list.head;
+//     let head = list.head;
+//     let store;
+//     let sorting = true;
 
 //     while (sorting) {
-//         sorting = false; 
+//         sorting = false;
 
 //         while (currNode.next !== null) {
 
 //             if (currNode.value > currNode.next.value) {
 //                 store = currNode.value;
-//                 currNode.value = currNode.next.value; 
+//                 currNode.value = currNode.next.value;
 //                 currNode.next.value = store;
 //                 sorting = true;
 //             }
 
-//             currNode = currNode.next; 
+//             currNode = currNode.next;
 //         }
 
 //         if (!currNode.next) {
@@ -318,42 +208,13 @@ const { test } = require('./testDir')
 //     }
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const str = '1234'
 
 // function reverString() {
 
 //     let result = str.split('')
-//     let ptrVal1 
-//     let ptrVal2 
+//     let ptrVal1
+//     let ptrVal2
 //     let curr
 //     let prev
 //     let next
@@ -387,57 +248,7 @@ const { test } = require('./testDir')
 
 // }
 
-
 // console.log('reverString(str)', reverString(str))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/3245/
 
@@ -447,10 +258,7 @@ const { test } = require('./testDir')
 
 // // Do the above modifications to the input array in place, do not return anything from your function.
 
-
 // const arr = [1, 0, 2, 3, 0, 4, 5, 0]
-
-
 
 // function duplicateZeros(arr) {
 
@@ -465,28 +273,14 @@ const { test } = require('./testDir')
 //     // do an insertion of a 0 at +1 from that index
 //     // keep track of that +1 index
 //     // after the insertion is completed,
-//     // traverse from that +1 index and 
+//     // traverse from that +1 index and
 //     // repeat the process
 
-//     // 
+//     //
 
 // }
 
 // console.log('duplicateZeros(arr)', duplicateZeros(arr))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const arr = [5, 8, 6, 1]
 
@@ -535,26 +329,6 @@ const { test } = require('./testDir')
 
 // console.log('greatestDiff(arr)', greatestDiff(arr))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // 1
 
 // const starbuckString = "Hello there, how are you? Can you tell me how to get to the nearest Starbucks?"
@@ -571,30 +345,15 @@ const { test } = require('./testDir')
 
 //         obj[splitStr[i]] === undefined ? obj[splitStr[i]]=1 : obj[splitStr[i]] += 1
 
-
-
 //         console.log('obj', obj)
 
-
-
-
-
 //     }
-
-
-
-
 
 // }
 
 // firstApproachSBS(starbuckString)
 
 // console.log('firstApproachSBS(starbuckString)', firstApproachSBS(starbuckString))
-
-
-
-
-
 
 // function merge(left, right, array) {
 //     let leftIndex = 0;
@@ -619,7 +378,7 @@ const { test } = require('./testDir')
 //     return array;
 // };
 
-// // merge sort 
+// // merge sort
 
 // const array = [2, 3, 5, 1, 6, 4]
 // console.log('array', array)
@@ -647,16 +406,8 @@ const { test } = require('./testDir')
 //     return merge(left, right, array);
 // };
 
-
 // const arrayExample = [21, 1, 26, 45, 29, 28, 2, 9, 16, 49, 39, 27, 43, 34, 46, 40]
 // // console.log('mergeSort(arrayExample)', mergeSort(arrayExample))
-
-
-
-
-
-
-
 
 // // mode freq
 
@@ -681,20 +432,7 @@ const { test } = require('./testDir')
 // }
 // console.log('modeFreq(input)', modeFreq(input))
 
-
-
-
-
-
-
-
-
-
-
-
-
 // const partitionThis = [10,5,2,3,9,4]
-
 
 // function partition(array, start, end) {
 //     const pivot = array[end - 1];
@@ -719,9 +457,6 @@ const { test } = require('./testDir')
 // console.log('partition(partitionThis, start, end)',
 //     partition(partitionThis, 0, partitionThis.length-1))
 
-
-
-
 // 3 9 1 14 17 24 22 20
 
 // The pivot could have been 17, but could not have been 14
@@ -729,36 +464,17 @@ const { test } = require('./testDir')
 // Neither 14 nor 17 could have been the pivot
 // The pivot could have been 14, but could not have been 17
 
-
-// 14, 17, 13, 15, 19, 10, 3, 16, 9, 12 
+// 14, 17, 13, 15, 19, 10, 3, 16, 9, 12
 
 // last item pivot
-//   i   
-// 10 3 9 12 15 19 14 17 16 13 
+//   i
+// 10 3 9 12 15 19 14 17 16 13
 
+// first item pivot
+//    i
+// 13 10 3 9 12 14 15 16 19 17
 
-// first item pivot 
-//    i         
-// 13 10 3 9 12 14 15 16 19 17 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// /* 
+// /*
 // Algorithm to count number of word occurrences
 // Input: `"Hello there, how are you? Can you tell me how to get to the nearest Starbucks?"`
 // Output: `Hello = 1, there = 1, how = 2, are = 1, you = 2` etc.
@@ -766,37 +482,33 @@ const { test } = require('./testDir')
 
 // function wordCounter(sentence) {
 //     const words = sentence.split(/\W/).filter(Boolean); // split via regex /\W/ and remove anything that doesn't match
-//     const hash = new Map(); // hash map/table instantiation 
+//     const hash = new Map(); // hash map/table instantiation
 
 //     words.forEach(word => {
 //         if (hash.has(word)) {
-//             hash.set(word, hash.get(word) + 1); // if word exists in hash map, increment counter by 1         
+//             hash.set(word, hash.get(word) + 1); // if word exists in hash map, increment counter by 1
 //         }
 //         else {
-//             hash.set(word, 1); // otherwise, make a new key/value pair for the word.                          
+//             hash.set(word, 1); // otherwise, make a new key/value pair for the word.
 //         }
 //     });
 
-//     const counter = []; // array to hold hash map results.                                
+//     const counter = []; // array to hold hash map results.
 
-//     hash.forEach((value, key) => {  // loop through hash table to get the key/value data for the display array.                  
-//         counter.push(key + ' = ' + value); 
+//     hash.forEach((value, key) => {  // loop through hash table to get the key/value data for the display array.
+//         counter.push(key + ' = ' + value);
 //     });
 
-//     return counter.join(', ');  // display array showing word occurences and join all key/value pairs with commas                         
+//     return counter.join(', ');  // display array showing word occurences and join all key/value pairs with commas
 // }
 
 // console.log(wordCounter(`"Hello there, how are you? Can you tell me how to get to the nearest Starbucks?"`));
-
-
-
-
 
 // function bucketSort(arr, min, max) {
 //     //given an array, sort it with an O(n) algorithm
 //     //we know the maximum range of all values in the array
 //     //because of this, we know every possible value in the array
-//     //pass every value in the array into a hashMap, 
+//     //pass every value in the array into a hashMap,
 //     // tracking the number of times each value appears
 //     const numMap = new Map();
 //     for (let i = 0; i < arr.length; i++) {
@@ -811,7 +523,7 @@ const { test } = require('./testDir')
 //     console.log('arr', arr)
 
 //     //then iterate from min to max
-//     //retrieving the values in the hashmap to know 
+//     //retrieving the values in the hashmap to know
 //     //how many times the given value appears
 //     //overwrite the values in arr in order
 //     let j = 0;
@@ -834,15 +546,7 @@ const { test } = require('./testDir')
 // const min = Math.min(...arr);
 // const max = Math.max(...arr);
 
-
 // console.log('bucketSort (arr, min, max)', bucketSort(arr, min, max))
-
-
-
-
-
-
-
 
 // function compareLists(list1, list2) {
 //     if (!list1.head || !list2.head) {
@@ -850,7 +554,7 @@ const { test } = require('./testDir')
 //     }
 
 //     let listNode1 = list1.head;
-//     let listNode2 = list2.head; 
+//     let listNode2 = list2.head;
 
 //     while (listNode1 && listNode2) {
 //         if (listNode1.value.toLowerCase() < listNode2.value.toLowerCase()) {
@@ -897,7 +601,6 @@ const { test } = require('./testDir')
 
 // console.log(compareLists(list1, list2));
 
-
 // // greatest difference
 
 // const arr = [5, 8, 6, 1]
@@ -914,35 +617,22 @@ const { test } = require('./testDir')
 
 //     return max - min
 
-
 // }
 // console.log('greatestDiff(arr)', greatestDiff(arr))
 
-
-
-
-
-
-
-// // dsa interview 
-
-
+// // dsa interview
 
 // class Node {
 //     // constructor
 //     // value:
-//     // next: 
+//     // next:
 //     constructor(value, next) {
 //         this.value = value,
 //         this.next = next
 //     }
 // }
 
-
-
 // class LinkedList {
-
-
 
 //     // constructor
 //     // head = null
@@ -952,11 +642,10 @@ const { test } = require('./testDir')
 //         this.length = 0
 //     }
 
-
 //     // insert item
-//     // specify index 
+//     // specify index
 //     // start traversing until get to correct index
-//     // previous pointer connect to node 
+//     // previous pointer connect to node
 //     // nodes next set equal to prev nodes next pointer
 //     insert(value) {
 //         let currNode = this.head
@@ -970,8 +659,6 @@ const { test } = require('./testDir')
 //             currNode = currNode.next
 //         }
 //     }
-
-
 
 //     // find middle
 //     findMiddle() {
@@ -989,10 +676,7 @@ const { test } = require('./testDir')
 
 //         return currNode
 
-
 //     }
-
-
 
 //     // find
 //     // take in value
@@ -1000,28 +684,19 @@ const { test } = require('./testDir')
 //     // return index
 //     // return null
 
-
 //     // get
 //     // use find to find the value
 //     // return value
 
-
 //     // remove
-//     // specify index 
+//     // specify index
 //     // traverse until find value to remove
-//     // connect prev next next pointer to current next pointer 
-
-
+//     // connect prev next next pointer to current next pointer
 
 // }
 
-
-
-
-
 // function mergeSort(arr) {
 //     let middle = Math.floor(arr.length/2);
-
 
 //     if (arr.length === 0) {
 
@@ -1030,8 +705,7 @@ const { test } = require('./testDir')
 
 // //////////////////////////////////////////////////////////////////////////
 
-
-// // function same, takes in two arrays. if every value in first array has 
+// // function same, takes in two arrays. if every value in first array has
 // // its squared value in second array, return true
 
 // let arr1 = [2, 3]
@@ -1039,7 +713,6 @@ const { test } = require('./testDir')
 
 // // array length can be different
 // // assume not duplicates in input arr
-
 
 // function same(arr1, arr2) {
 
@@ -1070,13 +743,7 @@ const { test } = require('./testDir')
 
 // console.log('same(arr1,arr2)', same(arr1, arr2))
 
-
-
-
-
-
-
-// // valid anagram 
+// // valid anagram
 
 // const str1 = 'blahh'
 // const str2 = 'lhhab'
@@ -1097,7 +764,6 @@ const { test } = require('./testDir')
 //     }
 //     console.log('freqs2', freqs2)
 
-
 //     for (let key in freqs1) {
 //         if (!(freqs1[key] === freqs2[key])) {
 //             return false
@@ -1112,10 +778,9 @@ const { test } = require('./testDir')
 // better way to solve is to do one obj called lookup.
 // fill in lookup obj with str 1 chars and their frequency
 // loop thru second str
-// see if exists in lookup, 
-// if it does, decrement that letters frequency 
+// see if exists in lookup,
+// if it does, decrement that letters frequency
 // if not or if it's 0, return false
-
 
 // // countUniqueValues from sorted arr
 
@@ -1134,20 +799,10 @@ const { test } = require('./testDir')
 //     return count + 1
 // }
 
-
 // console.log('countUniqueValues(arr)', countUniqueValues(arr))
-
-
-
-
-
-
-
-
 
 // const num1 = 21344;
 // const num2 = 32414
-
 
 // function sameFrequency(num1, num2) {
 
@@ -1178,16 +833,11 @@ const { test } = require('./testDir')
 //         }
 //         return true
 
-
 //     }
 
 // }
 
-
 // console.log('sameFrequency(num1,num2)', sameFrequency(num1, num2))
-
-
-
 
 // sameFrequency Solution
 // function sameFrequency(num1, num2){
@@ -1213,15 +863,6 @@ const { test } = require('./testDir')
 //   return true;
 // }
 
-
-
-
-
-
-
-
-
-
 // const args = [1, 2, 2, 3, 0]
 
 // function areThereDuplicates(...args) {
@@ -1242,13 +883,7 @@ const { test } = require('./testDir')
 //     return false
 // }
 
-
 // console.log('areThereDuplicates(arr)', areThereDuplicates(...args))
-
-
-
-
-
 
 // // areThereDuplicates Solution (Multiple Pointers)
 // function areThereDuplicates(...args) {
@@ -1266,7 +901,6 @@ const { test } = require('./testDir')
 //   return false
 // }
 
-
 // // areThereDuplicates One Liner Solution
 // function areThereDuplicates() {
 //   return new Set(arguments).size !== arguments.length;
@@ -1274,20 +908,15 @@ const { test } = require('./testDir')
 
 // console.log('areThereDuplicates(1,2,3,4,4)', areThereDuplicates(1,2,3,4,4))
 
-
-
-
 // const arr = [4, 1, 2, 3]
 // const avg = 2
 
 // function averagePair(arr, avg) {
 
-
 //   let i = 0;
 
 //   let next = 1
 //   while (next<arr.length) {
-
 
 //     for (let j = next; j < arr.length; j++ ) {
 //       console.log('j', j)
@@ -1299,11 +928,6 @@ const { test } = require('./testDir')
 //       }
 //     }
 
-
-
-
-
-
 //     i++
 //     next++
 //   }
@@ -1312,10 +936,7 @@ const { test } = require('./testDir')
 
 // }
 
-
 // console.log('averagePair(arr, avg)', averagePair(arr, avg))
-
-
 
 // const arr = [3,4,2,1]
 // const num = 1.5
@@ -1334,16 +955,12 @@ const { test } = require('./testDir')
 //   return false;
 // }
 
-
 // console.log('averagePair(arr, num)', averagePair(arr, num))
 
-
-
-
 // //     i
-// // a b c 
+// // a b c
 
-// //         j 
+// //         j
 // // a f b f d
 
 // // if j value === i value
@@ -1378,21 +995,6 @@ const { test } = require('./testDir')
 // }
 // console.log('isSubsequence(str1,str2)', isSubsequence(str1,str2))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // isSubsequence Solution - Iterative
 // function isSubsequence(str1, str2) {
 //   var i = 0;
@@ -1407,16 +1009,13 @@ const { test } = require('./testDir')
 // }
 // console.log('isSubsequence(str1, str2)', isSubsequence(str1, str2))
 
-
 // // isSubsequence Solution - Recursive but not O(1) Space
 // function isSubsequence(str1, str2) {
 //   if(str1.length === 0) return true
 //   if(str2.length === 0) return false
-//   if(str2[0] === str1[0]) return isSubsequence(str1.slice(1), str2.slice(1))  
+//   if(str2[0] === str1[0]) return isSubsequence(str1.slice(1), str2.slice(1))
 //   return isSubsequence(str1, str2.slice(1))
 // }
-
-
 
 // const arr = [1, 2, 3, 4, 2, 2]
 // const num = 2
@@ -1427,7 +1026,7 @@ const { test } = require('./testDir')
 
 //   let total = 0;
 //   for (let i = 0; i < num; i++) {
-//     total += arr[i];  
+//     total += arr[i];
 //   }
 //   let currentTotal = total;
 //   for (let i = num; i < arr.length; i++) {
@@ -1438,9 +1037,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('maxSubarraySum(arr, num)', maxSubarraySum(arr, num))
-
-
-
 
 // const str = 'abcaaaaabcd'
 
@@ -1467,19 +1063,7 @@ const { test } = require('./testDir')
 //   return longest;
 // }
 
-
 // console.log('findLongestSubstring(str)', findLongestSubstring(str))
-
-
-
-
-
-
-
-
-
-
-
 
 // //power
 
@@ -1495,17 +1079,7 @@ const { test } = require('./testDir')
 
 // }
 
-
 // console.log('power(2,4)', power(2, 3))
-
-
-
-
-
-
-
-
-
 
 // //factorial(1) // 1
 // // factorial(2) // 2
@@ -1520,19 +1094,10 @@ const { test } = require('./testDir')
 //   return x * factorial(x-1);
 // }
 
-
 // console.log('factorial(num)', factorial(num))
-
-
-
-
-
-
 
 // // productOfArray([1,2,3]) // 6
 // // productOfArray([1,2,3,10]) // 60
-
-
 
 // function productOfArray(arr) {
 
@@ -1543,36 +1108,20 @@ const { test } = require('./testDir')
 
 // console.log('productOfArray([1,2,3])', productOfArray([1,2,3,10]))
 
-
-
-
-
-
-
-
-
-
 // // SAMPLE INPUT/OUTPUT
 // // recursiveRange(6) // 21
-// // recursiveRange(10) // 55 
+// // recursiveRange(10) // 55
 
 // const num = 10
 
 // function recursiveRange(num){
 
-//   if (num === 0) return 0  
+//   if (num === 0) return 0
 
 //   return num + recursiveRange(num-1)
 // }
 
 // console.log('recursiveRange(num)', recursiveRange(num))
-
-
-
-
-
-
-
 
 // // fib(4) // 3
 // // fib(10) // 55
@@ -1585,31 +1134,10 @@ const { test } = require('./testDir')
 
 //   if (num <= 2) return 1
 
-
 //   return fib(num -1) + fib(num-2)
 // }
 
-
-
 // console.log('fib(num)', fib(num))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const arr = [0,1,2,3,4,5,6,7]
 // const val = 8
@@ -1639,9 +1167,6 @@ const { test } = require('./testDir')
 
 // console.log('binarySearch(arr,val)', binarySearch(arr, val))
 
-
-
-
 // const str = "abcblahabcblah";
 // const word = "blah";
 // const strLen = str.length;
@@ -1655,7 +1180,7 @@ const { test } = require('./testDir')
 //       while (j < j + wordLen && j < strLen) {
 //         if (str[j] !== word[j-i]) {
 //           break
-//         } 
+//         }
 //         if (j-i === wordLen-1) {
 //           count++
 //         }
@@ -1667,10 +1192,7 @@ const { test } = require('./testDir')
 // }
 // console.log('naiveStringSearch(str,word)', naiveStringSearch(str, word))
 
-
-
-
-// // bubble sort 
+// // bubble sort
 
 // const arr = [4, 5, 2, 3, 1]
 
@@ -1696,11 +1218,7 @@ const { test } = require('./testDir')
 
 // console.log('bubbleSort(arr)', bubbleSort(arr))
 
-
-
-
 // const arr = [4, 5, 2, 3, 1]
-
 
 // function selectionSort(arr) {
 //   for (let i = 0; i < arr.length - 1; i++) {
@@ -1726,9 +1244,6 @@ const { test } = require('./testDir')
 
 // console.log('selectionSort(arr)', selectionSort(arr))
 
-
-
-
 // const arr = [1, 2, 2, 3]
 
 // function areThereDuplicates(...args) {
@@ -1746,17 +1261,7 @@ const { test } = require('./testDir')
 //   return false;
 // }
 
-
-
 // console.log('areThereDuplicates(...arr)', areThereDuplicates(...arr))
-
-
-
-
-
-
-
-
 
 // function merge(arr1, arr2) {
 //   const len1 = arr1.length;
@@ -1790,14 +1295,10 @@ const { test } = require('./testDir')
 
 // }
 
-
 // console.log('merge([1, 10, 50], [2, 14, 99, 100])', merge([1, 10, 50], [2, 14, 99, 100]))
-
-
 
 // const arr = [4, 7, 3, 1, 8, 2, 5, 6]
 // // const arr = [2, 1]
-
 
 // function mergeSort(arr) {
 
@@ -1809,33 +1310,16 @@ const { test } = require('./testDir')
 //   let leftArr = mergeSort(arr.slice(0, midpoint));
 //   let rightArr = mergeSort(arr.slice(midpoint));
 
-
-
 //   return merge(leftArr,rightArr)
 // }
 
 // console.log('mergeSort(arr)', mergeSort(arr))
-
-
-
-
-
-
-
-
-
-
-
-
 
 // function swap(arr, idx1, idx2) {
 //   const temp = arr[idx1]
 //   arr[idx1] = arr[idx2]
 //   arr[idx2] = temp
 // }
-
-
-
 
 // const arr = [7, 4, 3, 1, 8, 2, 5, 6]
 
@@ -1845,36 +1329,25 @@ const { test } = require('./testDir')
 
 // function pivot(arr, start = 0, end = arr.length - 1) {
 
-
 // let pivotVal = arr[start]
 // let swapIdx = start
-
 
 //   for (let i = 1; i <= end; i++) {
 //     if (arr[start] > arr[i]) {
 //       swapIdx++;
 //       console.log('swapIdx', swapIdx)
 //       swap(arr,swapIdx,i)
-//       console.log('arr', arr) 
+//       console.log('arr', arr)
 //     }
 //   }
 //   swap(arr,start,swapIdx)
 //   return arr
 
-
 // }
 
 // console.log('pivot(arr,start,end)', pivot(arr, 0, arr.length-1))
 
-
-
-
-
-
-
 // const s = 'aaaabbbb'
-
-
 
 // function countStrings(s) {
 
@@ -1884,7 +1357,7 @@ const { test } = require('./testDir')
 //     if (curS.charAt(0) === curS.charAt(curS.length-1)) {
 //       count++
 //     }
-//     curS = circleShift(curS) 
+//     curS = circleShift(curS)
 //   }
 
 //   return count
@@ -1899,15 +1372,11 @@ const { test } = require('./testDir')
 
 // }
 
-
 // console.log('countStrings(s)', countStrings(s))
-
-
 
 // //hackerrank thing 2
 
 // const size = [ 5, 7, 6, 9, 8, 4, 2,2]
-
 
 // function findDolls(size) {
 
@@ -1946,14 +1415,11 @@ const { test } = require('./testDir')
 
 // }
 
-
-
 // console.log('findDolls(size)', findDolls(size))
 
 // const meal_cost = 15.50
 // const tax_percent = 15
 // const tip_percent = 10
-
 
 // function solve(meal_cost, tip_percent, tax_percent) {
 
@@ -1964,12 +1430,9 @@ const { test } = require('./testDir')
 
 //   return Math.round(total);
 
-
 // }
 
 // console.log('solve(meal_cost, tip_percent, tax_percent)', solve(meal_cost, tip_percent, tax_percent))
-
-
 
 // const ar = [1,2,2,4,4,4,5,5]
 // const n = ar.length
@@ -1981,7 +1444,6 @@ const { test } = require('./testDir')
 //     return a-b;
 //   })
 
-
 //   let ptr1 = 0;
 //   let ptr2 = 1;
 // let count = 0;
@@ -1992,14 +1454,12 @@ const { test } = require('./testDir')
 //       ptr1 += 2
 //       ptr2 += 2
 
-
 //     } else {
 //       ptr1++
 //       ptr2++
 //     }
 
 //   }
-
 
 //   console.log(count)
 //   return count
@@ -2024,7 +1484,6 @@ const { test } = require('./testDir')
 //       wentBelow = true;
 //     }
 
-
 //     // console.log('level', level)
 //     // console.log('wentBelow', wentBelow)
 //     // console.log('cameBackUp', cameBackUp)
@@ -2040,21 +1499,8 @@ const { test } = require('./testDir')
 
 // console.log('countingValleys(steps, path)', countingValleys(steps, path))
 
-
-
-
-
-
-
-
-
-
-
-
 // const SLL = new SinglyLinkedList();
 // console.log('SLL', SLL)
-
-
 
 // // SLL.push(1)
 // // console.log('SLL', SLL)
@@ -2081,16 +1527,6 @@ const { test } = require('./testDir')
 // SLL.unshift(0)
 // console.log('SLL', SLL)
 
-
-
-
-
-
-
-
-
-
-
 // // hackerrank
 
 // const c = [0,1,0,0,0,0,0,1,0]
@@ -2114,10 +1550,8 @@ const { test } = require('./testDir')
 
 // console.log('jumpingOnClouds(c)', jumpingOnClouds(c))
 
-
-
 // const s = 'a';
-// const n = 10000;  
+// const n = 10000;
 // function repeatedString(s, n) {
 
 //   const len = s.length;
@@ -2135,18 +1569,11 @@ const { test } = require('./testDir')
 
 // }
 
-
 // console.log('repeatedString(s, n)', repeatedString(s, n))
-
-
-
 
 // 1234
 // 1243
 // 1423
-
-
-
 
 // // hackerrank comcast
 
@@ -2163,7 +1590,6 @@ const { test } = require('./testDir')
 //   let moves = 0
 //   while (dist < len) {
 
-
 //     if (obs[dist] === curLane) {
 //       curLane = move(dist, curLane, obs);
 //       moves++;
@@ -2174,8 +1600,6 @@ const { test } = require('./testDir')
 
 //   return moves
 // }
-
-
 
 // function move(dist, curLane, obs) {
 //   let flipCoin = Math.random() < 0.5; // lul
@@ -2189,7 +1613,6 @@ const { test } = require('./testDir')
 //     return curLane = 2
 //   }
 
-
 //   // if (obs[dist + 1] === 2 && curLane === 2) {
 //   //   return curLane = flipCoin === true ? 1 : 3;
 //   // }
@@ -2199,7 +1622,6 @@ const { test } = require('./testDir')
 //   if (obs[dist + 1] === 2 && curLane === 3) {
 //     return curLane = 1
 //   }
-
 
 //   // if (obs[dist + 1] === 3 && curLane === 3) {
 //   //   return curLane = flipCoin === true ? 1 : 2;
@@ -2213,9 +1635,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('minimumMovement(obstacleLanes)', minimumMovement(obstacleLanes))
-
-
-
 
 // const arr = [1, 9, 9, 4, 4, 4, 4, 4, 1, 1];
 
@@ -2232,10 +1651,7 @@ const { test } = require('./testDir')
 //   return arr.length - maxCount;
 // }
 
-
-
 // console.log('equalizeArray(arr)', equalizeArray(arr))
-
 
 // const arr = [
 //   [1, 1, 1, 0, 0, 0],
@@ -2245,7 +1661,6 @@ const { test } = require('./testDir')
 //   [0, 0, 0, -2, 0, 0],
 //   [0, 0, -1, -2, -4, 0],
 // ]
-
 
 // function hourglassSum(arr) {
 //   let maxSum = -Infinity;
@@ -2285,13 +1700,7 @@ const { test } = require('./testDir')
 
 // console.log('hgSum(arr, x, y)', hgSum(arr, x, y))
 
-
 // console.log('hourglassSum(arr)', hourglassSum(arr))
-
-
-
-
-
 
 // const a = [1, 2, 3, 4, 5];
 
@@ -2308,16 +1717,9 @@ const { test } = require('./testDir')
 
 // }
 
-
 // console.log('rotLeft(a, d)', rotLeft(a, d))
 
-
-
-
-
-
 // const arr = [1, 3, 5, 2, 4, 6, 7]
-
 
 // function minimumSwaps(arr) {
 
@@ -2339,12 +1741,10 @@ const { test } = require('./testDir')
 //       swapCount++
 //     }
 
-
 //   }
 
 //   // return arr
 //   return swapCount;
-
 
 // }
 
@@ -2354,11 +1754,7 @@ const { test } = require('./testDir')
 //   arr[j] = temp;
 // }
 
-
 // console.log('minimumSwaps(arr)', minimumSwaps(arr))
-
-
-
 
 // const queries = [[2,6,8], [3,5,7], [1,8,1],[5,9,15]];
 // const n = 10
@@ -2391,14 +1787,10 @@ const { test } = require('./testDir')
 //     }
 //   }
 
-
 //   return max
 // }
 
 // console.log('arrayManipulation(n, queries)', arrayManipulation(n, queries))
-
-
-
 
 // const queries = [[1, 3, 5], [3, 5, 10], [5, 7, 20], [1, 2, 30]];
 // const n = 10
@@ -2406,7 +1798,6 @@ const { test } = require('./testDir')
 // function arrayManipulation(n, queries) {
 
 //   const arr = Array(n + 1);
-
 
 //   let maxValue = 0,
 //     currentNumber = 0;
@@ -2437,15 +1828,7 @@ const { test } = require('./testDir')
 //   return maxValue;
 // }
 
-
-
-
 // console.log('arrayManipulation(n, queries)', arrayManipulation(n, queries))
-
-
-
-
-
 
 // const nums = [1]
 
@@ -2463,10 +1846,6 @@ const { test } = require('./testDir')
 // };
 
 // console.log('removeDuplicates(nums)', removeDuplicates(nums))
-
-
-
-
 
 // const prices = [1,2,3,4,5]
 
@@ -2492,14 +1871,7 @@ const { test } = require('./testDir')
 //   return profit
 // };
 
-
-
-
-
-
 // console.log('maxProfit(prices)', maxProfit(prices))
-
-
 
 // function f(x) {
 //   x *= 2
@@ -2512,7 +1884,6 @@ const { test } = require('./testDir')
 // }
 // let g = f(3)(4)(5);
 // console.log('f(3)(4)(5)', f(3)(4)(5))
-
 
 // const nums = [1,5,-2,-4,0,1]
 
@@ -2530,12 +1901,7 @@ const { test } = require('./testDir')
 //   return false
 // };
 
-
 // console.log('containsDuplicate(nums)', containsDuplicate(nums))
-
-
-
-
 
 // const s = ["h"];
 
@@ -2557,31 +1923,22 @@ const { test } = require('./testDir')
 
 // }
 
-
 // console.log('reverseString(s)', reverseString(s))
 
-
-
-
 // var removeNthFromEnd = function (head, n) {
-
-
 
 //   const list = head
 //   let isTrue = true
 //   while (head.next || isTrue) {
 
-
 //   }
 //   return list
 // };
 
-
 // function ListNode(val,next) {
-//   this.val = (val === undefined ? 0 : val) 
+//   this.val = (val === undefined ? 0 : val)
 //   this.next = (next === undefined ? null : next)
 // }
-
 
 // let SLL = new SinglyLinkedList
 
@@ -2610,8 +1967,6 @@ const { test } = require('./testDir')
 //     console.log('cur', cur)
 
 // };
-
-
 
 // console.log('reverseList(head)', reverseList(head))
 
@@ -2648,8 +2003,7 @@ const { test } = require('./testDir')
 // let shuffled = solution.shuffle()
 // console.log('shuffled', shuffled)
 
-
-// const nums = [2,7,4,1] 
+// const nums = [2,7,4,1]
 // const target = 9
 
 // var twoSum = function(nums, target) {
@@ -2665,11 +2019,7 @@ const { test } = require('./testDir')
 //   }
 // };
 
-
-
 // console.log('twoSum(nums,target)', twoSum(nums,target))
-
-
 
 // //                j
 // const nums1 =    [4, 9, 5]
@@ -2716,9 +2066,6 @@ const { test } = require('./testDir')
 //   return intersection
 // };
 
-
-
-
 // console.log('intersect(num1,num2)', intersect(nums1, nums2))
 
 // //             j
@@ -2727,14 +2074,11 @@ const { test } = require('./testDir')
 // //             i
 // const nums2 = [1, 1]
 
-
 // //                j
 // const nums1 =    [4, 9, 5]
 // //                k
 // //             i
 // const nums2 = [9, 4, 9, 8, 4, 9]
-
-
 
 // var intersect = function (nums1, nums2) {
 //   const len1 = nums1.length
@@ -2754,7 +2098,7 @@ const { test } = require('./testDir')
 
 //   for (const num of long) {
 //     if (longObj[num]) {
-//       longObj[num]++ 
+//       longObj[num]++
 //     } else {
 //       longObj[num] = 1
 //     }
@@ -2770,13 +2114,9 @@ const { test } = require('./testDir')
 
 // };
 
-
-
-
 // console.log('intersect(num1,num2)', intersect(nums1, nums2))
 
-
-// //               i          
+// //               i
 // const s = "cce"
 
 // var firstUniqChar = function(s) {
@@ -2787,14 +2127,14 @@ const { test } = require('./testDir')
 //   const seenLetters = new Set()
 //   // traverse from i = end to beginning of string
 //   for (let i = s.length-1; i >= 0; i--) {
-//     // for each character, check if it's contained in map. 
+//     // for each character, check if it's contained in map.
 //     const letter = s.charAt(i)
 
 //     if (!seenLetters.has(letter)) {
 //       // if it's not, push the index onto a stack
 //       possibles.push([letter, i])
 //       seenLetters.add(letter)
-//     } 
+//     }
 //   }
 
 //   let j = 0
@@ -2805,7 +2145,6 @@ const { test } = require('./testDir')
 //       j++
 //     }
 
-
 //     // return last item on stack
 //   console.log('possibles', possibles)
 //   // return possibles.pop()
@@ -2815,15 +2154,7 @@ const { test } = require('./testDir')
 
 // console.log('firstUniqChar(s)', firstUniqChar(s))
 
-
-
-
-
-
-
-
-
-// //               i          
+// //               i
 // const s = "ccecccce"
 
 // var firstUniqChar = function(s) {
@@ -2851,7 +2182,6 @@ const { test } = require('./testDir')
 // };
 
 // console.log('firstUniqChar(s)', firstUniqChar(s))
-
 
 // const s = "-5-"
 
@@ -2923,11 +2253,7 @@ const { test } = require('./testDir')
 
 // };
 
-
 // const s = "   34 qwer"
-
-
-
 
 // var myAtoi = function(s) {
 //   var a = parseInt(s, 10) ? parseInt(s, 10) : 0;
@@ -2941,9 +2267,6 @@ const { test } = require('./testDir')
 // };
 
 // console.log('myAtoi(s)', myAtoi(s))
-
-
-
 
 // const haystack = ""
 // const needle =  ""
@@ -2978,16 +2301,16 @@ const { test } = require('./testDir')
 
 // console.log('strStr(haystack, needle)', strStr(haystack, needle))
 
-//                      seen = a 
-//         i   
+//                      seen = a
+//         i
 // const s = "daasdfasdfasdfasdf"
 // //         j
 // //  i = 0   s[i] = a                                                                              maxStr = 1
 // //  i = 1   s[i] = b                                                                              maxStr = 2
-// //  i = 2   s[i] = b  if (set.has(s[i])) maxStr = 1                                               maxStr = 1  
-// //  i = 3   s[i] = a                                                                              maxStr = 2    
-// //  i = 4   s[i] = b  if (set.has(s[i])) maxStr = 1, go back to last element that isnt this one   maxStr = 1        
-// //  i = 5   s[i] = c                                                                              maxStr = 1  
+// //  i = 2   s[i] = b  if (set.has(s[i])) maxStr = 1                                               maxStr = 1
+// //  i = 3   s[i] = a                                                                              maxStr = 2
+// //  i = 4   s[i] = b  if (set.has(s[i])) maxStr = 1, go back to last element that isnt this one   maxStr = 1
+// //  i = 5   s[i] = c                                                                              maxStr = 1
 
 // var lengthOfLongestSubstring = function (s) {
 //   const len = s.length
@@ -3022,13 +2345,6 @@ const { test } = require('./testDir')
 
 // console.log('lengthOfLongestSubstring(s)', lengthOfLongestSubstring(s))
 
-
-
-
-
-
-
-
 // //              i
 // const s = "ababcabbcd"
 // //           j
@@ -3058,30 +2374,27 @@ const { test } = require('./testDir')
 
 // console.log('lengthOfLongestSubstring(s)', lengthOfLongestSubstring(s))
 
-
-
 //      aabc
 //      cbaa     does orig === rev ?   nope
-//      baa      does orig[0:3] === rev[1:4]   i=start=0 to i=len-winLenRem    j=len-winLenRem  to j=len       winLen=3  winLenRem=len-winLen=1  
-//       cba     does orig[1:4] === rev[0:3]   i=start=1 to i=len              j=0  to j=len-winLenRem         winLen=3  winLenRem=len-winLen=1  
+//      baa      does orig[0:3] === rev[1:4]   i=start=0 to i=len-winLenRem    j=len-winLenRem  to j=len       winLen=3  winLenRem=len-winLen=1
+//       cba     does orig[1:4] === rev[0:3]   i=start=1 to i=len              j=0  to j=len-winLenRem         winLen=3  winLenRem=len-winLen=1
 //      aa       does orig[0:2] === rev[2:4]   i=start=0 to i=start+len-winLenRem    j=len-winLenRem  to j=len       winLen=2  winLenRem=len-winLen=2
 //       ba      does orig[1:3] === rev[1:3]   i=start=1 to i=start+len-winLenRem
 //        cb
 
 //      aabc
-//      cbaa   
-//     s[0] === s[3]   i=start=0  i=start+winLen-1=3       winLen=4   
-//      baa              
-//     s[0] === s[2]   i=start=0  i=start+winLen-1=2       winLen=3   
-//       cba         
-//     s[1] === s[3]   i=start=1  i=start+winLen-1=3       winLen=3   
-//      aa       
-//     s[0] === s[1]   i=start=0  i=start+winLen-1=1       winLen=2   
-//       ba    
-//     s[1] === s[2]   i=start=1  i=start+winLen-1=2       winLen=2   
+//      cbaa
+//     s[0] === s[3]   i=start=0  i=start+winLen-1=3       winLen=4
+//      baa
+//     s[0] === s[2]   i=start=0  i=start+winLen-1=2       winLen=3
+//       cba
+//     s[1] === s[3]   i=start=1  i=start+winLen-1=3       winLen=3
+//      aa
+//     s[0] === s[1]   i=start=0  i=start+winLen-1=1       winLen=2
+//       ba
+//     s[1] === s[2]   i=start=1  i=start+winLen-1=2       winLen=2
 //        cb
-//     s[2] === s[3]   i=start=2  i=start+winLen-1=3       winLen=2   
-
+//     s[2] === s[3]   i=start=2  i=start+winLen-1=3       winLen=2
 
 // const s = "asdfasfwsdvewtrebv32wwdfevbwrwvsda"
 
@@ -3089,7 +2402,6 @@ const { test } = require('./testDir')
 //   let len = s.length;
 //   while (len > 0) {
 //     for (let i = 0; i < s.length - len + 1; i++) {
-
 
 //       let str = s.slice(i, i + len);
 //       if (isPalindrom(str))
@@ -3114,59 +2426,54 @@ const { test } = require('./testDir')
 
 // console.log('longestPalindrome(s)', longestPalindrome(s))
 
-
-
 // Output: [1,2,2,3,5,6]
 
 //            i
-// nums1 = [1,2,3,0,0,0] 
-// 
+// nums1 = [1,2,3,0,0,0]
+//
 //            i   j
-// nums1 = [1,2,3,2,5,6] 
-//              i 
-// nums1 = [1,2,2,3,5,6] 
+// nums1 = [1,2,3,2,5,6]
+//              i
+// nums1 = [1,2,2,3,5,6]
 //                j
 
-//          i   
-// nums1 = [1,2,5,1,3,4] 
+//          i
+// nums1 = [1,2,5,1,3,4]
 //                j
-//                  i   
-// nums1 = [1,1,2,3,5,1]     increment i, dont inc j until either i === j or 
+//                  i
+// nums1 = [1,1,2,3,5,1]     increment i, dont inc j until either i === j or
 //                  j
 
-//            i 
-// nums1 = [1,2,5,1,3,4] 
+//            i
+// nums1 = [1,2,5,1,3,4]
 //                j
 
-//              i 
-// nums1 = [1,1,5,2,3,4] 
+//              i
+// nums1 = [1,1,5,2,3,4]
 //                j
 
-//                i 
-// nums1 = [1,1,2,5,3,4] 
+//                i
+// nums1 = [1,1,2,5,3,4]
 //                  j
 
-
-//            i   
-// nums1 = [1,2,5,1,1,1] 
+//            i
+// nums1 = [1,2,5,1,1,1]
 //                j
-//                  i   
-// nums1 = [1,1,2,3,5,1]     increment i, dont inc j until either i === j or 
+//                  i
+// nums1 = [1,1,2,3,5,1]     increment i, dont inc j until either i === j or
 //                  j
 
-//            i 
-// nums1 = [1,2,5,1,3,4] 
+//            i
+// nums1 = [1,2,5,1,3,4]
 //                j
 
-//              i 
-// nums1 = [1,1,5,2,3,4] 
+//              i
+// nums1 = [1,1,5,2,3,4]
 //                j
 
-//                i 
-// nums1 = [1,1,2,5,3,4] 
+//                i
+// nums1 = [1,1,2,5,3,4]
 //                  j
-
-
 
 //          j
 // nums2 = [2,5,6]
@@ -3177,7 +2484,6 @@ const { test } = require('./testDir')
 // const nums2 = [2,3,4,5]
 // const n = nums2.length
 // const m = nums1.length - n
-
 
 // var merge = function (nums1, m, nums2, n) {
 
@@ -3212,64 +2518,40 @@ const { test } = require('./testDir')
 
 //   return nums1
 
-
 // };
 
 // console.log('merge(nums1, m, nums2, n)', merge(nums1, m, nums2, n))
 
-
-
-
-//     c1 
+//     c1
 //     1->  2->  4
-//                           c1 > c2 ?  no, so 
+//                           c1 > c2 ?  no, so
 
-//     c2 
+//     c2
 //     1->  3->  4
 
-
-
-
-//     c1 
+//     c1
 //     1->  2->  4
 
-
-//     c2 
+//     c2
 //     1->  3->  4
 
-
-
-
-//     c1 
+//     c1
 //     1->  2->  4
 
-
-//     c2 
+//     c2
 //     1->  3->  4
 
-
-
-
-//     c1 
+//     c1
 //     1->  2->  4
 
-
-//     c2 
+//     c2
 //     1->  3->  4
 
-//     c1 <= c2    yes, so 
-
-
+//     c1 <= c2    yes, so
 
 // var mergeTwoLists = function(l1, l2) {
 
-
-
 // };
-
-
-
-
 
 // const SLL = new SinglyLinkedList();
 // SLL.push(0)
@@ -3287,11 +2569,8 @@ const { test } = require('./testDir')
 // // SLL.set(1,100)
 // // console.log('SLL', SLL)
 
-
 // // SLL.insert(0,999)
 // // console.log('SLL', SLL)
-
-
 
 // // SLL.delete(1)
 // // console.log('SLL.delete(2)', SLL.delete(2))
@@ -3301,25 +2580,16 @@ const { test } = require('./testDir')
 
 // SLL.print()
 
-
-
 // 1
-
-
 
 // 11
 
 // 2
 
-
-
 // 111
 // 21
 
 // 12
-
-
-
 
 // 1111
 // 211
@@ -3327,8 +2597,6 @@ const { test } = require('./testDir')
 
 // 112
 // 22
-
-
 
 // 11111
 // 2111
@@ -3339,8 +2607,6 @@ const { test } = require('./testDir')
 
 // 212
 // 122
-
-
 
 // 111111
 // 21111
@@ -3355,21 +2621,13 @@ const { test } = require('./testDir')
 // 1221
 // 1212
 // 1122
-// 222 
-
-
-
-
-
-
+// 222
 
 // const n = 6;
 
 // var climbStairs = function (n) {
 
-
 //   if (n <= 3) return n;
-
 
 //   let i = 4;
 //   let result;
@@ -3390,11 +2648,6 @@ const { test } = require('./testDir')
 // };
 
 // console.log('climbStairs(n)', climbStairs(n))
-
-
-
-
-
 
 // const prices = [10, 3, 8, 2, 3,1,100]
 
@@ -3428,13 +2681,7 @@ const { test } = require('./testDir')
 
 // console.log('maxProfit(prices)', maxProfit(prices))
 
-
-
-
-
-
 // const nums = [10, -2, 4, -3, -1, 4]
-
 
 // // const nums = [-2, -1]
 
@@ -3456,13 +2703,6 @@ const { test } = require('./testDir')
 
 // console.log('maxSubArray(nums)', maxSubArray(nums))
 
-
-
-
-
-
-
-
 // const nums = [3, -20, 4, -3, 6, 1]
 
 // var maxSubArray = function (nums) {
@@ -3482,7 +2722,6 @@ const { test } = require('./testDir')
 
 // console.log('maxSubArray(nums)', maxSubArray(nums))
 
-
 // const nums = [1, 2, 3,4,5,6]
 
 // var Solution = function (nums) {
@@ -3490,7 +2729,7 @@ const { test } = require('./testDir')
 //   const original = nums;
 
 //   this.shuffle = () => {
-//     let rand; 
+//     let rand;
 //     for (let i = len-1; i >= 0; i--) {
 //       rand = Math.floor(Math.random() * nums.length);
 //       let temp = nums[i];
@@ -3509,7 +2748,6 @@ const { test } = require('./testDir')
 // const solution = new Solution(nums)
 // console.log('solution', solution.shuffle())
 
-
 // const n = 15;
 
 // var fizzBuzz = function (n) {
@@ -3526,11 +2764,6 @@ const { test } = require('./testDir')
 
 // console.log('fizzBuzz(n)', fizzBuzz(n))
 
-
-
-
-
-
 // const DLL = new DoublyLinkedList()
 
 // DLL.push(0)
@@ -3545,22 +2778,13 @@ const { test } = require('./testDir')
 // DLL.shift()
 // console.log('DLL', DLL)
 
-
 // DLL.unshift(0)
 // console.log('DLL', DLL)
 
-
-
-
-
 // console.log('DLL.get(1)', DLL.get(2))
-
 
 // DLL.set(100,2)
 // console.log('DLL.set(100,2)', DLL.set(2,100))
-
-
-
 
 // DLL.insert(1,'something')
 
@@ -3576,16 +2800,12 @@ const { test } = require('./testDir')
 // stack.push(2)
 // stack.push(3)
 
-
 // // stack.pop()
 // // stack.pop()
 
 // console.log('stack', stack)
 
-
-
 // const queue = new Queue();
-
 
 // queue.enqueue(1)
 // queue.enqueue(2)
@@ -3594,16 +2814,9 @@ const { test } = require('./testDir')
 // queue.dequeue()
 // queue.dequeue()
 
-
-
-
 // console.log('queue', queue)
 
-
-
-
 // const BST = new BinarySearchTree();
-
 
 // BST.insert(2)
 // BST.insert(3)
@@ -3623,13 +2836,10 @@ const { test } = require('./testDir')
 // console.log('BST.DFS_InOrder()', BST.DFS_InOrder())
 // console.log('BST', BST)
 
-
-
-
 // const MBH = new MaxBinaryHeap();
 
 // MBH.insert(10);
-// MBH.insert(20); 
+// MBH.insert(20);
 // MBH.insert(30);
 // MBH.insert(40);
 // MBH.insert(50);
@@ -3637,7 +2847,6 @@ const { test } = require('./testDir')
 
 // console.log('MBH.extractMax()', MBH.extractMax())
 // console.log('MBH', MBH)
-
 
 // let ER = new PriorityQueue();
 
@@ -3672,7 +2881,6 @@ const { test } = require('./testDir')
 
 // console.log('HT.keys()', HT.keys())
 
-
 // remove duplicate values in a string
 
 // const str = 'google';
@@ -3684,17 +2892,13 @@ const { test } = require('./testDir')
 //         if (!map.has(char)) {
 //             map.set(char);
 //             newStr += char;
-//         } 
+//         }
 //     }
 //     return newStr;
 
 // }
 
 // console.log('removeDups(str)', removeDups(str))
-
-
-
-
 
 // const g = new Graph()
 
@@ -3711,15 +2915,11 @@ const { test } = require('./testDir')
 
 // console.log('g', g)
 
-
 // // g.removeEdge('Tokyo', 'Dallas');
 
 // // console.log('g', g)
 
-
 // g.removeVertex('NYC')
-
-
 
 // console.log('g', g)
 // const g = new Graph()
@@ -3741,27 +2941,17 @@ const { test } = require('./testDir')
 
 // console.log('g', g)
 
-
-
 // console.log('g.DFS_Recursive("A",true)', g.DFS_Recursive("A", true))
-
 
 // console.log('==============================================')
 // console.log('==============================================')
 // console.log('g.DFS_Recursive("A",false)', g.DFS_Recursive("A", false))
 
-
-
-
 // console.log('g.DFS_Iterative("A")', g.DFS_Iterative("A"))
-
-
 
 // console.log('g.BFS("A")', g.BFS("A"))
 
-
 // let graph = new WeightedGraph();
-
 
 // graph.addVertex("A");
 // graph.addVertex("B");
@@ -3782,7 +2972,6 @@ const { test } = require('./testDir')
 // console.log('graph.adjacencyList', graph.adjacencyList)
 
 // console.log('graph.shortestPath("A","E")', graph.shortestPath("A", "E"))
-
 
 // const fib = (n, memo = []) => {
 //     if (memo[n] !== undefined) return memo[n];
@@ -3807,7 +2996,6 @@ const { test } = require('./testDir')
 // }
 // console.log('sortedFrequency(arr,num)', sortedFrequency(arr, num))
 
-
 // const denoms = [1, 5, 10, 25];
 // const val = 5;
 
@@ -3818,7 +3006,7 @@ const { test } = require('./testDir')
 //     let coinCounts = {};
 //     while (total !== val) {
 //         candidate = denoms[1];
-//         if (total + candidate === val) { 
+//         if (total + candidate === val) {
 //             total = total + candidate;
 //             coinCounts[candidate] = coinCounts[candidate] + 1 || 1;
 //             paths = paths + 1;
@@ -3830,10 +3018,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('coinChange(denoms, val)', coinChange(denoms, val))
-
-
-
-
 
 // function waysToReturnMemoize(amount, denominations) {
 //     // intialize an array of zeros with indices up to amount
@@ -3867,8 +3051,6 @@ const { test } = require('./testDir')
 // var amount = 6;
 // // console.log(waysToReturnChange(denominations, denominations.length - 1, amount));
 // console.log(waysToReturnMemoize(amount,denominations));
-
-
 
 // const arr = [0, 1, 2];
 // const num = 1;
@@ -3912,7 +3094,6 @@ const { test } = require('./testDir')
 //             mid = start + Math.floor((end - start) / 2);
 //         }
 
-
 //     }
 //     return mid;
 // }
@@ -3947,16 +3128,12 @@ const { test } = require('./testDir')
 
 // console.log('sortedFrequency(arr, num)', sortedFrequency(arr, num))
 
-
-
-
-
 // https://www.hackerrank.com/challenges/two-strings/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=dictionaries-hashmaps
 
 // const s1 = 'asdf'
 // const s2 = 'aiuhi'
 
-// function twoStrings(s1, s2) {    
+// function twoStrings(s1, s2) {
 //     const s1Len = s1.length;
 //     const s2Len = s2.length;
 //     const longest = Math.max(s1Len, s2Len);
@@ -3972,23 +3149,19 @@ const { test } = require('./testDir')
 //         // console.log('s2Map.has(s1[i])', s2Map.has(s1[i]))
 //         if (s2Map.has(s1[i]) || s1Map.has(s2[i])) return 'YES';
 //         i++;
-//     }    
+//     }
 
 //     return 'NO'
 // }
 
 // console.log('twoStrings(s1, s2)', twoStrings(s1, s2))
 
-
-
 // const s = 'ifailuhkqq'
-
 
 // function sherlockAndAnagrams(s) {
 
 //     let count = 0;
 //     const { substrArr, substrObj } = allSubstrings(s);
-
 
 //     for (let str of substrArr) {
 
@@ -4031,15 +3204,7 @@ const { test } = require('./testDir')
 //     return s.split('').sort().join('')
 // }
 
-
-
 // console.log('sherlockAndAnagrams(s)', sherlockAndAnagrams(s))
-
-
-
-
-
-
 
 // const s = "ABABABAB"
 
@@ -4053,9 +3218,6 @@ const { test } = require('./testDir')
 
 // console.log('alternatingCharacters(s)', alternatingCharacters(s))
 
-
-
-
 // const s = "aabbc"
 
 // function isValid(s) {
@@ -4067,7 +3229,6 @@ const { test } = require('./testDir')
 //     }
 
 //     // console.log('counts', counts)
-
 
 //     const countsArr = Object.values(counts)
 //     const sortedCounts = countsArr.sort((a, b) => a - b)
@@ -4087,7 +3248,6 @@ const { test } = require('./testDir')
 //         return false
 //     }
 
-
 //     if (sortedCounts[0] === sortedCounts[end - 1] || containsASingleOne()) {
 //         if (sortedCounts[end] <= sortedCounts[end - 1] + 1) {
 //             return 'YES'
@@ -4098,10 +3258,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('isValid(s)', isValid(s))
-
-
-
-
 
 // const arr = [1, 3, 3, 9, 27]
 // const r = 3
@@ -4138,9 +3294,6 @@ const { test } = require('./testDir')
 
 // console.log('countDoublets(arr, r)', countDoublets(arr, r))
 
-
-
-
 // const arr = [1237, 1237, 1237]
 // // const arr = [1, 100, 10000, 100000, 1000000, 1000000000, 1000000000, 10000000, 100000, 100000000, 1000, 100000000, 1000, 1000, 10000000, 10000, 100, 1000, 1, 100, 100000, 1, 10000]
 // const r = 1
@@ -4171,22 +3324,16 @@ const { test } = require('./testDir')
 //             complements[cur] = addOn
 //         }
 
-
 //         if (complements[curDivR]) {
 
 //             addOn = triplements[cur] === undefined
 //                 ? complements[curDivR]
 //                 : triplements[cur] + complements[curDivR]
 
-
 //             totalTriplements += complements[curDivR]
 //             triplements[cur] = addOn
 //             // triplements[cur] = complements[curDivR]
 //         }
-
-
-
-
 
 //         // console.log('totalComplements', totalComplements)
 //         // console.log('counts', counts)
@@ -4198,16 +3345,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('countTriplets(arr, r)', countTriplets(arr, r))
-
-
-
-
-
-
-
-
-
-
 
 // // const arr = [1,3,9]
 // const arr = [1, 3, 9, 9, 27, 81]
@@ -4250,13 +3387,6 @@ const { test } = require('./testDir')
 
 // console.log('countTriplets(arr, r)', countTriplets(arr, r))
 
-
-
-
-
-
-
-
 // // Declare second integer, double, and String variables.
 // // Read and save an integer, double, and String to your variables.
 // var i2 = +(readLine());
@@ -4273,12 +3403,6 @@ const { test } = require('./testDir')
 // // The 's' variable above should be printed first.
 // console.log(s + s2);
 
-
-
-
-
-
-
 // console.log("What is your name?");
 // process.stdin.once('data', (chunk) => {
 //     let name = chunk.toString().trim();
@@ -4286,7 +3410,6 @@ const { test } = require('./testDir')
 //     process.exit();
 
 // });
-
 
 // const readline = require('readline');
 // const readlineInterface = readline.createInterface(process.stdin, process.stdout);
@@ -4309,10 +3432,6 @@ const { test } = require('./testDir')
 //     'and here is a ' + color + ' flower for you.');
 //   process.exit();
 // }
-
-
-
-
 
 // process.stdin.resume();
 // process.stdin.setEncoding('ascii');
@@ -4358,11 +3477,6 @@ const { test } = require('./testDir')
 
 // }
 
-
-
-
-
-
 // const prices = [1, 2, 3, 4]
 // const k = 7
 
@@ -4382,15 +3496,6 @@ const { test } = require('./testDir')
 
 // console.log('maximumToys(prices, k)', maximumToys(prices, k))
 
-
-
-
-
-
-
-
-
-
 // const SLL = new SinglyLinkedList()
 
 // SLL.push(1)
@@ -4398,7 +3503,6 @@ const { test } = require('./testDir')
 // SLL.push(3)
 
 // // console.log('SLL', SLL)
-
 
 // //                 1 --> 2 --> 3--> null
 // //            p    c     n
@@ -4417,7 +3521,7 @@ const { test } = require('./testDir')
 // //        null <-- 1 <-- 2     3--> null
 // //                       p     c      n
 
-// //        null <-- 1 <-- 2 <-- 3 
+// //        null <-- 1 <-- 2 <-- 3
 // const reverseLinkedList = (SLL) => {
 
 //     let prev = null;
@@ -4439,8 +3543,6 @@ const { test } = require('./testDir')
 
 // console.log('reverseLinkedList(SLL)', reverseLinkedList(SLL))
 
-
-
 // const str = 'aabbcdd'
 
 // function firstNonRepeatingCharacter(str) {
@@ -4454,7 +3556,6 @@ const { test } = require('./testDir')
 //     }
 //     return '_'
 // }
-
 
 // console.log('firstNonRepeatingCharacter(str)', firstNonRepeatingCharacter(str))
 
@@ -4477,12 +3578,7 @@ const { test } = require('./testDir')
 
 // }
 
-
-
 // console.log('reverString2(str)', reverString2(str))
-
-
-
 
 // const str = 'aabbbc'
 
@@ -4503,8 +3599,6 @@ const { test } = require('./testDir')
 // }
 // console.log('maxRecurringChar(str)', maxRecurringChar(str))
 
-
-
 // const arr = [1, 2, 3, 2, 3]
 
 // const firstDup = (arr) => {
@@ -4524,20 +3618,14 @@ const { test } = require('./testDir')
 // }
 // console.log('firstDup(arr)', firstDup(arr))
 
-
-
-
-
-
-
 // const arr = [-6, -4, 1, 2, 3, 5];
 
 // function sortedSquaredArr(arr) {
 //     let result = new Array(arr.length).fill(0)
 //     let leftPtr = 0;
 //     let rightPtr = arr.length - 1;
-//     let left 
-//     let right 
+//     let left
+//     let right
 //     for (let i = result.length - 1; i >= 0; i--) {
 //         left = arr[leftPtr]
 //         right = arr[rightPtr]
@@ -4552,14 +3640,9 @@ const { test } = require('./testDir')
 
 //     }
 
-
 //     return result
 // }
 // console.log('sortedSquaredArr(arr)', sortedSquaredArr(arr))
-
-
-
-
 
 // const n = 3
 
@@ -4573,7 +3656,6 @@ const { test } = require('./testDir')
 //         hanoi(n - 1, other, end);
 //     }
 
-
 // }
 
 // function printMove(start, end) {
@@ -4581,7 +3663,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('hanoi(n,1,3)', hanoi(n, 1, 3))
-
 
 // const n = 3
 
@@ -4646,7 +3727,6 @@ const { test } = require('./testDir')
 
 // console.log('FindIntersection(strArr)', FindIntersection(strArr))
 
-
 // const sen = "asdf asdf asdfasdfasdf asdf 03943948039840983098408902340289380489243";
 
 // function LongestWord(sen) {
@@ -4676,10 +3756,9 @@ const { test } = require('./testDir')
 
 // console.log('LongestWord(sen)', LongestWord(sen))
 
-
 // const str = "ab";
 
-// function FirstReverse(str) { 
+// function FirstReverse(str) {
 //     let reversed = ''
 //     for ( let i = str.length - 1; i >= 0; i--) {
 //         reversed += str[i]
@@ -4698,15 +3777,11 @@ const { test } = require('./testDir')
 //         : [...FirstReverse(tail), head];
 // }
 
-
-
 // console.log('FirstReverse(str)', FirstReverse(str))
-
-
 
 // const num = 18;
 
-// function FirstFactorial(num) { 
+// function FirstFactorial(num) {
 
 //     let result = 1
 
@@ -4714,18 +3789,13 @@ const { test } = require('./testDir')
 //         result *= i
 //     }
 
-
-//     return result; 
+//     return result;
 
 // }
 
-
 // console.log('FirstFactorial(num)', FirstFactorial(num))
 
-
-
 // const str = ")()"
-
 
 // function BracketMatcher(str) {
 //     str = str.split('')
@@ -4747,9 +3817,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('BracketMatcher(str)', BracketMatcher(str))
-
-
-
 
 // const strArr = ["caae", "cae"]
 
@@ -4780,7 +3847,6 @@ const { test } = require('./testDir')
 //     return
 // }
 
-
 // function isMatch(candidate, hash) {
 //     const clonedHash = JSON.parse(JSON.stringify(hash))
 //     for (let char of candidate) {
@@ -4792,8 +3858,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('MinWindowSubstring(strArr)', MinWindowSubstring(strArr))
-
-
 
 // const adjacencyList = { 'a': ['d', 'b', 'c'], 'b': ['a'], 'c': ['a', 'd'], 'd': ['c', 'a'] }
 // console.log('adjacencyList', adjacencyList)
@@ -4827,13 +3891,11 @@ const { test } = require('./testDir')
 
 // }
 
-
 // console.log('BFS(adjacencyList, start)', BFS(adjacencyList, start))
-
 
 // const strArr = ["(2,5)", "(2,6)"]
 
-// function TreeConstructor(strArr) { 
+// function TreeConstructor(strArr) {
 //     const childCounts = {}
 //     const parentCounts = {}
 //     for (let node of strArr) {
@@ -4843,7 +3905,6 @@ const { test } = require('./testDir')
 //         if (childCounts[node[1]] > 2) return false
 //         if (parentCounts[node[0]] > 1) return false
 //     }
-
 
 //     return true
 
@@ -4897,19 +3958,15 @@ const { test } = require('./testDir')
 
 // }
 
-
-
 // function isNumber(char) {
 //     return (char.charCodeAt() >= 48 && char.charCodeAt() <= 57)
 // }
 
 // console.log('QuestionsMarks(str)', QuestionsMarks(str))
 
-
 // const str = "_df34f"
 
 // function CodelandUsernameValidation(str) {
-
 
 //     if (str.length < 4 || str.length > 25) {
 //         return false
@@ -4928,8 +3985,6 @@ const { test } = require('./testDir')
 //             return false;
 //         }
 //     }
-
-
 
 //     return true;
 
@@ -4954,19 +4009,9 @@ const { test } = require('./testDir')
 //     return false
 // }
 
-
 // console.log('CodelandUsernameValidation(str)', CodelandUsernameValidation(str))
 
-
-
-
-
-
-
-
-
 // const queries = [[1, 3], [1, 3], [1, 3], [1, 3], [3, 1]]
-
 
 // const freqQuery = queries => {
 //     const result = [];
@@ -5030,8 +4075,6 @@ const { test } = require('./testDir')
 //             freqsCounts[freq] = ++freqsCounts[freq] || 1;
 //             freqsCounts[freq + 1] = Math.max(--freqsCounts[freq + 1], 0)
 
-
-
 //         }
 
 //         if (type === 3) {
@@ -5047,7 +4090,6 @@ const { test } = require('./testDir')
 //     // console.log('counts', counts)
 //     // console.log('freqsCounts', freqsCounts)
 //     // console.log('freqs', freqs)
-
 
 //     return freqs;
 
@@ -5092,13 +4134,7 @@ const { test } = require('./testDir')
 
 // }
 
-
-
-
 // console.log('minimumBribes(q)', minimumBribes(q))
-
-
-
 
 // // const magazine = 'two times three is not four'
 // // const note = 'two times two is four'
@@ -5106,15 +4142,13 @@ const { test } = require('./testDir')
 // const note = 'give one grand today'
 // function checkMagazine(magazine, note) {
 
-
-
 //     const splitMagazine = magazine;
 //     const splitNote = note;
 //     // const splitMagazine = magazine.split(' ');
 //     // const splitNote = note.split(' ');
 //     // 'heres some example inputs: *shows strings*
 //     // 'heres what actual inputs are: *array of strings*
-//     // ... 
+//     // ...
 //     const magazineCounts = {}
 //     const noteCounts = {}
 //     for (let word of splitMagazine) {
@@ -5135,11 +4169,7 @@ const { test } = require('./testDir')
 
 // }
 
-
-
 // console.log('checkMagazine(magazine, note)', checkMagazine(magazine, note))
-
-
 
 // const arr = [[1, 2, 5],
 //              [3, 1, 2],
@@ -5160,18 +4190,12 @@ const { test } = require('./testDir')
 
 //     return Math.abs(primaryDiag - secondaryDiag)
 
-
 // }
 
 // console.log('diagonalDifference(arr)', diagonalDifference(arr))
 
-
-
-
-
 // const a = [1,5,5]
 // const b = [2,4,1]
-
 
 // function compareTriplets(a, b) {
 //     let aScore = 0
@@ -5183,7 +4207,7 @@ const { test } = require('./testDir')
 //             aScore += 1
 //         } else if (a[i] < b[i]) {
 //             bScore += 1
-//         } 
+//         }
 
 //     }
 
@@ -5191,15 +4215,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('compareTriplets(a, b)', compareTriplets(a, b))
-
-
-
-
-
-
-
-
-
 
 // const ar = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]
 
@@ -5212,19 +4227,18 @@ const { test } = require('./testDir')
 
 // console.log('aVeryBigSum(ar)', aVeryBigSum(ar))
 
-
-// // const s = [[5, 4, 3], 
-// //            [1, 5, 8], 
+// // const s = [[5, 4, 3],
+// //            [1, 5, 8],
 // //            [6, 4, 2]]
 //      5 to 8     8 to 9  4 to 7
 //  12    15        15      15     12     15
-//  14    14        15      15     14     
-//  12    12        12      15     12 
-//  12    15        15      15     12 
-//  13    13        13      13     13 
-//  13    13        15      15     13 
-//  12    15        15      15     12 
-//  15    15        15      15     14 
+//  14    14        15      15     14
+//  12    12        12      15     12
+//  12    15        15      15     12
+//  13    13        13      13     13
+//  13    13        15      15     13
+//  12    15        15      15     12
+//  15    15        15      15     14
 
 // // 1 2
 // // 1 1
@@ -5240,20 +4254,13 @@ const { test } = require('./testDir')
 // // 2 1 2
 // // 2 2 2
 
-
-
 // const s = [[5, 4, 3], [1, 5, 8], [6, 4, 2]]
 
 // function formingMagicSquare(s) {
 
-
 // }
 
 // console.log('formingMagicSquare(s)', formingMagicSquare(s))
-
-
-
-
 
 // const str = 'abc'
 // let k = 0
@@ -5277,15 +4284,11 @@ const { test } = require('./testDir')
 //     return results
 // }
 
-
-
 // console.log('permute(str)', permute(str))
 
-
-// sum(3) = 3 + sum(2) 
-//                3    =    2 + sum(1) 
+// sum(3) = 3 + sum(2)
+//                3    =    2 + sum(1)
 //                                1
-
 
 // const n = 3
 
@@ -5295,21 +4298,16 @@ const { test } = require('./testDir')
 // }
 // console.log('sum(n)', sum(n))
 
-
-
-
 // const n = 10
 // const m = 2
 // const mCoord = 0
 // const nCoord = 0
-
 
 // function travelBox(n, m) {
 
 //     if (n === 1 || m === 1) return 1;
 
 //     return travelBox(n, m - 1) + travelBox(n - 1, m)
-
 
 // }
 
@@ -5336,12 +4334,11 @@ const { test } = require('./testDir')
 
 // console.log('permute(nums)', permute(nums))
 
-
 // s = 1
 // k = 1
 // p = 9
 
-// if n is 1 and k is 1 or more, 
+// if n is 1 and k is 1 or more,
 //     replace with 9
 
 // s = 12
@@ -5351,43 +4348,43 @@ const { test } = require('./testDir')
 // if flanks not equal
 //     make them equal
 
-// if n is 2 and k is 1 
-//     if not a palindrome  
+// if n is 2 and k is 1
+//     if not a palindrome
 //         replace min digit with larger digit
 
 // s = 123  323
 // k = 1
 // p = 323  393
 
-// if flanks not equal 
+// if flanks not equal
 //     make them equal
-// if flanks are equal 
+// if flanks are equal
 //     replace middle with 9
 
 // if n is 3 and k is 1
 //     if not palindrome
 //         replace min flank digit with larger flank digit
 
-//     if is palindrome 
+//     if is palindrome
 //         replace middle digit with 9
 
-// s = 123  129  323  919 
+// s = 123  129  323  919
 // k = 2
-// p = 929  999  929  999 
+// p = 929  999  929  999
 
 // if flanks not equal
 //     if one already a 9
-//         replace other with 9 
+//         replace other with 9
 //         replace middle with 9
 //     if none already a 9
 //         replace both with 9
 
 // if n is 3 and k is 2
 //     if not palindrome
-//         if one of the flanks is not 9, 
-//             replace non-9 flank with 9 
+//         if one of the flanks is not 9,
+//             replace non-9 flank with 9
 //             replace middle with 9
-//         if no flanks are 9 
+//         if no flanks are 9
 //             replace flanks with 9
 
 // s = 1234 1224 4214 1238 1229 4114 9119
@@ -5396,7 +4393,7 @@ const { test } = require('./testDir')
 
 // if flanks not equal
 //     make equal
-//     if next inner level flanks not equal    
+//     if next inner level flanks not equal
 //         not a palindrome
 // if flanks equal
 //     if next inner level flanks not equal
@@ -5406,14 +4403,13 @@ const { test } = require('./testDir')
 //     if not palindrome
 //         if flanks are 9
 
-
 // s = 1234 1224 4214 1238 1229 4114 9119
 // k = 2
 // p = 4334 9229 4994 8338 9229 9119 9999
 
 // if flanks not equal
 //     make equal
-//     if next inner level flanks not equal    
+//     if next inner level flanks not equal
 //         not a palindrome
 // if flanks equal
 //     if next inner level flanks not equal
@@ -5442,7 +4438,7 @@ const { test } = require('./testDir')
 //         left = Math.floor(n / 2) - 1;
 //         right = Math.floor(n / 2);
 //     }
-//     // start in middle 
+//     // start in middle
 //     const start = left;
 
 //     for (let i = start; i >= 0; i--) {
@@ -5452,11 +4448,11 @@ const { test } = require('./testDir')
 //         // to i[0] and i[length -1]
 
 //         // and check if they are dichotomous
-//         // if they are not equal, 
+//         // if they are not equal,
 //         // equalize
 //         // decrement k
 //         // and mark down that that index is nined
-//         // if they are equal, 
+//         // if they are equal,
 //         // mark down if they're nined
 
 //         if (k > 0) {
@@ -5508,38 +4504,24 @@ const { test } = require('./testDir')
 
 //     // keep going till get to i = 0
 //     // when gets to i = 0, if still have k's left
-//     // nine the outtermost rings, going inward and 
+//     // nine the outtermost rings, going inward and
 //     // nining till run out of k's
-
 
 //     return s.join('')
 
 // }
 
-
 // console.log('highestValuePalindrome(s, n, k)', highestValuePalindrome(s, n, k))
-
-
-
-
-
-
-
-
-
 
 // // const s = '11331' k=4
 // // const s = '13331' k=3
 // // const s = '93339' k=1
 // // const s = '93339' k=1
 
-
-
 // // const s = '11331' k=4
 // // const s = '13331' k=3  nonNineReplacement
 // // const s = '93339' k=1
 // // const s = '93339' k=1
-
 
 // // const s = '11331' k=3
 // // const s = '13331' k=2  nonNineReplacement
@@ -5552,7 +4534,6 @@ const { test } = require('./testDir')
 // // const s = '1234'
 // const n = s.length;
 // const k = 2;
-
 
 // function highestValuePalindrome(s, n, k) {
 //     if (k >= n) return new Array(n).fill(9).join('');
@@ -5573,7 +4554,6 @@ const { test } = require('./testDir')
 //     const start = left;
 
 //     for (let i = start; i >= 0; i--) {
-
 
 //         if (k > 0) {
 //             if (s[left] < s[right]) {
@@ -5601,8 +4581,6 @@ const { test } = require('./testDir')
 //     left = 0;
 //     right = s.length - 1;
 
-
-
 //     for (let i = 0; i <= start; i++) {
 //         if (k > 0) {
 
@@ -5611,7 +4589,6 @@ const { test } = require('./testDir')
 //                 s[right] = 9;
 //                 k--;
 //             }
-
 
 //             if (k >= 2) {
 //                 if (s[left] !== 9 && s[right] !== 9) {
@@ -5639,11 +4616,9 @@ const { test } = require('./testDir')
 //         right--;
 //     }
 
-
 //     return s.join('')
 
 // }
-
 
 // console.log('highestValuePalindrome(s, n, k)', highestValuePalindrome(s, n, k))
 
@@ -5660,7 +4635,6 @@ const { test } = require('./testDir')
 
 // }
 // console.log('staircase(n)', staircase(n))
-
 
 // const candles = [1,1]
 
@@ -5682,7 +4656,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('birthdayCakeCandles(candles)', birthdayCakeCandles(candles))
-
 
 // const s = '04:40:22PM'
 
@@ -5709,17 +4682,12 @@ const { test } = require('./testDir')
 
 // console.log('timeConversion(s)', timeConversion(s))
 
-
-
-
-
 // const s = 7
 // const t = 10
 // const a = 4
 // const b = 12
 // const apples = [-1, 5, 2]
 // const oranges = [-3, 5, -4]
-
 
 // function countApplesAndOranges(s, t, a, b, apples, oranges) {
 //     let samsApples = 0
@@ -5743,31 +4711,19 @@ const { test } = require('./testDir')
 
 // console.log('countApplesAndOranges(s, t, a, b, apples, oranges)', countApplesAndOranges(s, t, a, b, apples, oranges))
 
-
-
-
-
 // function organizingContainers(container) {
-
 
 // }
 
-
 // console.log('organizingContainers(container)', organizingContainers(container))
-
-
-
-
 
 // const prices = [1, 2, 3, 2]
 // //                +1 +1 -1
 
 // const prices = [1, 3, 2, 4, 1]
-// //                +2 -1 +2 -3 
+// //                +2 -1 +2 -3
 
 // const prices = [1000000,1,10,1000,10,10,100]
-
-
 
 // function stockmax(prices) {
 //     let amount = 0
@@ -5784,9 +4740,9 @@ const { test } = require('./testDir')
 //                     i--
 //                     amount += diff
 //                 }
-//             } 
+//             }
 //             i--
-//         } 
+//         }
 
 //     }
 //     return amount
@@ -5794,10 +4750,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('stockmax(prices)', stockmax(prices))
-
-
-
-
 
 // let h = [1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7];
 
@@ -5826,63 +4778,7 @@ const { test } = require('./testDir')
 
 // console.log('designerPdfViewer(h, word)', designerPdfViewer(h, word))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const year = 2000;
-
 
 // function dayOfProgrammer(year) {
 
@@ -5904,11 +4800,7 @@ const { test } = require('./testDir')
 
 //     return nonLeapYearPDay + '' + year
 
-
-
-
 // }
-
 
 // function isGregorianLeapYear(year) {
 
@@ -5918,28 +4810,22 @@ const { test } = require('./testDir')
 //     return false
 // }
 
-
 // function isJulianLeapYear(year) {
 
 //     if (year % 4 === 0) return true;
 //     return false
 // }
 
-
 // console.log('dayOfProgrammer(year)', dayOfProgrammer(year))
-
-
-
-
 
 // const arr = [1, 6, 5, 2, 4, 3]
 // //          +0 +4 +2 -2 -1 -3
 
 // const arr = [1, 2, 3, 5, 4]
-// //          +0 +0 +0 +1 -1 
+// //          +0 +0 +0 +1 -1
 
 // const arr = [1, 2, 5, 3, 4]
-// //          +0 +0 +2 -1 -1 
+// //          +0 +0 +2 -1 -1
 
 // const arr = [5, 1, 2, 3, 4]
 // //          +4 -1 -1 -1 -1
@@ -5952,9 +4838,9 @@ const { test } = require('./testDir')
 // const arr = [2, 3, 1] y
 // //          +1 +1 -2
 
-// //            
+// //
 // const arr = [] n
-// //          
+// //
 
 // //            +2 -1
 // const arr = [1, 3, 2] n
@@ -5980,7 +4866,6 @@ const { test } = require('./testDir')
 // const arr = [1, 4, 2, 3]
 // const arr = [1, 2, 3, 4]
 
-
 // const arr = [1, 3, 2, 4]
 // //          +0 +1 -1 +0
 
@@ -5994,8 +4879,7 @@ const { test } = require('./testDir')
 // //          +2 -1 +1 -2
 // const arr = [1, 4, 3, 2]
 // const arr = [1, 2, 4, 3]
-// //         
-
+// //
 
 // const arr = [1, 2, 4, 3, 6, 5]
 // //          +0 +0 +1 -1 +1 -1
@@ -6004,7 +4888,7 @@ const { test } = require('./testDir')
 // //          +0 +0 +1 +1 -2 +0
 
 // const arr = [1, 2, 3, 4, 5, 6]
-// //          
+// //
 
 // const arr = [6, 2, 4, 3, 1, 5]
 // //          +5 +0 +1 -1 -4 -1
@@ -6021,7 +4905,7 @@ const { test } = require('./testDir')
 
 // const k = 2
 // const arr = [0, 2, 2, 4]
-// //            +2 +2 
+// //            +2 +2
 // //              4
 
 // function pairs(k, arr) {
@@ -6043,17 +4927,13 @@ const { test } = require('./testDir')
 
 // console.log('pairs(k, arr)', pairs(k, arr))
 
-
-
 // const arr = [4, 3, 2, 1] 2
 // //          +3 +1 -1 -3
 // const arr = [1, 2, 3, 4]
 
-
 // const arr = [2, 1, 4, 3] 2
 // //          +1 -1 +1 -1
 // const arr = [1, 2, 3, 4]
-
 
 // const arr = [2, 4, 1, 3] 3
 // //          +1 +2 -2 -1
@@ -6101,7 +4981,6 @@ const { test } = require('./testDir')
 //             console.log('orig', orig)
 //             console.log('indices', indices)
 
-
 //         }
 //     }
 
@@ -6118,7 +4997,6 @@ const { test } = require('./testDir')
 //     -------- -------------- --------
 //  01 02 03 04 05 06 07 08 09 10 11 12
 //     h        h     h               h
-
 
 //     -----       --------       -----
 //  01 02 03 04 05 06 07 08 09 10 11 12
@@ -6156,8 +5034,6 @@ const { test } = require('./testDir')
 //         i = map[trans] + 1
 //         console.log('map[trans]', map[trans])
 
-
-
 //         // i++
 //         console.log('i', i)
 //     }
@@ -6182,15 +5058,11 @@ const { test } = require('./testDir')
 
 //         return
 
-
 //     }
 
 // }
 
 // console.log('hackerlandRadioTransmitters(x, k)', hackerlandRadioTransmitters(x, k))
-
-
-
 
 // const nums = [2,7,6,8]
 // const target = 9
@@ -6206,27 +5078,13 @@ const { test } = require('./testDir')
 
 // console.log('twoSum(nums, target)', twoSum(nums, target))
 
-
-
-
-
-
-
-
 // const l1 = [2, 4, 3]
 // const l2 = [5, 6, 4]
-
 
 // function ListNode(val, next) {
 //     this.val = (val === undefined ? 0 : val)
 //     this.next = (next === undefined ? null : next)
 // }
-
-
-
-
-
-
 
 // function SLL() {
 //     this.head = null;
@@ -6260,7 +5118,6 @@ const { test } = require('./testDir')
 
 // };
 
-
 // function arrToInt(arr) {
 //     let str = ''
 //     for (let i = 0; i < arr.length; i++) {
@@ -6269,13 +5126,7 @@ const { test } = require('./testDir')
 //     return Number(str)
 // }
 
-
 // console.log('addTwoNumbers(l1, l2)', addTwoNumbers(l1, l2))
-
-
-
-
-
 
 // const SLL1 = new SinglyLinkedList()
 // SLL1.push(2)
@@ -6288,12 +5139,8 @@ const { test } = require('./testDir')
 // SLL2.push(4)
 // // console.log('SLL2', SLL2)
 
-
-
 // const l1 = SLL1.head
 // const l2 = SLL2.head
-
-
 
 // function ListNode(val, next) {
 //     this.val = (val === undefined ? 0 : val)
@@ -6333,13 +5180,7 @@ const { test } = require('./testDir')
 //     return List.next;
 // };
 
-
 // console.log('addTwoNumbers(l1, l2)', addTwoNumbers(l1, l2))
-
-
-
-
-
 
 // const nums = [1, 3, 4, 2, 2]
 
@@ -6353,7 +5194,106 @@ const { test } = require('./testDir')
 
 // console.log('findDuplicate(nums)', findDuplicate(nums))
 
+// const n = 3
 
+// var generateMatrix = function (n) {
+
+//     const matrix = []
+//     for (let i = 0; i < n; i++) {
+//         matrix.push(new Array(n))
+//     }
+
+//     let direction = ['r', 'd', 'l', 'u']
+//     let curDir = direction[0]
+//     let step = 1;
+//     let row = 0;
+//     let col = 0;
+//     let numSteps = n
+//     let dirChanges = 0;
+
+//     while (numSteps > 0) {
+//         console.log('row', row)
+//         console.log('col', col)
+//         console.log('dirChanges', dirChanges)
+//         if (dirChanges % 2 === 1) {
+//             numSteps--
+//         }
+//         console.log('numSteps', numSteps)
+//         console.log('curDir', curDir)
+//         if (curDir === 'r') {
+//             let i = 0;
+//             while (i < numSteps) {
+//                 matrix[row][col] = step
+//                 console.log('step', step)
+//                 console.log('matrix', matrix)
+//                 col++
+//                 step++
+//                 i++
+//             }
+//             col--
+//             row++
+//             curDir = 'd'
+//         } else if (curDir === 'd') {
+//             let i = 0;
+//             while (i < numSteps) {
+//                 matrix[row][col] = step
+//                 console.log('row', row)
+//                 console.log('col', col)
+//                 console.log('matrix', matrix)
+//                 row++
+//                 step++
+//                 i++
+//             }
+//             row--
+//             col--
+//             curDir = 'l'
+//         } else if (curDir === 'l') {
+//             let i = 0;
+//             while (i < numSteps) {
+//                 matrix[row][col] = step
+//                 console.log('row', row)
+//                 console.log('col', col)
+//                 console.log('matrix', matrix)
+//                 col--
+//                 step++
+//                 i++
+//             }
+//             col++
+//             row--
+//             curDir = 'u'
+//         } else if (curDir === 'u') {
+//             let i = 0;
+//             console.log('row', row)
+//             console.log('col', col)
+//             while (i < numSteps) {
+//                 matrix[row][col] = step
+//                 console.log('row', row)
+//                 console.log('col', col)
+//                 console.log('matrix', matrix)
+//                 row--
+//                 step++
+//                 i++
+//             }
+//             row++
+//             col++
+//             console.log('row', row)
+//             console.log('col', col)
+
+//             curDir = 'r'
+//         }
+
+//         dirChanges++
+
+//     };
+//     return matrix
+
+// }
+
+// console.log('generateMatrix(n)', generateMatrix(n))
+// const mat = generateMatrix(4)
+// for (let i = 0; i < mat.length; i++) {
+//     console.log(mat[[i]])
+// }
 
 // const n = 3
 
@@ -6443,7 +5383,6 @@ const { test } = require('./testDir')
 //             curDir = 'r'
 //         }
 
-
 //         dirChanges++
 
 //     };
@@ -6456,132 +5395,6 @@ const { test } = require('./testDir')
 // for (let i = 0; i < mat.length; i++) {
 //     console.log(mat[[i]])
 // }
-
-
-
-
-
-
-
-
-
-
-
-// const n = 3
-
-// var generateMatrix = function (n) {
-
-//     const matrix = []
-//     for (let i = 0; i < n; i++) {
-//         matrix.push(new Array(n))
-//     }
-
-//     let direction = ['r', 'd', 'l', 'u']
-//     let curDir = direction[0]
-//     let step = 1;
-//     let row = 0;
-//     let col = 0;
-//     let numSteps = n
-//     let dirChanges = 0;
-
-//     while (numSteps > 0) {
-//         console.log('row', row)
-//         console.log('col', col)
-//         console.log('dirChanges', dirChanges)
-//         if (dirChanges % 2 === 1) {
-//             numSteps--
-//         }
-//         console.log('numSteps', numSteps)
-//         console.log('curDir', curDir)
-//         if (curDir === 'r') {
-//             let i = 0;
-//             while (i < numSteps) {
-//                 matrix[row][col] = step
-//                 console.log('step', step)
-//                 console.log('matrix', matrix)
-//                 col++
-//                 step++
-//                 i++
-//             }
-//             col--
-//             row++
-//             curDir = 'd'
-//         } else if (curDir === 'd') {
-//             let i = 0;
-//             while (i < numSteps) {
-//                 matrix[row][col] = step
-//                 console.log('row', row)
-//                 console.log('col', col)
-//                 console.log('matrix', matrix)
-//                 row++
-//                 step++
-//                 i++
-//             }
-//             row--
-//             col--
-//             curDir = 'l'
-//         } else if (curDir === 'l') {
-//             let i = 0;
-//             while (i < numSteps) {
-//                 matrix[row][col] = step
-//                 console.log('row', row)
-//                 console.log('col', col)
-//                 console.log('matrix', matrix)
-//                 col--
-//                 step++
-//                 i++
-//             }
-//             col++
-//             row--
-//             curDir = 'u'
-//         } else if (curDir === 'u') {
-//             let i = 0;
-//             console.log('row', row)
-//             console.log('col', col)
-//             while (i < numSteps) {
-//                 matrix[row][col] = step
-//                 console.log('row', row)
-//                 console.log('col', col)
-//                 console.log('matrix', matrix)
-//                 row--
-//                 step++
-//                 i++
-//             }
-//             row++
-//             col++
-//             console.log('row', row)
-//             console.log('col', col)
-
-//             curDir = 'r'
-//         }
-
-
-//         dirChanges++
-
-//     };
-//     return matrix
-
-// }
-
-// console.log('generateMatrix(n)', generateMatrix(n))
-// const mat = generateMatrix(4)
-// for (let i = 0; i < mat.length; i++) {
-//     console.log(mat[[i]])
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // const digits = [9,9,9]
 // const digits = [9,9]
@@ -6626,18 +5439,7 @@ const { test } = require('./testDir')
 
 // };
 
-
 // console.log('plusOne(digits)', plusOne(digits))
-
-
-
-
-
-
-
-
-
-
 
 // const digits = [9,9,9,9]
 
@@ -6659,10 +5461,7 @@ const { test } = require('./testDir')
 
 // }
 
-
-
 // console.log('plusOne(digits)', plusOne(digits))
-
 
 // const nums = [2, 0,2,0,0,2,0]
 // const val = 2
@@ -6697,7 +5496,6 @@ const { test } = require('./testDir')
 
 //         }
 
-
 //     };
 
 //     // console.log('nums', nums)
@@ -6707,12 +5505,6 @@ const { test } = require('./testDir')
 
 // }
 // console.log('removeElement(nums, val)', removeElement(nums, val))
-
-
-
-
-
-
 
 // const nums = [2, 3, 2, 2, 3, 5, 2, 0]
 // const val = 2
@@ -6733,10 +5525,7 @@ const { test } = require('./testDir')
 // }
 // console.log('removeElement(nums, val)', removeElement(nums, val))
 
-
-
-
-// const nums = [1,2,10] 
+// const nums = [1,2,10]
 // const target = 9
 
 // var searchInsert = function(nums, target) {
@@ -6744,16 +5533,13 @@ const { test } = require('./testDir')
 //     while ( i < nums.length) {
 //         if ( nums[i] >= target) {
 //             return i
-//         } 
+//         }
 //         i++
 //     }
 //     return i
 // };
 
-
 // console.log('searchInsert(nums, target)', searchInsert(nums, target))
-
-
 
 // const intervals = [[1,4],[0,4]]
 // // const intervals = [[1, 3], [1, 10], [5, 18]]
@@ -6779,16 +5565,7 @@ const { test } = require('./testDir')
 //     return output
 // };
 
-
 // console.log('merge(intervals)', merge(intervals))
-
-
-
-
-
-
-
-
 
 // const n = 4;
 // var climbStairs = function (n) {
@@ -6815,8 +5592,6 @@ const { test } = require('./testDir')
 // };
 // console.log('climbStairs(n)', climbStairs(n))
 
-
-
 // const n = 4;
 // var climbStairs = function (n) {
 
@@ -6833,18 +5608,8 @@ const { test } = require('./testDir')
 
 //     return dp[n]
 
-
 // };
 // console.log('climbStairs(n)', climbStairs(n))
-
-
-
-
-
-
-
-
-
 
 // const arr = [1,2,3]
 
@@ -6862,7 +5627,6 @@ const { test } = require('./testDir')
 
 // console.log('largestToRight(arr)', largestToRight(arr))
 
-
 // const SLL = new SinglyLinkedList()
 
 // SLL.push(1)
@@ -6871,7 +5635,6 @@ const { test } = require('./testDir')
 // // SLL.push(4)
 // // SLL.push(5)
 // // console.log('SLL', SLL)
-
 
 // var reverseList = function (head) {
 
@@ -6884,14 +5647,9 @@ const { test } = require('./testDir')
 //     // console.log('head', head)
 //     return reversedListHead
 
-
 // };
 
 // reverseList(SLL.head)
-
-
-
-
 
 // const s = []
 
@@ -6912,14 +5670,9 @@ const { test } = require('./testDir')
 
 //     return stack.length === 0 ? true : false
 
-
 // };
 
 // console.log('isValid(s)', isValid(s))
-
-
-
-
 
 // const nums = [2,2]
 
@@ -6928,15 +5681,11 @@ const { test } = require('./testDir')
 //     for ( let num of nums ) {
 //         if ( seen.has(num)) return true
 //         seen.add(num)
-//     }    
+//     }
 //     return false
 // };
 
-
 // console.log('containsDuplicate(nums)', containsDuplicate(nums))
-
-
-
 
 // const prices = [1, 9, 3, 14, 0, 19]
 
@@ -6954,19 +5703,9 @@ const { test } = require('./testDir')
 
 //     return maxProfit
 
-
-
 // };
 
-
 // console.log('maxProfit(prices)', maxProfit(prices))
-
-
-
-
-
-
-
 
 // const nums = [1, 0, 0, 3, 12]
 
@@ -6988,14 +5727,7 @@ const { test } = require('./testDir')
 //     return nums
 // };
 
-
-
-
-
 // console.log('moveZeroes(nums)', moveZeroes(nums))
-
-
-
 
 // const nums = [1, 1, 3, 2, 2, 2]
 
@@ -7017,13 +5749,6 @@ const { test } = require('./testDir')
 
 // console.log('singleNumber(nums)', singleNumber(nums))
 
-
-
-
-
-
-
-
 // const nums = [1, 2, 3, 4, 5, 6, 7]
 // // const nums = [1, 2, 3, 4]
 // const k = 3
@@ -7040,7 +5765,6 @@ const { test } = require('./testDir')
 //     //         j--
 //     //     }
 //     //     k--
-
 
 //     // }
 //     // console.log('nums', nums)
@@ -7075,20 +5799,7 @@ const { test } = require('./testDir')
 //     arr[j] = temp
 // }
 
-
 // console.log('rotate(nums,k)', rotate(nums, k))
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const nums2 = [4, 4, 5, 9]
 // const nums1 = [3, 4, 4, 4, 8, 9, 9, 10]
@@ -7118,42 +5829,9 @@ const { test } = require('./testDir')
 //     console.log('intersection', intersection)
 // };
 
-
 // console.log('intersect(nums1,nums2)', intersect(nums1, nums2))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const s = 'IV'
-
 
 // var romanToInt = function (s) {
 //     const romanVal = {
@@ -7181,16 +5859,11 @@ const { test } = require('./testDir')
 //     }
 //     return total
 
-
 // };
-
 
 // console.log('romanToInt(s)', romanToInt(s))
 
-
-
 // const s = "dfede"
-
 
 // var firstUniqChar = function (s) {
 
@@ -7212,14 +5885,7 @@ const { test } = require('./testDir')
 //     console.log('seenOnce.entries()', [...seenOnce.entries()].pop()[1])
 // };
 
-
 // console.log('firstUniqChar(s)', firstUniqChar(s))
-
-
-
-
-
-
 
 // const x = 1563847412
 
@@ -7241,11 +5907,7 @@ const { test } = require('./testDir')
 //     return result
 // };
 
-
 // console.log('reverse(x)', reverse(x))
-
-
-
 
 // const s = 'cbaab'
 // const t = 'bcbaa'
@@ -7269,16 +5931,7 @@ const { test } = require('./testDir')
 //     return true
 // };
 
-
 // console.log('isAnagram(s,t)', isAnagram(s, t))
-
-
-
-
-
-
-
-
 
 // const s = "asdffdsa"
 
@@ -7303,7 +5956,6 @@ const { test } = require('./testDir')
 //     return true
 // };
 
-
 // function isValid(char) {
 //     const charCode = char.charCodeAt(0)
 //     if ((charCode >= 97 && charCode <= 122) ||
@@ -7326,8 +5978,6 @@ const { test } = require('./testDir')
 
 //     return function (n) {
 //         console.log('n', n)
-
-
 
 //         let leftInd = 0
 //         let rightInd = n
@@ -7355,11 +6005,7 @@ const { test } = require('./testDir')
 //     };
 // };
 
-
 // console.log('solution(isBadVersion)', solution(isBadVersion)(n))
-
-
-
 
 // const nums = [2, 0, -1, -1, -4, 1]
 
@@ -7381,11 +6027,9 @@ const { test } = require('./testDir')
 //     console.log('tripletHash', tripletHash)
 //     console.log('res', res)
 
-
 // };
 
 // console.log('threeSum(nums)', threeSum(nums))
-
 
 // function twoSum(nums, i, target, fixed, tripletHash) {
 //     console.log('target', target)
@@ -7409,9 +6053,7 @@ const { test } = require('./testDir')
 
 // }
 
-
 // const s = "abcabcd"
-
 
 // var lengthOfLongestSubstring = function (s) {
 //     let start = 0;
@@ -7441,9 +6083,6 @@ const { test } = require('./testDir')
 
 // console.log('lengthOfLongestSubstring(s)', lengthOfLongestSubstring(s))
 
-
-
-
 // const SLL1 = new SinglyLinkedList()
 // const SLL2 = new SinglyLinkedList()
 
@@ -7460,8 +6099,6 @@ const { test } = require('./testDir')
 
 // temp = head1
 // head1.next = head2
-
-
 
 // function mergeTwoLists(head1, head2) {
 //     const newHead = head1.val <= head2.val ? head1 : head2;
@@ -7495,7 +6132,6 @@ const { test } = require('./testDir')
 
 // console.log('mergeTwoLists(SLL1,SLL2)', mergeTwoLists(SLL1.head, SLL2.head))
 
-
 // const arr = [1, 2, 3, 4, 1, 2, 3, 4, 5]
 
 // function longestIncreasingSubsequence(arr) {
@@ -7522,11 +6158,9 @@ const { test } = require('./testDir')
 //         console.log('maxLen', maxLen)
 //     }
 
-
 // }
 
 // console.log('longestIncreasingSubsequence(arr)', longestIncreasingSubsequence(arr))
-
 
 // const matrix = [[1,1,1],[1,0,1],[1,1,1]]
 
@@ -7535,7 +6169,6 @@ const { test } = require('./testDir')
 // };
 
 // console.log('setZeroes(matrix)', setZeroes(matrix))
-
 
 // const arr = [0, 1, 0, 0]
 
@@ -7564,8 +6197,6 @@ const { test } = require('./testDir')
 
 // console.log('shuffleArray(arr)', shuffleArray(arr))
 
-
-
 // const s = 'jasdoifjasdfk'
 
 // function findLongestSubstring(s) {
@@ -7590,12 +6221,9 @@ const { test } = require('./testDir')
 
 //     return max
 
-
 // }
 
 // console.log('findLongestSubstring(s)', findLongestSubstring(s))
-
-
 
 // const SLL = new SinglyLinkedList()
 
@@ -7605,7 +6233,7 @@ const { test } = require('./testDir')
 // SLL.push(4)
 
 // // 1 -> 2 -> 3 -> 4
-// //      
+// //
 
 // const node = SLL.head.next
 // // console.log('node', node)
@@ -7641,7 +6269,7 @@ const { test } = require('./testDir')
 // SLL.push(5)
 
 // // 1 -> 2 -> 3 -> 4 -> null
-// //      cur.next = cur.next.next     
+// //      cur.next = cur.next.next
 
 // const head = SLL.head
 // const n = 2
@@ -7676,8 +6304,6 @@ const { test } = require('./testDir')
 
 // console.log('removeNthFromEnd(head, n)', removeNthFromEnd(head, n))
 
-
-
 // const SLL1 = new SinglyLinkedList()
 // const SLL2 = new SinglyLinkedList()
 
@@ -7692,7 +6318,6 @@ const { test } = require('./testDir')
 
 // const l1 = SLL1.head
 // const l2 = SLL2.head
-
 
 // var mergeTwoLists = function (l1, l2) {
 
@@ -7732,10 +6357,7 @@ const { test } = require('./testDir')
 //             }
 //         }
 
-
 //     }
-
-
 
 //     traverseSSL(newHead)
 
@@ -7748,18 +6370,7 @@ const { test } = require('./testDir')
 //     }
 // }
 
-
 // console.log('mergeTwoLists(l1,l2)', mergeTwoLists(l1, l2))
-
-
-
-
-
-
-
-
-
-
 
 // const BST = new BinarySearchTree()
 
@@ -7776,7 +6387,7 @@ const { test } = require('./testDir')
 //     const result = []
 //     const q = [root]
 //     let depth = 0
-//     let node 
+//     let node
 
 //     while (q.length) {
 //         let level = q.length;
@@ -7792,16 +6403,11 @@ const { test } = require('./testDir')
 //             if (node.right) q.unshift(node.right)
 //         }
 
-
 //     }
-
 
 // }
 
 // console.log('traverseBST(root)', traverseBST(root))
-
-
-
 
 // const strs = ["gar", "gar"]
 
@@ -7838,7 +6444,7 @@ const { test } = require('./testDir')
 
 // //      1 -> 2 -> 3 -> 4 -> null
 
-// // p    c    n 
+// // p    c    n
 
 // const head = SLL.head
 
@@ -7858,9 +6464,6 @@ const { test } = require('./testDir')
 //         cur = next
 //         console.log('prev', prev)
 
-
-
-
 //     }
 //     return prev
 // }
@@ -7868,16 +6471,10 @@ const { test } = require('./testDir')
 // console.log('reverseSLL(head)', reverseSLL(head))
 
 //                                 2
-//                             /       \ 
+//                             /       \
 //                           1           4
-//                                      /  \ 
+//                                      /  \
 //                                     3    5
-
-
-
-
-
-
 
 // const BT = new BinarySearchTree()
 
@@ -7893,7 +6490,7 @@ const { test } = require('./testDir')
 // function inverseBT(root) {
 //     console.log('root', root)
 
-//     let curr 
+//     let curr
 //     const q = [root]
 //     // console.log('q', q)
 //     let temp
@@ -7911,18 +6508,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('inverseBT(root)', inverseBT(root))
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const BT = new BinarySearchTree()
 
@@ -7953,7 +6538,6 @@ const { test } = require('./testDir')
 // };
 
 // console.log('isValidBST(root)', isValidBST(root))
-
 
 // const n = 3
 // const m = 3
@@ -8011,12 +6595,7 @@ const { test } = require('./testDir')
 //     return count
 // }
 
-
 // console.log('horsebot(n,m)', horsebot(n,m))
-
-
-
-
 
 // const s = "a"
 
@@ -8024,7 +6603,7 @@ const { test } = require('./testDir')
 
 //     output = []
 
-//     recurse([s],0,s.length) 
+//     recurse([s],0,s.length)
 
 //     function recurse(parts,start,end) {
 
@@ -8032,10 +6611,8 @@ const { test } = require('./testDir')
 //         if (parts.length === 1) {
 //             parts.push(...part)
 //             console.log('parts', parts)
-//             return 
+//             return
 //         }
-
-
 
 //     }
 
@@ -8047,7 +6624,7 @@ const { test } = require('./testDir')
 //     let i = 0
 //     let j = str.length - 1;
 //     while (i <= j) {
-//         if (str[i] !== str[j] ) return false 
+//         if (str[i] !== str[j] ) return false
 //         i++
 //         j--
 //     }
@@ -8056,10 +6633,7 @@ const { test } = require('./testDir')
 
 // console.log('partition(s)', partition(s))
 
-
-// 21 
-
-
+// 21
 
 // const n = 15;
 
@@ -8073,11 +6647,9 @@ const { test } = require('./testDir')
 // // n = 7        1113213211
 // // n = 7        31131211131221
 // // n = 7        13211311123113112211
-// // n = 7        
-// // n = 7        
-// // n = 7        
-
-
+// // n = 7
+// // n = 7
+// // n = 7
 
 // var countAndSay = function (n) {
 //     let count
@@ -8112,8 +6684,6 @@ const { test } = require('./testDir')
 
 // };
 
-
-
 // function getCount(str, i) {
 //     // console.log('i', i)
 
@@ -8134,10 +6704,7 @@ const { test } = require('./testDir')
 //     return count.toString()
 // }
 
-
 // console.log('countAndSay(n)', countAndSay(n))
-
-
 
 // // Input: 5
 // // Output:
@@ -8154,8 +6721,6 @@ const { test } = require('./testDir')
 //     if (numRows === 1) return [[1]]
 //     if (numRows === 2) return [[1], [1, 1]]
 //     const res = [[1], [1, 1]]
-
-
 
 //     for (let i = 2; i < numRows; i++) {
 //         let end = i
@@ -8177,7 +6742,6 @@ const { test } = require('./testDir')
 // };
 
 // console.log('generate(numRows)', generate(numRows))
-
 
 // const board = [["5", "3", ".", ".", "7", ".", ".", ".", "."]
 //     , ["6", ".", ".", "1", "9", "5", ".", ".", "."]
@@ -8220,10 +6784,6 @@ const { test } = require('./testDir')
 
 //     }
 
-
-
-
-
 //     function getSquareArr(row, col) {
 //         const arr = []
 //         let i = 0
@@ -8244,7 +6804,6 @@ const { test } = require('./testDir')
 
 // };
 
-
 // function hasDuplicate(arr) {
 //     const set = new Set()
 //     for (let num of arr) {
@@ -8258,10 +6817,6 @@ const { test } = require('./testDir')
 // }
 
 // console.log('isValidSudoku(board)', isValidSudoku(board))
-
-
-
-
 
 // const strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
 
@@ -8280,13 +6835,8 @@ const { test } = require('./testDir')
 
 // console.log('groupAnagrams(strs)', groupAnagrams(strs))
 
-
-
-
-
 // ababdbeabfbaaabfdccabbefabbabcdbbb
 //       ^    ^
-
 
 // const str = 'aggggghoijgabcdefghi'
 // //            ^^
@@ -8305,7 +6855,6 @@ const { test } = require('./testDir')
 //     console.log('map', map)
 
 //     while (right <= str.length) {
-
 
 //         lChar = str[left]
 //         rChar = str[right]
@@ -8352,24 +6901,11 @@ const { test } = require('./testDir')
 
 //         right++
 
-
-
 //     }
 //     return longestWord
 // }
 
-
 // console.log('lengthOfLongestSubstring(str)', lengthOfLongestSubstring(str))
-
-
-
-
-
-
-
-
-
-
 
 // const lowLimit = 1
 // const highLimit = 5
@@ -8398,9 +6934,6 @@ const { test } = require('./testDir')
 
 // console.log('countBalls(lowLimit,highLimit)', countBalls(lowLimit, highLimit))
 
-
-
-
 // adjacentPairs = [[4, -2], [1, 4], [-3, 1]]
 
 // var restoreArray = function (adjacentPairs) {
@@ -8409,14 +6942,10 @@ const { test } = require('./testDir')
 
 // console.log('restoreArray(adjacentPairs)', restoreArray(adjacentPairs))
 
-
-
 // const str = 'ababa'
 // function threePalindromes(str) {
 
 // }
-
-
 
 // // const nums = [4, 5, 6, 7, 0, 1, 2]
 // const nums = [6, 7, 0, 1, 2, 4, 5]
@@ -8462,7 +6991,6 @@ const { test } = require('./testDir')
 
 // console.log('search(nums,target)', search(nums, target))
 
-
 // // const nums = [2, 3, 1, 1, 4]
 // const nums = [3,2,1,1]
 
@@ -8485,10 +7013,7 @@ const { test } = require('./testDir')
 
 // };
 
-
-
 // console.log('canJump(nums)', canJump(nums))
-
 
 // // const newInterval = [1,2];
 // // const newInterval = [1,2];
@@ -8521,7 +7046,6 @@ const { test } = require('./testDir')
 
 // console.log('insert(intervals,newInterval)', insert(intervals, newInterval))
 
-
 // const board = [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
 // const word = "SEE"
 
@@ -8532,7 +7056,7 @@ const { test } = require('./testDir')
 //     for (let i = 0; i < colLen; i++) {
 //         for (let j = 0; j < rowLen; j++) {
 //             if (board[i][j] === word[0]) {
-//                const foundWord = wordExists(i, j); 
+//                const foundWord = wordExists(i, j);
 //                console.log('foundWord', foundWord)
 //                 if (foundWord) return true;
 //             }
@@ -8574,17 +7098,11 @@ const { test } = require('./testDir')
 
 //         return false;
 
-
 //     }
-
-
 
 // };
 
 // console.log('exist(board,word)', exist(board, word))
-
-
-
 
 // const nums = [-2, 2, 3, -2, -10, 0, 2,10,10];
 
@@ -8618,12 +7136,6 @@ const { test } = require('./testDir')
 
 // console.log('maxProduct(nums)', maxProduct(nums))
 
-
-
-
-
-
-
 // // const nums = [3, 4, 5, 1, 2];
 // // const nums = [2, 3, 4, 5, 1];
 // // const nums = [1, 2, 3, 4, 5, 6];
@@ -8649,18 +7161,12 @@ const { test } = require('./testDir')
 //             end = mid;
 //         }
 
-
 //     }
 
 //     return nums[start];
 // };
 
 // console.log('findMin(nums)', findMin(nums))
-
-
-
-
-
 
 // const nums = [1, 2, 3, 1, 1, 10];
 
@@ -8679,12 +7185,6 @@ const { test } = require('./testDir')
 // };
 
 // console.log('rob(nums)', rob(nums))
-
-
-
-
-
-
 
 // let s = 'ff'
 // let t = 'asdf'
@@ -8709,11 +7209,6 @@ const { test } = require('./testDir')
 
 // console.log('isAnagram(s,t)', isAnagram(s, t))
 
-
-
-
-
-
 // const nums = [1,2,3];
 
 // var permute = function(nums) {
@@ -8728,11 +7223,9 @@ const { test } = require('./testDir')
 //         res.push(permutation)
 //         return
 
-//     } 
-
+//     }
 
 // // console.log('permute(nums)', permute(nums))
-
 
 // const nums = [9, 1, 2, 5, 6, 7]
 
@@ -8760,16 +7253,9 @@ const { test } = require('./testDir')
 //     }
 //     return maxCount
 
-
 // };
 
 // console.log('longestConsecutive(nums)', longestConsecutive(nums))
-
-
-
-
-
-
 
 // const intervals = [[1, 4], [3, 5]];
 
@@ -8778,10 +7264,6 @@ const { test } = require('./testDir')
 // };
 
 // console.log('eraseOverlapIntervals(intervals)', eraseOverlapIntervals(intervals))
-
-
-
-
 
 // const nums = [3,0,1]
 
@@ -8802,11 +7284,6 @@ const { test } = require('./testDir')
 
 // console.log('missingNumber(nums)', missingNumber(nums))
 
-
-
-
-
-
 // const nums = [3, 1, 3, 4, 2]
 
 // var findDuplicate = function (nums) {
@@ -8817,10 +7294,7 @@ const { test } = require('./testDir')
 //     }
 // };
 
-
 // console.log('findDuplicate(nums)', findDuplicate(nums))
-
-
 
 // // const s = "qrsaaqrsdabbabf"
 // const s = "01234bbabasdfasdfasdfasdfasdfasdfasdfbbbbbaaasb"
@@ -8878,10 +7352,6 @@ const { test } = require('./testDir')
 
 // console.log('characterReplacement(s,k)', characterReplacement(s, k))
 
-
-
-
-
 // // const s = "qrsaaqrsdabbabf"
 // const s = "ABBAAAACCCC"
 // const k = 2
@@ -8900,7 +7370,7 @@ const { test } = require('./testDir')
 //             let c = String.fromCharCode(char)
 //             console.log('c', c)
 //             maxStreak = Math.max(charRepForLetter(c, s, k), maxStreak)
-//         } 
+//         }
 //     }
 //     return maxStreak
 // };
@@ -8932,17 +7402,9 @@ const { test } = require('./testDir')
 
 //     return best
 
-
-
 // }
 
 // console.log('characterReplacement(s,k)', characterReplacement(s, k))
-
-
-
-
-
-
 
 // const OPTIONS = ["One", "Two", "Three"];
 // OPTIONS.reduce(
@@ -8957,11 +7419,6 @@ const { test } = require('./testDir')
 //     {}
 // )
 
-
-
-
-
-
 // const tempTermList = []
 
 // const terms = ["donald trump", 'something', 'cuomo']
@@ -8975,7 +7432,6 @@ const { test } = require('./testDir')
 // const termList = tempTermList.join(' OR ')
 
 // console.log('termList', termList)
-
 
 // const num = 20;
 // const fizzBuzz = () => {
@@ -8995,7 +7451,6 @@ const { test } = require('./testDir')
 // const res = fizzBuzz()
 // console.log('res', res)
 
-
 // const num = 20;
 // const fizzBuzz = () => {
 //     for (i = 0; i <= num; i++) {
@@ -9009,7 +7464,6 @@ const { test } = require('./testDir')
 
 // const res = fizzBuzz()
 // console.log('res', res)
-
 
 // const word = 'SasdfF'
 
@@ -9040,9 +7494,6 @@ const { test } = require('./testDir')
 // const res = detectCapitalUse(word)
 // console.log('res', res)
 
-
-
-
 // const n = 5;
 // const start = 0;
 
@@ -9059,12 +7510,7 @@ const { test } = require('./testDir')
 // const res = xorOperation(n, start)
 // console.log('res', res)
 
-
-
-
-
 // const num = 5;
-
 
 // var findComplement = function (num) {
 //     let binary = (num >>> 0).toString(2)
@@ -9079,13 +7525,6 @@ const { test } = require('./testDir')
 
 // const res = findComplement(num)
 // console.log('res', res)
-
-
-
-
-
-
-
 
 // const arr = [1, 2, 2, 3, 3, 3]
 
@@ -9103,18 +7542,8 @@ const { test } = require('./testDir')
 //     return maxLuckyNumber
 // };
 
-
 // const res = findLucky(arr)
 // console.log('res', res)
-
-
-
-
-
-
-
-
-
 
 // const moves = 'LL'
 
@@ -9137,9 +7566,6 @@ const { test } = require('./testDir')
 
 // const res = judgeCircle(moves)
 // console.log('res', res)
-
-
-
 
 // const nums = [34323, 3432]
 
@@ -9175,16 +7601,8 @@ const { test } = require('./testDir')
 //     return finalStr
 // };
 
-
 // const res = largestNumber(nums)
 // console.log('res', res)
-
-
-
-
-
-
-
 
 // // const nums = [9, 4, 32, 3, 36]
 // const nums = [0,0]
@@ -9208,12 +7626,8 @@ const { test } = require('./testDir')
 //     return nums.join('')
 // };
 
-
 // const res = largestNumber(nums)
 // console.log('res', res)
-
-
-
 
 // const digits = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
@@ -9253,26 +7667,16 @@ const { test } = require('./testDir')
 // const res = plusOne(digits)
 // console.log('res', res)
 
-
-
-
-
 // // const s = 'ababab'
 // const s = 'abcabc'
 // // const s = 'aaaaa'
 
-
-
 // var repeatedSubstringPattern = function (s) {
-
 
 // };
 
-
-
 // const res = repeatedSubstringPattern(s)
 // console.log('res', res)
-
 
 // const nums = [1,2,1,1,2,3]
 // // const nums = [1, 3, 5, 3, 3, 3, 3, 7, 8, 9, 11, 12]
@@ -9300,15 +7704,6 @@ const { test } = require('./testDir')
 // const res = findLengthOfLCIS(nums)
 // console.log('res', res)
 
-
-
-
-
-
-
-
-
-
 // const nums = [1, 3, 2, 4, 2, 4]
 
 // var findNumberOfLIS = function (nums) {
@@ -9324,9 +7719,6 @@ const { test } = require('./testDir')
 
 // const res = findNumberOfLIS(nums)
 // console.log('res', res)
-
-
-
 
 // const nums = [10, 9, 2, 5, 3, 7, 101, 18]
 
@@ -9346,7 +7738,6 @@ const { test } = require('./testDir')
 // const res = lengthOfLIS(nums)
 // console.log('res', res)
 
-
 // const arr = [0, 0]
 
 // var checkIfExist = function (arr) {
@@ -9359,14 +7750,11 @@ const { test } = require('./testDir')
 //         seen.add(num)
 //     }
 
-
-
 //     return false
 // };
 
 // const res = checkIfExist(arr)
 // console.log('res', res)
-
 
 // const arr = [1, 2, 3, 4]
 // const k = 2
@@ -9390,19 +7778,14 @@ const { test } = require('./testDir')
 // const res = findKthPositive(arr, k)
 // console.log('res', res)
 
-
 // const arr = [8, 4, 5, 0, 0, 0, 0, 7]
 // //          [8, 4, 5, 0, 0, 0, 0, 0]
 // var duplicateZeros = function (arr) {
-
 
 // };
 
 // const res = duplicateZeros(arr)
 // console.log('res', res)
-
-
-
 
 // const nums = [1, -2, -3]
 
@@ -9412,7 +7795,6 @@ const { test } = require('./testDir')
 
 // const res = minStartValue(nums)
 // console.log('res', res)
-
 
 // const s = 'caca'
 // const t = 'baba'
@@ -9440,13 +7822,6 @@ const { test } = require('./testDir')
 // const res = isIsomorphic(s, t)
 // console.log('res', res)
 
-
-
-
-
-
-
-
 // const BT = new BinaryTree()
 
 // // BT.insertArray([0, 1, 2, 21, 22, 23, 24])
@@ -9454,11 +7829,6 @@ const { test } = require('./testDir')
 // // BT.insertArray([5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1])
 // // BT.insertArray([5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1])
 // console.log('BT', BT.root.left)
-
-
-
-
-
 
 // var hasPathSum = function(root, sum) {
 //     if (!root) return false;
@@ -9470,21 +7840,7 @@ const { test } = require('./testDir')
 //     }
 // };
 
-
-
-
-
-
-
-
-
-
-
-
-
 // const nums = [-2, -1, 0, 1, 2]
-
-
 
 // var maximumProduct = function (nums) {
 //     if (nums.length === 3) return nums.reduce((acc, val) => acc * val)
@@ -9498,9 +7854,6 @@ const { test } = require('./testDir')
 // const res = maximumProduct(nums)
 // console.log('res', res)
 
-
-
-
 // const SLL = new SinglyLinkedList()
 
 // SLL.push(1)
@@ -9508,7 +7861,6 @@ const { test } = require('./testDir')
 // SLL.push(3)
 // SLL.push(2)
 // SLL.push(1)
-
 
 // const head = SLL.head
 
@@ -9529,7 +7881,6 @@ const { test } = require('./testDir')
 
 //     // reverse second half
 
-
 //     const reverseSLL = (head) {
 //         let prev = null
 //         while (head !== null) {
@@ -9540,13 +7891,10 @@ const { test } = require('./testDir')
 //         }
 //     }
 
-
-
 // };
 
 // const res = isPalindrome(head)
 // console.log('res', res)
-
 
 // const coordinates =[[1,1],[2,2],[3,4],[4,5],[5,6],[7,7]]
 
@@ -9568,15 +7916,10 @@ const { test } = require('./testDir')
 
 //     return true
 
-
 // };
 
 // const res = checkStraightLine(coordinates)
 // console.log('res', res)
-
-
-
-
 
 // const BST = new BinarySearchTree()
 
@@ -9585,7 +7928,6 @@ const { test } = require('./testDir')
 // BST.insert(2)
 // BST.insert(1)
 // console.log('BST', BST)
-
 
 // const root = BST.root
 
@@ -9597,7 +7939,6 @@ const { test } = require('./testDir')
 //     const str = ''
 
 //     traverse(root, str)
-
 
 //     function traverse(root, str) {
 //         if (!str.length) {
@@ -9621,11 +7962,8 @@ const { test } = require('./testDir')
 
 // };
 
-
-
 // const res = binaryTreePaths(root)
 // console.log('res', res)
-
 
 // const nums = [0,11,1222]
 
@@ -9647,13 +7985,8 @@ const { test } = require('./testDir')
 //     return evens
 // };
 
-
-
 // const res = findNumbers(nums)
 // console.log('res', res)
-
-
-
 
 // const columnTitle = "AA"
 
@@ -9681,10 +8014,6 @@ const { test } = require('./testDir')
 // const res = titleToNumber(columnTitle)
 // console.log('res', res)
 
-
-
-
-
 // const rowIndex = 4
 // var getRow = function (rowIndex) {
 //     let rows = []
@@ -9710,11 +8039,6 @@ const { test } = require('./testDir')
 // const res = getRow(rowIndex)
 // console.log('res', res)
 
-
-
-
-
-
 // // const { main, something } = require('./testDir/findAnagrams')
 // // const { main } = require('./test')
 // const funcs = require('./testDir')
@@ -9722,21 +8046,12 @@ const { test } = require('./testDir')
 // // main()
 // // something()
 
-
 // // funcs.findAnagrams()
 // console.log('funcs', funcs.findAnagrams.main())
 // console.log('funcs', funcs.findAnagrams.something())
 
-
-
-
-
-
-
-
 // const s = 'zzzbabaabaz'
 // const p = 'aab'
-
 
 // var findAnagrams = function (s, p) {
 //     const starts = []
@@ -9764,19 +8079,11 @@ const { test } = require('./testDir')
 //         }
 //     })
 
-
 //     return starts
 // };
 
-
 // const res = findAnagrams(s, p)
 // console.log('res', res)
-
-
-
-
-
-
 
 // // const nums = [1, 2, 4]
 // const nums = [1334, 1500, 4169, 724, 4358]
@@ -9785,7 +8092,6 @@ const { test } = require('./testDir')
 
 // var minMoves2 = function (nums) {
 //     let moves = 0;
-
 
 //     const len = nums.length
 //     nums.sort((a,b)=>a-b)
@@ -9801,9 +8107,6 @@ const { test } = require('./testDir')
 //     // median = 1400
 //     // console.log('median', median)
 
-
-
-
 //     for (let num of nums) {
 //         // console.log('num', num)
 //         let increment = Math.abs(num - median)
@@ -9818,1165 +8121,56 @@ const { test } = require('./testDir')
 // const res = minMoves2(nums)
 // console.log('res', res)
 
-
-
-
-
-
-
-
-
-
-
-// pagination problem
-
-let pageTokensMaster = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
-
-function getPageNums(curPage, seen) {
-    const { start, end } = seen
-    const span = 2
-    const maxWinLen = span * 2 + 1
-    const highestSeen = end
-    let low, high
-    let pageTokens = pageTokensMaster.slice(start - 1, end)
-    let index = curPage - 1
-    if (curPage === 1) {
-        low = 0
-        high = index + maxWinLen - 1
-    } else if (!pageTokens[index - span]) {
-        low = 0
-        high = index + maxWinLen - curPage
-    } else if (!pageTokens[index + span]) {
-        high = highestSeen - 1
-        const addTerm = high - index
-        low = curPage - (maxWinLen) + addTerm
-    } else if (pageTokens[index - span] && pageTokens[index + span]) {
-        low = index - span
-        high = index + span
-    }
-
-    let pageNums = pageTokens.map((el, i) => i + 1)
-    let numsForDisplay = pageNums.slice(Math.max(0, low), high + 1)
-    return numsForDisplay
-}
-
-const start = 1
-const end = 5
-const curPage = 3
-const seen = { start, end }
-
-console.log('getPageNums(curPage,seen)', getPageNums(curPage, seen))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// // pagination problem
+
+// let pageTokensMaster = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+// function getPageNums(curPage, seen) {
+//     const { start, end } = seen
+//     const span = 2
+//     const maxWinLen = span * 2 + 1
+//     const highestSeen = end
+//     let low, high
+//     let pageTokens = pageTokensMaster.slice(start - 1, end)
+//     let index = curPage - 1
+//     if (curPage === 1) {
+//         low = 0
+//         high = index + maxWinLen - 1
+//     } else if (!pageTokens[index - span]) {
+//         low = 0
+//         high = index + maxWinLen - curPage
+//     } else if (!pageTokens[index + span]) {
+//         high = highestSeen - 1
+//         const addTerm = high - index
+//         low = curPage - (maxWinLen) + addTerm
+//     } else if (pageTokens[index - span] && pageTokens[index + span]) {
+//         low = index - span
+//         high = index + span
+//     }
+
+//     let pageNums = pageTokens.map((el, i) => i + 1)
+//     let numsForDisplay = pageNums.slice(Math.max(0, low), high + 1)
+//     return numsForDisplay
+// }
+
+// const start = 1
+// const end = 5
+// const curPage = 3
+// const seen = { start, end }
+
+// console.log('getPageNums(curPage,seen)', getPageNums(curPage, seen))
+const example = { a: 1, b: 2 };
+
+const p1 = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(example), 2000);
+  });
+};
+
+const p = async () => {
+  const res = await p1();
+
+  return res;
+};
 
 

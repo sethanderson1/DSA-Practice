@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon DSA-practice.js",
+    "start": "nodemon DSA-Practice2.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
