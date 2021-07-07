@@ -1,3 +1,6 @@
+import { buyStocks } from "./algos/buyStocks1";
+import { promises } from "./sandboxes/promises";
+
 const nodemon = require("nodemon");
 // const { LinkedList, _Node } = require('./LinkedList')
 const {
@@ -17,6 +20,5 @@ const {
   BinaryTree,
 } = require("./DS");
 
-const { promises } = require("./sandboxes/promises");
 
-promises();
+buyStocks
