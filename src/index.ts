@@ -1,4 +1,5 @@
-import { buyStocks } from "./algos/buyStocks1";
+import { buyStocks1 } from "./algos/buyStocks1";
+import { removeDupsSorted } from "./algos/removeDupsSorted";
 import { promises } from "./sandboxes/promises";
 
 const nodemon = require("nodemon");
@@ -21,4 +22,5 @@ const {
 } = require("./DS");
 
 
-buyStocks
+// buyStocks1
+removeDupsSorted

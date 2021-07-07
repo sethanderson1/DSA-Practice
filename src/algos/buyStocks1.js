@@ -1,4 +1,4 @@
-const buyStocks = (stocks) => {
+const buyStocks1 = (stocks) => {
   let min = Infinity;
   let maxProfit = 0;
   for (let i = 0; i < stocks.length; i++) {
@@ -12,9 +12,9 @@ const buyStocks = (stocks) => {
 };
 
 const stocks = [2, 5, 1, 2, 4, 9, 3];
-const result = buyStocks(stocks);
+const result = buyStocks1(stocks);
 console.log("result", result);
 
 module.exports = {
-  buyStocks,
+  buyStocks1,
 };
