@@ -1,6 +1,9 @@
 import { buyStocks1 } from "./algos/buyStocks1";
+import { buyStocks2 } from "./algos/buyStocks2";
 import { removeDupsSorted } from "./algos/removeDupsSorted";
+import { rotateArray } from "./algos/rotateArray";
 import { promises } from "./sandboxes/promises";
+import { typescriptSandbox } from "./sandboxes/typescriptSandbox";
 
 const nodemon = require("nodemon");
 // const { LinkedList, _Node } = require('./LinkedList')
@@ -23,4 +26,7 @@ const {
 
 
 // buyStocks1
-removeDupsSorted
+// removeDupsSorted
+// buyStocks2
+// typescriptSandbox
+rotateArray
