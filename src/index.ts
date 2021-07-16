@@ -9,6 +9,7 @@ import { rotateArray } from "./algos/rotateArray";
 import { singleNumber } from "./algos/singleNumber";
 import { promises } from "./sandboxes/promises";
 import { typescriptSandbox } from "./sandboxes/typescriptSandbox";
+import { twoSum } from "./algos/twoSum";
 
 const nodemon = require("nodemon");
 // const { LinkedList, _Node } = require('./LinkedList')
@@ -38,4 +39,5 @@ const {
 // singleNumber
 // intersectionArr2
 // plusOne
-moveZeros
+// moveZeros
+twoSum
