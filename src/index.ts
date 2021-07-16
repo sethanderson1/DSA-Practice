@@ -3,6 +3,7 @@ import { buyStocks2 } from "./algos/buyStocks2";
 import { hasDuplicate } from "./algos/hasDuplicate";
 import { intersectionArr2 } from "./algos/intersectionArr2";
 import { plusOne } from "./algos/plusOne";
+import { moveZeros } from "./algos/moveZeros";
 import { removeDupsSorted } from "./algos/removeDupsSorted";
 import { rotateArray } from "./algos/rotateArray";
 import { singleNumber } from "./algos/singleNumber";
@@ -36,4 +37,5 @@ const {
 // hasDuplicate;
 // singleNumber
 // intersectionArr2
-plusOne
+// plusOne
+moveZeros
