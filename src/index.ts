@@ -10,6 +10,7 @@ import { singleNumber } from "./algos/singleNumber";
 import { promises } from "./sandboxes/promises";
 import { typescriptSandbox } from "./sandboxes/typescriptSandbox";
 import { twoSum } from "./algos/twoSum";
+import { validSudoku } from "./algos/validSudoku";
 
 const nodemon = require("nodemon");
 // const { LinkedList, _Node } = require('./LinkedList')
@@ -40,4 +41,5 @@ const {
 // intersectionArr2
 // plusOne
 // moveZeros
-twoSum
+// twoSum
+validSudoku
