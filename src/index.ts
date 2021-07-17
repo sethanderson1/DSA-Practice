@@ -11,6 +11,8 @@ import { promises } from "./sandboxes/promises";
 import { typescriptSandbox } from "./sandboxes/typescriptSandbox";
 import { twoSum } from "./algos/twoSum";
 import { validSudoku } from "./algos/validSudoku";
+import { reverseString } from "./algos/reverseString";
+import { reverseInteger } from "./algos/reverseInteger";
 
 const nodemon = require("nodemon");
 // const { LinkedList, _Node } = require('./LinkedList')
@@ -42,4 +44,6 @@ const {
 // plusOne
 // moveZeros
 // twoSum
-validSudoku
+// validSudoku
+// reverseString
+reverseInteger;
