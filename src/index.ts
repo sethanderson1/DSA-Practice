@@ -13,6 +13,7 @@ import { twoSum } from "./algos/twoSum";
 import { validSudoku } from "./algos/validSudoku";
 import { reverseString } from "./algos/reverseString";
 import { reverseInteger } from "./algos/reverseInteger";
+import { firstUniqChar } from "./algos/firstUniqChar";
 
 const nodemon = require("nodemon");
 // const { LinkedList, _Node } = require('./LinkedList')
@@ -46,4 +47,5 @@ const {
 // twoSum
 // validSudoku
 // reverseString
-reverseInteger;
+// reverseInteger;
+firstUniqChar
