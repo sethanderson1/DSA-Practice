@@ -14,6 +14,8 @@ import { validSudoku } from "./algos/validSudoku";
 import { reverseString } from "./algos/reverseString";
 import { reverseInteger } from "./algos/reverseInteger";
 import { firstUniqChar } from "./algos/firstUniqChar";
+import { validAnagram } from "./algos/validAnagram";
+import { isPalindrome } from "./algos/isPalindrome";
 
 const nodemon = require("nodemon");
 // const { LinkedList, _Node } = require('./LinkedList')
@@ -48,4 +50,6 @@ const {
 // validSudoku
 // reverseString
 // reverseInteger;
-firstUniqChar
+// firstUniqChar;
+// validAnagram;
+isPalindrome;
