@@ -1,6 +1,6 @@
-const isPalindrome = (str) => {
+const isPalindrome = (s) => {
   let l = 0;
-  let r = str.length - 1;
+  let r = s.length - 1;
 
   const isAlphaNum = (char) => {
     char = char.charCodeAt(0);
@@ -11,28 +11,48 @@ const isPalindrome = (str) => {
   };
 
   while (l < r) {
-    console.log("str[l]", str[l]);
-    console.log("str[r]", str[r]);
-    while (!isAlphaNum(str[l].toLowerCase())) {
+    while (l < r && !isAlphaNum(s[l].toLowerCase())) {
       l++;
     }
-    while (!isAlphaNum(str[r].toLowerCase())) {
+    while (l < r && !isAlphaNum(s[r].toLowerCase())) {
       r--;
     }
-    if (str[l].toLowerCase() !== str[r].toLowerCase()) {
+    if (s[l].toLowerCase() !== s[r].toLowerCase()) {
       return false;
     }
     l++;
     r--;
-    console.log('l', l)
-    console.log('r', r)
   }
-  return true
+  return true;
 };
 
-const str = "44okj ,jk  o44";
-// const str = "A man, a plan, a canal: Panama";
-const result = isPalindrome(str);
+// // Second Solution
+// var isPalindrome = function(s) {
+//   let low = 0, high = s.length-1;
+//   while (low < high) {
+//       // validate character at both pointers
+//       while (low < high && !isAlphaNumeric(s[low])) low++;
+//       while (low < high && !isAlphaNumeric(s[high])) high--;
+
+//       if (s[low].toLowerCase() !== s[high].toLowerCase()) return false;
+//       low++, high--;
+//   }
+//   return true;
+//   // T.C: O(N)
+//   // S.C: O(1)
+// };
+
+function isAlphaNumeric(x) {
+  let code = x.charCodeAt();
+  return (
+    (code >= 48 && code <= 57) ||
+    (code >= 65 && code <= 90) ||
+    (code >= 97 && code <= 122)
+  );
+}
+
+const s = ".;;'";
+const result = isPalindrome(s);
 console.log("result", result);
 
 module.exports = {
