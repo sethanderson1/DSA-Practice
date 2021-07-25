@@ -17,6 +17,7 @@ import { firstUniqChar } from "./algos/firstUniqChar";
 import { validAnagram } from "./algos/validAnagram";
 import { isPalindrome } from "./algos/isPalindrome";
 import { strStr } from "./algos/strStr";
+import { maxSubArray } from "./algos/maxSubArray";
 
 const nodemon = require("nodemon");
 // const { LinkedList, _Node } = require('./LinkedList')
@@ -54,4 +55,5 @@ const {
 // firstUniqChar;
 // validAnagram;
 // isPalindrome;
-strStr;
+// strStr;
+maxSubArray;
