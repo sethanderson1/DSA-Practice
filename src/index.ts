@@ -16,6 +16,7 @@ import { reverseInteger } from "./algos/reverseInteger";
 import { firstUniqChar } from "./algos/firstUniqChar";
 import { validAnagram } from "./algos/validAnagram";
 import { isPalindrome } from "./algos/isPalindrome";
+import { strStr } from "./algos/strStr";
 
 const nodemon = require("nodemon");
 // const { LinkedList, _Node } = require('./LinkedList')
@@ -52,4 +53,5 @@ const {
 // reverseInteger;
 // firstUniqChar;
 // validAnagram;
-isPalindrome;
+// isPalindrome;
+strStr;
