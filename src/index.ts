@@ -19,6 +19,8 @@ import { isPalindrome } from "./algos/isPalindrome";
 import { strStr } from "./algos/strStr";
 import { maxSubArray } from "./algos/maxSubArray";
 import { isValidParens } from "./algos/isValidParens";
+import { mergeTwoArrs } from "./algos/mergeTwoArrs";
+import { rob } from "./algos/rob";
 
 const nodemon = require("nodemon");
 // const { LinkedList, _Node } = require('./LinkedList')
@@ -39,6 +41,7 @@ const {
   BinaryTree,
 } = require("./DS");
 
+promises;
 // buyStocks1
 // removeDupsSorted
 // buyStocks2
@@ -58,4 +61,6 @@ const {
 // isPalindrome;
 // strStr;
 // maxSubArray;
-isValidParens;
+// isValidParens;
+// mergeTwoArrs;
+// rob;
