@@ -41,7 +41,7 @@ const {
   BinaryTree,
 } = require("./DS");
 
-promises;
+// promises;
 // buyStocks1
 // removeDupsSorted
 // buyStocks2
@@ -63,4 +63,4 @@ promises;
 // maxSubArray;
 // isValidParens;
 // mergeTwoArrs;
-// rob;
+rob;
