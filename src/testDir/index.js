@@ -1,5 +1,5 @@
 
 module.exports = {
     findAnagrams: require('./findAnagrams'),
-    test: require('./test')
+    test: require('./_test')
 }
