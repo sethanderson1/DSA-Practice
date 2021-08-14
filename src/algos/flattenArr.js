@@ -1,6 +1,6 @@
 
 const flattenArr = (arr) => {
-
+  // test commit 2
 };
 
 
